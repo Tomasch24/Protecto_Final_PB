@@ -9,7 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CAPA DE ENTIDADES\CAPA DE ENTIDADES.csproj" />
     <ProjectReference Include="..\Capa_Negocios\Capa_Negocios.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="USUARIOS\donna_paulsen.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="USUARIOS\harvey_specter.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
