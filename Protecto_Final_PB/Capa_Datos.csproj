@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+
     <ProjectReference Include="..\Capa de Modulos\Capa de Modulos.csproj" />
+
   </ItemGroup>
 
 </Project>
