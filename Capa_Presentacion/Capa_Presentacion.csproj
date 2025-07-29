@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Capa de Modulos\Capa de Modulos.csproj" />
     <ProjectReference Include="..\Capa_Negocios\Capa_Negocios.csproj" />
   </ItemGroup>
 

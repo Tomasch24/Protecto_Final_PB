@@ -31,21 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pantalla_De_Inicio));
             butCatalogo = new Button();
             butHacer_pedido = new Button();
-            pictureBox1 = new PictureBox();
             iconoMinimizar = new PictureBox();
             iconoCerrar = new PictureBox();
             MenuVertical = new Panel();
             button1 = new Button();
-            pictureBox2 = new PictureBox();
             btnSlide = new PictureBox();
             BarraTitulo = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pictureBox1 = new PictureBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)iconoMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconoCerrar).BeginInit();
             MenuVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnSlide).BeginInit();
             BarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // butCatalogo
@@ -56,9 +59,10 @@
             butCatalogo.ForeColor = SystemColors.ButtonHighlight;
             butCatalogo.Image = (Image)resources.GetObject("butCatalogo.Image");
             butCatalogo.ImageAlign = ContentAlignment.MiddleLeft;
-            butCatalogo.Location = new Point(3, 240);
+            butCatalogo.Location = new Point(2, 192);
+            butCatalogo.Margin = new Padding(2);
             butCatalogo.Name = "butCatalogo";
-            butCatalogo.Size = new Size(307, 68);
+            butCatalogo.Size = new Size(246, 54);
             butCatalogo.TabIndex = 0;
             butCatalogo.Text = "Catalogo";
             butCatalogo.UseVisualStyleBackColor = true;
@@ -72,32 +76,23 @@
             butHacer_pedido.ForeColor = SystemColors.ButtonHighlight;
             butHacer_pedido.Image = (Image)resources.GetObject("butHacer_pedido.Image");
             butHacer_pedido.ImageAlign = ContentAlignment.MiddleLeft;
-            butHacer_pedido.Location = new Point(-4, 403);
+            butHacer_pedido.Location = new Point(-3, 322);
+            butHacer_pedido.Margin = new Padding(2);
             butHacer_pedido.Name = "butHacer_pedido";
-            butHacer_pedido.Size = new Size(281, 68);
+            butHacer_pedido.Size = new Size(225, 54);
             butHacer_pedido.TabIndex = 1;
             butHacer_pedido.Text = "   Hacer Pedido";
             butHacer_pedido.UseVisualStyleBackColor = true;
             butHacer_pedido.Click += button2_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(373, 155);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(864, 573);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
             // iconoMinimizar
             // 
             iconoMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             iconoMinimizar.Image = (Image)resources.GetObject("iconoMinimizar.Image");
-            iconoMinimizar.Location = new Point(1288, 12);
+            iconoMinimizar.Location = new Point(743, 10);
+            iconoMinimizar.Margin = new Padding(2);
             iconoMinimizar.Name = "iconoMinimizar";
-            iconoMinimizar.Size = new Size(30, 30);
+            iconoMinimizar.Size = new Size(24, 24);
             iconoMinimizar.SizeMode = PictureBoxSizeMode.Zoom;
             iconoMinimizar.TabIndex = 6;
             iconoMinimizar.TabStop = false;
@@ -107,9 +102,10 @@
             // 
             iconoCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             iconoCerrar.Image = (Image)resources.GetObject("iconoCerrar.Image");
-            iconoCerrar.Location = new Point(1324, 12);
+            iconoCerrar.Location = new Point(772, 10);
+            iconoCerrar.Margin = new Padding(2);
             iconoCerrar.Name = "iconoCerrar";
-            iconoCerrar.Size = new Size(30, 30);
+            iconoCerrar.Size = new Size(24, 24);
             iconoCerrar.SizeMode = PictureBoxSizeMode.Zoom;
             iconoCerrar.TabIndex = 8;
             iconoCerrar.TabStop = false;
@@ -117,15 +113,19 @@
             // 
             // MenuVertical
             // 
-            MenuVertical.BackColor = Color.FromArgb(120, 160, 100);
+            MenuVertical.BackColor = Color.FromArgb(41, 76, 37);
+            MenuVertical.Controls.Add(label3);
+            MenuVertical.Controls.Add(label2);
+            MenuVertical.Controls.Add(label1);
+            MenuVertical.Controls.Add(pictureBox3);
             MenuVertical.Controls.Add(button1);
-            MenuVertical.Controls.Add(pictureBox2);
             MenuVertical.Controls.Add(butCatalogo);
             MenuVertical.Controls.Add(butHacer_pedido);
             MenuVertical.Dock = DockStyle.Left;
             MenuVertical.Location = new Point(0, 0);
+            MenuVertical.Margin = new Padding(2);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(68, 878);
+            MenuVertical.Size = new Size(286, 715);
             MenuVertical.TabIndex = 10;
             // 
             // button1
@@ -136,30 +136,22 @@
             button1.ForeColor = SystemColors.ButtonHighlight;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(10, 566);
+            button1.Location = new Point(8, 453);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(281, 68);
+            button1.Size = new Size(225, 54);
             button1.TabIndex = 3;
             button1.Text = "Personal";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-36, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(369, 210);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
             // btnSlide
             // 
             btnSlide.Image = (Image)resources.GetObject("btnSlide.Image");
-            btnSlide.Location = new Point(6, 2);
+            btnSlide.Location = new Point(5, 2);
+            btnSlide.Margin = new Padding(2);
             btnSlide.Name = "btnSlide";
-            btnSlide.Size = new Size(45, 45);
+            btnSlide.Size = new Size(36, 36);
             btnSlide.SizeMode = PictureBoxSizeMode.Zoom;
             btnSlide.TabIndex = 5;
             btnSlide.TabStop = false;
@@ -171,33 +163,92 @@
             BarraTitulo.Controls.Add(iconoCerrar);
             BarraTitulo.Controls.Add(iconoMinimizar);
             BarraTitulo.Dock = DockStyle.Top;
-            BarraTitulo.Location = new Point(68, 0);
+            BarraTitulo.Location = new Point(286, 0);
+            BarraTitulo.Margin = new Padding(2);
             BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(1366, 50);
+            BarraTitulo.Size = new Size(806, 40);
             BarraTitulo.TabIndex = 11;
             BarraTitulo.Paint += BarraTitulo_Paint_1;
             BarraTitulo.MouseDown += BarraTitulo_MouseDown_1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.Image = Capa_Presentacion.Properties.Resources.LOGO_OSCURO;
+            pictureBox1.Location = new Point(521, 192);
+            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(299, 264);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century", 10.2F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(122, 125);
+            label3.Name = "label3";
+            label3.Size = new Size(62, 21);
+            label3.TabIndex = 10;
+            label3.Text = "label3";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century", 10.2F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(122, 73);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 21);
+            label2.TabIndex = 9;
+            label2.Text = "label2";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century", 10.2F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(122, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(62, 21);
+            label1.TabIndex = 8;
+            label1.Text = "label1";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Capa_Presentacion.Properties.Resources.USUARIO_BLANCO;
+            pictureBox3.Location = new Point(11, 16);
+            pictureBox3.Margin = new Padding(2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(95, 130);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 7;
+            pictureBox3.TabStop = false;
+            // 
             // Pantalla_De_Inicio
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1434, 878);
+            ClientSize = new Size(1092, 715);
             Controls.Add(BarraTitulo);
             Controls.Add(MenuVertical);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "Pantalla_De_Inicio";
             Text = "Form3";
             Load += Pantalla_De_Inicio_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconoMinimizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconoCerrar).EndInit();
             MenuVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            MenuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnSlide).EndInit();
             BarraTitulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -205,13 +256,16 @@
 
         private Button butCatalogo;
         private Button butHacer_pedido;
-        private PictureBox pictureBox1;
         private PictureBox iconoMinimizar;
         private PictureBox iconoCerrar;
         private Panel MenuVertical;
         private PictureBox btnSlide;
         private Panel BarraTitulo;
-        private PictureBox pictureBox2;
         private Button button1;
+        private PictureBox pictureBox1;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private PictureBox pictureBox3;
     }
 }
