@@ -36,11 +36,11 @@
             lblUser = new Label();
             lblPassword = new Label();
             txtPassword = new TextBox();
-            checkBox1 = new CheckBox();
             btnLogin = new Button();
             panel2 = new Panel();
             linkLabel1 = new LinkLabel();
             pictureBox1 = new PictureBox();
+            lblError = new Label();
             panelLogTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
@@ -135,17 +135,6 @@
             txtPassword.Size = new Size(350, 22);
             txtPassword.TabIndex = 4;
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Century", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            checkBox1.Location = new Point(50, 454);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(220, 25);
-            checkBox1.TabIndex = 6;
-            checkBox1.Text = "Recordar Contraseña";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
             // btnLogin
             // 
             btnLogin.BackColor = Color.FromArgb(88, 173, 83);
@@ -158,6 +147,7 @@
             btnLogin.TabIndex = 7;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             btnLogin.Paint += btnLogin_Paint;
             // 
             // panel2
@@ -195,17 +185,32 @@
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
             // 
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.Font = new Font("Century", 9F, FontStyle.Bold);
+            lblError.ForeColor = Color.Black;
+//            lblError.Image = Properties.Resources.icons8_error_50;
+            lblError.ImageAlign = ContentAlignment.MiddleLeft;
+            lblError.Location = new Point(50, 449);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(147, 18);
+            lblError.TabIndex = 11;
+            lblError.Text = "Mensaje de Error";
+            lblError.TextAlign = ContentAlignment.MiddleRight;
+            lblError.Visible = false;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(245, 247, 246);
+            BackColor = Color.White;
             ClientSize = new Size(474, 785);
+            Controls.Add(lblError);
             Controls.Add(pictureBox1);
             Controls.Add(linkLabel1);
             Controls.Add(panel2);
             Controls.Add(btnLogin);
-            Controls.Add(checkBox1);
             Controls.Add(lblPassword);
             Controls.Add(txtPassword);
             Controls.Add(lblUser);
@@ -236,10 +241,10 @@
         private Label lblUser;
         private Label lblPassword;
         private TextBox txtPassword;
-        private CheckBox checkBox1;
         private Button btnLogin;
         private Panel panel2;
         private LinkLabel linkLabel1;
         private PictureBox pictureBox1;
+        private Label lblError;
     }
 }

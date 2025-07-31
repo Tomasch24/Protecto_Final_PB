@@ -118,26 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MINIMIZAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MINIMIZAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="harvey_specter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\harvey_specter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="RESTAURAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RESTAURAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MAXIMIZAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MAXIMIZAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LOGO OSCURO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO OSCURO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CERRAR (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CERRAR (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LOGO CLARO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO CLARO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="donna_paulsen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\donna_paulsen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,7 +127,58 @@
   <data name="USUARIO NEGRO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\USUARIO NEGRO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MINIMIZAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MINIMIZAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGO OSCURO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO OSCURO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MAXIMIZAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MAXIMIZAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="descargar (13)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\descargar (13).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="harvey_specter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\harvey_specter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OPCION A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OPCION A.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OPCION C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OPCION C.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OPCION B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OPCION B.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-error-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-error-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="USUARIO BLANCO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\USUARIO BLANCO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGO CLARO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO CLARO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CERRAR (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CERRAR (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="descargar (13)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\descargar (13)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CAJERA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Empleada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OPCION D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OPCION D.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="descargar (13)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\descargar (13)2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SIN FONDO OSCURO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SIN FONDO OSCURO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SIN FONDO CLARO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SIN FONDO CLARO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
