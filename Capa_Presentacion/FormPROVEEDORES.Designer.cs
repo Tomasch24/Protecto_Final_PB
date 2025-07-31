@@ -1,6 +1,6 @@
 ﻿namespace Capa.Presentacion
 {
-    partial class FormLISTATEMPORAL
+    partial class FormPROVEEDORES
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLISTATEMPORAL));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPROVEEDORES));
             lblRNC = new Label();
             lblNOMBRE = new Label();
             lblTELEFONO = new Label();
@@ -36,7 +36,7 @@
             btnBUSCAR = new Button();
             lnlPRODUCTO = new Label();
             TxtPRODUCTO = new TextBox();
-            dgvLISTATEMPORAL = new DataGridView();
+            dgvPROVEEDORES = new DataGridView();
             btnREGISTRARLISTATEMP = new Button();
             label1 = new Label();
             TxtTELEFONO = new MaskedTextBox();
@@ -44,18 +44,19 @@
             btnLIMPIAR = new Button();
             btnELIMINAR = new Button();
             TxtNOMBRE = new TextBox();
-            btnGUARDARENBD = new Button();
             btnEDITAR = new Button();
             cmbTipoProveedor = new ComboBox();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)dgvLISTATEMPORAL).BeginInit();
+            lblPRECIO = new Label();
+            TxtPRECIO = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvPROVEEDORES).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblRNC
             // 
             lblRNC.AutoSize = true;
-            lblRNC.Location = new Point(126, 130);
+            lblRNC.Location = new Point(126, 98);
             lblRNC.Name = "lblRNC";
             lblRNC.Size = new Size(38, 20);
             lblRNC.TabIndex = 0;
@@ -64,7 +65,7 @@
             // lblNOMBRE
             // 
             lblNOMBRE.AutoSize = true;
-            lblNOMBRE.Location = new Point(100, 195);
+            lblNOMBRE.Location = new Point(100, 152);
             lblNOMBRE.Name = "lblNOMBRE";
             lblNOMBRE.Size = new Size(64, 20);
             lblNOMBRE.TabIndex = 1;
@@ -73,7 +74,7 @@
             // lblTELEFONO
             // 
             lblTELEFONO.AutoSize = true;
-            lblTELEFONO.Location = new Point(97, 254);
+            lblTELEFONO.Location = new Point(97, 208);
             lblTELEFONO.Name = "lblTELEFONO";
             lblTELEFONO.Size = new Size(67, 20);
             lblTELEFONO.TabIndex = 2;
@@ -82,7 +83,7 @@
             // lblTIPO
             // 
             lblTIPO.AutoSize = true;
-            lblTIPO.Location = new Point(125, 325);
+            lblTIPO.Location = new Point(125, 268);
             lblTIPO.Name = "lblTIPO";
             lblTIPO.Size = new Size(39, 20);
             lblTIPO.TabIndex = 3;
@@ -101,7 +102,7 @@
             // lnlPRODUCTO
             // 
             lnlPRODUCTO.AutoSize = true;
-            lnlPRODUCTO.Location = new Point(95, 391);
+            lnlPRODUCTO.Location = new Point(95, 327);
             lnlPRODUCTO.Name = "lnlPRODUCTO";
             lnlPRODUCTO.Size = new Size(69, 20);
             lnlPRODUCTO.TabIndex = 13;
@@ -109,24 +110,24 @@
             // 
             // TxtPRODUCTO
             // 
-            TxtPRODUCTO.Location = new Point(170, 384);
+            TxtPRODUCTO.Location = new Point(170, 320);
             TxtPRODUCTO.Name = "TxtPRODUCTO";
             TxtPRODUCTO.Size = new Size(253, 27);
             TxtPRODUCTO.TabIndex = 15;
             // 
-            // dgvLISTATEMPORAL
+            // dgvPROVEEDORES
             // 
-            dgvLISTATEMPORAL.AllowUserToAddRows = false;
-            dgvLISTATEMPORAL.AllowUserToResizeRows = false;
-            dgvLISTATEMPORAL.BackgroundColor = SystemColors.ControlLightLight;
-            dgvLISTATEMPORAL.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLISTATEMPORAL.Location = new Point(479, 123);
-            dgvLISTATEMPORAL.Name = "dgvLISTATEMPORAL";
-            dgvLISTATEMPORAL.ReadOnly = true;
-            dgvLISTATEMPORAL.RowHeadersWidth = 51;
-            dgvLISTATEMPORAL.Size = new Size(685, 296);
-            dgvLISTATEMPORAL.TabIndex = 16;
-            dgvLISTATEMPORAL.CellMouseClick += dgvLISTATEMPORAL_CellMouseClick;
+            dgvPROVEEDORES.AllowUserToAddRows = false;
+            dgvPROVEEDORES.AllowUserToResizeRows = false;
+            dgvPROVEEDORES.BackgroundColor = SystemColors.ControlLightLight;
+            dgvPROVEEDORES.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPROVEEDORES.Location = new Point(492, 130);
+            dgvPROVEEDORES.Name = "dgvPROVEEDORES";
+            dgvPROVEEDORES.ReadOnly = true;
+            dgvPROVEEDORES.RowHeadersWidth = 51;
+            dgvPROVEEDORES.Size = new Size(685, 296);
+            dgvPROVEEDORES.TabIndex = 16;
+            dgvPROVEEDORES.CellMouseClick += dgvLISTATEMPORAL_CellMouseClick;
             // 
             // btnREGISTRARLISTATEMP
             // 
@@ -142,15 +143,15 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Modern No. 20", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(303, 14);
+            label1.Location = new Point(458, 14);
             label1.Name = "label1";
-            label1.Size = new Size(577, 34);
+            label1.Size = new Size(277, 34);
             label1.TabIndex = 18;
-            label1.Text = "LISTA TEMPORAL PROVEEDORES";
+            label1.Text = " PROVEEDORES";
             // 
             // TxtTELEFONO
             // 
-            TxtTELEFONO.Location = new Point(170, 247);
+            TxtTELEFONO.Location = new Point(170, 201);
             TxtTELEFONO.Mask = "(999)-000-0000";
             TxtTELEFONO.Name = "TxtTELEFONO";
             TxtTELEFONO.Size = new Size(253, 27);
@@ -158,7 +159,7 @@
             // 
             // TxtRNC
             // 
-            TxtRNC.Location = new Point(170, 123);
+            TxtRNC.Location = new Point(170, 91);
             TxtRNC.Mask = "999999999";
             TxtRNC.Name = "TxtRNC";
             TxtRNC.Size = new Size(253, 27);
@@ -186,20 +187,10 @@
             // 
             // TxtNOMBRE
             // 
-            TxtNOMBRE.Location = new Point(170, 188);
+            TxtNOMBRE.Location = new Point(170, 145);
             TxtNOMBRE.Name = "TxtNOMBRE";
             TxtNOMBRE.Size = new Size(253, 27);
             TxtNOMBRE.TabIndex = 24;
-            // 
-            // btnGUARDARENBD
-            // 
-            btnGUARDARENBD.Location = new Point(479, 448);
-            btnGUARDARENBD.Name = "btnGUARDARENBD";
-            btnGUARDARENBD.Size = new Size(134, 29);
-            btnGUARDARENBD.TabIndex = 25;
-            btnGUARDARENBD.Text = "Guardar en BD";
-            btnGUARDARENBD.UseVisualStyleBackColor = true;
-            btnGUARDARENBD.Click += btnGUARDARENBD_Click;
             // 
             // btnEDITAR
             // 
@@ -215,7 +206,7 @@
             // 
             cmbTipoProveedor.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoProveedor.FormattingEnabled = true;
-            cmbTipoProveedor.Location = new Point(170, 317);
+            cmbTipoProveedor.Location = new Point(170, 260);
             cmbTipoProveedor.Name = "cmbTipoProveedor";
             cmbTipoProveedor.Size = new Size(253, 28);
             cmbTipoProveedor.TabIndex = 27;
@@ -231,16 +222,33 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // FormLISTATEMPORAL
+            // lblPRECIO
+            // 
+            lblPRECIO.AutoSize = true;
+            lblPRECIO.Location = new Point(114, 386);
+            lblPRECIO.Name = "lblPRECIO";
+            lblPRECIO.Size = new Size(50, 20);
+            lblPRECIO.TabIndex = 29;
+            lblPRECIO.Text = "Precio";
+            // 
+            // TxtPRECIO
+            // 
+            TxtPRECIO.Location = new Point(170, 383);
+            TxtPRECIO.Name = "TxtPRECIO";
+            TxtPRECIO.Size = new Size(253, 27);
+            TxtPRECIO.TabIndex = 30;
+            // 
+            // FormPROVEEDORES
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1235, 575);
+            Controls.Add(TxtPRECIO);
+            Controls.Add(lblPRECIO);
             Controls.Add(pictureBox1);
             Controls.Add(cmbTipoProveedor);
             Controls.Add(btnEDITAR);
-            Controls.Add(btnGUARDARENBD);
             Controls.Add(TxtNOMBRE);
             Controls.Add(btnELIMINAR);
             Controls.Add(btnLIMPIAR);
@@ -248,7 +256,7 @@
             Controls.Add(TxtTELEFONO);
             Controls.Add(label1);
             Controls.Add(btnREGISTRARLISTATEMP);
-            Controls.Add(dgvLISTATEMPORAL);
+            Controls.Add(dgvPROVEEDORES);
             Controls.Add(TxtPRODUCTO);
             Controls.Add(lnlPRODUCTO);
             Controls.Add(btnBUSCAR);
@@ -257,10 +265,10 @@
             Controls.Add(lblNOMBRE);
             Controls.Add(lblRNC);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormLISTATEMPORAL";
+            Name = "FormPROVEEDORES";
             Text = "FormLISTATEMPORAL";
-            Load += FormLISTATEMPORAL_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvLISTATEMPORAL).EndInit();
+            Load += FormPROVEEDORES_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvPROVEEDORES).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -275,7 +283,7 @@
         private Button btnBUSCAR;
         private Label lnlPRODUCTO;
         private TextBox TxtPRODUCTO;
-        private DataGridView dgvLISTATEMPORAL;
+        private DataGridView dgvPROVEEDORES;
         private Button btnREGISTRARLISTATEMP;
         private Label label1;
         private MaskedTextBox TxtTELEFONO;
@@ -283,9 +291,10 @@
         private Button btnLIMPIAR;
         private Button btnELIMINAR;
         private TextBox TxtNOMBRE;
-        private Button btnGUARDARENBD;
         private Button btnEDITAR;
         private ComboBox cmbTipoProveedor;
         private PictureBox pictureBox1;
+        private Label lblPRECIO;
+        private TextBox TxtPRECIO;
     }
 }
