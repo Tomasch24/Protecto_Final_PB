@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Capa_de_Modulos.CACHE
 {
-    public class LoginUser
+    public static class LoginUser
     {
             public static int IdUser { get; set; }
             public static string Nombre { get; set; }

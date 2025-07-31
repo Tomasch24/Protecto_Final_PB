@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using Capa_Interfas;
+using Capa_Negocios;
+using Microsoft.Identity.Client;
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing.Drawing2D;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Capa_de_Modulos.CACHE;
 
 
 namespace Capa_Presentacion
@@ -33,6 +30,53 @@ namespace Capa_Presentacion
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUser.Text != "Usuario")
+            {
+                if (txtPassword.Text != "Contraseña")
+                {
+                    UserModel user = new UserModel();
+                    var validLogin = user.LoginUser(txtUser.Text, txtPassword.Text);
+                    if (validLogin == true)
+                    {
+                        Pantalla_De_Inicio mainMenu = new Pantalla_De_Inicio();
+                        MessageBox.Show("Bienvenido/a  " + LoginUser.Nombre + " " + LoginUser.Apellido);
+                        mainMenu.Show();
+                        mainMenu.FormClosed += LogOut; // Asigna el evento FormClosed para manejar el cierre del formulario
+                        this.Hide(); // Oculta el formulario de login después de iniciar sesión
+                    }
+                    else
+                    { 
+                        msgError("Usuario o contraseña incorrectos \n Intenta nuevamente, por favor.");
+                        txtPassword.Clear();
+                        txtUser.Focus();
+                    }
+                }
+                else msgError("Ingrese La Contraseña");
+            }
+            else msgError("Ingrese el nombre de usuario");
+        }
+
+        private void msgError(string msg)
+        {
+            lblError.Text = "      " + msg;
+            lblError.Visible = true;
+        }
+
+        private void LogOut(object sender, FormClosedEventArgs e)
+        {
+            txtUser.Clear();
+            txtPassword.Clear();
+            lblError.Visible = false; // Oculta el mensaje de error al cerrar el formulario
+            this.Show(); // Muestra el formulario de login nuevamente
+            txtUser.Focus(); 
+        }
+
+          
+
+        
         #endregion
 
 
