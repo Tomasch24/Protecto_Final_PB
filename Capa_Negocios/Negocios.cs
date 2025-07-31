@@ -11,10 +11,11 @@ namespace Capa_Negocios
 
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public string Temporada { get; set; }
+        public string Descripcion { get; set; }
         public virtual string Tipo { get; set; }
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }
+        public string ImangenRuta { get; set; }
         public decimal Total => Precio * Cantidad;
 
         //TODO Costo de envio y su metodo
