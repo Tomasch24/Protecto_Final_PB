@@ -134,7 +134,7 @@
             // 
             // btnSlide
             // 
-           // btnSlide.Image = Capa_Presentacion.Properties.Resources.icons8_bullet_list_48;
+            btnSlide.Image = Capa_Presentacion.Properties.Resources.icons8_bullet_list_48;
             btnSlide.Location = new Point(14, 6);
             btnSlide.Margin = new Padding(2);
             btnSlide.Name = "btnSlide";
@@ -315,7 +315,7 @@
             // PanelLogo
             // 
             PanelLogo.BackColor = Color.FromArgb(128, 1, 1, 1);
-           // PanelLogo.BackgroundImage = Capa_Presentacion.Properties.Resources.SIN_FONDO_OSCURO;
+            PanelLogo.BackgroundImage = Capa_Presentacion.Properties.Resources.SIN_FONDO_OSCURO;
             PanelLogo.BackgroundImageLayout = ImageLayout.Stretch;
             PanelLogo.Location = new Point(321, 248);
             PanelLogo.Name = "PanelLogo";
