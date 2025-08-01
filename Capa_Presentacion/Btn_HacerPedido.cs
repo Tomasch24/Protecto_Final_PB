@@ -13,7 +13,9 @@ namespace Capa_Presentacion
 {
     public partial class Btn_HacerPedido : Form
     {
+        // TODO Instancia de la clase PedidosNegocio para manejar la lógica de negocio
         public PedidosNegocio pedidoNegocio = new PedidosNegocio();
+        // TODO Variables para almacenar los datos del producto seleccionado (de la base de datos)
         public DataRow datosProducto;
         public string nombreProducto;
         public decimal precioBase;
@@ -24,13 +26,14 @@ namespace Capa_Presentacion
         public Btn_HacerPedido(string producto)
         {
             InitializeComponent();
-            txtCantidad.Text = "1"; // Valor por defecto
-            txtCantidad.MaxLength = 3; // Limitar a 3 dígitos
+            txtCantidad.Text = "1"; //T ODO Valor por defecto
+            txtCantidad.MaxLength = 3; // TODO Limitar a 3 dígitos
 
-            nombreProducto = producto;
+            nombreProducto = producto; // TODO Guardar el nombre del producto seleccionado
 
         }
 
+        // TODO Evento que se dispara cuando cambia el texto del campo de cantidad
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
             // TODO Validar que solo se ingresen números
@@ -42,7 +45,7 @@ namespace Capa_Presentacion
             }
             if (precioBase <= 0)
                 return;
-            // Calcular el total automáticamente
+            // TODO Calcular el total automáticamente
             txtTotal.Text = (cantidad * precioBase).ToString("0.00");
         }
 
@@ -51,8 +54,11 @@ namespace Capa_Presentacion
            
         }
 
+        // TODO Evento que se dispara al hacer clic en el botón de confirmar pedido
+
         private void lblConfirmar_Click(object sender, EventArgs e)
         {
+            // TODO validaciones
             if (!int.TryParse(txtCantidad.Text, out int cantidad) || cantidad <= 0 || cantidad > 999)
             {
                 MessageBox.Show("Cantidad inválida.");
@@ -65,7 +71,7 @@ namespace Capa_Presentacion
             if (exito)
             {
                 MessageBox.Show("Pedido registrado correctamente.");
-                this.DialogResult = DialogResult.OK; // para refrescar desde el form anterior
+                this.DialogResult = DialogResult.OK; // TODO para refrescar desde el form anterior
                 this.Close();
             }
             else
@@ -74,11 +80,15 @@ namespace Capa_Presentacion
             }
         }
 
+
+        // TODO Evento que se dispara al hacer clic en el botón de cancelar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
+        // TODO carga el form hacer pedido y obtiene los datos del producto seleccionado
         private void Btn_HacerPedido_Load(object sender, EventArgs e)
         {
             datosProducto = pedidoNegocio.ObtenerDatosProductoCompleto(nombreProducto);
