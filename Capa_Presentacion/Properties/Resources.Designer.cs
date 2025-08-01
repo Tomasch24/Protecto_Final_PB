@@ -22,7 +22,9 @@ namespace Capa_Presentacion.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+
     public class Resources {
+
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +38,9 @@ namespace Capa_Presentacion.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+
         public static global::System.Resources.ResourceManager ResourceManager {
+
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Capa_Presentacion.Properties.Resources", typeof(Resources).Assembly);
@@ -51,6 +55,7 @@ namespace Capa_Presentacion.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+
         public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
@@ -63,6 +68,7 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+
         public static System.Drawing.Bitmap CAJERA {
             get {
                 object obj = ResourceManager.GetObject("CAJERA", resourceCulture);
@@ -246,6 +252,7 @@ namespace Capa_Presentacion.Properties {
         public static System.Drawing.Bitmap USUARIO_NEGRO {
             get {
                 object obj = ResourceManager.GetObject("USUARIO NEGRO", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
