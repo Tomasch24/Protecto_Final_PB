@@ -77,6 +77,7 @@
             // 
             // dgvExistentes
             // 
+            dgvExistentes.AllowUserToAddRows = false;
             dgvExistentes.AllowUserToDeleteRows = false;
             dgvExistentes.AllowUserToResizeColumns = false;
             dgvExistentes.AllowUserToResizeRows = false;
@@ -123,6 +124,7 @@
             // 
             // ProductosExistentes
             // 
+            ProductosExistentes.DataPropertyName = "Nombre";
             ProductosExistentes.Frozen = true;
             ProductosExistentes.HeaderText = "Producto";
             ProductosExistentes.MinimumWidth = 8;
@@ -132,6 +134,7 @@
             // 
             // Stock
             // 
+            Stock.DataPropertyName = "Stock";
             Stock.Frozen = true;
             Stock.HeaderText = "Cantidad en Stock";
             Stock.MinimumWidth = 8;
@@ -152,6 +155,7 @@
             // 
             // dgvAgotados
             // 
+            dgvAgotados.AllowUserToAddRows = false;
             dgvAgotados.AllowUserToDeleteRows = false;
             dgvAgotados.AllowUserToResizeColumns = false;
             dgvAgotados.AllowUserToResizeRows = false;
@@ -198,6 +202,7 @@
             // 
             // ProductosAgotados
             // 
+            ProductosAgotados.DataPropertyName = "Nombre";
             ProductosAgotados.Frozen = true;
             ProductosAgotados.HeaderText = "Producto";
             ProductosAgotados.MinimumWidth = 8;
@@ -207,6 +212,7 @@
             // 
             // Stock0
             // 
+            Stock0.DataPropertyName = "Stock";
             Stock0.Frozen = true;
             Stock0.HeaderText = "Cantidad en Stock";
             Stock0.MinimumWidth = 8;
@@ -264,7 +270,9 @@
             Controls.Add(btnHacerPedido);
             Controls.Add(lblPedidos);
             Controls.Add(tabPedidos);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Pedidos";
+            Load += Pedidos_Load;
             tabPedidos.ResumeLayout(false);
             tabExistentes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvExistentes).EndInit();

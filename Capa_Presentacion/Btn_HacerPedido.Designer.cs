@@ -168,6 +168,7 @@
             lblConfirmar.TabIndex = 9;
             lblConfirmar.Text = "Confirmar";
             lblConfirmar.UseVisualStyleBackColor = false;
+            lblConfirmar.Click += lblConfirmar_Click;
             // 
             // btnCancelar
             // 
@@ -182,6 +183,7 @@
             btnCancelar.TabIndex = 10;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // txtRNC
             // 
@@ -254,6 +256,7 @@
             txtTotal.ReadOnly = true;
             txtTotal.Size = new Size(194, 32);
             txtTotal.TabIndex = 18;
+            txtTotal.TextChanged += txtTotal_TextChanged;
             // 
             // Btn_HacerPedido
             // 
@@ -281,8 +284,10 @@
             Controls.Add(lblProveedor);
             Controls.Add(lblInformacion);
             Font = new Font("Verdana", 10F);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "Btn_HacerPedido";
+            Load += Btn_HacerPedido_Load;
             ResumeLayout(false);
             PerformLayout();
         }
