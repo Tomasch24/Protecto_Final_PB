@@ -1,4 +1,5 @@
 using Capa_Interfas;
+using OfficeOpenXml;
 
 namespace Capa_Presentacion
 {
@@ -12,8 +13,9 @@ namespace Capa_Presentacion
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            ExcelPackage.License.SetNonCommercialOrganization("SistemaEvaluacionesApp (Uso No Comercial)");
             ApplicationConfiguration.Initialize();
-            Application.Run(new Pantalla_De_Inicio());
+            Application.Run(new Reporte());
         }
     }
 }
