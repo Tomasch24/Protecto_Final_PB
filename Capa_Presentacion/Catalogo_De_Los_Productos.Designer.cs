@@ -29,64 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogo_De_Los_Productos));
-            pictureBox1 = new PictureBox();
-            iconoCerrarCat = new PictureBox();
-            iconoMinimizarCat = new PictureBox();
-            pictureBox2 = new PictureBox();
             butHacer_pedido = new Button();
             btnVolMenu = new Button();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            DGVProductos = new DataGridView();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconoCerrarCat).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconoMinimizarCat).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVProductos).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(177, 122);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1015, 674);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            // 
-            // iconoCerrarCat
-            // 
-            iconoCerrarCat.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconoCerrarCat.Image = (Image)resources.GetObject("iconoCerrarCat.Image");
-            iconoCerrarCat.Location = new Point(1275, 12);
-            iconoCerrarCat.Name = "iconoCerrarCat";
-            iconoCerrarCat.Size = new Size(30, 30);
-            iconoCerrarCat.SizeMode = PictureBoxSizeMode.Zoom;
-            iconoCerrarCat.TabIndex = 9;
-            iconoCerrarCat.TabStop = false;
-            iconoCerrarCat.Click += iconoCerrarCat_Click;
-            // 
-            // iconoMinimizarCat
-            // 
-            iconoMinimizarCat.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconoMinimizarCat.Image = (Image)resources.GetObject("iconoMinimizarCat.Image");
-            iconoMinimizarCat.Location = new Point(1239, 12);
-            iconoMinimizarCat.Name = "iconoMinimizarCat";
-            iconoMinimizarCat.Size = new Size(30, 30);
-            iconoMinimizarCat.SizeMode = PictureBoxSizeMode.Zoom;
-            iconoMinimizarCat.TabIndex = 12;
-            iconoMinimizarCat.TabStop = false;
-            iconoMinimizarCat.Click += iconoMinimizarCat_Click;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(379, -3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(659, 165);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 13;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // butHacer_pedido
             // 
@@ -96,11 +47,11 @@
             butHacer_pedido.ForeColor = SystemColors.ButtonHighlight;
             butHacer_pedido.Image = (Image)resources.GetObject("butHacer_pedido.Image");
             butHacer_pedido.ImageAlign = ContentAlignment.MiddleLeft;
-            butHacer_pedido.Location = new Point(12, 771);
+            butHacer_pedido.Location = new Point(35, 771);
             butHacer_pedido.Name = "butHacer_pedido";
             butHacer_pedido.Size = new Size(281, 68);
             butHacer_pedido.TabIndex = 14;
-            butHacer_pedido.Text = "   Hacer Pedido";
+            butHacer_pedido.Text = "   Carrito";
             butHacer_pedido.UseVisualStyleBackColor = true;
             butHacer_pedido.Click += butHacer_pedido_Click;
             // 
@@ -112,7 +63,7 @@
             btnVolMenu.ForeColor = SystemColors.ButtonHighlight;
             btnVolMenu.Image = (Image)resources.GetObject("btnVolMenu.Image");
             btnVolMenu.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVolMenu.Location = new Point(1039, 771);
+            btnVolMenu.Location = new Point(873, 771);
             btnVolMenu.Name = "btnVolMenu";
             btnVolMenu.Size = new Size(281, 68);
             btnVolMenu.TabIndex = 15;
@@ -120,35 +71,65 @@
             btnVolMenu.UseVisualStyleBackColor = true;
             btnVolMenu.Click += btnVolMenu_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(1160, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(157, 851);
+            panel1.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(157, 126);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // DGVProductos
+            // 
+            DGVProductos.AllowUserToAddRows = false;
+            DGVProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVProductos.BackgroundColor = Color.White;
+            DGVProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVProductos.Location = new Point(85, 158);
+            DGVProductos.Name = "DGVProductos";
+            DGVProductos.ReadOnly = true;
+            DGVProductos.RowHeadersWidth = 62;
+            DGVProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGVProductos.Size = new Size(995, 523);
+            DGVProductos.TabIndex = 17;
+            // 
             // Catalogo_De_Los_Productos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(120, 160, 100);
+            BackColor = Color.FromArgb(88, 173, 83);
             ClientSize = new Size(1317, 851);
-            Controls.Add(btnVolMenu);
+            Controls.Add(DGVProductos);
+            Controls.Add(panel1);
             Controls.Add(butHacer_pedido);
-            Controls.Add(pictureBox2);
-            Controls.Add(iconoMinimizarCat);
-            Controls.Add(iconoCerrarCat);
-            Controls.Add(pictureBox1);
+            Controls.Add(btnVolMenu);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Catalogo_De_Los_Productos";
             Text = "Form2";
             Load += Catalogo_De_Los_Productos_Load;
+            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconoCerrarCat).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconoMinimizarCat).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVProductos).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private PictureBox pictureBox1;
-        private PictureBox iconoCerrarCat;
-        private PictureBox iconoMinimizarCat;
-        private PictureBox pictureBox2;
         private Button butHacer_pedido;
         private Button btnVolMenu;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private DataGridView DGVProductos;
     }
 }

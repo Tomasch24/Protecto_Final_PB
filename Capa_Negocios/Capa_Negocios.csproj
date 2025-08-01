@@ -7,10 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+
     <PackageReference Include="ClosedXML" Version="0.105.0" />
   </ItemGroup>
 
   <ItemGroup>
+
+    <ProjectReference Include="..\Capa de Modulos\Capa de Modulos.csproj" />
+
     <ProjectReference Include="..\Protecto_Final_PB\Capa_Datos.csproj" />
   </ItemGroup>
 
