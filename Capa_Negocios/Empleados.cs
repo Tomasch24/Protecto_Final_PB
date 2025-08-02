@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocios
 {
+    
     public class Empleado
     {
         public string Nombre { get; set; }
