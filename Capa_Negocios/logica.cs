@@ -28,7 +28,7 @@ namespace Capa_Negocios
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
-                cmd.Parameters.AddWithValue("@Temporada", producto.Temporada);
+                //cmd.Parameters.AddWithValue("@Temporada", producto.Temporada);
                 cmd.Parameters.AddWithValue("@Tipo", producto.Tipo);
                 cmd.Parameters.AddWithValue("@Precio", producto.Precio);
                 cmd.Parameters.AddWithValue("@Cantidad", producto.Cantidad);

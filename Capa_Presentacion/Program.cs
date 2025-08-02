@@ -1,5 +1,6 @@
 using Capa.Presentacion;
 using Capa_Interfas;
+using DocumentFormat.OpenXml.Bibliography;
 
 namespace Capa_Presentacion
 {
@@ -15,7 +16,7 @@ namespace Capa_Presentacion
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new Login());
+            Application.Run(new DashGrafico());
 
         }
     }
