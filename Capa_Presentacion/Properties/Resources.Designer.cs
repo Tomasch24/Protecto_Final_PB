@@ -22,9 +22,7 @@ namespace Capa_Presentacion.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-
     public class Resources {
-
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -38,9 +36,7 @@ namespace Capa_Presentacion.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-
         public static global::System.Resources.ResourceManager ResourceManager {
-
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Capa_Presentacion.Properties.Resources", typeof(Resources).Assembly);
@@ -55,7 +51,6 @@ namespace Capa_Presentacion.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-
         public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
@@ -68,10 +63,80 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-
+        public static System.Drawing.Bitmap _1492617364_13_setting_configure_repair_support_optimization_google_83447 {
+            get {
+                object obj = ResourceManager.GetObject("1492617364-13-setting-configure-repair-support-optimization-google_83447", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _4544830_business_comerce_delivery_register_shop_121429 {
+            get {
+                object obj = ResourceManager.GetObject("4544830-business-comerce-delivery-register-shop_121429", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _4544848_business_comerce_delivery_shop_truck_121448 {
+            get {
+                object obj = ResourceManager.GetObject("4544848-business-comerce-delivery-shop-truck_121448", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap arrow_exchanges_exchange_growth_stock_market_bars_economy_stocks_icon_258648 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_exchanges_exchange_growth_stock_market_bars_economy_stocks_icon_258648", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap bagofmoney_5108 {
+            get {
+                object obj = ResourceManager.GetObject("bagofmoney_5108", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap bills_cash_currency_contract_document_agreement_business_dollar_money_icon_258639 {
+            get {
+                object obj = ResourceManager.GetObject("bills_cash_currency_contract_document_agreement_business_dollar_money_icon_258639" +
+                        "", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap CAJERA {
             get {
                 object obj = ResourceManager.GetObject("CAJERA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap calendar_with_spring_binder_and_date_blocks_icon_icons_com_73645 {
+            get {
+                object obj = ResourceManager.GetObject("calendar-with-spring-binder-and-date-blocks_icon-icons.com_73645", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -119,6 +184,16 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap diagram_arrow_market_profit_progress_increase_graph_growth_icon_228896 {
+            get {
+                object obj = ResourceManager.GetObject("diagram_arrow_market_profit_progress_increase_graph_growth_icon_228896", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap donna_paulsen {
             get {
                 object obj = ResourceManager.GetObject("donna_paulsen", resourceCulture);
@@ -132,6 +207,16 @@ namespace Capa_Presentacion.Properties {
         public static System.Drawing.Bitmap harvey_specter {
             get {
                 object obj = ResourceManager.GetObject("harvey_specter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_bullet_list_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bullet-list-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -229,9 +314,59 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap OPCION_E {
+            get {
+                object obj = ResourceManager.GetObject("OPCION E", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap release_introduction_debut_product_launch_icon_263002 {
+            get {
+                object obj = ResourceManager.GetObject("release_introduction_debut_product_launch_icon_263002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap RESTAURAR {
             get {
                 object obj = ResourceManager.GetObject("RESTAURAR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SIN_FONDO_CLARO {
+            get {
+                object obj = ResourceManager.GetObject("SIN FONDO CLARO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SIN_FONDO_OSCURO {
+            get {
+                object obj = ResourceManager.GetObject("SIN FONDO OSCURO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap users_group_customers_clients_icon_icons_com_72448 {
+            get {
+                object obj = ResourceManager.GetObject("users_group_customers_clients_icon-icons.com_72448", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -252,7 +387,6 @@ namespace Capa_Presentacion.Properties {
         public static System.Drawing.Bitmap USUARIO_NEGRO {
             get {
                 object obj = ResourceManager.GetObject("USUARIO NEGRO", resourceCulture);
-
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

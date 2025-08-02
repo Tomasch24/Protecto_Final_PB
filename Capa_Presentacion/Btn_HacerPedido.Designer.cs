@@ -57,7 +57,7 @@
             lblInformacion.Location = new Point(368, 31);
             lblInformacion.Margin = new Padding(4, 0, 4, 0);
             lblInformacion.Name = "lblInformacion";
-            lblInformacion.Size = new Size(445, 40);
+            lblInformacion.Size = new Size(374, 34);
             lblInformacion.TabIndex = 0;
             lblInformacion.Text = "Información del Pedido";
             // 
@@ -69,7 +69,7 @@
             lblProveedor.Location = new Point(127, 151);
             lblProveedor.Margin = new Padding(4, 0, 4, 0);
             lblProveedor.Name = "lblProveedor";
-            lblProveedor.Size = new Size(114, 25);
+            lblProveedor.Size = new Size(94, 20);
             lblProveedor.TabIndex = 1;
             lblProveedor.Text = "Proveedor";
             // 
@@ -81,7 +81,7 @@
             lblProducto.Location = new Point(127, 205);
             lblProducto.Margin = new Padding(4, 0, 4, 0);
             lblProducto.Name = "lblProducto";
-            lblProducto.Size = new Size(100, 25);
+            lblProducto.Size = new Size(84, 20);
             lblProducto.TabIndex = 2;
             lblProducto.Text = "Producto";
             // 
@@ -93,7 +93,7 @@
             lblPrecioBase.Location = new Point(127, 354);
             lblPrecioBase.Margin = new Padding(4, 0, 4, 0);
             lblPrecioBase.Name = "lblPrecioBase";
-            lblPrecioBase.Size = new Size(161, 25);
+            lblPrecioBase.Size = new Size(133, 20);
             lblPrecioBase.TabIndex = 3;
             lblPrecioBase.Text = "Precio Unitario";
             // 
@@ -105,7 +105,7 @@
             lblRNC.Location = new Point(127, 103);
             lblRNC.Margin = new Padding(4, 0, 4, 0);
             lblRNC.Name = "lblRNC";
-            lblRNC.Size = new Size(55, 25);
+            lblRNC.Size = new Size(46, 20);
             lblRNC.TabIndex = 4;
             lblRNC.Text = "RNC";
             // 
@@ -117,7 +117,7 @@
             lblTelefono.Location = new Point(127, 304);
             lblTelefono.Margin = new Padding(4, 0, 4, 0);
             lblTelefono.Name = "lblTelefono";
-            lblTelefono.Size = new Size(96, 25);
+            lblTelefono.Size = new Size(79, 20);
             lblTelefono.TabIndex = 5;
             lblTelefono.Text = "Teléfono";
             // 
@@ -129,7 +129,7 @@
             lblTipo.Location = new Point(127, 256);
             lblTipo.Margin = new Padding(4, 0, 4, 0);
             lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(180, 25);
+            lblTipo.Size = new Size(153, 20);
             lblTipo.TabIndex = 6;
             lblTipo.Text = "Tipo de Producto";
             // 
@@ -140,7 +140,7 @@
             lblCantidad.Location = new Point(357, 429);
             lblCantidad.Margin = new Padding(4, 0, 4, 0);
             lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(187, 25);
+            lblCantidad.Size = new Size(159, 20);
             lblCantidad.TabIndex = 7;
             lblCantidad.Text = "Cantidad a Pedir:";
             // 
@@ -151,7 +151,7 @@
             lblTotal.Location = new Point(357, 469);
             lblTotal.Margin = new Padding(4, 0, 4, 0);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(152, 25);
+            lblTotal.Size = new Size(127, 20);
             lblTotal.TabIndex = 8;
             lblTotal.Text = "Total a Pagar:";
             // 
@@ -191,7 +191,7 @@
             txtRNC.Margin = new Padding(4, 3, 4, 3);
             txtRNC.Name = "txtRNC";
             txtRNC.ReadOnly = true;
-            txtRNC.Size = new Size(641, 32);
+            txtRNC.Size = new Size(641, 28);
             txtRNC.TabIndex = 11;
             // 
             // txtProveedor
@@ -200,7 +200,7 @@
             txtProveedor.Margin = new Padding(4, 3, 4, 3);
             txtProveedor.Name = "txtProveedor";
             txtProveedor.ReadOnly = true;
-            txtProveedor.Size = new Size(641, 32);
+            txtProveedor.Size = new Size(641, 28);
             txtProveedor.TabIndex = 12;
             // 
             // txtProducto
@@ -209,7 +209,7 @@
             txtProducto.Margin = new Padding(4, 3, 4, 3);
             txtProducto.Name = "txtProducto";
             txtProducto.ReadOnly = true;
-            txtProducto.Size = new Size(641, 32);
+            txtProducto.Size = new Size(641, 28);
             txtProducto.TabIndex = 13;
             // 
             // txtTipo
@@ -218,7 +218,7 @@
             txtTipo.Margin = new Padding(4, 3, 4, 3);
             txtTipo.Name = "txtTipo";
             txtTipo.ReadOnly = true;
-            txtTipo.Size = new Size(641, 32);
+            txtTipo.Size = new Size(641, 28);
             txtTipo.TabIndex = 14;
             // 
             // txtTelefono
@@ -227,7 +227,7 @@
             txtTelefono.Margin = new Padding(4, 3, 4, 3);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.ReadOnly = true;
-            txtTelefono.Size = new Size(641, 32);
+            txtTelefono.Size = new Size(641, 28);
             txtTelefono.TabIndex = 15;
             // 
             // txtPrecioBase
@@ -236,7 +236,7 @@
             txtPrecioBase.Margin = new Padding(4, 3, 4, 3);
             txtPrecioBase.Name = "txtPrecioBase";
             txtPrecioBase.ReadOnly = true;
-            txtPrecioBase.Size = new Size(641, 32);
+            txtPrecioBase.Size = new Size(641, 28);
             txtPrecioBase.TabIndex = 16;
             // 
             // txtCantidad
@@ -244,7 +244,7 @@
             txtCantidad.Location = new Point(628, 426);
             txtCantidad.Margin = new Padding(4, 3, 4, 3);
             txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(194, 32);
+            txtCantidad.Size = new Size(194, 28);
             txtCantidad.TabIndex = 17;
             txtCantidad.TextChanged += txtCantidad_TextChanged;
             // 
@@ -254,13 +254,13 @@
             txtTotal.Margin = new Padding(4, 3, 4, 3);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
-            txtTotal.Size = new Size(194, 32);
+            txtTotal.Size = new Size(194, 28);
             txtTotal.TabIndex = 18;
             txtTotal.TextChanged += txtTotal_TextChanged;
             // 
             // Btn_HacerPedido
             // 
-            AutoScaleDimensions = new SizeF(13F, 25F);
+            AutoScaleDimensions = new SizeF(11F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 247, 246);
             ClientSize = new Size(1178, 609);

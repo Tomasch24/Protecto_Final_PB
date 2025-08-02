@@ -89,7 +89,7 @@ namespace Capa_Interfas
 
             // Asignar valores de los controles al objeto Producto
             producto.Tipo = cmbTipo.SelectedItem?.ToString() ?? cmbTipo.Text; // Usar SelectedItem si existe, sino Text
-            producto.Temporada = cmbTemporada.SelectedItem?.ToString() ?? cmbTemporada.Text;
+            //producto.Temporada = cmbTemporada.SelectedItem?.ToString() ?? cmbTemporada.Text;
             producto.Nombre = cmbProduc.SelectedItem?.ToString() ?? cmbProduc.Text;
             producto.Cantidad = (int)numericUpDown1.Value; // NumericUpDown ya es int/decimal
 
