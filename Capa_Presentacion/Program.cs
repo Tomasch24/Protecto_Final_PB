@@ -18,7 +18,7 @@ namespace Capa_Presentacion
 
 
 
-            Application.Run(new DashGrafico());
+            Application.Run(new Clientes());
 
 
         }

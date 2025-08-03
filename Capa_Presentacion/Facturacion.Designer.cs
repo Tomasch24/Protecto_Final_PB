@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtIdCliente = new TextBox();
             lblRnc = new Label();
             lblTelefono = new Label();
@@ -55,7 +57,7 @@
             lblCantidad = new Label();
             lblTipo = new Label();
             lblFecha = new Label();
-            button1 = new Button();
+            btnAgregar = new Button();
             button6 = new Button();
             gbDatosV = new GroupBox();
             gbInformacionP = new GroupBox();
@@ -83,11 +85,12 @@
             // 
             // txtIdCliente
             // 
-            txtIdCliente.Font = new Font("Segoe UI", 9F);
+            txtIdCliente.Font = new Font("Verdana", 10F);
             txtIdCliente.Location = new Point(20, 69);
             txtIdCliente.Name = "txtIdCliente";
-            txtIdCliente.Size = new Size(82, 31);
+            txtIdCliente.Size = new Size(82, 32);
             txtIdCliente.TabIndex = 0;
+            txtIdCliente.KeyPress += txtIdCliente_KeyPress;
             // 
             // lblRnc
             // 
@@ -127,27 +130,29 @@
             // 
             // MtxtRnc
             // 
-            MtxtRnc.Font = new Font("Segoe UI", 9F);
+            MtxtRnc.Font = new Font("Verdana", 10F);
             MtxtRnc.Location = new Point(677, 69);
+            MtxtRnc.Mask = "000-0000000-0";
             MtxtRnc.Name = "MtxtRnc";
-            MtxtRnc.Size = new Size(236, 31);
+            MtxtRnc.Size = new Size(236, 32);
             MtxtRnc.TabIndex = 5;
             // 
             // MtxtTelefono
             // 
-            MtxtTelefono.Font = new Font("Segoe UI", 9F);
+            MtxtTelefono.Font = new Font("Verdana", 10F);
             MtxtTelefono.ForeColor = SystemColors.ControlText;
             MtxtTelefono.Location = new Point(414, 69);
+            MtxtTelefono.Mask = "+1 (999) 000-0000";
             MtxtTelefono.Name = "MtxtTelefono";
-            MtxtTelefono.Size = new Size(236, 31);
+            MtxtTelefono.Size = new Size(236, 32);
             MtxtTelefono.TabIndex = 4;
             // 
             // txtNombre
             // 
-            txtNombre.Font = new Font("Segoe UI", 9F);
+            txtNombre.Font = new Font("Verdana", 10F);
             txtNombre.Location = new Point(152, 69);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(236, 31);
+            txtNombre.Size = new Size(236, 32);
             txtNombre.TabIndex = 1;
             // 
             // dgvFactura
@@ -156,6 +161,15 @@
             dgvFactura.AllowUserToDeleteRows = false;
             dgvFactura.AllowUserToResizeColumns = false;
             dgvFactura.AllowUserToResizeRows = false;
+            dgvFactura.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
+            dataGridViewCellStyle1.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFactura.Columns.AddRange(new DataGridViewColumn[] { IdProducto, Producto, Precio, Cantidad, SubTotal, btnEliminar });
             dgvFactura.EnableHeadersVisualStyles = false;
@@ -163,6 +177,10 @@
             dgvFactura.Name = "dgvFactura";
             dgvFactura.ReadOnly = true;
             dgvFactura.RowHeadersWidth = 62;
+            dataGridViewCellStyle2.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Green;
+            dgvFactura.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvFactura.Size = new Size(1079, 405);
             dgvFactura.TabIndex = 100;
             // 
@@ -246,12 +264,14 @@
             // pbBuscarIdCliente
             // 
             pbBuscarIdCliente.BackColor = Color.Transparent;
+            pbBuscarIdCliente.Image = Properties.Resources.icons8_search_32;
             pbBuscarIdCliente.Location = new Point(112, 69);
             pbBuscarIdCliente.Name = "pbBuscarIdCliente";
             pbBuscarIdCliente.Size = new Size(30, 36);
             pbBuscarIdCliente.SizeMode = PictureBoxSizeMode.Zoom;
             pbBuscarIdCliente.TabIndex = 13;
             pbBuscarIdCliente.TabStop = false;
+            pbBuscarIdCliente.Click += pbBuscarIdCliente_Click;
             // 
             // lblIdCliente
             // 
@@ -267,32 +287,36 @@
             // 
             // txtProducto
             // 
-            txtProducto.Font = new Font("Segoe UI", 9F);
+            txtProducto.Font = new Font("Verdana", 10F);
             txtProducto.Location = new Point(153, 100);
             txtProducto.Name = "txtProducto";
-            txtProducto.Size = new Size(236, 31);
+            txtProducto.Size = new Size(236, 32);
             txtProducto.TabIndex = 2;
             // 
             // txtPrecio
             // 
-            txtPrecio.Font = new Font("Segoe UI", 9F);
+            txtPrecio.Font = new Font("Verdana", 10F);
             txtPrecio.Location = new Point(420, 100);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(236, 31);
+            txtPrecio.Size = new Size(236, 32);
             txtPrecio.TabIndex = 3;
+            txtPrecio.KeyPress += txtPrecio_KeyPress;
             // 
             // dtpFecha
             // 
-            dtpFecha.Font = new Font("Segoe UI", 9F);
+            dtpFecha.CalendarFont = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpFecha.Enabled = false;
+            dtpFecha.Font = new Font("Verdana", 10F);
             dtpFecha.Format = DateTimePickerFormat.Short;
             dtpFecha.Location = new Point(6, 69);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(236, 31);
+            dtpFecha.Size = new Size(236, 32);
             dtpFecha.TabIndex = 1;
+            dtpFecha.TabStop = false;
             // 
             // cbTipo
             // 
-            cbTipo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbTipo.Font = new Font("Verdana", 10F);
             cbTipo.FormattingEnabled = true;
             cbTipo.Location = new Point(255, 69);
             cbTipo.Name = "cbTipo";
@@ -359,18 +383,20 @@
             lblFecha.TabIndex = 19;
             lblFecha.Text = "Fecha";
             // 
-            // button1
+            // btnAgregar
             // 
-            button1.BackColor = Color.DarkGreen;
-            button1.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ImageAlign = ContentAlignment.TopCenter;
-            button1.Location = new Point(1308, 276);
-            button1.Name = "button1";
-            button1.Size = new Size(163, 120);
-            button1.TabIndex = 20;
-            button1.Text = "Agregar";
-            button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.UseVisualStyleBackColor = false;
+            btnAgregar.BackColor = Color.DarkGreen;
+            btnAgregar.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAgregar.Image = Properties.Resources.icons8_plus_math_64__1_;
+            btnAgregar.ImageAlign = ContentAlignment.TopCenter;
+            btnAgregar.Location = new Point(1308, 276);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(163, 120);
+            btnAgregar.TabIndex = 20;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.TextAlign = ContentAlignment.BottomCenter;
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // button6
             // 
@@ -422,6 +448,7 @@
             // pbBuscarIdProducto
             // 
             pbBuscarIdProducto.BackColor = Color.Transparent;
+            pbBuscarIdProducto.Image = Properties.Resources.icons8_search_32;
             pbBuscarIdProducto.Location = new Point(98, 100);
             pbBuscarIdProducto.Name = "pbBuscarIdProducto";
             pbBuscarIdProducto.Size = new Size(30, 36);
@@ -431,11 +458,12 @@
             // 
             // txtIdProducto
             // 
-            txtIdProducto.Font = new Font("Segoe UI", 9F);
+            txtIdProducto.Font = new Font("Verdana", 10F);
             txtIdProducto.Location = new Point(6, 100);
             txtIdProducto.Name = "txtIdProducto";
-            txtIdProducto.Size = new Size(82, 31);
+            txtIdProducto.Size = new Size(82, 32);
             txtIdProducto.TabIndex = 21;
+            txtIdProducto.KeyPress += txtIdProducto_KeyPress;
             // 
             // lblIdProducto
             // 
@@ -451,11 +479,12 @@
             // 
             // nudCantidad
             // 
-            nudCantidad.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nudCantidad.Font = new Font("Verdana", 10F);
             nudCantidad.Location = new Point(965, 101);
             nudCantidad.Name = "nudCantidad";
-            nudCantidad.Size = new Size(236, 31);
+            nudCantidad.Size = new Size(236, 32);
             nudCantidad.TabIndex = 20;
+            nudCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label1
             // 
@@ -471,10 +500,11 @@
             // 
             // txtStock
             // 
-            txtStock.Font = new Font("Segoe UI", 9F);
+            txtStock.Font = new Font("Verdana", 10F);
             txtStock.Location = new Point(697, 100);
             txtStock.Name = "txtStock";
-            txtStock.Size = new Size(236, 31);
+            txtStock.ReadOnly = true;
+            txtStock.Size = new Size(236, 32);
             txtStock.TabIndex = 18;
             // 
             // lblTitulo
@@ -527,23 +557,30 @@
             // 
             // txtTotal
             // 
+            txtTotal.Font = new Font("Verdana", 10F);
             txtTotal.Location = new Point(1259, 495);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(168, 31);
+            txtTotal.ReadOnly = true;
+            txtTotal.Size = new Size(168, 32);
             txtTotal.TabIndex = 101;
+            txtTotal.KeyPress += txtTotal_KeyPress;
             // 
             // txtPago
             // 
+            txtPago.Font = new Font("Verdana", 10F);
             txtPago.Location = new Point(1259, 569);
             txtPago.Name = "txtPago";
-            txtPago.Size = new Size(168, 31);
+            txtPago.Size = new Size(168, 32);
             txtPago.TabIndex = 102;
+            txtPago.KeyPress += txtPago_KeyPress;
             // 
             // txtCambio
             // 
+            txtCambio.Font = new Font("Verdana", 10F);
             txtCambio.Location = new Point(1259, 640);
             txtCambio.Name = "txtCambio";
-            txtCambio.Size = new Size(168, 31);
+            txtCambio.ReadOnly = true;
+            txtCambio.Size = new Size(168, 32);
             txtCambio.TabIndex = 103;
             // 
             // Facturacion
@@ -561,7 +598,7 @@
             Controls.Add(gbInformacionP);
             Controls.Add(button6);
             Controls.Add(gbDatosV);
-            Controls.Add(button1);
+            Controls.Add(btnAgregar);
             Controls.Add(gbDatosC);
             Controls.Add(lblTitulo);
             Controls.Add(button3);
@@ -605,7 +642,7 @@
         private Label lblCantidad;
         private Label lblTipo;
         private Label lblFecha;
-        private Button button1;
+        private Button btnAgregar;
         private Label lblIdCliente;
         private Button button6;
         private GroupBox gbDatosV;
