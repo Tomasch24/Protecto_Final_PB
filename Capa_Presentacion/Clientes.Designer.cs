@@ -43,17 +43,22 @@
             lblRnc = new Label();
             lblTitulo = new Label();
             btnEditarCliente = new Button();
-            dataGridView1 = new DataGridView();
+            dgvClientes = new DataGridView();
+            btnBuscar = new Button();
+            btnEliminarCliente = new Button();
+            pbAtras = new PictureBox();
             gbDatosC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbBuscarIdCliente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbAtras).BeginInit();
             SuspendLayout();
             // 
             // txtCorreo
             // 
+            txtCorreo.Font = new Font("Verdana", 10F);
             txtCorreo.Location = new Point(20, 379);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(236, 36);
+            txtCorreo.Size = new Size(236, 32);
             txtCorreo.TabIndex = 115;
             // 
             // lblCorreo
@@ -71,12 +76,14 @@
             // btnGuardarCliente
             // 
             btnGuardarCliente.BackColor = SystemColors.MenuBar;
-            btnGuardarCliente.Location = new Point(945, 649);
+            btnGuardarCliente.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGuardarCliente.Location = new Point(1240, 620);
             btnGuardarCliente.Name = "btnGuardarCliente";
-            btnGuardarCliente.Size = new Size(142, 51);
+            btnGuardarCliente.Size = new Size(161, 40);
             btnGuardarCliente.TabIndex = 107;
-            btnGuardarCliente.Text = "button6";
+            btnGuardarCliente.Text = "Guardar";
             btnGuardarCliente.UseVisualStyleBackColor = false;
+            btnGuardarCliente.Click += btnGuardarCliente_Click;
             // 
             // gbDatosC
             // 
@@ -93,9 +100,9 @@
             gbDatosC.Controls.Add(lblRnc);
             gbDatosC.Font = new Font("Lucida Sans", 12F, FontStyle.Bold);
             gbDatosC.ForeColor = Color.White;
-            gbDatosC.Location = new Point(881, 136);
+            gbDatosC.Location = new Point(1055, 110);
             gbDatosC.Name = "gbDatosC";
-            gbDatosC.Size = new Size(342, 433);
+            gbDatosC.Size = new Size(328, 433);
             gbDatosC.TabIndex = 108;
             gbDatosC.TabStop = false;
             gbDatosC.Text = "Datos del Cliente";
@@ -103,28 +110,32 @@
             // pbBuscarIdCliente
             // 
             pbBuscarIdCliente.BackColor = Color.Transparent;
+            pbBuscarIdCliente.Image = Properties.Resources.icons8_search_32;
             pbBuscarIdCliente.Location = new Point(112, 69);
             pbBuscarIdCliente.Name = "pbBuscarIdCliente";
             pbBuscarIdCliente.Size = new Size(30, 36);
             pbBuscarIdCliente.SizeMode = PictureBoxSizeMode.Zoom;
             pbBuscarIdCliente.TabIndex = 13;
             pbBuscarIdCliente.TabStop = false;
+            pbBuscarIdCliente.Click += pbBuscarIdCliente_Click;
             // 
             // txtIdCliente
             // 
-            txtIdCliente.Font = new Font("Segoe UI", 9F);
+            txtIdCliente.Font = new Font("Verdana", 10F);
             txtIdCliente.Location = new Point(20, 69);
             txtIdCliente.Name = "txtIdCliente";
-            txtIdCliente.Size = new Size(82, 31);
+            txtIdCliente.Size = new Size(82, 32);
             txtIdCliente.TabIndex = 0;
+            txtIdCliente.KeyPress += txtIdCliente_KeyPress;
             // 
             // txtNombre
             // 
-            txtNombre.Font = new Font("Segoe UI", 9F);
+            txtNombre.Font = new Font("Verdana", 10F);
             txtNombre.Location = new Point(20, 148);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(236, 31);
+            txtNombre.Size = new Size(236, 32);
             txtNombre.TabIndex = 1;
+            txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // lblNombre
             // 
@@ -140,11 +151,12 @@
             // 
             // MtxtTelefono
             // 
-            MtxtTelefono.Font = new Font("Segoe UI", 9F);
+            MtxtTelefono.Font = new Font("Verdana", 10F);
             MtxtTelefono.ForeColor = SystemColors.ControlText;
             MtxtTelefono.Location = new Point(20, 233);
+            MtxtTelefono.Mask = "+1 (999) 000-0000";
             MtxtTelefono.Name = "MtxtTelefono";
-            MtxtTelefono.Size = new Size(236, 31);
+            MtxtTelefono.Size = new Size(236, 32);
             MtxtTelefono.TabIndex = 4;
             // 
             // lblTelefono
@@ -173,10 +185,11 @@
             // 
             // MtxtRnc
             // 
-            MtxtRnc.Font = new Font("Segoe UI", 9F);
+            MtxtRnc.Font = new Font("Verdana", 10F);
             MtxtRnc.Location = new Point(20, 305);
+            MtxtRnc.Mask = "000-0000000-0";
             MtxtRnc.Name = "MtxtRnc";
-            MtxtRnc.Size = new Size(236, 31);
+            MtxtRnc.Size = new Size(236, 32);
             MtxtRnc.TabIndex = 5;
             // 
             // lblRnc
@@ -205,46 +218,86 @@
             // 
             // btnEditarCliente
             // 
-            btnEditarCliente.Location = new Point(964, 599);
+            btnEditarCliente.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditarCliente.Location = new Point(1240, 574);
             btnEditarCliente.Name = "btnEditarCliente";
-            btnEditarCliente.Size = new Size(112, 34);
+            btnEditarCliente.Size = new Size(161, 40);
             btnEditarCliente.TabIndex = 104;
-            btnEditarCliente.Text = "button3";
+            btnEditarCliente.Text = "Editar Cliente";
             btnEditarCliente.UseVisualStyleBackColor = true;
+            btnEditarCliente.Click += btnEditarCliente_Click;
             // 
-            // dataGridView1
+            // dgvClientes
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(89, 136);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(726, 564);
-            dataGridView1.TabIndex = 114;
+            dgvClientes.AllowUserToAddRows = false;
+            dgvClientes.AllowUserToDeleteRows = false;
+            dgvClientes.AllowUserToResizeColumns = false;
+            dgvClientes.AllowUserToResizeRows = false;
+            dgvClientes.BackgroundColor = Color.White;
+            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvClientes.EnableHeadersVisualStyles = false;
+            dgvClientes.Location = new Point(89, 110);
+            dgvClientes.Name = "dgvClientes";
+            dgvClientes.ReadOnly = true;
+            dgvClientes.RowHeadersWidth = 62;
+            dgvClientes.Size = new Size(918, 550);
+            dgvClientes.TabIndex = 114;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBuscar.Location = new Point(1040, 574);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(194, 40);
+            btnBuscar.TabIndex = 115;
+            btnBuscar.Text = "Buscar por Id";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // btnEliminarCliente
+            // 
+            btnEliminarCliente.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEliminarCliente.Location = new Point(1040, 620);
+            btnEliminarCliente.Name = "btnEliminarCliente";
+            btnEliminarCliente.Size = new Size(194, 40);
+            btnEliminarCliente.TabIndex = 116;
+            btnEliminarCliente.Text = "Eliminar Cliente";
+            btnEliminarCliente.UseVisualStyleBackColor = true;
+            btnEliminarCliente.Click += btnEliminarCliente_Click;
+            // 
+            // pbAtras
+            // 
+            pbAtras.Image = Properties.Resources.Flecha_hacia_atras;
+            pbAtras.Location = new Point(950, 58);
+            pbAtras.Name = "pbAtras";
+            pbAtras.Size = new Size(57, 46);
+            pbAtras.SizeMode = PictureBoxSizeMode.Zoom;
+            pbAtras.TabIndex = 117;
+            pbAtras.TabStop = false;
+            pbAtras.Click += pbAtras_Click;
             // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(88, 173, 83);
-            ClientSize = new Size(1250, 767);
+            ClientSize = new Size(1431, 777);
+            Controls.Add(pbAtras);
+            Controls.Add(btnEliminarCliente);
+            Controls.Add(btnBuscar);
             Controls.Add(btnGuardarCliente);
             Controls.Add(gbDatosC);
             Controls.Add(lblTitulo);
             Controls.Add(btnEditarCliente);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvClientes);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Clientes";
+            Load += Clientes_Load;
             gbDatosC.ResumeLayout(false);
             gbDatosC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbBuscarIdCliente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbAtras).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -265,6 +318,9 @@
         private Label lblRnc;
         private Label lblTitulo;
         private Button btnEditarCliente;
-        private DataGridView dataGridView1;
+        private DataGridView dgvClientes;
+        private Button btnBuscar;
+        private Button btnEliminarCliente;
+        private PictureBox pbAtras;
     }
 }

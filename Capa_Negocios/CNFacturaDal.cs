@@ -25,8 +25,8 @@ namespace Capa_negocios
                 conn.Open();
 
                 // TODO comando sql para que se guarden los datos que inserte el usuario en la base de datos
-                string query = "INSERT INTO Factura (IdCliente, Nombre, Telefono, RNC, Fecha, Descripcion, Precio, Cantidad, Tipo)" +
-                                 "VALUES (@IdCliente, @Nombre, @Telefono, @RNC, @Fecha, @Descripcion, @Precio, @Cantidad, @Tipo)";
+                string query = "INSERT INTO Factura (IdCliente, Nombre, Telefono, RNC, Fecha, Producto, Precio, Cantidad, Tipo)" +
+                                 "VALUES (@IdCliente, @Nombre, @Telefono, @RNC, @Fecha, @Producto, @Precio, @Cantidad, @Tipo)";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -35,7 +35,7 @@ namespace Capa_negocios
                 cmd.Parameters.AddWithValue("@Telefono", factura.Cliente.Telefono);
                 cmd.Parameters.AddWithValue("@RNC", factura.Cliente.RNC);
                 cmd.Parameters.AddWithValue("@Fecha", factura.Fecha);
-                cmd.Parameters.AddWithValue("@Descripcion", factura.Descripcion);
+                cmd.Parameters.AddWithValue("@Producto", factura.Descripcion);
                 cmd.Parameters.AddWithValue("@Precio", factura.Precio);
                 cmd.Parameters.AddWithValue("@Cantidad", factura.Cantidad);
                 cmd.Parameters.AddWithValue("@Tipo", factura.TipoFactura());
@@ -82,7 +82,7 @@ namespace Capa_negocios
                     factura.NombreFactura = reader["Nombre"].ToString(); //Desde la tabla Factura
                     factura.TelefonoF = reader["Telefono"].ToString();//Desde la tabla Factura
                     factura.RncF = reader["RNC"].ToString();//Desde la tabla Factura
-                    factura.Descripcion = reader["Descripcion"].ToString();
+                    factura.Descripcion = reader["Producto"].ToString();
                     factura.Precio = Convert.ToDecimal(reader["Precio"]);
                     factura.Cantidad = Convert.ToInt32(reader["Cantidad"]);
                     factura.Fecha = Convert.ToDateTime(reader["Fecha"]);
@@ -97,54 +97,54 @@ namespace Capa_negocios
             return null; 
         }
         //TODO Lista para mostrar clientes en el datagridview
-        public static List<Factura> GenerarFacturas()
-        {
-            List<Factura> lista = new();
-            Productos_Agri data = new Productos_Agri();
+        /* public static List<Factura> GenerarFacturas()
+         {
+             List<Factura> lista = new();
+             Productos_Agri data = new Productos_Agri();
 
-            using (SqlConnection conn = new SqlConnection(data.Conexion))
-            {
-                string query = "SELECT * FROM Factura";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+             using (SqlConnection conn = new SqlConnection(data.Conexion))
+             {
+                 string query = "SELECT * FROM Factura";
+                 SqlCommand cmd = new SqlCommand(query, conn);
+                 conn.Open();
+                 SqlDataReader reader = cmd.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    CNCliente cliente;
+                 while (reader.Read())
+                 {
+                     CNCliente cliente;
 
-                    if (reader["IdCliente"] != DBNull.Value)
-                    {
-                        int idCliente = Convert.ToInt32(reader["IdCliente"]);
-                        cliente = CNClienteDal.BuscarPorId(idCliente);
-                    }
-                    else
-                    {
-                        cliente = new CNCliente(
-                            reader["Nombre"].ToString(),
-                            reader["Telefono"].ToString(),
-                            reader["RNC"].ToString(),
-                            ""
-                        );
-                    }
-                    Factura factura = reader["Tipo"].ToString() == "Contado"
-                        ? new FacturaContado(cliente)
-                        : new FacturaCredito(cliente);
+                     if (reader["IdCliente"] != DBNull.Value)
+                     {
+                         int idCliente = Convert.ToInt32(reader["IdCliente"]);
+                         cliente = CNClienteDal.BuscarPorId(idCliente);
+                     }
+                     else
+                     {
+                         cliente = new CNCliente(
+                             reader["Nombre"].ToString(),
+                             reader["Telefono"].ToString(),
+                             reader["RNC"].ToString(),
+                             ""
+                         );
+                     }
+                     Factura factura = reader["Tipo"].ToString() == "Contado"
+                         ? new FacturaContado(cliente)
+                         : new FacturaCredito(cliente);
 
-                    factura.IdFactura = Convert.ToInt32(reader["IdFactura"]);
-                    factura.TelefonoF = reader["Telefono"].ToString();
-                    factura.RncF = reader["RNC"].ToString();
-                    factura.Descripcion = reader["Descripcion"].ToString();
-                    factura.Precio = Convert.ToDecimal(reader["Precio"]);
-                    factura.Cantidad = Convert.ToInt32(reader["Cantidad"]);
-                    factura.Fecha = Convert.ToDateTime(reader["Fecha"]);
-                    factura.AplicarDescuento();
-                    factura.CalcularTotales();
+                     factura.IdFactura = Convert.ToInt32(reader["IdFactura"]);
+                     factura.TelefonoF = reader["Telefono"].ToString();
+                     factura.RncF = reader["RNC"].ToString();
+                     factura.Descripcion = reader["Producto"].ToString();
+                     factura.Precio = Convert.ToDecimal(reader["Precio"]);
+                     factura.Cantidad = Convert.ToInt32(reader["Cantidad"]);
+                     factura.Fecha = Convert.ToDateTime(reader["Fecha"]);
+                     factura.AplicarDescuento();
+                     factura.CalcularTotales();
 
-                    lista.Add(factura);
-                }
-            }
-            return lista;
-        }
+                     lista.Add(factura);
+                 }
+             }
+             return lista;
+         }*/
     }
 }
