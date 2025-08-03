@@ -16,5 +16,29 @@ namespace Capa_Presentacion
         {
             InitializeComponent();
         }
+
+        private void Facturacion_Load(object sender, EventArgs e)
+        {
+            cbTipo.Items.Add("Contado");
+            cbTipo.Items.Add("Crédito");
+            cbTipo.SelectedIndex = 0;
+            txtTotal.Text = "0";
+        }
+        private void LimpiarCampos()
+        {
+            txtIdCliente.Text = "";
+            txtNombre.Text = "";
+            MtxtRnc.Text = "";
+            MtxtTelefono.Text = "";
+            txtIdCliente.Text = "";
+            txtIdProducto.Text = "";
+            txtCambio.Text = "";
+            txtPago.Text = "";
+            txtPrecio.Text = "";
+            txtProducto.Text = "";
+            txtStock.Text = "";
+            txtTotal.Text = "0";
+        }
     }
+    
 }
