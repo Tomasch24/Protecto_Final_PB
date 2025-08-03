@@ -1,4 +1,6 @@
+using Capa.Presentacion;
 using Capa_Interfas;
+using DocumentFormat.OpenXml.Bibliography;
 
 namespace Capa_Presentacion
 {
@@ -13,7 +15,12 @@ namespace Capa_Presentacion
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Facturacion());
+
+
+
+            Application.Run(new DashGrafico());
+
+
         }
     }
 }

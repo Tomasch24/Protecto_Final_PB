@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Capa_Negocios;
 
 namespace Capa_Interfas
 {
@@ -42,9 +43,18 @@ namespace Capa_Interfas
 
         }
 
+        private readonly ProductoService servicio = new ProductoService();
+
         private void Catalogo_De_Los_Productos_Load(object sender, EventArgs e)
         {
+            var productos = servicio.ObtenerResumenProductos();
+            DGVProductos.DataSource = productos;
 
+            // Ajuste visual de columnas (opcional)
+           DGVProductos.Columns["Id"].HeaderText = "ID";
+            DGVProductos.Columns["Nombre"].HeaderText = "Nombre";
+            DGVProductos.Columns["Tipo"].HeaderText = "Tipo";
+            DGVProductos.Columns["Precio"].HeaderText = "Precio";
         }
 
         private void butHacer_pedido_Click(object sender, EventArgs e)
@@ -63,5 +73,8 @@ namespace Capa_Interfas
 
             this.Dispose();
         }
+
+
+
     }
 }
