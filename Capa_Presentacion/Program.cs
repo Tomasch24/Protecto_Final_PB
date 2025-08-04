@@ -18,7 +18,7 @@ namespace Capa_Presentacion
 
 
 
-            Application.Run(new Clientes());
+            Application.Run(new Pantalla_De_Inicio());
 
 
         }
