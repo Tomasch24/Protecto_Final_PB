@@ -15,13 +15,28 @@ namespace Capa_Interfas
 
     public partial class Catalogo_De_Los_Productos : Form
     {
+        public string connectionString = "Server=.;Database=GreenPoint;Integrated Security=true" + " ;TrustServerCertificate=True;"; // Aqui abro nuevamente la cadena de conexion, para que el metodo pueda acceder a la base de datos correctamente
+        SqlConnection connection = new SqlConnection("Server=.;Database=GreenPoint;Integrated Security=true" + " ;TrustServerCertificate=True;"); //
+        SqlDataAdapter adapt;
         public Catalogo_De_Los_Productos()
         {
             InitializeComponent();
+            MostrarInformacion();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+       private void MostrarInformacion() 
+        {
+            connection.Open();
+            DataTable dt = new DataTable();
+            adapt = new SqlDataAdapter("SELECT * FROM Producto", connection);
+            adapt.Fill(dt);
+            DGVProductos.DataSource = dt;
+            connection.Close();
 
         }
 
@@ -74,7 +89,25 @@ namespace Capa_Interfas
             this.Dispose();
         }
 
+<<<<<<< Updated upstream
 
 
+=======
+        private void DGVProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+            /*Productos_Agri conexion = new Productos_Agri();
+            using (SqlConnection conn = new SqlConnection(conexion.Conexion))
+            {
+                conn.Open();
+                SqlDataAdapter adpt = new SqlDataAdapter(
+                    "SELECT Id, Nombre, Temporada, Tipo, Precio, Stock,", conn);
+                DataTable dataTable = new DataTable();
+                adpt.Fill(dataTable);
+                DGVProductos.DataSource = dataTable;
+                conn.Close();
+            }*/
+        }
+>>>>>>> Stashed changes
     }
 }
