@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Negocios;
+using ConexionADatos;
+using Microsoft.Data.SqlClient;
 
 namespace Capa_Interfas
 {
@@ -58,19 +60,19 @@ namespace Capa_Interfas
 
         }
 
-        private readonly ProductoService servicio = new ProductoService();
+        //private readonly ProductoService servicio = new ProductoService();
 
-        private void Catalogo_De_Los_Productos_Load(object sender, EventArgs e)
+        /*private void Catalogo_De_Los_Productos_Load(object sender, EventArgs e)
         {
             var productos = servicio.ObtenerResumenProductos();
             DGVProductos.DataSource = productos;
 
             // Ajuste visual de columnas (opcional)
-           DGVProductos.Columns["Id"].HeaderText = "ID";
+            DGVProductos.Columns["Id"].HeaderText = "ID";
             DGVProductos.Columns["Nombre"].HeaderText = "Nombre";
             DGVProductos.Columns["Tipo"].HeaderText = "Tipo";
             DGVProductos.Columns["Precio"].HeaderText = "Precio";
-        }
+        }*/
 
         private void butHacer_pedido_Click(object sender, EventArgs e)
         {
@@ -89,14 +91,18 @@ namespace Capa_Interfas
             this.Dispose();
         }
 
-<<<<<<< Updated upstream
 
 
-=======
+
         private void DGVProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
           
             /*Productos_Agri conexion = new Productos_Agri();
+
+        private void DGVProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Productos_Agri conexion = new Productos_Agri();
+
             using (SqlConnection conn = new SqlConnection(conexion.Conexion))
             {
                 conn.Open();
@@ -106,8 +112,11 @@ namespace Capa_Interfas
                 adpt.Fill(dataTable);
                 DGVProductos.DataSource = dataTable;
                 conn.Close();
+
             }*/
         }
->>>>>>> Stashed changes
+
+            }
+        }
     }
 }

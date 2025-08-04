@@ -16,14 +16,11 @@ namespace Capa_Presentacion
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-<<<<<<< Updated upstream
-            Application.Run(new DashGrafico());
-=======
 
 
-            Application.Run(new Clientes());
+            Application.Run(new Pantalla_De_Inicio());
 
->>>>>>> Stashed changes
+
 
         }
     }
