@@ -118,7 +118,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Catalogo_De_Los_Productos";
             Text = "Form2";
-            Load += Catalogo_De_Los_Productos_Load;
+            //Load += Catalogo_De_Los_Productos_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)DGVProductos).EndInit();

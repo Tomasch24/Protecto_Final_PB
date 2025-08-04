@@ -18,6 +18,7 @@ namespace Capa_Interfas
         public Catalogo_De_Los_Productos()
         {
             InitializeComponent();
+            CargarProductos();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -43,11 +44,11 @@ namespace Capa_Interfas
 
         }
 
-        private readonly ProductoService servicio = new ProductoService();
+        //private readonly ProductoService servicio = new ProductoService();
 
-        private void Catalogo_De_Los_Productos_Load(object sender, EventArgs e)
+       /* private void Catalogo_De_Los_Productos_Load(object sender, EventArgs e)
         {
-            var productos = servicio.ObtenerResumenProductos();
+           // var productos = servicio.ObtenerResumenProductos();
             DGVProductos.DataSource = productos;
 
             // Ajuste visual de columnas (opcional)
@@ -55,7 +56,7 @@ namespace Capa_Interfas
             DGVProductos.Columns["Nombre"].HeaderText = "Nombre";
             DGVProductos.Columns["Tipo"].HeaderText = "Tipo";
             DGVProductos.Columns["Precio"].HeaderText = "Precio";
-        }
+        }*/
 
         private void butHacer_pedido_Click(object sender, EventArgs e)
         {
@@ -74,6 +75,15 @@ namespace Capa_Interfas
             this.Dispose();
         }
 
+        private void CargarProductos()
+        {
+            var negocio = new MostrarInfoCat();
+            var productos = negocio.Mostrar_InfCatPro();
+
+
+            DGVProductos.DataSource = productos;
+
+        }
 
 
     }

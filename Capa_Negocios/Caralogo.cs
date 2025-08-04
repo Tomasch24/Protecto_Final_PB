@@ -7,7 +7,7 @@ using Microsoft.Data.SqlClient;
 
 namespace Capa_Negocios
 {
-    public class ProductoService
+   /* public class ProductoService
     {
         private readonly string conexion = @"Data Source=.;Initial Catalog=GreenPoint;Integrated Security=True";
 
@@ -36,5 +36,5 @@ namespace Capa_Negocios
 
             return lista;
         }
-    }
+    }*/
 }
