@@ -51,7 +51,7 @@ namespace Capa_Negocios
             string nombre = null;
             using (SqlConnection conexion = new SqlConnection(datos.Conexion))
             {
-                string query = "SELECT Nombre FROM Proveedores WHERE RNC = @RNC";
+                string query = "SELECT Nombre FROM PROVEEDOR WHERE RNC = @RNC";
                 SqlCommand comando = new SqlCommand(query, conexion);
                 comando.Parameters.AddWithValue("@RNC", rnc);
 
@@ -67,7 +67,7 @@ namespace Capa_Negocios
 
 
 
-        private void InsertarProveedorEnBD(PROVEEDOR proveedor, SqlConnection conn)
+        public void InsertarProveedorEnBD(PROVEEDOR proveedor, SqlConnection conn)
         {
             // Opcional: Verificar si el RNC/ID ya existe antes de insertar
             string checkQuery = "SELECT COUNT(1) FROM PROVEEDOR WHERE RNC = @RNC";
@@ -142,7 +142,7 @@ namespace Capa_Negocios
             {
                 using (SqlConnection conn = new SqlConnection(datos.Conexion))
                 {
-                    string query = "DELETE FROM Proveedores WHERE RNC = @RNC";
+                    string query = "DELETE FROM PROVEEDOR WHERE RNC = @RNC";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@RNC", rnc);
 
@@ -166,7 +166,7 @@ namespace Capa_Negocios
             {
                 using (SqlConnection conn = new SqlConnection(datos.Conexion))
                 {
-                    string query = @"UPDATE Proveedores
+                    string query = @"UPDATE PROVEEDOR
                              SET RNC = @RNC, NOMBRE = @NOMBRE, TELEFONO = @TELEFONO, TIPO = @TIPO, PRODUCTO = @PRODUCTO, PRECIO = @PRECIO
                              WHERE RNC = @RNC_ORIGINAL";
 

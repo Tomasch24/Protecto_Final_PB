@@ -34,7 +34,7 @@ namespace Capa.Presentacion
             cmbTipoProveedor.Text = "";
             TxtPRODUCTO.Text = "";
             TxtPRECIO.Text = "";
-           
+
         }
 
 
@@ -112,12 +112,14 @@ namespace Capa.Presentacion
 
             try
             {
+                // Validación de campos obligatorios
                 if (string.IsNullOrWhiteSpace(TxtRNC.Text) || string.IsNullOrWhiteSpace(TxtNOMBRE.Text))
                 {
                     MessageBox.Show("Por favor completa los campos obligatorios (RNC y Nombre).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
+                // Validación de precio
                 decimal precio;
                 if (!decimal.TryParse(TxtPRECIO.Text.Trim(), out precio))
                 {
@@ -131,6 +133,7 @@ namespace Capa.Presentacion
                     return;
                 }
 
+                // Creación del proveedor según tipo
                 PROVEEDOR nuevoProveedor;
 
                 if (cmbTipoProveedor.SelectedItem?.ToString() == "LOCAL")
@@ -159,27 +162,32 @@ namespace Capa.Presentacion
                     return;
                 }
 
+                // Validación personalizada del proveedor
                 if (!nuevoProveedor.EsValido())
                 {
                     MessageBox.Show("El identificador ingresado no es válido.", "Validación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                CNProveedor negocio = new CNProveedor();
-                negocio.GuardarListaProveedores(new List<PROVEEDOR> { nuevoProveedor });
+                // Inserción directa en la base de datos
+                using (SqlConnection conn = new SqlConnection(new Productos_Agri().Conexion))
+                {
+                    conn.Open();
 
-                MessageBox.Show("Proveedor registrado correctamente.");
-                LimpiarCampos();
-                CargarProveedoresDesdeBD();
+                    CNProveedor negocio = new CNProveedor();
+                    negocio.InsertarProveedorEnBD(nuevoProveedor, conn);
+
+                    MessageBox.Show("Proveedor registrado correctamente.");
+                    LimpiarCampos();
+                    CargarProveedoresDesdeBD();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error inesperado: " + ex.Message);
             }
-
-           
-
         }
+
 
         private void btnLIMPIAR_Click(object sender, EventArgs e)
         {
@@ -243,7 +251,7 @@ namespace Capa.Presentacion
 
         }
 
-     
+
 
         private void dgvLISTATEMPORAL_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -275,7 +283,7 @@ namespace Capa.Presentacion
             dgvPROVEEDORES.CurrentCell = null;
         }
 
-       
+
         private void btnEDITAR_Click(object sender, EventArgs e)
         {
             // Validar que hay un proveedor seleccionado
@@ -384,6 +392,11 @@ namespace Capa.Presentacion
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void TxtNOMBRE_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
