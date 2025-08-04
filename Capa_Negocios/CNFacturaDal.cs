@@ -27,9 +27,13 @@ namespace Capa_negocios
                 // TODO comando sql para que se guarden los datos que inserte el usuario en la base de datos
                 string query = "INSERT INTO Factura (IdCliente, Nombre, Teléfono, RNC, Fecha, Producto, Precio, Cantidad, Tipo)" +
                                  "VALUES (@IdCliente, @Nombre, @Teléfono, @RNC, @Fecha, @Producto, @Precio, @Cantidad, @Tipo)";
-
-                
-
+<<<<<<< Updated upstream
+                string query = "INSERT INTO Factura (IdCliente, Nombre, Telefono, RNC, Fecha, Descripcion, Precio, Cantidad, Tipo)" +
+                                 "VALUES (@IdCliente, @Nombre, @Telefono, @RNC, @Fecha, @Descripcion, @Precio, @Cantidad, @Tipo)";
+=======
+                string query = "INSERT INTO Factura (IdCliente, Nombre, Teléfono, RNC, Fecha, Producto, Precio, Cantidad, Tipo)" +
+                                 "VALUES (@IdCliente, @Nombre, @Teléfono, @RNC, @Fecha, @Producto, @Precio, @Cantidad, @Tipo)";
+>>>>>>> Stashed changes
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
