@@ -25,11 +25,14 @@ namespace Capa_negocios
                 conn.Open();
 
                 // TODO comando sql para que se guarden los datos que inserte el usuario en la base de datos
-                string query = "INSERT INTO Factura (IdCliente, Nombre, Teléfono, RNC, Fecha, Producto, Precio, Cantidad, Tipo)" +
-                                 "VALUES (@IdCliente, @Nombre, @Teléfono, @RNC, @Fecha, @Producto, @Precio, @Cantidad, @Tipo)";
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                 string query = "INSERT INTO Factura (IdCliente, Nombre, Telefono, RNC, Fecha, Descripcion, Precio, Cantidad, Tipo)" +
                                  "VALUES (@IdCliente, @Nombre, @Telefono, @RNC, @Fecha, @Descripcion, @Precio, @Cantidad, @Tipo)";
+=======
+                string query = "INSERT INTO Factura (IdCliente, Nombre, Teléfono, RNC, Fecha, Producto, Precio, Cantidad, Tipo)" +
+                                 "VALUES (@IdCliente, @Nombre, @Teléfono, @RNC, @Fecha, @Producto, @Precio, @Cantidad, @Tipo)";
+>>>>>>> Stashed changes
 =======
                 string query = "INSERT INTO Factura (IdCliente, Nombre, Teléfono, RNC, Fecha, Producto, Precio, Cantidad, Tipo)" +
                                  "VALUES (@IdCliente, @Nombre, @Teléfono, @RNC, @Fecha, @Producto, @Precio, @Cantidad, @Tipo)";
