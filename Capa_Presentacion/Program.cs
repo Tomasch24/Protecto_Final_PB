@@ -18,7 +18,8 @@ namespace Capa_Presentacion
 
 
 
-            Application.Run(new Clientes());
+            Application.Run(new Facturacion());
+
 
 
         }
