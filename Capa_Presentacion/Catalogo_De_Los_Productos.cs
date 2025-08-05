@@ -76,9 +76,9 @@ namespace Capa_Interfas
 
         private void butHacer_pedido_Click(object sender, EventArgs e)
         {
-            Seleccion_De_Producto selecCat = new Seleccion_De_Producto();
+           // Seleccion_De_Producto selecCat = new Seleccion_De_Producto();
 
-            selecCat.Show();
+            //selecCat.Show();
 
             this.WindowState = FormWindowState.Minimized;
         }
@@ -118,5 +118,5 @@ namespace Capa_Interfas
 
             }
         }
-    }
-}
+    
+
