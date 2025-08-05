@@ -50,6 +50,8 @@
             lblPRECIO = new Label();
             TxtPRECIO = new TextBox();
             groupBox1 = new GroupBox();
+            TxtIDPROVEEDOR = new TextBox();
+            lblIDPROVEEDOR = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvPROVEEDORES).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
@@ -59,7 +61,7 @@
             // 
             lblRNC.AutoSize = true;
             lblRNC.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRNC.Location = new Point(46, 55);
+            lblRNC.Location = new Point(46, 125);
             lblRNC.Name = "lblRNC";
             lblRNC.Size = new Size(40, 18);
             lblRNC.TabIndex = 0;
@@ -69,7 +71,7 @@
             // 
             lblNOMBRE.AutoSize = true;
             lblNOMBRE.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNOMBRE.Location = new Point(18, 119);
+            lblNOMBRE.Location = new Point(18, 184);
             lblNOMBRE.Name = "lblNOMBRE";
             lblNOMBRE.Size = new Size(68, 18);
             lblNOMBRE.TabIndex = 1;
@@ -79,7 +81,7 @@
             // 
             lblTELEFONO.AutoSize = true;
             lblTELEFONO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTELEFONO.Location = new Point(16, 179);
+            lblTELEFONO.Location = new Point(16, 253);
             lblTELEFONO.Name = "lblTELEFONO";
             lblTELEFONO.Size = new Size(70, 18);
             lblTELEFONO.TabIndex = 2;
@@ -89,7 +91,7 @@
             // 
             lblTIPO.AutoSize = true;
             lblTIPO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTIPO.Location = new Point(47, 240);
+            lblTIPO.Location = new Point(47, 318);
             lblTIPO.Name = "lblTIPO";
             lblTIPO.Size = new Size(39, 18);
             lblTIPO.TabIndex = 3;
@@ -110,7 +112,7 @@
             // 
             lnlPRODUCTO.AutoSize = true;
             lnlPRODUCTO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lnlPRODUCTO.Location = new Point(11, 312);
+            lnlPRODUCTO.Location = new Point(11, 381);
             lnlPRODUCTO.Name = "lnlPRODUCTO";
             lnlPRODUCTO.Size = new Size(75, 18);
             lnlPRODUCTO.TabIndex = 13;
@@ -119,10 +121,10 @@
             // TxtPRODUCTO
             // 
             TxtPRODUCTO.BackColor = Color.White;
-            TxtPRODUCTO.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtPRODUCTO.Location = new Point(92, 298);
+            TxtPRODUCTO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtPRODUCTO.Location = new Point(92, 367);
             TxtPRODUCTO.Name = "TxtPRODUCTO";
-            TxtPRODUCTO.Size = new Size(253, 32);
+            TxtPRODUCTO.Size = new Size(253, 26);
             TxtPRODUCTO.TabIndex = 15;
             // 
             // dgvPROVEEDORES
@@ -164,26 +166,27 @@
             // TxtTELEFONO
             // 
             TxtTELEFONO.BackColor = Color.White;
-            TxtTELEFONO.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtTELEFONO.Location = new Point(92, 165);
+            TxtTELEFONO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtTELEFONO.Location = new Point(92, 239);
             TxtTELEFONO.Mask = "(999)-000-0000";
             TxtTELEFONO.Name = "TxtTELEFONO";
-            TxtTELEFONO.Size = new Size(253, 32);
+            TxtTELEFONO.Size = new Size(253, 26);
             TxtTELEFONO.TabIndex = 19;
             // 
             // TxtRNC
             // 
             TxtRNC.BackColor = Color.White;
-            TxtRNC.Location = new Point(170, 91);
+            TxtRNC.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtRNC.Location = new Point(92, 117);
             TxtRNC.Mask = "999999999";
             TxtRNC.Name = "TxtRNC";
-            TxtRNC.Size = new Size(253, 27);
+            TxtRNC.Size = new Size(253, 26);
             TxtRNC.TabIndex = 20;
             // 
             // btnLIMPIAR
             // 
             btnLIMPIAR.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLIMPIAR.Location = new Point(225, 500);
+            btnLIMPIAR.Location = new Point(219, 562);
             btnLIMPIAR.Name = "btnLIMPIAR";
             btnLIMPIAR.Size = new Size(94, 29);
             btnLIMPIAR.TabIndex = 21;
@@ -205,10 +208,10 @@
             // TxtNOMBRE
             // 
             TxtNOMBRE.BackColor = Color.White;
-            TxtNOMBRE.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtNOMBRE.Location = new Point(92, 105);
+            TxtNOMBRE.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtNOMBRE.Location = new Point(92, 176);
             TxtNOMBRE.Name = "TxtNOMBRE";
-            TxtNOMBRE.Size = new Size(253, 32);
+            TxtNOMBRE.Size = new Size(253, 26);
             TxtNOMBRE.TabIndex = 24;
             TxtNOMBRE.TextChanged += TxtNOMBRE_TextChanged;
             // 
@@ -227,11 +230,11 @@
             // 
             cmbTipoProveedor.BackColor = Color.White;
             cmbTipoProveedor.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbTipoProveedor.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbTipoProveedor.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbTipoProveedor.FormattingEnabled = true;
-            cmbTipoProveedor.Location = new Point(92, 225);
+            cmbTipoProveedor.Location = new Point(92, 303);
             cmbTipoProveedor.Name = "cmbTipoProveedor";
-            cmbTipoProveedor.Size = new Size(253, 33);
+            cmbTipoProveedor.Size = new Size(253, 26);
             cmbTipoProveedor.TabIndex = 27;
             // 
             // pictureBox1
@@ -249,7 +252,7 @@
             // 
             lblPRECIO.AutoSize = true;
             lblPRECIO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPRECIO.Location = new Point(33, 382);
+            lblPRECIO.Location = new Point(33, 443);
             lblPRECIO.Name = "lblPRECIO";
             lblPRECIO.Size = new Size(53, 18);
             lblPRECIO.TabIndex = 29;
@@ -258,19 +261,22 @@
             // TxtPRECIO
             // 
             TxtPRECIO.BackColor = Color.White;
-            TxtPRECIO.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtPRECIO.Location = new Point(92, 368);
+            TxtPRECIO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtPRECIO.Location = new Point(92, 429);
             TxtPRECIO.Name = "TxtPRECIO";
-            TxtPRECIO.Size = new Size(253, 32);
+            TxtPRECIO.Size = new Size(253, 26);
             TxtPRECIO.TabIndex = 30;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(TxtIDPROVEEDOR);
+            groupBox1.Controls.Add(lblIDPROVEEDOR);
             groupBox1.Controls.Add(lblPRECIO);
             groupBox1.Controls.Add(cmbTipoProveedor);
             groupBox1.Controls.Add(TxtNOMBRE);
             groupBox1.Controls.Add(TxtPRECIO);
             groupBox1.Controls.Add(TxtPRODUCTO);
+            groupBox1.Controls.Add(TxtRNC);
             groupBox1.Controls.Add(TxtTELEFONO);
             groupBox1.Controls.Add(lblTELEFONO);
             groupBox1.Controls.Add(lblTIPO);
@@ -279,24 +285,41 @@
             groupBox1.Controls.Add(lblRNC);
             groupBox1.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(78, 45);
+            groupBox1.Location = new Point(78, 47);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(387, 434);
+            groupBox1.Size = new Size(387, 492);
             groupBox1.TabIndex = 31;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Proveedores";
+            // 
+            // TxtIDPROVEEDOR
+            // 
+            TxtIDPROVEEDOR.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtIDPROVEEDOR.Location = new Point(92, 56);
+            TxtIDPROVEEDOR.Name = "TxtIDPROVEEDOR";
+            TxtIDPROVEEDOR.Size = new Size(253, 26);
+            TxtIDPROVEEDOR.TabIndex = 33;
+            // 
+            // lblIDPROVEEDOR
+            // 
+            lblIDPROVEEDOR.AutoSize = true;
+            lblIDPROVEEDOR.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblIDPROVEEDOR.Location = new Point(62, 64);
+            lblIDPROVEEDOR.Name = "lblIDPROVEEDOR";
+            lblIDPROVEEDOR.Size = new Size(24, 18);
+            lblIDPROVEEDOR.TabIndex = 32;
+            lblIDPROVEEDOR.Text = "ID";
             // 
             // FormPROVEEDORES
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(110, 190, 125);
-            ClientSize = new Size(1369, 575);
+            ClientSize = new Size(1369, 657);
             Controls.Add(pictureBox1);
             Controls.Add(btnEDITAR);
             Controls.Add(btnELIMINAR);
             Controls.Add(btnLIMPIAR);
-            Controls.Add(TxtRNC);
             Controls.Add(label1);
             Controls.Add(btnREGISTRARLISTATEMP);
             Controls.Add(dgvPROVEEDORES);
@@ -337,5 +360,7 @@
         private Label lblPRECIO;
         private TextBox TxtPRECIO;
         private GroupBox groupBox1;
+        private TextBox TxtIDPROVEEDOR;
+        private Label lblIDPROVEEDOR;
     }
 }

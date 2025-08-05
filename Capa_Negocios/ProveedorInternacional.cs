@@ -11,10 +11,11 @@ using Capa_Negocios;
         public class ProveedorInternacional : PROVEEDOR
         {
             // Constructor: llama al constructor base con tipo "INTERNACIONAL"
-            public ProveedorInternacional(string rnc, string nombre, string telefono, string producto, decimal precio)
-                : base(rnc, nombre, telefono, producto,"INTERNACIONAL", precio)
+            public ProveedorInternacional(string idproveedor, string rnc, string nombre, string telefono, string producto, decimal precio)
+                : base(idproveedor, rnc, nombre, telefono, producto,"INTERNACIONAL", precio)
             {
             }
+
 
             // Implementación de métodos abstractos
             public override string ObtenerIdentificadorPrincipal() => RNC;
