@@ -16,7 +16,7 @@ namespace Capa_Presentacion
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new Pantalla_De_Inicio());
+            Application.Run(new Catalogo_De_Los_Productos());
 
         }
     }
