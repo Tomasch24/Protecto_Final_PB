@@ -23,7 +23,7 @@ namespace Capa_Interfas
         public Catalogo_De_Los_Productos()
         {
             InitializeComponent();
-            MostrarInformacion();
+            CargarProductos();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,16 +31,7 @@ namespace Capa_Interfas
 
         }
 
-       private void MostrarInformacion() 
-        {
-            connection.Open();
-            DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("SELECT * FROM Producto", connection);
-            adapt.Fill(dt);
-            DGVProductos.DataSource = dt;
-            connection.Close();
-
-        }
+       
 
         private void iconoCerrarCat_Click(object sender, EventArgs e)
         {
@@ -96,7 +87,7 @@ namespace Capa_Interfas
 
         private void DGVProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+           
             /*Productos_Agri conexion = new Productos_Agri();
 
         private void DGVProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -116,7 +107,14 @@ namespace Capa_Interfas
             }*/
         }
 
-            }
+        private void CargarProductos()
+        {
+            var negocio = new MostrarInfoCat();
+            var productos = negocio.Mostrar_InfCatPro();
+
+
+            DGVProductos.DataSource = productos;
+
         }
     }
 }
