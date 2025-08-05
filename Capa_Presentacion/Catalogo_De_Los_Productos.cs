@@ -68,7 +68,9 @@ namespace Capa_Interfas
 
         private void butHacer_pedido_Click(object sender, EventArgs e)
         {
+
            
+
         }
 
         private void btnVolMenu_Click(object sender, EventArgs e)
@@ -84,7 +86,9 @@ namespace Capa_Interfas
           
         }
 
+
     }
 }
+
     
 
