@@ -43,8 +43,8 @@
             Precio = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
             SubTotal = new DataGridViewTextBoxColumn();
-            Descuento = new DataGridViewTextBoxColumn();
-            btnEliminar = new DataGridViewButtonColumn();
+            btnEliminar = new DataGridViewTextBoxColumn();
+            button3 = new Button();
             gbDatosC = new GroupBox();
             pbBuscarIdCliente = new PictureBox();
             lblIdCliente = new Label();
@@ -58,7 +58,7 @@
             lblTipo = new Label();
             lblFecha = new Label();
             btnAgregar = new Button();
-            btnGenerarFacturaPDF = new Button();
+            button6 = new Button();
             gbDatosV = new GroupBox();
             gbInformacionP = new GroupBox();
             pbBuscarIdProducto = new PictureBox();
@@ -161,7 +161,6 @@
             dgvFactura.AllowUserToDeleteRows = false;
             dgvFactura.AllowUserToResizeColumns = false;
             dgvFactura.AllowUserToResizeRows = false;
-            dgvFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvFactura.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
@@ -172,7 +171,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvFactura.Columns.AddRange(new DataGridViewColumn[] { IdProducto, Producto, Precio, Cantidad, SubTotal, Descuento, btnEliminar });
+            dgvFactura.Columns.AddRange(new DataGridViewColumn[] { IdProducto, Producto, Precio, Cantidad, SubTotal, btnEliminar });
             dgvFactura.EnableHeadersVisualStyles = false;
             dgvFactura.Location = new Point(33, 417);
             dgvFactura.Name = "dgvFactura";
@@ -182,10 +181,8 @@
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = Color.Green;
             dgvFactura.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            dgvFactura.Size = new Size(1146, 405);
+            dgvFactura.Size = new Size(1079, 405);
             dgvFactura.TabIndex = 100;
-            dgvFactura.CellContentClick += dgvFactura_CellContentClick;
-            dgvFactura.CellPainting += dgvFactura_CellPainting;
             // 
             // IdProducto
             // 
@@ -193,7 +190,7 @@
             IdProducto.MinimumWidth = 8;
             IdProducto.Name = "IdProducto";
             IdProducto.ReadOnly = true;
-            IdProducto.Visible = false;
+            IdProducto.Width = 169;
             // 
             // Producto
             // 
@@ -201,7 +198,7 @@
             Producto.MinimumWidth = 8;
             Producto.Name = "Producto";
             Producto.ReadOnly = true;
-            Producto.Resizable = DataGridViewTriState.True;
+            Producto.Width = 169;
             // 
             // Precio
             // 
@@ -209,6 +206,7 @@
             Precio.MinimumWidth = 8;
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
+            Precio.Width = 170;
             // 
             // Cantidad
             // 
@@ -216,6 +214,7 @@
             Cantidad.MinimumWidth = 8;
             Cantidad.Name = "Cantidad";
             Cantidad.ReadOnly = true;
+            Cantidad.Width = 169;
             // 
             // SubTotal
             // 
@@ -223,13 +222,7 @@
             SubTotal.MinimumWidth = 8;
             SubTotal.Name = "SubTotal";
             SubTotal.ReadOnly = true;
-            // 
-            // Descuento
-            // 
-            Descuento.HeaderText = "Descuento";
-            Descuento.MinimumWidth = 8;
-            Descuento.Name = "Descuento";
-            Descuento.ReadOnly = true;
+            SubTotal.Width = 169;
             // 
             // btnEliminar
             // 
@@ -237,8 +230,16 @@
             btnEliminar.MinimumWidth = 8;
             btnEliminar.Name = "btnEliminar";
             btnEliminar.ReadOnly = true;
-            btnEliminar.Resizable = DataGridViewTriState.False;
-            btnEliminar.SortMode = DataGridViewColumnSortMode.Automatic;
+            btnEliminar.Width = 169;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(1275, 717);
+            button3.Name = "button3";
+            button3.Size = new Size(112, 34);
+            button3.TabIndex = 2;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
             // 
             // gbDatosC
             // 
@@ -397,17 +398,15 @@
             btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
-            // btnGenerarFacturaPDF
+            // button6
             // 
-            btnGenerarFacturaPDF.BackColor = Color.Red;
-            btnGenerarFacturaPDF.ForeColor = Color.White;
-            btnGenerarFacturaPDF.Location = new Point(1248, 715);
-            btnGenerarFacturaPDF.Name = "btnGenerarFacturaPDF";
-            btnGenerarFacturaPDF.Size = new Size(189, 51);
-            btnGenerarFacturaPDF.TabIndex = 22;
-            btnGenerarFacturaPDF.Text = "Generar Factura PDF";
-            btnGenerarFacturaPDF.UseVisualStyleBackColor = false;
-            btnGenerarFacturaPDF.Click += btnGenerarFacturaPDF_Click;
+            button6.BackColor = SystemColors.MenuBar;
+            button6.Location = new Point(1259, 757);
+            button6.Name = "button6";
+            button6.Size = new Size(142, 51);
+            button6.TabIndex = 22;
+            button6.Text = "button6";
+            button6.UseVisualStyleBackColor = false;
             // 
             // gbDatosV
             // 
@@ -598,11 +597,12 @@
             Controls.Add(lblPago);
             Controls.Add(lblTotal);
             Controls.Add(gbInformacionP);
-            Controls.Add(btnGenerarFacturaPDF);
+            Controls.Add(button6);
             Controls.Add(gbDatosV);
             Controls.Add(btnAgregar);
             Controls.Add(gbDatosC);
             Controls.Add(lblTitulo);
+            Controls.Add(button3);
             Controls.Add(dgvFactura);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
@@ -632,6 +632,7 @@
         private Label lblTelefono;
         private Label lblNombre;
         private DataGridView dgvFactura;
+        private Button button3;
         private GroupBox gbDatosC;
         private TextBox txtProducto;
         private TextBox txtPrecio;
@@ -644,7 +645,7 @@
         private Label lblFecha;
         private Button btnAgregar;
         private Label lblIdCliente;
-        private Button btnGenerarFacturaPDF;
+        private Button button6;
         private GroupBox gbDatosV;
         private PictureBox pbBuscarIdCliente;
         private GroupBox gbInformacionP;
@@ -658,15 +659,14 @@
         private PictureBox pbBuscarIdProducto;
         private TextBox txtIdProducto;
         private Label lblIdProducto;
-        private TextBox txtTotal;
-        private TextBox txtPago;
-        private TextBox txtCambio;
         private DataGridViewTextBoxColumn IdProducto;
         private DataGridViewTextBoxColumn Producto;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn SubTotal;
-        private DataGridViewTextBoxColumn Descuento;
-        private DataGridViewButtonColumn btnEliminar;
+        private DataGridViewTextBoxColumn btnEliminar;
+        private TextBox txtTotal;
+        private TextBox txtPago;
+        private TextBox txtCambio;
     }
 }
