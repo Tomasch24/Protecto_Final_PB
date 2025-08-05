@@ -121,6 +121,9 @@
   <data name="descargar (13)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar (13)2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LOGO OSCURO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO OSCURO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calendar-with-spring-binder-and-date-blocks_icon-icons.com_73645" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendar-with-spring-binder-and-date-blocks_icon-icons.com_73645.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,8 +154,8 @@
   <data name="descargar (13)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar (13).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LOGO OSCURO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO OSCURO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-plus-math-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-plus-math-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MAXIMIZAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MAXIMIZAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +184,9 @@
   <data name="descargar (13)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar (13)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LOGO CLARO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO CLARO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-plus-math-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-plus-math-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -195,6 +201,9 @@
   </data>
   <data name="diagram_arrow_market_profit_progress_increase_graph_growth_icon_228896" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diagram_arrow_market_profit_progress_increase_graph_growth_icon_228896.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MINIMIZAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MINIMIZAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bills_cash_currency_contract_document_agreement_business_dollar_money_icon_258639" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bills_cash_currency_contract_document_agreement_business_dollar_money_icon_258639.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,6 +256,11 @@
   <data name="folleto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folleto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="trash-can-solid-full.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash-can-solid-full.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zafacon25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zafacon25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   <data name="menu-principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu-principal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
