@@ -130,8 +130,11 @@
   <data name="SIN FONDO OSCURO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SIN FONDO OSCURO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OPCION A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OPCION A.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="USUARIO BLANCO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\USUARIO BLANCO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bagofmoney_5108" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bagofmoney_5108.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow_exchanges_exchange_growth_stock_market_bars_economy_stocks_icon_258648" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow_exchanges_exchange_growth_stock_market_bars_economy_stocks_icon_258648.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -150,6 +153,9 @@
   </data>
   <data name="exportar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exportar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zafacon25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zafacon251.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="descargar (13)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar (13).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,9 +181,6 @@
   <data name="USUARIO NEGRO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\USUARIO NEGRO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bagofmoney_5108" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bagofmoney_5108.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="hacer-un-pedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hacer-un-pedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,26 +190,20 @@
   <data name="LOGO CLARO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO CLARO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-plus-math-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-plus-math-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="OPCION E" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OPCION E1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CAJERA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Empleada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="USUARIO BLANCO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\USUARIO BLANCO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu-principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu-principal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="diagram_arrow_market_profit_progress_increase_graph_growth_icon_228896" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diagram_arrow_market_profit_progress_increase_graph_growth_icon_228896.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MINIMIZAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MINIMIZAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bills_cash_currency_contract_document_agreement_business_dollar_money_icon_258639" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bills_cash_currency_contract_document_agreement_business_dollar_money_icon_258639.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OPCION A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OPCION A.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OPCION D" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OPCION D.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,18 +247,16 @@
   <data name="MINIMIZAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MINIMIZAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LOGO CLARO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO CLARO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folleto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folleto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bills_cash_currency_contract_document_agreement_business_dollar_money_icon_258639" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bills_cash_currency_contract_document_agreement_business_dollar_money_icon_258639.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="trash-can-solid-full.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash-can-solid-full.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Zafacon25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Zafacon25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="menu-principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu-principal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="folleto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folleto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-plus-math-64 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-plus-math-64 (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
