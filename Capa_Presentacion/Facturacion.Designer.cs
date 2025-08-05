@@ -385,10 +385,10 @@
             // btnAgregar
             // 
             btnAgregar.BackColor = Color.DarkGreen;
+            btnAgregar.BackgroundImage = Properties.Resources.icons8_plus_math_64__1_1;
             btnAgregar.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAgregar.Image = Properties.Resources.icons8_plus_math_64__1_;
             btnAgregar.ImageAlign = ContentAlignment.TopCenter;
-            btnAgregar.Location = new Point(1308, 276);
+            btnAgregar.Location = new Point(1317, 276);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(163, 120);
             btnAgregar.TabIndex = 20;
