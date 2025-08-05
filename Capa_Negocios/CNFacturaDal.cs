@@ -25,14 +25,15 @@ namespace Capa_negocios
                 conn.Open();
 
                 // TODO comando sql para que se guarden los datos que inserte el usuario en la base de datos
-                string query = "INSERT INTO Factura (IdCliente, Nombre, Telefono, RNC, Fecha, Producto, Precio, Cantidad, Tipo)" +
-                                 "VALUES (@IdCliente, @Nombre, @Telefono, @RNC, @Fecha, @Producto, @Precio, @Cantidad, @Tipo)";
+
+                string query = "INSERT INTO Factura (IdCliente, Nombre, Teléfono, RNC, Fecha, Producto, Precio, Cantidad, Tipo)" +
+                                 "VALUES (@IdCliente, @Nombre, @Teléfono, @RNC, @Fecha, @Producto, @Precio, @Cantidad, @Tipo)";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@IdCliente", factura.Cliente?.IdCliente > 0 ? factura.Cliente.IdCliente : (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@Nombre", factura.Cliente.Nombre);
-                cmd.Parameters.AddWithValue("@Telefono", factura.Cliente.Telefono);
+                cmd.Parameters.AddWithValue("@Teléfono", factura.Cliente.Telefono);
                 cmd.Parameters.AddWithValue("@RNC", factura.Cliente.RNC);
                 cmd.Parameters.AddWithValue("@Fecha", factura.Fecha);
                 cmd.Parameters.AddWithValue("@Producto", factura.Descripcion);

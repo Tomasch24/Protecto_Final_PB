@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogo_De_Los_Productos));
-            butHacer_pedido = new Button();
-            btnVolMenu = new Button();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             DGVProductos = new DataGridView();
@@ -38,38 +36,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DGVProductos).BeginInit();
             SuspendLayout();
-            // 
-            // butHacer_pedido
-            // 
-            butHacer_pedido.FlatAppearance.BorderSize = 0;
-            butHacer_pedido.FlatStyle = FlatStyle.Flat;
-            butHacer_pedido.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butHacer_pedido.ForeColor = SystemColors.ButtonHighlight;
-            butHacer_pedido.Image = (Image)resources.GetObject("butHacer_pedido.Image");
-            butHacer_pedido.ImageAlign = ContentAlignment.MiddleLeft;
-            butHacer_pedido.Location = new Point(35, 771);
-            butHacer_pedido.Name = "butHacer_pedido";
-            butHacer_pedido.Size = new Size(281, 68);
-            butHacer_pedido.TabIndex = 14;
-            butHacer_pedido.Text = "   Carrito";
-            butHacer_pedido.UseVisualStyleBackColor = true;
-            butHacer_pedido.Click += butHacer_pedido_Click;
-            // 
-            // btnVolMenu
-            // 
-            btnVolMenu.FlatAppearance.BorderSize = 0;
-            btnVolMenu.FlatStyle = FlatStyle.Flat;
-            btnVolMenu.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVolMenu.ForeColor = SystemColors.ButtonHighlight;
-            btnVolMenu.Image = (Image)resources.GetObject("btnVolMenu.Image");
-            btnVolMenu.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVolMenu.Location = new Point(873, 771);
-            btnVolMenu.Name = "btnVolMenu";
-            btnVolMenu.Size = new Size(281, 68);
-            btnVolMenu.TabIndex = 15;
-            btnVolMenu.Text = "      Volver al Menu";
-            btnVolMenu.UseVisualStyleBackColor = true;
-            btnVolMenu.Click += btnVolMenu_Click;
             // 
             // panel1
             // 
@@ -97,13 +63,14 @@
             DGVProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DGVProductos.BackgroundColor = Color.White;
             DGVProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVProductos.Location = new Point(85, 158);
+            DGVProductos.Location = new Point(60, 145);
             DGVProductos.Name = "DGVProductos";
             DGVProductos.ReadOnly = true;
             DGVProductos.RowHeadersWidth = 62;
             DGVProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGVProductos.Size = new Size(995, 523);
+            DGVProductos.Size = new Size(1037, 568);
             DGVProductos.TabIndex = 17;
+            DGVProductos.CellContentClick += DGVProductos_CellContentClick;
             // 
             // Catalogo_De_Los_Productos
             // 
@@ -113,12 +80,9 @@
             ClientSize = new Size(1317, 851);
             Controls.Add(DGVProductos);
             Controls.Add(panel1);
-            Controls.Add(butHacer_pedido);
-            Controls.Add(btnVolMenu);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Catalogo_De_Los_Productos";
             Text = "Form2";
-            Load += Catalogo_De_Los_Productos_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)DGVProductos).EndInit();
@@ -126,8 +90,6 @@
         }
 
         #endregion
-        private Button butHacer_pedido;
-        private Button btnVolMenu;
         private Panel panel1;
         private PictureBox pictureBox1;
         private DataGridView DGVProductos;
