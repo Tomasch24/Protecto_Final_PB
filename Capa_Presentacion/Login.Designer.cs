@@ -190,7 +190,6 @@
             lblError.AutoSize = true;
             lblError.Font = new Font("Century", 9F, FontStyle.Bold);
             lblError.ForeColor = Color.Black;
-//            lblError.Image = Properties.Resources.icons8_error_50;
             lblError.ImageAlign = ContentAlignment.MiddleLeft;
             lblError.Location = new Point(50, 449);
             lblError.Name = "lblError";
@@ -219,7 +218,6 @@
             Controls.Add(panelLogTitulo);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
-            Opacity = 0.85D;
             StartPosition = FormStartPosition.CenterScreen;
             Load += Login_Load;
             MouseMove += Login_MouseDown;

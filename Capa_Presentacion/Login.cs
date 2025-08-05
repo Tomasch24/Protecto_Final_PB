@@ -33,22 +33,41 @@ namespace Capa_Presentacion
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // Verifica si los campos de usuario y contraseña no están vacíos o con valores por defecto
             if (txtUser.Text != "Usuario")
             {
                 if (txtPassword.Text != "Contraseña")
                 {
                     UserModel user = new UserModel();
                     var validLogin = user.LoginUser(txtUser.Text, txtPassword.Text);
+
                     if (validLogin == true)
                     {
-                        Pantalla_De_Inicio mainMenu = new Pantalla_De_Inicio();
-                        MessageBox.Show("Bienvenido/a  " + LoginUser.Nombre + " " + LoginUser.Apellido);
-                        mainMenu.Show();
-                        mainMenu.FormClosed += LogOut; // Asigna el evento FormClosed para manejar el cierre del formulario
-                        this.Hide(); // Oculta el formulario de login después de iniciar sesión
+                        // Si el login es exitoso, ahora verificamos el rol
+                        if (LoginUser.Rol == "Gerente")
+                        {
+                            Pantalla_De_Inicio inicioGerente = new Pantalla_De_Inicio();
+                            MessageBox.Show("Bienvenido/a  " + LoginUser.Nombre + " " + LoginUser.Apellido);
+                            inicioGerente.Show();
+                            inicioGerente.FormClosed += LogOut; // Asigna el evento para manejar el cierre del formulario
+                            this.Hide(); // Oculta el formulario de login después de iniciar sesión
+                        }
+                        else if (LoginUser.Rol == "Cajera")
+                        {
+                            // Abre el formulario específico para la cajera
+                            Pantalla_Inicio_Cajera inicioCajera = new Pantalla_Inicio_Cajera();
+                            MessageBox.Show("Bienvenido/a  " + LoginUser.Nombre + " " + LoginUser.Apellido);
+                            inicioCajera.Show();
+                            inicioCajera.FormClosed += LogOut; // Asigna el evento para manejar el cierre
+                            this.Hide(); // Oculta el formulario de login
+                        }
+                        else
+                        {
+                            msgError("Rol de usuario no reconocido.");
+                        }
                     }
                     else
-                    { 
+                    {
                         msgError("Usuario o contraseña incorrectos \n Intenta nuevamente, por favor.");
                         txtPassword.Clear();
                         txtUser.Focus();
