@@ -9,6 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
+using System.Drawing.Imaging;
+using DocumentFormat.OpenXml.Presentation;
+using Rectangle = System.Drawing.Rectangle;
+using Capa_Interfas;
 
 namespace Capa_Presentacion
 {
@@ -28,43 +36,22 @@ namespace Capa_Presentacion
 
 
         }
-        private void LimpiarCampos()
+        private void LimpiarCamposProducto()
+        {
+
+            txtIdProducto.Text = "";
+            txtPrecio.Text = "";
+            txtProducto.Text = "";
+            txtStock.Text = "";
+
+        }
+        private void LimpiarCamposCliente()
         {
             txtIdCliente.Text = "";
             txtNombre.Text = "";
             MtxtRnc.Text = "";
             MtxtTelefono.Text = "";
             txtIdCliente.Text = "";
-            txtIdProducto.Text = "";
-            txtCambio.Text = "";
-            txtPago.Text = "";
-            txtPrecio.Text = "";
-            txtProducto.Text = "";
-            txtStock.Text = "";
-            txtTotal.Text = "0";
-        }
-        private void GenerarFactura()
-        {
-            /* var lista = FacturaDal.GenerarFacturas();
-
-             dgvFactura.DataSource = null;
-             dgvFactura.DataSource = lista.Select(f => new
-             {
-                 IdFactura = f.IdFactura,
-                 IdCliente = f.Cliente?.IdCliente > 0 ? f.Cliente.IdCliente.ToString() : "No registrado",
-                 Nombre = f.Cliente?.Nombre ?? f.NombreFactura ?? "Desconocido",
-                 Telefono = f.TelefonoF,
-                 Rnc = f.RncF,
-                 f.Descripcion,
-                 f.Cantidad,
-                 f.Precio,
-                 f.SubTotal,
-                 f.Descuento,
-                 f.Total,
-                 Tipo = f.TipoFactura(),
-                 f.Fecha
-             }).ToList();*/
-
 
         }
 
@@ -138,23 +125,6 @@ namespace Capa_Presentacion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //TODO Capturas de error de los textbox
-            if (string.IsNullOrWhiteSpace(txtNombre.Text))
-            {
-                MessageBox.Show("El campo Cliente esta incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!MtxtTelefono.MaskCompleted)
-            {
-                MessageBox.Show("El campo Teléfono está incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!MtxtRnc.MaskCompleted)
-            {
-                MessageBox.Show("El campo RNC está incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             if (string.IsNullOrWhiteSpace(txtIdProducto.Text))
             {
@@ -189,12 +159,12 @@ namespace Capa_Presentacion
                 ? new FacturaContado(cliente)
                 : new FacturaCredito(cliente);
 
-            factura.Descripcion = txtIdProducto.Text;
+            factura.Producto = txtIdProducto.Text;
             factura.Precio = precio;
             factura.Cantidad = cantidad;
             factura.AplicarDescuento();
             factura.Fecha = dtpFecha.Value;
-            factura.CalcularTotales();
+
 
             //TODO captura de exito o error al infresar datos
             int result = FacturaDal.IngresarDatos(factura);
@@ -209,21 +179,186 @@ namespace Capa_Presentacion
                      txtProducto.Text,
                      txtPrecio.Text,
                      nudCantidad.Value,
-                     factura.SubTotal
+                     factura.SubTotal,
+                     factura.Descuento
                 });
 
-
-
-                // GenerarFactura();
-
+                LimpiarCamposProducto();
+                CalcularTotal();
             }
             else
             {
                 MessageBox.Show("Error 404: el codigo del cerebro del jeifferson de este codigo dejo de compilar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void CalcularTotal()
+        {
+            decimal total = 0;
 
-       
+            foreach (DataGridViewRow row in dgvFactura.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                if (decimal.TryParse(row.Cells[4].Value?.ToString(), out decimal subtotal) && decimal.TryParse(row.Cells[5].Value?.ToString(), out decimal descuento))
+                {
+                    total += (subtotal - descuento);
+                }
+            }
+
+            txtTotal.Text = total.ToString("0.00");
+        }
+
+        private void btnGenerarFacturaPDF_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El campo Cliente esta incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!MtxtTelefono.MaskCompleted)
+            {
+                MessageBox.Show("El campo Teléfono está incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!MtxtRnc.MaskCompleted)
+            {
+                MessageBox.Show("El campo RNC está incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
+
+            guardar.Filter = "PDF Files (*.pdf)|*.pdf";
+
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                {
+                    Document pdfDoc = new Document(PageSize.A4, 25, 25, 30, 30);
+                    PdfWriter.GetInstance(pdfDoc, stream);
+                    pdfDoc.Open();
+
+                    // Cargar imagen del logo (ajusta la ruta a tu caso)
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        Properties.Resources.LOGO_OSCURO.Save(ms, ImageFormat.Png);
+                        iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(ms.ToArray());
+                        logo.ScaleAbsolute(100, 50);
+                        logo.Alignment = Element.ALIGN_LEFT;
+                        pdfDoc.Add(logo);
+                    }
+
+                    // Información de la empresa
+                    Paragraph infoEmpresa = new Paragraph("GreenPoint\nRNC: 123456789\nDirección: Av. Barcelo, Bavaro, Punta Cana\nTeléfono: (809) 123-4567\n\n", FontFactory.GetFont("Arial", "12", Font.Bold));
+                    infoEmpresa.Alignment = Element.ALIGN_LEFT;
+                    pdfDoc.Add(infoEmpresa);
+
+                    // Información del cliente
+                    pdfDoc.Add(new Paragraph("FACTURA\n", FontFactory.GetFont("Arial", "16", Font.Bold)));
+                    pdfDoc.Add(new Paragraph($"Fecha: {DateTime.Now:dd/MM/yyyy}", FontFactory.GetFont("Arial", "12")));
+                    pdfDoc.Add(new Paragraph($"Cliente: {txtNombre.Text}"));
+                    pdfDoc.Add(new Paragraph($"Teléfono: {MtxtTelefono.Text}"));
+                    pdfDoc.Add(new Paragraph($"RNC: {MtxtRnc.Text}"));
+                    pdfDoc.Add(new Paragraph($"Tipo de Factura: {cbTipo.SelectedItem.ToString()}\n\n"));
+
+                    // Tabla de productos
+                    PdfPTable table = new PdfPTable(6); // ID, Nombre, Precio, Cantidad, Descuento, SubTotal
+                    BaseColor colorFondo = new BaseColor(230, 230, 230); // Gris claro
+                    FontFactory.GetFont("Arial", "12", Font.Bold);
+
+                    string[] headers = { "ID Producto", "Producto", "Precio", "Cantidad", "Subtotal", "Descuento" };
+                    foreach (string encabezado in headers)
+                    {
+                        PdfPCell celdaTitulo = new PdfPCell(new Phrase(encabezado, FontFactory.GetFont("Arial", "12", Font.Bold)))
+                        {
+                            BackgroundColor = colorFondo,
+                            HorizontalAlignment = Element.ALIGN_CENTER,
+                            Padding = 5
+                        };
+                        table.AddCell(celdaTitulo);
+                    }
+
+                    foreach (DataGridViewRow row in dgvFactura.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        table.AddCell(row.Cells[0].Value?.ToString() ?? "");
+                        table.AddCell(row.Cells[1].Value?.ToString() ?? "");
+                        table.AddCell(row.Cells[2].Value?.ToString() ?? "");
+                        table.AddCell(row.Cells[3].Value?.ToString() ?? "");
+                        table.AddCell(row.Cells[4].Value?.ToString() ?? "");
+                        table.AddCell(row.Cells[5].Value?.ToString() ?? "");
+
+
+                    }
+
+                    pdfDoc.Add(table);
+
+                    // Total
+                    pdfDoc.Add(new Paragraph("\nTOTAL A PAGAR: " + txtTotal.Text, FontFactory.GetFont("Arial", "12", Font.Bold)));
+
+                    pdfDoc.Close();
+                    stream.Close();
+                }
+
+                MessageBox.Show("Factura generada con éxito.", "PDF Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            LimpiarCamposProducto();
+            LimpiarCamposCliente();
+
+
+        }
+
+        private void dgvFactura_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            if (e.ColumnIndex == 6)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.Zafacon25.Width;
+                var h = Properties.Resources.Zafacon25.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.Zafacon25, new Rectangle(x, y, w, h));
+
+                e.Handled = true;
+            }
+        }
+
+
+
+        private void dgvFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvFactura.Columns[e.ColumnIndex].Name == "btnEliminar")
+            {
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    dgvFactura.Rows.RemoveAt(indice);
+                    CalcularTotal();
+                }
+            }
+        }
+
+        private void pbBuscarIdProducto_Click(object sender, EventArgs e)
+        {
+            using(var catalogo = new Catalogo_De_Los_Productos())
+            {
+                var resulta = catalogo.ShowDialog();
+
+                if (resulta == DialogResult.OK)
+                {
+                    
+                }
+            }
+        }
     }
 
 }

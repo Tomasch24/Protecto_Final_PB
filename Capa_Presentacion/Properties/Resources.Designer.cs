@@ -404,6 +404,16 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap trash_can_solid_full_png {
+            get {
+                object obj = ResourceManager.GetObject("trash-can-solid-full.png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap users_group_customers_clients_icon_icons_com_72448 {
             get {
                 object obj = ResourceManager.GetObject("users_group_customers_clients_icon-icons.com_72448", resourceCulture);
@@ -427,6 +437,16 @@ namespace Capa_Presentacion.Properties {
         public static System.Drawing.Bitmap USUARIO_NEGRO {
             get {
                 object obj = ResourceManager.GetObject("USUARIO NEGRO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Zafacon25 {
+            get {
+                object obj = ResourceManager.GetObject("Zafacon25", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

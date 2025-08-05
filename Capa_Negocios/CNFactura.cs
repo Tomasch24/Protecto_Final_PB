@@ -17,7 +17,7 @@ namespace capa_negocios
         public string NombreFactura { get; set; }
         public string TelefonoF { get; set; }
         public string RncF { get; set; }
-        public string Descripcion { get; set; }
+        public string Producto { get; set; }
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }
         public DateTime Fecha { get; set; } 
@@ -36,10 +36,23 @@ namespace capa_negocios
         //TODO metodo vacio para aplicarle descuento a clientes registrados
         public void AplicarDescuento()
         {
+            decimal DescuentoPorCantidad = Cantidad switch
+            {
+                >= 50 => SubTotal * 0.15m,
+                >= 20 => SubTotal * 0.10m,
+                >= 10 => SubTotal * 0.05m,
+                _ => 0
+            };
+
+            decimal DescuentoClienteRegistrado; 
+                
             if (Cliente?.IdCliente > 0)
-                Descuento = SubTotal * 0.05m;
+                DescuentoClienteRegistrado = SubTotal * 0.05m;
             else
-                Descuento = 0;
+                DescuentoClienteRegistrado = 0;
+
+            Descuento = DescuentoPorCantidad + DescuentoClienteRegistrado;
+
         }
 
         //TODO Metodo Virtual para calcular totales
