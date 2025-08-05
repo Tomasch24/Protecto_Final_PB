@@ -1,27 +1,25 @@
-﻿using Capa.Presentacion;
-using Capa_de_Modulos.CACHE; // Para usar la clase LoginUser que almacena los datos del usuario logueado
-using Capa_Presentacion;
-using Microsoft.VisualBasic.ApplicationServices;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Capa_de_Modulos.CACHE;
+using Capa_Interfas;
+using DocumentFormat.OpenXml.Bibliography;
 
-namespace Capa_Interfas
+namespace Capa_Presentacion
 {
-    public partial class Pantalla_De_Inicio : Form
+    public partial class Pantalla_Inicio_Cajera : Form
     {
-        #region Campos de clase
-        private Panel loadingPanel;
-        // Almacena una referencia al formulario que está actualmente abierto en el panel principal.
-        // Se usa para poder cerrarlo antes de abrir uno nuevo. Es 'nullable' (con ?) porque al inicio no hay ningún formulario activo
-        private Form? activeForm = null;
-
-        #endregion
-        private Button _activeButton;
-
-        #region Constructor y Carga de Datos
-        public Pantalla_De_Inicio()
+        public Pantalla_Inicio_Cajera()
         {
-
             InitializeComponent();
+
 
             this.Text = string.Empty; // Elimina el texto de la barra de título.
             this.DoubleBuffered = true; // Mejora el rendimiento del dibujado del formulario, reduciendo el parpadeo.
@@ -33,6 +31,18 @@ namespace Capa_Interfas
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
+
+        #region Campos de clase
+        private Panel loadingPanel;
+        // Almacena una referencia al formulario que está actualmente abierto en el panel principal.
+        // Se usa para poder cerrarlo antes de abrir uno nuevo. Es 'nullable' (con ?) porque al inicio no hay ningún formulario activo
+        private Form? activeForm = null;
+
+        #endregion
+        private Button _activeButton;
+
+        #region Constructor y Carga de Datos
+
 
         private void Pantalla_De_Inicio_Load(object sender, EventArgs e)
         {
@@ -149,80 +159,12 @@ namespace Capa_Interfas
             if (MessageBox.Show("¿Esta seguro de que desea cerrar la aplicacion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 Application.Exit();
         }
-
-
-
-
-
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-        #endregion
-
-
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void BarraTitulo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblnom_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_2(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_3(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Dasboard(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BotonParaDashBoard_Click(object sender, EventArgs e)
-        {
-
-            OpenPanelHerencia(new DashGrafico());
-
-        }
-
-        private void MenuVertical_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCatalogo_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Catalogo_De_Los_Productos());
 
@@ -231,36 +173,22 @@ namespace Capa_Interfas
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Facturacion());
-
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Pedidos());
-
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Clientes());
-
-        }
-
-        private void btnProveedores_Click(object sender, EventArgs e)
-        {
-            OpenPanelHerencia(new FormPROVEEDORES());
-
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Registro_Pedidos());
-
-        }
-
-        private void PBuser_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
+#endregion
