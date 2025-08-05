@@ -455,6 +455,7 @@
             pbBuscarIdProducto.SizeMode = PictureBoxSizeMode.Zoom;
             pbBuscarIdProducto.TabIndex = 23;
             pbBuscarIdProducto.TabStop = false;
+            pbBuscarIdProducto.Click += pbBuscarIdProducto_Click;
             // 
             // txtIdProducto
             // 

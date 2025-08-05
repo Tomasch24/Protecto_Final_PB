@@ -223,7 +223,10 @@ namespace Capa_Presentacion
             }
         }
 
-       
+        private void pbBuscarIdProducto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
