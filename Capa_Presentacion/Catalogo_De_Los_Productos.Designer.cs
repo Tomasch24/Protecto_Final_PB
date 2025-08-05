@@ -76,7 +76,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(88, 173, 83);
+            BackColor = Color.White;
             ClientSize = new Size(1317, 851);
             Controls.Add(DGVProductos);
             Controls.Add(panel1);
