@@ -221,18 +221,7 @@ namespace Capa.Presentacion
 
         private void dgvLISTATEMPORAL_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-           /* if (e.RowIndex >= 0 && dgvPROVEEDORES.Rows[e.RowIndex] != null)
-            {
-                DataGridViewRow fila = dgvPROVEEDORES.Rows[e.RowIndex];
-
-                TxtIDPROVEEDOR.Text = fila.Cells[0].Value?.ToString() ?? "";
-                TxtRNC.Text = fila.Cells[0].Value?.ToString() ?? "";
-                TxtNOMBRE.Text = fila.Cells[1].Value?.ToString() ?? "";
-                TxtTELEFONO.Text = fila.Cells[2].Value?.ToString() ?? "";
-                cmbTipoProveedor.Text = fila.Cells[3].Value?.ToString() ?? "";
-                TxtPRODUCTO.Text = fila.Cells[4].Value?.ToString() ?? "";
-                TxtPRECIO.Text = fila.Cells[5].Value?.ToString() ?? "";
-            }*/
+           
         }
 
         private void FormPROVEEDORES_Load(object sender, EventArgs e)

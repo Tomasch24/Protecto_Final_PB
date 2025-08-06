@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPROVEEDORES));
             lblRNC = new Label();
             lblNOMBRE = new Label();
@@ -61,7 +64,7 @@
             // 
             lblRNC.AutoSize = true;
             lblRNC.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRNC.Location = new Point(46, 125);
+            lblRNC.Location = new Point(16, 125);
             lblRNC.Name = "lblRNC";
             lblRNC.Size = new Size(40, 18);
             lblRNC.TabIndex = 0;
@@ -71,7 +74,7 @@
             // 
             lblNOMBRE.AutoSize = true;
             lblNOMBRE.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNOMBRE.Location = new Point(18, 184);
+            lblNOMBRE.Location = new Point(11, 184);
             lblNOMBRE.Name = "lblNOMBRE";
             lblNOMBRE.Size = new Size(68, 18);
             lblNOMBRE.TabIndex = 1;
@@ -81,7 +84,7 @@
             // 
             lblTELEFONO.AutoSize = true;
             lblTELEFONO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTELEFONO.Location = new Point(16, 253);
+            lblTELEFONO.Location = new Point(11, 247);
             lblTELEFONO.Name = "lblTELEFONO";
             lblTELEFONO.Size = new Size(70, 18);
             lblTELEFONO.TabIndex = 2;
@@ -91,7 +94,7 @@
             // 
             lblTIPO.AutoSize = true;
             lblTIPO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTIPO.Location = new Point(47, 318);
+            lblTIPO.Location = new Point(16, 311);
             lblTIPO.Name = "lblTIPO";
             lblTIPO.Size = new Size(39, 18);
             lblTIPO.TabIndex = 3;
@@ -99,20 +102,22 @@
             // 
             // btnBUSCAR
             // 
+            btnBUSCAR.BackColor = Color.FromArgb(111, 129, 105);
+            btnBUSCAR.FlatStyle = FlatStyle.Flat;
             btnBUSCAR.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBUSCAR.Location = new Point(503, 427);
+            btnBUSCAR.Location = new Point(37, 450);
             btnBUSCAR.Name = "btnBUSCAR";
             btnBUSCAR.Size = new Size(94, 29);
             btnBUSCAR.TabIndex = 12;
             btnBUSCAR.Text = "Buscar";
-            btnBUSCAR.UseVisualStyleBackColor = true;
+            btnBUSCAR.UseVisualStyleBackColor = false;
             btnBUSCAR.Click += btnBUSCAR_Click;
             // 
             // lnlPRODUCTO
             // 
             lnlPRODUCTO.AutoSize = true;
             lnlPRODUCTO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lnlPRODUCTO.Location = new Point(11, 381);
+            lnlPRODUCTO.Location = new Point(11, 375);
             lnlPRODUCTO.Name = "lnlPRODUCTO";
             lnlPRODUCTO.Size = new Size(75, 18);
             lnlPRODUCTO.TabIndex = 13;
@@ -132,32 +137,59 @@
             dgvPROVEEDORES.AllowUserToAddRows = false;
             dgvPROVEEDORES.AllowUserToResizeRows = false;
             dgvPROVEEDORES.BackgroundColor = Color.FromArgb(245, 247, 246);
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Verdana", 9F, FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(85, 58, 29);
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Window;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvPROVEEDORES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvPROVEEDORES.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPROVEEDORES.Location = new Point(488, 114);
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Verdana", 9F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(111, 129, 105);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.Window;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvPROVEEDORES.DefaultCellStyle = dataGridViewCellStyle5;
+            dgvPROVEEDORES.Location = new Point(22, 82);
             dgvPROVEEDORES.Name = "dgvPROVEEDORES";
             dgvPROVEEDORES.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Verdana", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvPROVEEDORES.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvPROVEEDORES.RowHeadersWidth = 51;
-            dgvPROVEEDORES.Size = new Size(843, 296);
+            dgvPROVEEDORES.Size = new Size(843, 343);
             dgvPROVEEDORES.TabIndex = 16;
             dgvPROVEEDORES.CellMouseClick += dgvLISTATEMPORAL_CellMouseClick;
             // 
             // btnREGISTRARLISTATEMP
             // 
+            btnREGISTRARLISTATEMP.BackColor = Color.FromArgb(111, 129, 105);
+            btnREGISTRARLISTATEMP.FlatStyle = FlatStyle.Flat;
             btnREGISTRARLISTATEMP.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnREGISTRARLISTATEMP.Location = new Point(638, 427);
+            btnREGISTRARLISTATEMP.Location = new Point(173, 450);
             btnREGISTRARLISTATEMP.Name = "btnREGISTRARLISTATEMP";
             btnREGISTRARLISTATEMP.Size = new Size(94, 29);
             btnREGISTRARLISTATEMP.TabIndex = 17;
             btnREGISTRARLISTATEMP.Text = "Registrar ";
-            btnREGISTRARLISTATEMP.UseVisualStyleBackColor = true;
+            btnREGISTRARLISTATEMP.UseVisualStyleBackColor = false;
             btnREGISTRARLISTATEMP.Click += btnREGISTRAR_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.White;
             label1.Font = new Font("Lucida Sans", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(734, 29);
+            label1.ForeColor = Color.FromArgb(111, 129, 105);
+            label1.Location = new Point(261, 12);
             label1.Name = "label1";
             label1.Size = new Size(368, 50);
             label1.TabIndex = 18;
@@ -185,24 +217,28 @@
             // 
             // btnLIMPIAR
             // 
+            btnLIMPIAR.BackColor = Color.FromArgb(111, 129, 105);
+            btnLIMPIAR.FlatStyle = FlatStyle.Flat;
             btnLIMPIAR.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLIMPIAR.Location = new Point(219, 562);
+            btnLIMPIAR.Location = new Point(1127, 534);
             btnLIMPIAR.Name = "btnLIMPIAR";
             btnLIMPIAR.Size = new Size(94, 29);
             btnLIMPIAR.TabIndex = 21;
             btnLIMPIAR.Text = "Limpiar";
-            btnLIMPIAR.UseVisualStyleBackColor = true;
+            btnLIMPIAR.UseVisualStyleBackColor = false;
             btnLIMPIAR.Click += btnLIMPIAR_Click;
             // 
             // btnELIMINAR
             // 
+            btnELIMINAR.BackColor = Color.FromArgb(111, 129, 105);
+            btnELIMINAR.FlatStyle = FlatStyle.Flat;
             btnELIMINAR.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnELIMINAR.Location = new Point(898, 427);
+            btnELIMINAR.Location = new Point(459, 450);
             btnELIMINAR.Name = "btnELIMINAR";
             btnELIMINAR.Size = new Size(94, 29);
             btnELIMINAR.TabIndex = 23;
             btnELIMINAR.Text = "Eliminar";
-            btnELIMINAR.UseVisualStyleBackColor = true;
+            btnELIMINAR.UseVisualStyleBackColor = false;
             btnELIMINAR.Click += btnELIMINAR_Click;
             // 
             // TxtNOMBRE
@@ -217,13 +253,15 @@
             // 
             // btnEDITAR
             // 
+            btnEDITAR.BackColor = Color.FromArgb(111, 129, 105);
+            btnEDITAR.FlatStyle = FlatStyle.Flat;
             btnEDITAR.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEDITAR.Location = new Point(770, 427);
+            btnEDITAR.Location = new Point(314, 450);
             btnEDITAR.Name = "btnEDITAR";
             btnEDITAR.Size = new Size(94, 29);
             btnEDITAR.TabIndex = 26;
             btnEDITAR.Text = "Editar";
-            btnEDITAR.UseVisualStyleBackColor = true;
+            btnEDITAR.UseVisualStyleBackColor = false;
             btnEDITAR.Click += btnEDITAR_Click;
             // 
             // cmbTipoProveedor
@@ -252,7 +290,7 @@
             // 
             lblPRECIO.AutoSize = true;
             lblPRECIO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPRECIO.Location = new Point(33, 443);
+            lblPRECIO.Location = new Point(11, 443);
             lblPRECIO.Name = "lblPRECIO";
             lblPRECIO.Size = new Size(53, 18);
             lblPRECIO.TabIndex = 29;
@@ -269,6 +307,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.FromArgb(111, 129, 105);
             groupBox1.Controls.Add(TxtIDPROVEEDOR);
             groupBox1.Controls.Add(lblIDPROVEEDOR);
             groupBox1.Controls.Add(lblPRECIO);
@@ -285,7 +324,7 @@
             groupBox1.Controls.Add(lblRNC);
             groupBox1.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(78, 47);
+            groupBox1.Location = new Point(953, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(387, 492);
             groupBox1.TabIndex = 31;
@@ -304,7 +343,7 @@
             // 
             lblIDPROVEEDOR.AutoSize = true;
             lblIDPROVEEDOR.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblIDPROVEEDOR.Location = new Point(62, 64);
+            lblIDPROVEEDOR.Location = new Point(11, 64);
             lblIDPROVEEDOR.Name = "lblIDPROVEEDOR";
             lblIDPROVEEDOR.Size = new Size(24, 18);
             lblIDPROVEEDOR.TabIndex = 32;
@@ -314,7 +353,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(110, 190, 125);
+            BackColor = Color.White;
             ClientSize = new Size(1369, 657);
             Controls.Add(pictureBox1);
             Controls.Add(btnEDITAR);

@@ -8,25 +8,6 @@ namespace Capa_Negocios
     public class CNProveedor
     {
 
-       /* public void GuardarListaProveedores(List<PROVEEDOR> proveedores)
-        {
-            Productos_Agri datos = new Productos_Agri();
-
-            using (SqlConnection conn = new SqlConnection(datos.Conexion))
-            {
-                conn.Open();
-                foreach (var p in proveedores)
-                {
-                    if (!p.EsValido())
-                    {
-                        throw new ArgumentException($"El proveedor '{p.NOMBRE}' tiene datos no válidos.");
-                    }
-                    InsertarProveedorEnBD(p, conn);
-                }
-            }
-        }*/
-
-
         //Lógica para obtener los datos desde la base
         public DataTable ObtenerTodosLosProveedores()
         {
@@ -98,20 +79,7 @@ namespace Capa_Negocios
 
         }
 
-       /* public void EliminarProveedor(string rnc)
-        {
-            Productos_Agri datos = new Productos_Agri();
-            using (SqlConnection conn = new SqlConnection(datos.Conexion))
-            {
-                string query = "DELETE FROM PROVEEDOR WHERE RNC = @RNC";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@RNC", rnc);
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }*/
+
 
 
         public DataTable BuscarProveedoresPorID(string IDPROVEEDOR)
@@ -134,6 +102,8 @@ namespace Capa_Negocios
 
             return dt;
         }
+
+
 
         public bool EliminarProveedorPorRNC(string rnc)
         {
@@ -179,5 +149,5 @@ namespace Capa_Negocios
         }
     }
 
-    }
+}   
 
