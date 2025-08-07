@@ -360,5 +360,10 @@ namespace Capa_Presentacion
                 MessageBox.Show("Error al cargar los datos de resumen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
