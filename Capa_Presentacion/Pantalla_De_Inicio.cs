@@ -1,4 +1,5 @@
-﻿using Capa_de_Modulos.CACHE; // Para usar la clase LoginUser que almacena los datos del usuario logueado
+﻿using Capa.Presentacion;
+using Capa_de_Modulos.CACHE; // Para usar la clase LoginUser que almacena los datos del usuario logueado
 using Capa_Presentacion;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Runtime.InteropServices;
@@ -8,22 +9,28 @@ namespace Capa_Interfas
     public partial class Pantalla_De_Inicio : Form
     {
         #region Campos de clase
-
+        private Panel loadingPanel;
         // Almacena una referencia al formulario que está actualmente abierto en el panel principal.
         // Se usa para poder cerrarlo antes de abrir uno nuevo. Es 'nullable' (con ?) porque al inicio no hay ningún formulario activo
         private Form? activeForm = null;
 
         #endregion
-
+        private Button _activeButton;
 
         #region Constructor y Carga de Datos
         public Pantalla_De_Inicio()
         {
+
             InitializeComponent();
 
             this.Text = string.Empty; // Elimina el texto de la barra de título.
             this.DoubleBuffered = true; // Mejora el rendimiento del dibujado del formulario, reduciendo el parpadeo.
             // Limita el área de maximización para que no cubra la barra de tareas de Windows.
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            // Asocia el evento MenuButton_Click a todos los botones del menú
+
+            this.Text = string.Empty;
+            this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
@@ -143,23 +150,10 @@ namespace Capa_Interfas
                 Application.Exit();
         }
 
-        private void btnMaximzar_Click(object sender, EventArgs e)
-        {
-            // Cambia el estado de la ventana a maximizado
-            this.WindowState = FormWindowState.Maximized;
-            // Oculta el botón de maximizar y muestra el de restaurar para una mejor experiencia de usuario
-            btnRestaurar.Visible = true;
-            btnMaximzar.Visible = false;
-        }
 
-        private void btnRestaurar_Click(object sender, EventArgs e)
-        {
-            // Devuelve la ventana a su estado normal.
-            this.WindowState = FormWindowState.Normal;
-            // Oculta el botón de restaurar y vuelve a mostrar el de maximizar
-            btnRestaurar.Visible = false;
-            btnMaximzar.Visible = true;
-        }
+
+
+
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
@@ -175,6 +169,98 @@ namespace Capa_Interfas
 
 
 
-       
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblnom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_3(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Dasboard(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BotonParaDashBoard_Click(object sender, EventArgs e)
+        {
+
+            OpenPanelHerencia(new DashGrafico());
+
+        }
+
+        private void MenuVertical_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Catalogo_De_Los_Productos());
+
+        }
+
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Facturacion());
+
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Pedidos());
+
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Clientes());
+
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new FormPROVEEDORES());
+
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Registro_Pedidos());
+
+        }
+
+        private void PBuser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

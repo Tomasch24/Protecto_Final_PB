@@ -144,6 +144,16 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap catalogo {
+            get {
+                object obj = ResourceManager.GetObject("catalogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap CERRAR__2_ {
             get {
                 object obj = ResourceManager.GetObject("CERRAR (2)", resourceCulture);
@@ -204,9 +214,59 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap exportar {
+            get {
+                object obj = ResourceManager.GetObject("exportar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap factura {
+            get {
+                object obj = ResourceManager.GetObject("factura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Flecha_hacia_atras {
             get {
                 object obj = ResourceManager.GetObject("Flecha hacia atras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap folleto {
+            get {
+                object obj = ResourceManager.GetObject("folleto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap grafico {
+            get {
+                object obj = ResourceManager.GetObject("grafico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap hacer_un_pedido {
+            get {
+                object obj = ResourceManager.GetObject("hacer-un-pedido", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -247,6 +307,16 @@ namespace Capa_Presentacion.Properties {
         public static System.Drawing.Bitmap icons8_plus_math_64__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-plus-math-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap icons8_plus_math_64__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plus-math-64 (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -297,6 +367,16 @@ namespace Capa_Presentacion.Properties {
         public static System.Drawing.Bitmap MAXIMIZAR {
             get {
                 object obj = ResourceManager.GetObject("MAXIMIZAR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap menu_principal {
+            get {
+                object obj = ResourceManager.GetObject("menu-principal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -404,6 +484,16 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap trash_can_solid_full_png {
+            get {
+                object obj = ResourceManager.GetObject("trash-can-solid-full.png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap users_group_customers_clients_icon_icons_com_72448 {
             get {
                 object obj = ResourceManager.GetObject("users_group_customers_clients_icon-icons.com_72448", resourceCulture);
@@ -427,6 +517,16 @@ namespace Capa_Presentacion.Properties {
         public static System.Drawing.Bitmap USUARIO_NEGRO {
             get {
                 object obj = ResourceManager.GetObject("USUARIO NEGRO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Zafacon25 {
+            get {
+                object obj = ResourceManager.GetObject("Zafacon25", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

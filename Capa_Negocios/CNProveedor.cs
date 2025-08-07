@@ -8,7 +8,7 @@ namespace Capa_Negocios
     public class CNProveedor
     {
 
-        public void GuardarListaProveedores(List<PROVEEDOR> proveedores)
+       /* public void GuardarListaProveedores(List<PROVEEDOR> proveedores)
         {
             Productos_Agri datos = new Productos_Agri();
 
@@ -24,7 +24,7 @@ namespace Capa_Negocios
                     InsertarProveedorEnBD(p, conn);
                 }
             }
-        }
+        }*/
 
 
         //Lógica para obtener los datos desde la base
@@ -35,7 +35,7 @@ namespace Capa_Negocios
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(datos.Conexion))
             {
-                string query = "SELECT RNC, NOMBRE, TELEFONO, TIPO, PRODUCTO, PRECIO FROM PROVEEDOR";
+                string query = "SELECT IDPROVEEDOR, RNC, NOMBRE, TELEFONO, TIPO, PRODUCTO, PRECIO FROM PROVEEDOR";
                 using (SqlDataAdapter adapt = new SqlDataAdapter(query, conn))
                 {
                     adapt.Fill(dt);
@@ -51,7 +51,7 @@ namespace Capa_Negocios
             string nombre = null;
             using (SqlConnection conexion = new SqlConnection(datos.Conexion))
             {
-                string query = "SELECT Nombre FROM Proveedores WHERE RNC = @RNC";
+                string query = "SELECT Nombre FROM PROVEEDOR WHERE RNC = @RNC";
                 SqlCommand comando = new SqlCommand(query, conexion);
                 comando.Parameters.AddWithValue("@RNC", rnc);
 
@@ -67,7 +67,7 @@ namespace Capa_Negocios
 
 
 
-        private void InsertarProveedorEnBD(PROVEEDOR proveedor, SqlConnection conn)
+        public void InsertarProveedorEnBD(PROVEEDOR proveedor, SqlConnection conn)
         {
             // Opcional: Verificar si el RNC/ID ya existe antes de insertar
             string checkQuery = "SELECT COUNT(1) FROM PROVEEDOR WHERE RNC = @RNC";
@@ -81,9 +81,10 @@ namespace Capa_Negocios
                 }
             }
 
-            string query = "INSERT INTO PROVEEDOR (RNC, NOMBRE, TELEFONO, TIPO, PRODUCTO, PRECIO) VALUES (@RNC, @NOMBRE, @TELEFONO, @TIPO, @PRODUCTO, @PRECIO)";
+            string query = "INSERT INTO PROVEEDOR (IDPROVEEDOR, RNC, NOMBRE, TELEFONO, TIPO, PRODUCTO, PRECIO) VALUES (@IDPROVEEDOR, @RNC, @NOMBRE, @TELEFONO, @TIPO, @PRODUCTO, @PRECIO)";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
+                cmd.Parameters.AddWithValue("@IDPROVEEDOR", proveedor.IDPROVEEDOR);
                 cmd.Parameters.AddWithValue("@RNC", proveedor.ObtenerIdentificadorPrincipal());
                 cmd.Parameters.AddWithValue("@NOMBRE", proveedor.NOMBRE);
                 cmd.Parameters.AddWithValue("@TELEFONO", proveedor.TELEFONO);
@@ -97,7 +98,7 @@ namespace Capa_Negocios
 
         }
 
-        public void EliminarProveedor(string rnc)
+       /* public void EliminarProveedor(string rnc)
         {
             Productos_Agri datos = new Productos_Agri();
             using (SqlConnection conn = new SqlConnection(datos.Conexion))
@@ -110,10 +111,10 @@ namespace Capa_Negocios
                     cmd.ExecuteNonQuery();
                 }
             }
-        }
+        }*/
 
 
-        public DataTable BuscarProveedores(string RNC)
+        public DataTable BuscarProveedoresPorID(string IDPROVEEDOR)
         {
             Productos_Agri datos = new Productos_Agri();
 
@@ -121,10 +122,10 @@ namespace Capa_Negocios
             using (SqlConnection conn = new SqlConnection(datos.Conexion))
             {
                 // Usamos LIKE para búsquedas parciales
-                string query = "SELECT RNC, NOMBRE, TELEFONO, TIPO, PRODUCTO FROM PROVEEDOR WHERE RNC LIKE @RNC";
+                string query = "SELECT IDPROVEEDOR, RNC, NOMBRE, TELEFONO, TIPO, PRODUCTO, PRECIO FROM PROVEEDOR WHERE IDPROVEEDOR LIKE @IDPROVEEDOR";
                 using (SqlDataAdapter adapt = new SqlDataAdapter(query, conn))
                 {
-                    adapt.SelectCommand.Parameters.AddWithValue("@RNC", "%" + RNC + "%");
+                    adapt.SelectCommand.Parameters.AddWithValue("@IDPROVEEDOR", "%" + IDPROVEEDOR + "%");
                     adapt.Fill(dt);
                 }
 
@@ -138,22 +139,15 @@ namespace Capa_Negocios
         {
             Productos_Agri datos = new Productos_Agri();
 
-            try
+            using (SqlConnection conn = new SqlConnection(datos.Conexion))
             {
-                using (SqlConnection conn = new SqlConnection(datos.Conexion))
-                {
-                    string query = "DELETE FROM Proveedores WHERE RNC = @RNC";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@RNC", rnc);
+                string query = "DELETE FROM PROVEEDOR WHERE RNC = @RNC";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@RNC", rnc);
 
-                    conn.Open();
-                    int filasAfectadas = cmd.ExecuteNonQuery();
-                    return filasAfectadas > 0;
-                }
-            }
-            catch
-            {
-                return false;
+                conn.Open();
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                return filasAfectadas > 0;
             }
         }
 
@@ -162,34 +156,28 @@ namespace Capa_Negocios
         {
             Productos_Agri datos = new Productos_Agri();
 
-            try
+            using (SqlConnection conn = new SqlConnection(datos.Conexion))
             {
-                using (SqlConnection conn = new SqlConnection(datos.Conexion))
-                {
-                    string query = @"UPDATE Proveedores
-                             SET RNC = @RNC, NOMBRE = @NOMBRE, TELEFONO = @TELEFONO, TIPO = @TIPO, PRODUCTO = @PRODUCTO, PRECIO = @PRECIO
-                             WHERE RNC = @RNC_ORIGINAL";
+                string query = @"UPDATE PROVEEDOR
+                                 SET IDPROVEEDOR = @IDPROVEEDOR, RNC = @RNC, NOMBRE = @NOMBRE, TELEFONO = @TELEFONO, TIPO = @TIPO, PRODUCTO = @PRODUCTO, PRECIO = @PRECIO
+                                 WHERE RNC = @RNC_ORIGINAL";
 
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@RNC_ORIGINAL", rncOriginal);
-                    cmd.Parameters.AddWithValue("@RNC", proveedorNuevo.RNC);
-                    cmd.Parameters.AddWithValue("@NOMBRE", proveedorNuevo.NOMBRE);
-                    cmd.Parameters.AddWithValue("@TELEFONO", proveedorNuevo.TELEFONO);
-                    cmd.Parameters.AddWithValue("@TIPO", proveedorNuevo.TIPO);
-                    cmd.Parameters.AddWithValue("@PRODUCTO", proveedorNuevo.PRODUCTO);
-                    cmd.Parameters.AddWithValue("@PRECIO", proveedorNuevo.PRECIO);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@RNC_ORIGINAL", rncOriginal);
+                cmd.Parameters.AddWithValue("@IDPROVEEDOR", proveedorNuevo.IDPROVEEDOR);
+                cmd.Parameters.AddWithValue("@RNC", proveedorNuevo.RNC);
+                cmd.Parameters.AddWithValue("@NOMBRE", proveedorNuevo.NOMBRE);
+                cmd.Parameters.AddWithValue("@TELEFONO", proveedorNuevo.TELEFONO);
+                cmd.Parameters.AddWithValue("@TIPO", proveedorNuevo.TIPO);
+                cmd.Parameters.AddWithValue("@PRODUCTO", proveedorNuevo.PRODUCTO);
+                cmd.Parameters.AddWithValue("@PRECIO", proveedorNuevo.PRECIO);
 
-                    conn.Open();
-                    int filasAfectadas = cmd.ExecuteNonQuery();
-                    return filasAfectadas > 0;
-                }
-            }
-            catch
-            {
-                return false;
+                conn.Open();
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                return filasAfectadas > 0;
             }
         }
+    }
 
     }
 
-}
