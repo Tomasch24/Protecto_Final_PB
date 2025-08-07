@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogo_De_Los_Productos));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            DGVProductos = new DataGridView();
+            flpCatalogo = new FlowLayoutPanel();
+            lbldescripcion = new Label();
+            btnHabilitarCat = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DGVProductos).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -43,55 +44,78 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1160, 0);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(157, 851);
+            panel1.Size = new Size(158, 851);
             panel1.TabIndex = 16;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 3);
+            pictureBox1.Location = new Point(0, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(157, 126);
+            pictureBox1.Size = new Size(158, 126);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // DGVProductos
+            // flpCatalogo
             // 
-            DGVProductos.AllowUserToAddRows = false;
-            DGVProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DGVProductos.BackgroundColor = Color.White;
-            DGVProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVProductos.Location = new Point(60, 145);
-            DGVProductos.Name = "DGVProductos";
-            DGVProductos.ReadOnly = true;
-            DGVProductos.RowHeadersWidth = 62;
-            DGVProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGVProductos.Size = new Size(1037, 568);
-            DGVProductos.TabIndex = 17;
-            DGVProductos.CellContentClick += DGVProductos_CellContentClick;
+            flpCatalogo.AutoScroll = true;
+            flpCatalogo.BackColor = Color.White;
+            flpCatalogo.Location = new Point(32, 179);
+            flpCatalogo.Name = "flpCatalogo";
+            flpCatalogo.Size = new Size(1107, 548);
+            flpCatalogo.TabIndex = 17;
+            // 
+            // lbldescripcion
+            // 
+            lbldescripcion.AutoSize = true;
+            lbldescripcion.Font = new Font("Lucida Sans", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbldescripcion.ForeColor = Color.White;
+            lbldescripcion.Location = new Point(212, 69);
+            lbldescripcion.Name = "lbldescripcion";
+            lbldescripcion.Size = new Size(713, 59);
+            lbldescripcion.TabIndex = 18;
+            lbldescripcion.Text = "CATALOGO GREEN POINT";
+            // 
+            // btnHabilitarCat
+            // 
+            btnHabilitarCat.Location = new Point(995, 733);
+            btnHabilitarCat.Name = "btnHabilitarCat";
+            btnHabilitarCat.Size = new Size(144, 34);
+            btnHabilitarCat.TabIndex = 19;
+            btnHabilitarCat.Text = "Habilitar";
+            btnHabilitarCat.UseVisualStyleBackColor = true;
+            btnHabilitarCat.Click += btnHabilitarCat_Click;
             // 
             // Catalogo_De_Los_Productos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(88, 173, 83);
-            ClientSize = new Size(1317, 851);
-            Controls.Add(DGVProductos);
+            ClientSize = new Size(1318, 851);
+            Controls.Add(btnHabilitarCat);
+            Controls.Add(lbldescripcion);
+            Controls.Add(flpCatalogo);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "Catalogo_De_Los_Productos";
             Text = "Form2";
+            Load += Catalogo_De_Los_Productos_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DGVProductos).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Panel panel1;
         private PictureBox pictureBox1;
-        private DataGridView DGVProductos;
+        private FlowLayoutPanel flpCatalogo;
+        private Label lbldescripcion;
+        private Button btnHabilitarCat;
     }
 }
