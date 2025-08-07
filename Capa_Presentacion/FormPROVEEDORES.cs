@@ -12,9 +12,9 @@ namespace Capa.Presentacion
     public partial class FormPROVEEDORES : Form
     {
 
-      
+
         //Lógica para mostrar los datos en la interfaz
-        
+
         private void CargarProveedoresDesdeBD()
         {
             try
@@ -30,11 +30,10 @@ namespace Capa.Presentacion
             }
         }
 
-       
+
 
         private void LimpiarCampos()
         {
-            TxtIDPROVEEDOR.Text = "";
             TxtRNC.Text = "";
             TxtNOMBRE.Text = "";
             TxtTELEFONO.Text = "";
@@ -60,27 +59,26 @@ namespace Capa.Presentacion
             cmbTipoProveedor.SelectedIndex = 0;
         }
 
-       
+
 
 
         private void btnBUSCAR_Click(object sender, EventArgs e)
         {
-            string idBuscado = TxtIDPROVEEDOR.Text.Trim();
+            string rncBuscado = TxtRNC.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(idBuscado))
+            if (string.IsNullOrWhiteSpace(rncBuscado))
             {
                 MessageBox.Show("Por favor ingresa un ID para buscar.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             CNProveedor negocio = new CNProveedor();
-            DataTable resultado = negocio.BuscarProveedoresPorID(idBuscado);
+            DataTable resultado = negocio.BuscarProveedoresPorRNC(rncBuscado);
 
             if (resultado.Rows.Count > 0)
             {
                 DataRow proveedor = resultado.Rows[0];
 
-                TxtIDPROVEEDOR.Text = proveedor["IDPROVEEDOR"].ToString();
                 TxtRNC.Text = proveedor["RNC"].ToString();
                 TxtNOMBRE.Text = proveedor["NOMBRE"].ToString();
                 TxtTELEFONO.Text = proveedor["TELEFONO"].ToString();
@@ -93,7 +91,7 @@ namespace Capa.Presentacion
 
                 for (int i = 0; i < dgvPROVEEDORES.Rows.Count; i++)
                 {
-                    if (dgvPROVEEDORES.Rows[i].Cells["IDPROVEEDOR"].Value?.ToString() == idBuscado)
+                    if (dgvPROVEEDORES.Rows[i].Cells["RNC"].Value?.ToString() == rncBuscado)
                     {
                         dgvPROVEEDORES.Rows[i].Selected = true;
                         dgvPROVEEDORES.CurrentCell = dgvPROVEEDORES.Rows[i].Cells[0];
@@ -132,11 +130,11 @@ namespace Capa.Presentacion
 
                 if (tipoProveedor == "LOCAL")
                 {
-                    nuevoProveedor = new ProveedorLocal(TxtIDPROVEEDOR.Text.Trim(), TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
+                    nuevoProveedor = new ProveedorLocal(TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
                 }
                 else if (tipoProveedor == "INTERNACIONAL")
                 {
-                    nuevoProveedor = new ProveedorInternacional(TxtIDPROVEEDOR.Text.Trim(), TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
+                    nuevoProveedor = new ProveedorInternacional(TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
                 }
                 else
                 {
@@ -144,11 +142,7 @@ namespace Capa.Presentacion
                     return;
                 }
 
-                if (!nuevoProveedor.EsValido())
-                {
-                    MessageBox.Show("El identificador ingresado no es válido.", "Validación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+             
 
                 using (SqlConnection conn = new SqlConnection(new Productos_Agri().Conexion))
                 {
@@ -211,7 +205,7 @@ namespace Capa.Presentacion
                 MessageBox.Show("No se pudo eliminar el proveedor. Verifica el RNC o intenta nuevamente.");
             }
 
-            // MODIFICADO: Se llama al método correcto para refrescar.
+            // Se llama al método correcto para refrescar.
             CargarProveedoresDesdeBD();
             LimpiarCampos();
 
@@ -221,16 +215,16 @@ namespace Capa.Presentacion
 
         private void dgvLISTATEMPORAL_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-           
+
         }
 
         private void FormPROVEEDORES_Load(object sender, EventArgs e)
         {
-            // 1. Evitar que se generen columnas automáticamente
+            // Evitar que se generen columnas automáticamente
             dgvPROVEEDORES.AutoGenerateColumns = false;
             dgvPROVEEDORES.Columns.Clear();
 
-            // 2. Definir las columnas manualmente y enlazar con los datos del DataTable
+            // Definir las columnas manualmente y enlazar con los datos del DataTable
             dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "IDPROVEEDOR", HeaderText = "ID", DataPropertyName = "IDPROVEEDOR" });
             dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "RNC", HeaderText = "RNC", DataPropertyName = "RNC" });
             dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "NOMBRE", HeaderText = "Nombre", DataPropertyName = "NOMBRE" });
@@ -239,7 +233,7 @@ namespace Capa.Presentacion
             dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "PRODUCTO", HeaderText = "Producto", DataPropertyName = "PRODUCTO" });
             dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "PRECIO", HeaderText = "Precio", DataPropertyName = "PRECIO" });
 
-            // 3. Cargar los datos desde la base de datos
+            //Cargar los datos desde la base de datos
             CargarProveedoresDesdeBD();
         }
 
@@ -252,60 +246,64 @@ namespace Capa.Presentacion
                 return;
             }
 
-            string rncSeleccionado = dgvPROVEEDORES.CurrentRow.Cells["RNC"].Value?.ToString();
-
-            if (!decimal.TryParse(TxtPRECIO.Text.Trim(), out decimal precio) || precio < 0 || precio > 1000000)
+            try
             {
-                MessageBox.Show("Formato de precio inválido. Debe estar entre 0 y 1,000,000.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                string rncSeleccionado = dgvPROVEEDORES.CurrentRow.Cells["RNC"].Value?.ToString();
 
-            PROVEEDOR proveedorActualizado;
-            string tipoProveedor = cmbTipoProveedor.SelectedItem?.ToString();
+                if (!decimal.TryParse(TxtPRECIO.Text.Trim(), out decimal precio) || precio < 0 || precio > 1000000)
+                {
+                    MessageBox.Show("Formato de precio inválido. Debe estar entre 0 y 1,000,000.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-            if (tipoProveedor == "LOCAL")
-            {
-                proveedorActualizado = new ProveedorLocal(TxtIDPROVEEDOR.Text.Trim(), TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
-            }
-            else if (tipoProveedor == "INTERNACIONAL")
-            {
-                proveedorActualizado = new ProveedorInternacional(TxtIDPROVEEDOR.Text.Trim(), TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
-            }
-            else
-            {
-                MessageBox.Show("Selecciona un tipo válido para el proveedor.", "Tipo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                PROVEEDOR proveedorActualizado;
+                string tipoProveedor = cmbTipoProveedor.SelectedItem?.ToString();
 
-            if (!proveedorActualizado.EsValido())
-            {
-                MessageBox.Show("El identificador ingresado no es válido.", "Validación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                if (tipoProveedor == "LOCAL")
+                {
+                    proveedorActualizado = new ProveedorLocal(TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
+                }
+                else if (tipoProveedor == "INTERNACIONAL")
+                {
+                    proveedorActualizado = new ProveedorInternacional(TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un tipo válido para el proveedor.", "Tipo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            CNProveedor negocio = new CNProveedor();
-            bool actualizado = negocio.ActualizarProveedor(rncSeleccionado, proveedorActualizado);
+                CNProveedor negocio = new CNProveedor();
+                bool actualizado = negocio.ActualizarProveedor(rncSeleccionado, proveedorActualizado);
 
-            if (actualizado)
-            {
-                MessageBox.Show("Proveedor actualizado correctamente.", "Edición exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (actualizado)
+                {
+                    MessageBox.Show("Proveedor actualizado correctamente.", "Edición exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar el proveedor. El RNC original no fue encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (InvalidOperationException ex)
             {
-                MessageBox.Show("No se pudo actualizar el proveedor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Captura el error específico de RNC duplicado.
+                MessageBox.Show(ex.Message, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            // MODIFICADO: Se llama al método correcto para refrescar.
-            CargarProveedoresDesdeBD();
-            LimpiarCampos();
+            catch (Exception ex)
+            {
+                // Captura cualquier otro error inesperado.
+                MessageBox.Show("Ocurrió un error inesperado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Se ejecuta siempre para refrescar la interfaz.
+                CargarProveedoresDesdeBD();
+                LimpiarCampos();
+            }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Pantalla_De_Inicio form = new Pantalla_De_Inicio();
-            form.Show();
-            this.Dispose();
-        }
+
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -314,6 +312,88 @@ namespace Capa.Presentacion
 
         private void TxtNOMBRE_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            btnLIMPIAR.Hide();
+            btnBUSCAR.Hide();
+            btnEDITAR.Hide();
+            btnELIMINAR.Hide();
+            btnREGISTRAR.Show();
+            TxtNOMBRE.Enabled = true;
+            TxtRNC.Enabled = true;
+            TxtTELEFONO.Enabled = true;
+            TxtPRECIO.Enabled = true;
+            TxtPRODUCTO.Enabled = true;
+            cmbTipoProveedor.Enabled = true;
+        }
+
+        private void pbBuscar_Click(object sender, EventArgs e)
+        {
+            btnLIMPIAR.Hide();
+            btnREGISTRAR.Hide();
+            btnEDITAR.Hide();
+            btnELIMINAR.Hide();
+            btnBUSCAR.Show();
+            TxtNOMBRE.Enabled = true;
+            TxtRNC.Enabled = true;
+            TxtTELEFONO.Enabled = true;
+            TxtPRECIO.Enabled = true;
+            TxtPRODUCTO.Enabled = true;
+            cmbTipoProveedor.Enabled = true;
+
+        }
+
+        private void pbEditar_Click(object sender, EventArgs e)
+        {
+            btnLIMPIAR.Hide();
+            btnREGISTRAR.Hide();
+            btnBUSCAR.Hide();
+            btnELIMINAR.Hide();
+            btnEDITAR.Show();
+            TxtNOMBRE.Enabled = true;
+            TxtRNC.Enabled = true;
+            TxtTELEFONO.Enabled = true;
+            TxtPRECIO.Enabled = true;
+            TxtPRODUCTO.Enabled = true;
+            cmbTipoProveedor.Enabled = true;
+        }
+
+        private void pbBorrar_Click(object sender, EventArgs e)
+        {
+            btnLIMPIAR.Hide();
+            btnREGISTRAR.Hide();
+            btnBUSCAR.Hide();
+            btnEDITAR.Hide();
+            btnELIMINAR.Show();
+            TxtNOMBRE.Enabled = true;
+            TxtRNC.Enabled = true;
+            TxtTELEFONO.Enabled = true;
+            TxtPRECIO.Enabled = true;
+            TxtPRODUCTO.Enabled = true;
+            cmbTipoProveedor.Enabled = true;
+        }
+
+        private void pbLimpiar_Click(object sender, EventArgs e)
+        {
+            btnELIMINAR.Hide();
+            btnREGISTRAR.Hide();
+            btnBUSCAR.Hide();
+            btnEDITAR.Hide();
+            btnLIMPIAR.Show();
+            TxtNOMBRE.Enabled = true;
+            TxtRNC.Enabled = true;
+            TxtTELEFONO.Enabled = true;
+            TxtPRECIO.Enabled = true;
+            TxtPRODUCTO.Enabled = true;
+            cmbTipoProveedor.Enabled = true;
+        }
+
+        private void TxtIDPROVEEDOR_TextChanged(object sender, EventArgs e)
+        {
+
 
         }
     }

@@ -62,10 +62,9 @@ namespace Capa_Negocios
                 }
             }
 
-            string query = "INSERT INTO PROVEEDOR (IDPROVEEDOR, RNC, NOMBRE, TELEFONO, TIPO, PRODUCTO, PRECIO) VALUES (@IDPROVEEDOR, @RNC, @NOMBRE, @TELEFONO, @TIPO, @PRODUCTO, @PRECIO)";
+            string query = "INSERT INTO PROVEEDOR (RNC, NOMBRE, TELEFONO, TIPO, PRODUCTO, PRECIO) VALUES (@RNC, @NOMBRE, @TELEFONO, @TIPO, @PRODUCTO, @PRECIO)";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@IDPROVEEDOR", proveedor.IDPROVEEDOR);
                 cmd.Parameters.AddWithValue("@RNC", proveedor.ObtenerIdentificadorPrincipal());
                 cmd.Parameters.AddWithValue("@NOMBRE", proveedor.NOMBRE);
                 cmd.Parameters.AddWithValue("@TELEFONO", proveedor.TELEFONO);
@@ -82,7 +81,7 @@ namespace Capa_Negocios
 
 
 
-        public DataTable BuscarProveedoresPorID(string IDPROVEEDOR)
+        public DataTable BuscarProveedoresPorRNC(string RNC)
         {
             Productos_Agri datos = new Productos_Agri();
 
@@ -90,10 +89,10 @@ namespace Capa_Negocios
             using (SqlConnection conn = new SqlConnection(datos.Conexion))
             {
                 // Usamos LIKE para búsquedas parciales
-                string query = "SELECT IDPROVEEDOR, RNC, NOMBRE, TELEFONO, TIPO, PRODUCTO, PRECIO FROM PROVEEDOR WHERE IDPROVEEDOR LIKE @IDPROVEEDOR";
+                string query = "SELECT RNC, NOMBRE, TELEFONO, TIPO, PRODUCTO, PRECIO FROM PROVEEDOR WHERE RNC LIKE @RNC";
                 using (SqlDataAdapter adapt = new SqlDataAdapter(query, conn))
                 {
-                    adapt.SelectCommand.Parameters.AddWithValue("@IDPROVEEDOR", "%" + IDPROVEEDOR + "%");
+                    adapt.SelectCommand.Parameters.AddWithValue("@RNC", "%" + RNC + "%");
                     adapt.Fill(dt);
                 }
 
@@ -128,13 +127,29 @@ namespace Capa_Negocios
 
             using (SqlConnection conn = new SqlConnection(datos.Conexion))
             {
+                conn.Open();
+
+                // --- INICIO DE LA VALIDACIÓN ---
+                // 1. Verificar si el nuevo RNC ya existe.
+                string checkQuery = "SELECT COUNT(1) FROM PROVEEDOR WHERE RNC = @RNC";
+                using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                {
+                    checkCmd.Parameters.AddWithValue("@RNC", proveedorNuevo.ObtenerIdentificadorPrincipal());
+                    int count = (int)checkCmd.ExecuteScalar();
+
+                    // 2. Si el RNC existe y no es el del proveedor que estamos editando, lanzar un error.
+                    if (count > 0 && rncOriginal != proveedorNuevo.ObtenerIdentificadorPrincipal())
+                    {
+                        throw new InvalidOperationException($"El RNC '{proveedorNuevo.ObtenerIdentificadorPrincipal()}' ya está asignado a otro proveedor.");
+                    }
+                }
+
                 string query = @"UPDATE PROVEEDOR
-                                 SET IDPROVEEDOR = @IDPROVEEDOR, RNC = @RNC, NOMBRE = @NOMBRE, TELEFONO = @TELEFONO, TIPO = @TIPO, PRODUCTO = @PRODUCTO, PRECIO = @PRECIO
+                                 SET RNC = @RNC, NOMBRE = @NOMBRE, TELEFONO = @TELEFONO, TIPO = @TIPO, PRODUCTO = @PRODUCTO, PRECIO = @PRECIO
                                  WHERE RNC = @RNC_ORIGINAL";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@RNC_ORIGINAL", rncOriginal);
-                cmd.Parameters.AddWithValue("@IDPROVEEDOR", proveedorNuevo.IDPROVEEDOR);
                 cmd.Parameters.AddWithValue("@RNC", proveedorNuevo.RNC);
                 cmd.Parameters.AddWithValue("@NOMBRE", proveedorNuevo.NOMBRE);
                 cmd.Parameters.AddWithValue("@TELEFONO", proveedorNuevo.TELEFONO);
@@ -142,7 +157,6 @@ namespace Capa_Negocios
                 cmd.Parameters.AddWithValue("@PRODUCTO", proveedorNuevo.PRODUCTO);
                 cmd.Parameters.AddWithValue("@PRECIO", proveedorNuevo.PRECIO);
 
-                conn.Open();
                 int filasAfectadas = cmd.ExecuteNonQuery();
                 return filasAfectadas > 0;
             }

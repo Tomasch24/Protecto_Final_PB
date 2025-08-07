@@ -11,8 +11,8 @@ using Capa_Negocios;
         public class ProveedorLocal : PROVEEDOR
         {
             //  Constructor: llama al constructor base con "LOCAL" como tipo fijo
-            public ProveedorLocal(string idproveedor, string rnc, string nombre, string telefono, string producto, decimal precio)
-                : base(idproveedor, rnc, nombre, telefono, producto, "LOCAL", precio)
+            public ProveedorLocal(string rnc, string nombre, string telefono, string producto, decimal precio)
+                : base(rnc, nombre, telefono, producto, "LOCAL", precio)
             {
             }
 
