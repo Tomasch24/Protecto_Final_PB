@@ -62,7 +62,7 @@
             BarraTitulo.Location = new Point(0, 0);
             BarraTitulo.Margin = new Padding(2);
             BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(1650, 57);
+            BarraTitulo.Size = new Size(1946, 71);
             BarraTitulo.TabIndex = 11;
             BarraTitulo.Paint += BarraTitulo_Paint;
             // 
@@ -83,8 +83,9 @@
             MenuVertical.Dock = DockStyle.Left;
             MenuVertical.ForeColor = SystemColors.ControlText;
             MenuVertical.Location = new Point(0, 0);
+            MenuVertical.Margin = new Padding(4);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(279, 764);
+            MenuVertical.Size = new Size(349, 955);
             MenuVertical.TabIndex = 11;
             MenuVertical.Paint += MenuVertical_Paint;
             // 
@@ -94,9 +95,10 @@
             lblemail.BackColor = Color.Transparent;
             lblemail.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblemail.ForeColor = Color.White;
-            lblemail.Location = new Point(112, 108);
+            lblemail.Location = new Point(140, 135);
+            lblemail.Margin = new Padding(4, 0, 4, 0);
             lblemail.Name = "lblemail";
-            lblemail.Size = new Size(44, 17);
+            lblemail.Size = new Size(54, 21);
             lblemail.TabIndex = 14;
             lblemail.Text = "E-mail";
             // 
@@ -106,9 +108,10 @@
             lblnom.BackColor = Color.Transparent;
             lblnom.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblnom.ForeColor = Color.White;
-            lblnom.Location = new Point(112, 21);
+            lblnom.Location = new Point(140, 26);
+            lblnom.Margin = new Padding(4, 0, 4, 0);
             lblnom.Name = "lblnom";
-            lblnom.Size = new Size(57, 17);
+            lblnom.Size = new Size(68, 21);
             lblnom.TabIndex = 13;
             lblnom.Text = "Nombre";
             // 
@@ -118,9 +121,10 @@
             btnClientes.FlatAppearance.BorderSize = 0;
             btnClientes.FlatStyle = FlatStyle.Flat;
             btnClientes.ForeColor = Color.White;
-            btnClientes.Location = new Point(42, 472);
+            btnClientes.Location = new Point(52, 590);
+            btnClientes.Margin = new Padding(4);
             btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(186, 38);
+            btnClientes.Size = new Size(232, 48);
             btnClientes.TabIndex = 7;
             btnClientes.Text = "Clientes";
             btnClientes.UseVisualStyleBackColor = false;
@@ -132,9 +136,10 @@
             lblRol.BackColor = Color.Transparent;
             lblRol.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblRol.ForeColor = Color.White;
-            lblRol.Location = new Point(112, 69);
+            lblRol.Location = new Point(140, 86);
+            lblRol.Margin = new Padding(4, 0, 4, 0);
             lblRol.Name = "lblRol";
-            lblRol.Size = new Size(27, 17);
+            lblRol.Size = new Size(33, 21);
             lblRol.TabIndex = 12;
             lblRol.Text = "Rol";
             // 
@@ -144,9 +149,10 @@
             BotonParaDashBoard.FlatAppearance.BorderSize = 0;
             BotonParaDashBoard.FlatStyle = FlatStyle.Flat;
             BotonParaDashBoard.ForeColor = Color.White;
-            BotonParaDashBoard.Location = new Point(42, 156);
+            BotonParaDashBoard.Location = new Point(52, 195);
+            BotonParaDashBoard.Margin = new Padding(4);
             BotonParaDashBoard.Name = "BotonParaDashBoard";
-            BotonParaDashBoard.Size = new Size(186, 38);
+            BotonParaDashBoard.Size = new Size(232, 48);
             BotonParaDashBoard.TabIndex = 6;
             BotonParaDashBoard.Text = "Dasboard";
             BotonParaDashBoard.UseVisualStyleBackColor = false;
@@ -158,11 +164,12 @@
             btnReportes.FlatAppearance.BorderSize = 0;
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.ForeColor = Color.White;
-            btnReportes.Location = new Point(42, 615);
+            btnReportes.Location = new Point(52, 769);
+            btnReportes.Margin = new Padding(4);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(186, 38);
+            btnReportes.Size = new Size(232, 48);
             btnReportes.TabIndex = 5;
-            btnReportes.Text = "Reportes";
+            btnReportes.Text = "Sistema";
             btnReportes.UseVisualStyleBackColor = false;
             btnReportes.Click += btnReportes_Click;
             // 
@@ -170,10 +177,10 @@
             // 
             PBuser.BackColor = Color.Transparent;
             PBuser.Image = Capa_Presentacion.Properties.Resources.USUARIO_NEGRO;
-            PBuser.Location = new Point(0, 21);
+            PBuser.Location = new Point(0, 26);
             PBuser.Margin = new Padding(2);
             PBuser.Name = "PBuser";
-            PBuser.Size = new Size(107, 88);
+            PBuser.Size = new Size(134, 110);
             PBuser.SizeMode = PictureBoxSizeMode.Zoom;
             PBuser.TabIndex = 11;
             PBuser.TabStop = false;
@@ -185,9 +192,10 @@
             btnProveedores.FlatAppearance.BorderSize = 0;
             btnProveedores.FlatStyle = FlatStyle.Flat;
             btnProveedores.ForeColor = Color.White;
-            btnProveedores.Location = new Point(42, 541);
+            btnProveedores.Location = new Point(52, 676);
+            btnProveedores.Margin = new Padding(4);
             btnProveedores.Name = "btnProveedores";
-            btnProveedores.Size = new Size(186, 38);
+            btnProveedores.Size = new Size(232, 48);
             btnProveedores.TabIndex = 4;
             btnProveedores.Text = "Proveedores";
             btnProveedores.UseVisualStyleBackColor = false;
@@ -199,9 +207,10 @@
             btnPedidos.FlatAppearance.BorderSize = 0;
             btnPedidos.FlatStyle = FlatStyle.Flat;
             btnPedidos.ForeColor = Color.White;
-            btnPedidos.Location = new Point(42, 395);
+            btnPedidos.Location = new Point(52, 494);
+            btnPedidos.Margin = new Padding(4);
             btnPedidos.Name = "btnPedidos";
-            btnPedidos.Size = new Size(186, 38);
+            btnPedidos.Size = new Size(232, 48);
             btnPedidos.TabIndex = 3;
             btnPedidos.Text = "Pedidos";
             btnPedidos.UseVisualStyleBackColor = false;
@@ -213,9 +222,10 @@
             btnFacturacion.FlatAppearance.BorderSize = 0;
             btnFacturacion.FlatStyle = FlatStyle.Flat;
             btnFacturacion.ForeColor = Color.White;
-            btnFacturacion.Location = new Point(42, 313);
+            btnFacturacion.Location = new Point(52, 391);
+            btnFacturacion.Margin = new Padding(4);
             btnFacturacion.Name = "btnFacturacion";
-            btnFacturacion.Size = new Size(186, 38);
+            btnFacturacion.Size = new Size(232, 48);
             btnFacturacion.TabIndex = 2;
             btnFacturacion.Text = "Facturación";
             btnFacturacion.UseVisualStyleBackColor = false;
@@ -227,11 +237,12 @@
             btnCatalogo.FlatAppearance.BorderSize = 0;
             btnCatalogo.FlatStyle = FlatStyle.Flat;
             btnCatalogo.ForeColor = Color.White;
-            btnCatalogo.Location = new Point(42, 233);
+            btnCatalogo.Location = new Point(52, 291);
+            btnCatalogo.Margin = new Padding(4);
             btnCatalogo.Name = "btnCatalogo";
-            btnCatalogo.Size = new Size(186, 38);
+            btnCatalogo.Size = new Size(232, 48);
             btnCatalogo.TabIndex = 1;
-            btnCatalogo.Text = "Catalogo";
+            btnCatalogo.Text = "Catálogo";
             btnCatalogo.UseVisualStyleBackColor = false;
             btnCatalogo.Click += button2_Click;
             // 
@@ -240,18 +251,20 @@
             PanelHerencia.Controls.Add(panel1);
             PanelHerencia.Controls.Add(MenuVertical);
             PanelHerencia.Dock = DockStyle.Fill;
-            PanelHerencia.Location = new Point(0, 57);
+            PanelHerencia.Location = new Point(0, 71);
+            PanelHerencia.Margin = new Padding(4);
             PanelHerencia.Name = "PanelHerencia";
-            PanelHerencia.Size = new Size(1650, 764);
+            PanelHerencia.Size = new Size(1946, 955);
             PanelHerencia.TabIndex = 12;
             // 
             // panel1
             // 
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(279, 0);
+            panel1.Location = new Point(349, 0);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1371, 764);
+            panel1.Size = new Size(1597, 955);
             panel1.TabIndex = 12;
             panel1.Paint += panel1_Paint_3;
             // 
@@ -259,9 +272,10 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Capa_Presentacion.Properties.Resources.LOGO_OSCURO;
-            pictureBox1.Location = new Point(432, 156);
+            pictureBox1.Location = new Point(540, 195);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(556, 410);
+            pictureBox1.Size = new Size(578, 512);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -274,10 +288,10 @@
             // 
             // Pantalla_De_Inicio
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1650, 821);
+            ClientSize = new Size(1946, 1026);
             Controls.Add(PanelHerencia);
             Controls.Add(BarraTitulo);
             FormBorderStyle = FormBorderStyle.None;

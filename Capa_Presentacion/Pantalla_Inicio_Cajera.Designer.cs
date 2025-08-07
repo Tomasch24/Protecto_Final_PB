@@ -54,11 +54,12 @@
             btnCatalogo.FlatAppearance.BorderSize = 0;
             btnCatalogo.FlatStyle = FlatStyle.Flat;
             btnCatalogo.ForeColor = Color.White;
-            btnCatalogo.Location = new Point(42, 192);
+            btnCatalogo.Location = new Point(52, 240);
+            btnCatalogo.Margin = new Padding(4);
             btnCatalogo.Name = "btnCatalogo";
-            btnCatalogo.Size = new Size(186, 38);
+            btnCatalogo.Size = new Size(232, 48);
             btnCatalogo.TabIndex = 1;
-            btnCatalogo.Text = "Catalogo";
+            btnCatalogo.Text = "Catálogo";
             btnCatalogo.UseVisualStyleBackColor = false;
             btnCatalogo.Click += btnCatalogo_Click;
             // 
@@ -68,9 +69,10 @@
             btnFacturacion.FlatAppearance.BorderSize = 0;
             btnFacturacion.FlatStyle = FlatStyle.Flat;
             btnFacturacion.ForeColor = Color.White;
-            btnFacturacion.Location = new Point(42, 274);
+            btnFacturacion.Location = new Point(52, 342);
+            btnFacturacion.Margin = new Padding(4);
             btnFacturacion.Name = "btnFacturacion";
-            btnFacturacion.Size = new Size(186, 38);
+            btnFacturacion.Size = new Size(232, 48);
             btnFacturacion.TabIndex = 2;
             btnFacturacion.Text = "Facturación";
             btnFacturacion.UseVisualStyleBackColor = false;
@@ -82,9 +84,10 @@
             btnPedidos.FlatAppearance.BorderSize = 0;
             btnPedidos.FlatStyle = FlatStyle.Flat;
             btnPedidos.ForeColor = Color.White;
-            btnPedidos.Location = new Point(42, 349);
+            btnPedidos.Location = new Point(52, 436);
+            btnPedidos.Margin = new Padding(4);
             btnPedidos.Name = "btnPedidos";
-            btnPedidos.Size = new Size(186, 38);
+            btnPedidos.Size = new Size(232, 48);
             btnPedidos.TabIndex = 3;
             btnPedidos.Text = "Pedidos";
             btnPedidos.UseVisualStyleBackColor = false;
@@ -94,10 +97,10 @@
             // 
             PBuser.BackColor = Color.Transparent;
             PBuser.Image = Properties.Resources.USUARIO_NEGRO;
-            PBuser.Location = new Point(0, 21);
+            PBuser.Location = new Point(0, 26);
             PBuser.Margin = new Padding(2);
             PBuser.Name = "PBuser";
-            PBuser.Size = new Size(107, 88);
+            PBuser.Size = new Size(134, 110);
             PBuser.SizeMode = PictureBoxSizeMode.Zoom;
             PBuser.TabIndex = 11;
             PBuser.TabStop = false;
@@ -108,11 +111,12 @@
             btnReportes.FlatAppearance.BorderSize = 0;
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.ForeColor = Color.White;
-            btnReportes.Location = new Point(42, 493);
+            btnReportes.Location = new Point(52, 616);
+            btnReportes.Margin = new Padding(4);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(186, 38);
+            btnReportes.Size = new Size(232, 48);
             btnReportes.TabIndex = 5;
-            btnReportes.Text = "Reportes";
+            btnReportes.Text = "Sistema";
             btnReportes.UseVisualStyleBackColor = false;
             btnReportes.Click += btnReportes_Click;
             // 
@@ -122,9 +126,10 @@
             lblRol.BackColor = Color.Transparent;
             lblRol.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblRol.ForeColor = Color.White;
-            lblRol.Location = new Point(112, 69);
+            lblRol.Location = new Point(140, 86);
+            lblRol.Margin = new Padding(4, 0, 4, 0);
             lblRol.Name = "lblRol";
-            lblRol.Size = new Size(27, 17);
+            lblRol.Size = new Size(33, 21);
             lblRol.TabIndex = 12;
             lblRol.Text = "Rol";
             // 
@@ -134,9 +139,10 @@
             btnClientes.FlatAppearance.BorderSize = 0;
             btnClientes.FlatStyle = FlatStyle.Flat;
             btnClientes.ForeColor = Color.White;
-            btnClientes.Location = new Point(42, 422);
+            btnClientes.Location = new Point(52, 528);
+            btnClientes.Margin = new Padding(4);
             btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(186, 38);
+            btnClientes.Size = new Size(232, 48);
             btnClientes.TabIndex = 7;
             btnClientes.Text = "Clientes";
             btnClientes.UseVisualStyleBackColor = false;
@@ -148,9 +154,10 @@
             lblnom.BackColor = Color.Transparent;
             lblnom.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblnom.ForeColor = Color.White;
-            lblnom.Location = new Point(112, 21);
+            lblnom.Location = new Point(140, 26);
+            lblnom.Margin = new Padding(4, 0, 4, 0);
             lblnom.Name = "lblnom";
-            lblnom.Size = new Size(57, 17);
+            lblnom.Size = new Size(68, 21);
             lblnom.TabIndex = 13;
             lblnom.Text = "Nombre";
             // 
@@ -160,9 +167,10 @@
             lblemail.BackColor = Color.Transparent;
             lblemail.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblemail.ForeColor = Color.White;
-            lblemail.Location = new Point(112, 108);
+            lblemail.Location = new Point(140, 135);
+            lblemail.Margin = new Padding(4, 0, 4, 0);
             lblemail.Name = "lblemail";
-            lblemail.Size = new Size(44, 17);
+            lblemail.Size = new Size(54, 21);
             lblemail.TabIndex = 14;
             lblemail.Text = "E-mail";
             // 
@@ -180,9 +188,10 @@
             MenuVertical.Controls.Add(btnCatalogo);
             MenuVertical.Dock = DockStyle.Left;
             MenuVertical.ForeColor = SystemColors.ControlText;
-            MenuVertical.Location = new Point(0, 57);
+            MenuVertical.Location = new Point(0, 71);
+            MenuVertical.Margin = new Padding(4);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(279, 717);
+            MenuVertical.Size = new Size(349, 897);
             MenuVertical.TabIndex = 13;
             // 
             // panel1
@@ -190,18 +199,20 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(PanelHerencia);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 57);
+            panel1.Location = new Point(0, 71);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1632, 717);
+            panel1.Size = new Size(1924, 897);
             panel1.TabIndex = 15;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.LOGO_OSCURO;
-            pictureBox1.Location = new Point(718, 177);
+            pictureBox1.Location = new Point(898, 221);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(485, 443);
+            pictureBox1.Size = new Size(490, 555);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -211,8 +222,9 @@
             // 
             PanelHerencia.Dock = DockStyle.Fill;
             PanelHerencia.Location = new Point(0, 0);
+            PanelHerencia.Margin = new Padding(4);
             PanelHerencia.Name = "PanelHerencia";
-            PanelHerencia.Size = new Size(1632, 717);
+            PanelHerencia.Size = new Size(1924, 897);
             PanelHerencia.TabIndex = 1;
             // 
             // BarraTitulo
@@ -223,17 +235,18 @@
             BarraTitulo.Location = new Point(0, 0);
             BarraTitulo.Margin = new Padding(2);
             BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(1632, 57);
+            BarraTitulo.Size = new Size(1924, 71);
             BarraTitulo.TabIndex = 14;
             // 
             // Pantalla_Inicio_Cajera
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1632, 774);
+            ClientSize = new Size(1924, 968);
             Controls.Add(MenuVertical);
             Controls.Add(panel1);
             Controls.Add(BarraTitulo);
+            Margin = new Padding(4);
             Name = "Pantalla_Inicio_Cajera";
             Text = "Pantalla_Inicio_Cajera";
             ((System.ComponentModel.ISupportInitialize)PBuser).EndInit();
