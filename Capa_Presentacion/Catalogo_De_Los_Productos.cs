@@ -49,6 +49,9 @@ namespace Capa_Interfas
                     {
                         UCProducto ucpro = new UCProducto();
 
+                        //TODO Suscribirse al evento ProductoAgregado del UserControl
+                        ucpro.ProductoAgregado += UcProducto_ProductoAgregado;
+
                         //TODO Obtener la ruta de la imagen (si existe)
                         string imagenPath = reader["ImagenPath"] != DBNull.Value ? reader["ImagenPath"].ToString() : string.Empty;
 
@@ -72,6 +75,23 @@ namespace Capa_Interfas
                 MessageBox.Show("Error al cargar los productos:\n" + ex.Message + "\n\n" + ex.StackTrace);
 
             }
+        }
+
+
+        private Facturacion formFacturacion;
+
+        private void UcProducto_ProductoAgregado(object sender, UCProducto.ProductoEventArgs e)
+        {
+            // Verifica si el formulario ya está abierto o fue cerrado
+            if (formFacturacion == null || formFacturacion.IsDisposed)
+                formFacturacion = new Facturacion();
+
+            // Pasa los datos al formulario de facturación
+            formFacturacion.SetDatosProducto(e);
+
+            // Muestra el formulario y lo trae al frente
+            formFacturacion.Show();
+            formFacturacion.BringToFront();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -136,6 +156,9 @@ namespace Capa_Interfas
                 }
             }
         }
+
+
+       
     }
 }
 

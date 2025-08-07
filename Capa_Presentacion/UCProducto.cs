@@ -69,7 +69,11 @@ namespace Capa_Presentacion
         private decimal ObtenerPrecio(string texto)
         {
             //TODO Elimina la etiqueta y el símbolo de moneda
-            string sinEtiqueta = texto.Replace("Precio: ", "").Replace("$", "").Trim();                
+            string sinEtiqueta = texto.Replace("Precio: ", "")
+                               .Replace("DOP", "")
+                               .Replace("RD$", "")
+                               .Replace("$", "")
+                               .Trim();
 
             decimal precio;
             return decimal.TryParse(sinEtiqueta, NumberStyles.Any, CultureInfo.InvariantCulture, out precio) ? precio : 0m;
@@ -103,12 +107,9 @@ namespace Capa_Presentacion
 
             
         }
-        private void ProductoSeleccionado()
-        {
-            Facturacion F;
-            
-        }
-        
+
+  
+
         public void HabilitarBotonAgregar()
         {
             btnAgregarFac.Enabled = true;
