@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             txtIdCliente = new TextBox();
             lblRnc = new Label();
             lblTelefono = new Label();
@@ -74,7 +77,9 @@
             txtTotal = new TextBox();
             txtPago = new TextBox();
             txtCambio = new TextBox();
-            button1 = new Button();
+            btnFacturar = new Button();
+            cbMetodoPago = new ComboBox();
+            pbAtrasMP = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvFactura).BeginInit();
             gbDatosC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbBuscarIdCliente).BeginInit();
@@ -82,10 +87,12 @@
             gbInformacionP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbBuscarIdProducto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbAtrasMP).BeginInit();
             SuspendLayout();
             // 
             // txtIdCliente
             // 
+            txtIdCliente.Enabled = false;
             txtIdCliente.Font = new Font("Verdana", 10F);
             txtIdCliente.Location = new Point(25, 86);
             txtIdCliente.Margin = new Padding(2);
@@ -97,10 +104,10 @@
             // lblRnc
             // 
             lblRnc.AutoSize = true;
-            lblRnc.BackColor = Color.FromArgb(88, 173, 83);
+            lblRnc.BackColor = Color.FromArgb(111, 129, 105);
             lblRnc.Font = new Font("Verdana", 9F);
             lblRnc.ForeColor = Color.White;
-            lblRnc.Location = new Point(848, 48);
+            lblRnc.Location = new Point(752, 48);
             lblRnc.Margin = new Padding(2, 0, 2, 0);
             lblRnc.Name = "lblRnc";
             lblRnc.Size = new Size(49, 22);
@@ -110,10 +117,10 @@
             // lblTelefono
             // 
             lblTelefono.AutoSize = true;
-            lblTelefono.BackColor = Color.FromArgb(88, 173, 83);
+            lblTelefono.BackColor = Color.FromArgb(111, 129, 105);
             lblTelefono.Font = new Font("Verdana", 9F);
             lblTelefono.ForeColor = Color.White;
-            lblTelefono.Location = new Point(518, 48);
+            lblTelefono.Location = new Point(465, 48);
             lblTelefono.Margin = new Padding(2, 0, 2, 0);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(85, 22);
@@ -123,10 +130,10 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.BackColor = Color.FromArgb(88, 173, 83);
+            lblNombre.BackColor = Color.FromArgb(111, 129, 105);
             lblNombre.Font = new Font("Verdana", 9F);
             lblNombre.ForeColor = Color.White;
-            lblNombre.Location = new Point(190, 48);
+            lblNombre.Location = new Point(170, 49);
             lblNombre.Margin = new Padding(2, 0, 2, 0);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(82, 22);
@@ -135,8 +142,9 @@
             // 
             // MtxtRnc
             // 
+            MtxtRnc.Enabled = false;
             MtxtRnc.Font = new Font("Verdana", 10F);
-            MtxtRnc.Location = new Point(848, 86);
+            MtxtRnc.Location = new Point(752, 86);
             MtxtRnc.Margin = new Padding(2);
             MtxtRnc.Mask = "000-0000000-0";
             MtxtRnc.Name = "MtxtRnc";
@@ -145,9 +153,10 @@
             // 
             // MtxtTelefono
             // 
+            MtxtTelefono.Enabled = false;
             MtxtTelefono.Font = new Font("Verdana", 10F);
             MtxtTelefono.ForeColor = SystemColors.ControlText;
-            MtxtTelefono.Location = new Point(518, 86);
+            MtxtTelefono.Location = new Point(465, 86);
             MtxtTelefono.Margin = new Padding(2);
             MtxtTelefono.Mask = "+1 (999) 000-0000";
             MtxtTelefono.Name = "MtxtTelefono";
@@ -156,8 +165,9 @@
             // 
             // txtNombre
             // 
+            txtNombre.Enabled = false;
             txtNombre.Font = new Font("Verdana", 10F);
-            txtNombre.Location = new Point(190, 86);
+            txtNombre.Location = new Point(170, 87);
             txtNombre.Margin = new Padding(2);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(236, 32);
@@ -171,7 +181,6 @@
             dgvFactura.AllowUserToResizeRows = false;
             dgvFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvFactura.BackgroundColor = Color.White;
-            dgvFactura.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
             dataGridViewCellStyle1.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -188,10 +197,10 @@
             dgvFactura.Name = "dgvFactura";
             dgvFactura.ReadOnly = true;
             dgvFactura.RowHeadersWidth = 62;
-            dataGridViewCellStyle2.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Green;
-            dgvFactura.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Green;
+            dgvFactura.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvFactura.Size = new Size(1453, 506);
             dgvFactura.TabIndex = 100;
             dgvFactura.CellContentClick += dgvFactura_CellContentClick;
@@ -203,6 +212,7 @@
             IdProducto.MinimumWidth = 8;
             IdProducto.Name = "IdProducto";
             IdProducto.ReadOnly = true;
+            IdProducto.Resizable = DataGridViewTriState.False;
             IdProducto.Visible = false;
             // 
             // Producto
@@ -211,14 +221,18 @@
             Producto.MinimumWidth = 8;
             Producto.Name = "Producto";
             Producto.ReadOnly = true;
-            Producto.Resizable = DataGridViewTriState.True;
+            Producto.Resizable = DataGridViewTriState.False;
             // 
             // Precio
             // 
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle2;
             Precio.HeaderText = "Precio";
             Precio.MinimumWidth = 8;
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
+            Precio.Resizable = DataGridViewTriState.False;
             // 
             // Cantidad
             // 
@@ -226,20 +240,29 @@
             Cantidad.MinimumWidth = 8;
             Cantidad.Name = "Cantidad";
             Cantidad.ReadOnly = true;
+            Cantidad.Resizable = DataGridViewTriState.False;
             // 
             // SubTotal
             // 
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            SubTotal.DefaultCellStyle = dataGridViewCellStyle3;
             SubTotal.HeaderText = "SubTotal";
             SubTotal.MinimumWidth = 8;
             SubTotal.Name = "SubTotal";
             SubTotal.ReadOnly = true;
+            SubTotal.Resizable = DataGridViewTriState.False;
             // 
             // Descuento
             // 
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle4;
             Descuento.HeaderText = "Descuento";
             Descuento.MinimumWidth = 8;
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
+            Descuento.Resizable = DataGridViewTriState.False;
             // 
             // btnEliminar
             // 
@@ -252,6 +275,7 @@
             // 
             // gbDatosC
             // 
+            gbDatosC.BackColor = Color.FromArgb(111, 129, 105);
             gbDatosC.Controls.Add(pbBuscarIdCliente);
             gbDatosC.Controls.Add(txtIdCliente);
             gbDatosC.Controls.Add(txtNombre);
@@ -263,11 +287,11 @@
             gbDatosC.Controls.Add(lblRnc);
             gbDatosC.Font = new Font("Lucida Sans", 12F, FontStyle.Bold);
             gbDatosC.ForeColor = Color.White;
-            gbDatosC.Location = new Point(698, 118);
+            gbDatosC.Location = new Point(705, 118);
             gbDatosC.Margin = new Padding(2);
             gbDatosC.Name = "gbDatosC";
             gbDatosC.Padding = new Padding(2);
-            gbDatosC.Size = new Size(1164, 155);
+            gbDatosC.Size = new Size(1022, 155);
             gbDatosC.TabIndex = 22;
             gbDatosC.TabStop = false;
             gbDatosC.Text = "Datos del Cliente";
@@ -275,8 +299,9 @@
             // pbBuscarIdCliente
             // 
             pbBuscarIdCliente.BackColor = Color.Transparent;
+            pbBuscarIdCliente.Enabled = false;
             pbBuscarIdCliente.Image = Properties.Resources.icons8_search_32;
-            pbBuscarIdCliente.Location = new Point(140, 86);
+            pbBuscarIdCliente.Location = new Point(111, 86);
             pbBuscarIdCliente.Margin = new Padding(2);
             pbBuscarIdCliente.Name = "pbBuscarIdCliente";
             pbBuscarIdCliente.Size = new Size(30, 36);
@@ -288,7 +313,7 @@
             // lblIdCliente
             // 
             lblIdCliente.AutoSize = true;
-            lblIdCliente.BackColor = Color.FromArgb(88, 173, 83);
+            lblIdCliente.BackColor = Color.FromArgb(111, 129, 105);
             lblIdCliente.Font = new Font("Verdana", 9F);
             lblIdCliente.ForeColor = Color.White;
             lblIdCliente.Location = new Point(25, 48);
@@ -300,6 +325,7 @@
             // 
             // txtProducto
             // 
+            txtProducto.Enabled = false;
             txtProducto.Font = new Font("Verdana", 10F);
             txtProducto.Location = new Point(190, 96);
             txtProducto.Margin = new Padding(2);
@@ -309,6 +335,7 @@
             // 
             // txtPrecio
             // 
+            txtPrecio.Enabled = false;
             txtPrecio.Font = new Font("Verdana", 10F);
             txtPrecio.Location = new Point(525, 96);
             txtPrecio.Margin = new Padding(2);
@@ -332,6 +359,7 @@
             // 
             // cbTipo
             // 
+            cbTipo.Enabled = false;
             cbTipo.Font = new Font("Verdana", 10F);
             cbTipo.FormattingEnabled = true;
             cbTipo.Location = new Point(319, 86);
@@ -343,7 +371,7 @@
             // lblProducto
             // 
             lblProducto.AutoSize = true;
-            lblProducto.BackColor = Color.FromArgb(88, 173, 83);
+            lblProducto.BackColor = Color.FromArgb(111, 129, 105);
             lblProducto.Font = new Font("Verdana", 9F);
             lblProducto.ForeColor = Color.White;
             lblProducto.Location = new Point(190, 53);
@@ -356,7 +384,7 @@
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
-            lblPrecio.BackColor = Color.FromArgb(88, 173, 83);
+            lblPrecio.BackColor = Color.FromArgb(111, 129, 105);
             lblPrecio.Font = new Font("Verdana", 9F);
             lblPrecio.ForeColor = Color.White;
             lblPrecio.Location = new Point(525, 53);
@@ -369,7 +397,7 @@
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.BackColor = Color.FromArgb(88, 173, 83);
+            lblCantidad.BackColor = Color.FromArgb(111, 129, 105);
             lblCantidad.Font = new Font("Verdana", 9F);
             lblCantidad.ForeColor = Color.White;
             lblCantidad.Location = new Point(1206, 53);
@@ -382,7 +410,7 @@
             // lblTipo
             // 
             lblTipo.AutoSize = true;
-            lblTipo.BackColor = Color.FromArgb(88, 173, 83);
+            lblTipo.BackColor = Color.FromArgb(111, 129, 105);
             lblTipo.Font = new Font("Verdana", 9F);
             lblTipo.ForeColor = Color.White;
             lblTipo.Location = new Point(319, 48);
@@ -395,7 +423,7 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.BackColor = Color.FromArgb(88, 173, 83);
+            lblFecha.BackColor = Color.FromArgb(111, 129, 105);
             lblFecha.Font = new Font("Verdana", 9F);
             lblFecha.ForeColor = Color.White;
             lblFecha.Location = new Point(8, 48);
@@ -407,11 +435,12 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.BackColor = Color.DarkGreen;
+            btnAgregar.BackColor = Color.FromArgb(41, 76, 37);
+            btnAgregar.Enabled = false;
             btnAgregar.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAgregar.Image = Properties.Resources.icons8_plus_math_64__1_;
             btnAgregar.ImageAlign = ContentAlignment.TopCenter;
-            btnAgregar.Location = new Point(1608, 314);
+            btnAgregar.Location = new Point(1525, 309);
             btnAgregar.Margin = new Padding(2);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(202, 113);
@@ -425,7 +454,7 @@
             // 
             btnGenerarFacturaPDF.BackColor = Color.Red;
             btnGenerarFacturaPDF.ForeColor = Color.White;
-            btnGenerarFacturaPDF.Location = new Point(1583, 820);
+            btnGenerarFacturaPDF.Location = new Point(1525, 757);
             btnGenerarFacturaPDF.Margin = new Padding(2);
             btnGenerarFacturaPDF.Name = "btnGenerarFacturaPDF";
             btnGenerarFacturaPDF.Size = new Size(189, 51);
@@ -436,6 +465,7 @@
             // 
             // gbDatosV
             // 
+            gbDatosV.BackColor = Color.FromArgb(111, 129, 105);
             gbDatosV.Controls.Add(cbTipo);
             gbDatosV.Controls.Add(lblTipo);
             gbDatosV.Controls.Add(lblFecha);
@@ -453,6 +483,7 @@
             // 
             // gbInformacionP
             // 
+            gbInformacionP.BackColor = Color.FromArgb(111, 129, 105);
             gbInformacionP.Controls.Add(pbBuscarIdProducto);
             gbInformacionP.Controls.Add(txtIdProducto);
             gbInformacionP.Controls.Add(lblIdProducto);
@@ -466,7 +497,7 @@
             gbInformacionP.Controls.Add(txtPrecio);
             gbInformacionP.Font = new Font("Lucida Sans", 12F, FontStyle.Bold);
             gbInformacionP.ForeColor = Color.White;
-            gbInformacionP.Location = new Point(40, 295);
+            gbInformacionP.Location = new Point(40, 294);
             gbInformacionP.Margin = new Padding(2);
             gbInformacionP.Name = "gbInformacionP";
             gbInformacionP.Padding = new Padding(2);
@@ -478,6 +509,7 @@
             // pbBuscarIdProducto
             // 
             pbBuscarIdProducto.BackColor = Color.Transparent;
+            pbBuscarIdProducto.Enabled = false;
             pbBuscarIdProducto.Image = Properties.Resources.icons8_search_32;
             pbBuscarIdProducto.Location = new Point(122, 96);
             pbBuscarIdProducto.Margin = new Padding(2);
@@ -489,6 +521,7 @@
             // 
             // txtIdProducto
             // 
+            txtIdProducto.Enabled = false;
             txtIdProducto.Font = new Font("Verdana", 10F);
             txtIdProducto.Location = new Point(8, 96);
             txtIdProducto.Margin = new Padding(2);
@@ -500,7 +533,7 @@
             // lblIdProducto
             // 
             lblIdProducto.AutoSize = true;
-            lblIdProducto.BackColor = Color.FromArgb(88, 173, 83);
+            lblIdProducto.BackColor = Color.FromArgb(111, 129, 105);
             lblIdProducto.Font = new Font("Verdana", 9F);
             lblIdProducto.ForeColor = Color.White;
             lblIdProducto.Location = new Point(8, 53);
@@ -512,6 +545,7 @@
             // 
             // nudCantidad
             // 
+            nudCantidad.Enabled = false;
             nudCantidad.Font = new Font("Verdana", 10F);
             nudCantidad.Location = new Point(1206, 97);
             nudCantidad.Margin = new Padding(2);
@@ -523,7 +557,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(88, 173, 83);
+            label1.BackColor = Color.FromArgb(111, 129, 105);
             label1.Font = new Font("Verdana", 9F);
             label1.ForeColor = Color.White;
             label1.Location = new Point(872, 53);
@@ -535,6 +569,7 @@
             // 
             // txtStock
             // 
+            txtStock.Enabled = false;
             txtStock.Font = new Font("Verdana", 10F);
             txtStock.Location = new Point(872, 96);
             txtStock.Margin = new Padding(2);
@@ -546,23 +581,23 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.FromArgb(88, 173, 83);
-            lblTitulo.Font = new Font("Lucida Sans", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(72, 42);
+            lblTitulo.BackColor = Color.Transparent;
+            lblTitulo.Font = new Font("Lucida Sans", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.FromArgb(111, 129, 105);
+            lblTitulo.Location = new Point(40, 35);
             lblTitulo.Margin = new Padding(2, 0, 2, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(137, 45);
+            lblTitulo.Size = new Size(194, 55);
             lblTitulo.TabIndex = 18;
-            lblTitulo.Text = "Venta";
+            lblTitulo.Text = "VENTA";
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.BackColor = Color.FromArgb(88, 173, 83);
+            lblTotal.BackColor = Color.FromArgb(111, 129, 105);
             lblTotal.Font = new Font("Verdana", 9F);
             lblTotal.ForeColor = Color.White;
-            lblTotal.Location = new Point(1574, 507);
+            lblTotal.Location = new Point(1525, 493);
             lblTotal.Margin = new Padding(2, 0, 2, 0);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(128, 22);
@@ -572,23 +607,23 @@
             // lblPago
             // 
             lblPago.AutoSize = true;
-            lblPago.BackColor = Color.FromArgb(88, 173, 83);
+            lblPago.BackColor = Color.FromArgb(111, 129, 105);
             lblPago.Font = new Font("Verdana", 9F);
             lblPago.ForeColor = Color.White;
-            lblPago.Location = new Point(1574, 599);
+            lblPago.Location = new Point(1525, 585);
             lblPago.Margin = new Padding(2, 0, 2, 0);
             lblPago.Name = "lblPago";
-            lblPago.Size = new Size(168, 22);
+            lblPago.Size = new Size(154, 22);
             lblPago.TabIndex = 26;
-            lblPago.Text = "Cliente paga con:";
+            lblPago.Text = "Metodo de Pago";
             // 
             // lblCambio
             // 
             lblCambio.AutoSize = true;
-            lblCambio.BackColor = Color.FromArgb(88, 173, 83);
+            lblCambio.BackColor = Color.FromArgb(111, 129, 105);
             lblCambio.Font = new Font("Verdana", 9F);
             lblCambio.ForeColor = Color.White;
-            lblCambio.Location = new Point(1574, 688);
+            lblCambio.Location = new Point(1525, 674);
             lblCambio.Margin = new Padding(2, 0, 2, 0);
             lblCambio.Name = "lblCambio";
             lblCambio.Size = new Size(79, 22);
@@ -597,53 +632,81 @@
             // 
             // txtTotal
             // 
+            txtTotal.Enabled = false;
             txtTotal.Font = new Font("Verdana", 10F);
-            txtTotal.Location = new Point(1574, 538);
+            txtTotal.Location = new Point(1525, 524);
             txtTotal.Margin = new Padding(2);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
-            txtTotal.Size = new Size(168, 32);
+            txtTotal.Size = new Size(182, 32);
             txtTotal.TabIndex = 101;
             txtTotal.KeyPress += txtTotal_KeyPress;
             // 
             // txtPago
             // 
             txtPago.Font = new Font("Verdana", 10F);
-            txtPago.Location = new Point(1574, 630);
+            txtPago.Location = new Point(1525, 616);
             txtPago.Margin = new Padding(2);
             txtPago.Name = "txtPago";
-            txtPago.Size = new Size(168, 32);
+            txtPago.Size = new Size(182, 32);
             txtPago.TabIndex = 102;
             txtPago.KeyPress += txtPago_KeyPress;
             // 
             // txtCambio
             // 
+            txtCambio.Enabled = false;
             txtCambio.Font = new Font("Verdana", 10F);
-            txtCambio.Location = new Point(1574, 719);
+            txtCambio.Location = new Point(1525, 705);
             txtCambio.Margin = new Padding(2);
             txtCambio.Name = "txtCambio";
             txtCambio.ReadOnly = true;
-            txtCambio.Size = new Size(168, 32);
+            txtCambio.Size = new Size(182, 32);
             txtCambio.TabIndex = 103;
             // 
-            // button1
+            // btnFacturar
             // 
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(1560, 813);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(236, 64);
-            button1.TabIndex = 104;
-            button1.Text = "Facturar";
-            button1.UseVisualStyleBackColor = true;
+            btnFacturar.ForeColor = Color.White;
+            btnFacturar.Location = new Point(1525, 757);
+            btnFacturar.Margin = new Padding(4);
+            btnFacturar.Name = "btnFacturar";
+            btnFacturar.Size = new Size(189, 51);
+            btnFacturar.TabIndex = 104;
+            btnFacturar.Text = "Facturar";
+            btnFacturar.UseVisualStyleBackColor = true;
+            btnFacturar.Click += btnFacturar_Click;
+            // 
+            // cbMetodoPago
+            // 
+            cbMetodoPago.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbMetodoPago.Enabled = false;
+            cbMetodoPago.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbMetodoPago.FormattingEnabled = true;
+            cbMetodoPago.Location = new Point(1525, 617);
+            cbMetodoPago.Name = "cbMetodoPago";
+            cbMetodoPago.Size = new Size(182, 33);
+            cbMetodoPago.TabIndex = 105;
+            cbMetodoPago.SelectedIndexChanged += cbMetodoPago_SelectedIndexChanged_1;
+            // 
+            // pbAtrasMP
+            // 
+            pbAtrasMP.Enabled = false;
+            pbAtrasMP.Image = Properties.Resources.Flecha_hacia_atras;
+            pbAtrasMP.Location = new Point(1684, 581);
+            pbAtrasMP.Name = "pbAtrasMP";
+            pbAtrasMP.Size = new Size(43, 26);
+            pbAtrasMP.SizeMode = PictureBoxSizeMode.Zoom;
+            pbAtrasMP.TabIndex = 106;
+            pbAtrasMP.TabStop = false;
             // 
             // Facturacion
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(88, 173, 83);
-            ClientSize = new Size(1880, 1028);
-            Controls.Add(button1);
+            BackColor = Color.White;
+            ClientSize = new Size(1786, 1028);
+            Controls.Add(pbAtrasMP);
+            Controls.Add(cbMetodoPago);
+            Controls.Add(btnFacturar);
             Controls.Add(txtCambio);
             Controls.Add(txtPago);
             Controls.Add(txtTotal);
@@ -673,6 +736,7 @@
             gbInformacionP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbBuscarIdProducto).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbAtrasMP).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -715,6 +779,9 @@
         private TextBox txtTotal;
         private TextBox txtPago;
         private TextBox txtCambio;
+        private Button btnFacturar;
+        private ComboBox cbMetodoPago;
+        private PictureBox pbAtrasMP;
         private DataGridViewTextBoxColumn IdProducto;
         private DataGridViewTextBoxColumn Producto;
         private DataGridViewTextBoxColumn Precio;
@@ -722,6 +789,5 @@
         private DataGridViewTextBoxColumn SubTotal;
         private DataGridViewTextBoxColumn Descuento;
         private DataGridViewButtonColumn btnEliminar;
-        private Button button1;
     }
 }
