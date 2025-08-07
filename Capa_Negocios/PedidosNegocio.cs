@@ -162,14 +162,14 @@ namespace Capa_Negocios
             {
                 var ws = wb.Worksheets.Add("Pedidos");
 
-                // Título
+               
                 ws.Cell("A1").Value = "GreenPoint - Reporte de Pedidos";
                 ws.Cell("A2").Value = $"Fecha: {DateTime.Now:dd/MM/yyyy HH:mm}";
                 ws.Range("A1:G1").Merge().Style.Font.SetBold().Font.FontSize = 16;
                 ws.Range("A2:G2").Merge().Style.Font.SetItalic().Font.FontSize = 12;
                 ws.Range("A1:G2").Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
 
-                // Encabezados columnas
+                
                 for (int i = 0; i < tabla.Columns.Count; i++)
                 {
                     ws.Cell(4, i + 1).Value = tabla.Columns[i].ColumnName;
@@ -177,7 +177,7 @@ namespace Capa_Negocios
                     ws.Cell(4, i + 1).Style.Fill.BackgroundColor = XLColor.LightGreen;
                 }
 
-                // Datos
+                //TODO ingresar Datos
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
                     for (int j = 0; j < tabla.Columns.Count; j++)
@@ -190,7 +190,7 @@ namespace Capa_Negocios
 
                 wb.SaveAs(rutaArchivo);
 
-                // Abrir el archivo automáticamente
+                //TODO Abrir el archivo automáticamente
                 Process.Start(new ProcessStartInfo(rutaArchivo) { UseShellExecute = true });
             }
      }

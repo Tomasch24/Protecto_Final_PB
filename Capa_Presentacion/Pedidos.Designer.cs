@@ -57,7 +57,8 @@
             // 
             tabPedidos.Controls.Add(tabExistentes);
             tabPedidos.Controls.Add(tabAgotados);
-            tabPedidos.Location = new Point(71, 93);
+            tabPedidos.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tabPedidos.Location = new Point(225, 135);
             tabPedidos.Name = "tabPedidos";
             tabPedidos.SelectedIndex = 0;
             tabPedidos.Size = new Size(1148, 503);
@@ -67,10 +68,10 @@
             // tabExistentes
             // 
             tabExistentes.Controls.Add(dgvExistentes);
-            tabExistentes.Location = new Point(4, 34);
+            tabExistentes.Location = new Point(4, 31);
             tabExistentes.Name = "tabExistentes";
             tabExistentes.Padding = new Padding(3);
-            tabExistentes.Size = new Size(1140, 465);
+            tabExistentes.Size = new Size(1140, 468);
             tabExistentes.TabIndex = 0;
             tabExistentes.Text = "Productos Existentes";
             tabExistentes.UseVisualStyleBackColor = true;
@@ -87,7 +88,7 @@
             dgvExistentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
-            dataGridViewCellStyle1.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = SystemColors.Window;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(41, 76, 37);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
@@ -97,9 +98,9 @@
             dgvExistentes.Columns.AddRange(new DataGridViewColumn[] { ProductosExistentes, Stock });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(111, 129, 105);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.Window;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvExistentes.DefaultCellStyle = dataGridViewCellStyle2;
@@ -111,9 +112,9 @@
             dgvExistentes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(41, 76, 37);
-            dataGridViewCellStyle3.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(111, 129, 105);
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.Window;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dgvExistentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
@@ -145,10 +146,10 @@
             // tabAgotados
             // 
             tabAgotados.Controls.Add(dgvAgotados);
-            tabAgotados.Location = new Point(4, 34);
+            tabAgotados.Location = new Point(4, 31);
             tabAgotados.Name = "tabAgotados";
             tabAgotados.Padding = new Padding(3);
-            tabAgotados.Size = new Size(1140, 465);
+            tabAgotados.Size = new Size(1140, 468);
             tabAgotados.TabIndex = 1;
             tabAgotados.Text = "Productos Agotados";
             tabAgotados.UseVisualStyleBackColor = true;
@@ -223,13 +224,13 @@
             // lblPedidos
             // 
             lblPedidos.AutoSize = true;
-            lblPedidos.Font = new Font("Lucida Sans", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPedidos.ForeColor = Color.FromArgb(88, 173, 83);
-            lblPedidos.Location = new Point(452, 29);
+            lblPedidos.Font = new Font("Lucida Sans", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPedidos.ForeColor = Color.Black;
+            lblPedidos.Location = new Point(697, 53);
             lblPedidos.Name = "lblPedidos";
-            lblPedidos.Size = new Size(389, 40);
+            lblPedidos.Size = new Size(221, 50);
             lblPedidos.TabIndex = 1;
-            lblPedidos.Text = "Pedidos Green Point";
+            lblPedidos.Text = "PEDIDOS";
             lblPedidos.TextAlign = ContentAlignment.TopCenter;
             // 
             // btnHacerPedido
@@ -238,7 +239,7 @@
             btnHacerPedido.FlatStyle = FlatStyle.Flat;
             btnHacerPedido.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHacerPedido.ForeColor = SystemColors.Window;
-            btnHacerPedido.Location = new Point(273, 621);
+            btnHacerPedido.Location = new Point(333, 700);
             btnHacerPedido.Name = "btnHacerPedido";
             btnHacerPedido.Size = new Size(270, 44);
             btnHacerPedido.TabIndex = 1;
@@ -252,7 +253,7 @@
             btnRegistroPedidos.FlatStyle = FlatStyle.Flat;
             btnRegistroPedidos.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistroPedidos.ForeColor = SystemColors.Window;
-            btnRegistroPedidos.Location = new Point(733, 621);
+            btnRegistroPedidos.Location = new Point(932, 700);
             btnRegistroPedidos.Name = "btnRegistroPedidos";
             btnRegistroPedidos.Size = new Size(270, 44);
             btnRegistroPedidos.TabIndex = 2;
@@ -265,7 +266,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 247, 246);
-            ClientSize = new Size(1322, 686);
+            ClientSize = new Size(1711, 821);
             Controls.Add(btnRegistroPedidos);
             Controls.Add(btnHacerPedido);
             Controls.Add(lblPedidos);
