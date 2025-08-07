@@ -62,7 +62,7 @@
             BarraTitulo.Location = new Point(0, 0);
             BarraTitulo.Margin = new Padding(2);
             BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(1650, 57);
+            BarraTitulo.Size = new Size(1554, 57);
             BarraTitulo.TabIndex = 11;
             BarraTitulo.Paint += BarraTitulo_Paint;
             // 
@@ -148,7 +148,7 @@
             BotonParaDashBoard.Name = "BotonParaDashBoard";
             BotonParaDashBoard.Size = new Size(186, 38);
             BotonParaDashBoard.TabIndex = 6;
-            BotonParaDashBoard.Text = "Dasboard";
+            BotonParaDashBoard.Text = "Dashboard";
             BotonParaDashBoard.UseVisualStyleBackColor = false;
             BotonParaDashBoard.Click += BotonParaDashBoard_Click;
             // 
@@ -162,7 +162,7 @@
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(186, 38);
             btnReportes.TabIndex = 5;
-            btnReportes.Text = "Reportes";
+            btnReportes.Text = "Sistema";
             btnReportes.UseVisualStyleBackColor = false;
             btnReportes.Click += btnReportes_Click;
             // 
@@ -231,7 +231,7 @@
             btnCatalogo.Name = "btnCatalogo";
             btnCatalogo.Size = new Size(186, 38);
             btnCatalogo.TabIndex = 1;
-            btnCatalogo.Text = "Catalogo";
+            btnCatalogo.Text = "Catálogo";
             btnCatalogo.UseVisualStyleBackColor = false;
             btnCatalogo.Click += button2_Click;
             // 
@@ -242,7 +242,7 @@
             PanelHerencia.Dock = DockStyle.Fill;
             PanelHerencia.Location = new Point(0, 57);
             PanelHerencia.Name = "PanelHerencia";
-            PanelHerencia.Size = new Size(1650, 764);
+            PanelHerencia.Size = new Size(1554, 764);
             PanelHerencia.TabIndex = 12;
             // 
             // panel1
@@ -251,7 +251,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(279, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1371, 764);
+            panel1.Size = new Size(1275, 764);
             panel1.TabIndex = 12;
             panel1.Paint += panel1_Paint_3;
             // 
@@ -261,7 +261,7 @@
             pictureBox1.Image = Capa_Presentacion.Properties.Resources.LOGO_OSCURO;
             pictureBox1.Location = new Point(432, 156);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(556, 410);
+            pictureBox1.Size = new Size(459, 410);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -277,7 +277,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1650, 821);
+            ClientSize = new Size(1554, 821);
             Controls.Add(PanelHerencia);
             Controls.Add(BarraTitulo);
             FormBorderStyle = FormBorderStyle.None;

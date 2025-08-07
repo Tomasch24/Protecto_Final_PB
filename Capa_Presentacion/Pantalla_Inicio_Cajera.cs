@@ -187,7 +187,7 @@ namespace Capa_Presentacion
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            OpenPanelHerencia(new Registro_Pedidos());
+            OpenPanelHerencia(new Sistema());
         }
     }
 }

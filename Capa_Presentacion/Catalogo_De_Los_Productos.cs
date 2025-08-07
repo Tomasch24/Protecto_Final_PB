@@ -49,6 +49,9 @@ namespace Capa_Interfas
                     {
                         UCProducto ucpro = new UCProducto();
 
+                        //TODO Suscribirse al evento ProductoAgregado del UserControl
+                        ucpro.ProductoAgregado += UcProducto_ProductoAgregado;
+
                         //TODO Obtener la ruta de la imagen (si existe)
                         string imagenPath = reader["ImagenPath"] != DBNull.Value ? reader["ImagenPath"].ToString() : string.Empty;
 
@@ -61,7 +64,6 @@ namespace Capa_Interfas
                             imagenPath
                         );
 
-                        ucpro.ProductoAgregado += UcProducto_ProductoAgregado;
                         //TODO Agregar el UserControl al FlowLayoutPanel
                         flpCatalogo.Controls.Add(ucpro);
 
@@ -91,6 +93,7 @@ namespace Capa_Interfas
             formFacturacion.Show();
             formFacturacion.BringToFront();
         }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -153,6 +156,9 @@ namespace Capa_Interfas
                 }
             }
         }
+
+
+       
     }
 }
 

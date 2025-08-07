@@ -17,7 +17,8 @@ using System.Drawing.Imaging;
 using DocumentFormat.OpenXml.Presentation;
 using Rectangle = System.Drawing.Rectangle;
 using Capa_Interfas;
-using DocumentFormat.OpenXml.Wordprocessing;
+using static Capa_Presentacion.UCProducto;
+using System.Globalization;
 
 namespace Capa_Presentacion
 {
@@ -34,8 +35,14 @@ namespace Capa_Presentacion
             cbTipo.Items.Add("Crédito");
             cbTipo.SelectedIndex = 0;
             txtTotal.Text = "0";
+            cbMetodoPago.Items.Add("Tarjeta de Credito/Debito");
+            cbMetodoPago.Items.Add("Transferencia");
+            cbMetodoPago.Items.Add("Efectivo");
 
-
+            txtCambio.Hide();
+            lblCambio.Hide();
+            pbAtrasMP.Hide();
+            btnGenerarFacturaPDF.Hide();
         }
         private void LimpiarCamposProducto()
         {
@@ -44,7 +51,7 @@ namespace Capa_Presentacion
             txtPrecio.Text = "";
             txtProducto.Text = "";
             txtStock.Text = "";
-
+            nudCantidad.Value = 1;
         }
         private void LimpiarCamposCliente()
         {
@@ -132,6 +139,11 @@ namespace Capa_Presentacion
                 MessageBox.Show("Error en el campo Producto.", "Ingrese un Producto valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (string.IsNullOrWhiteSpace(cbMetodoPago.Text))
+            {
+                MessageBox.Show("Error en el campo Metodo de Pago.", "Ingrese un Metodo de Pado valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (!int.TryParse(nudCantidad.Text, out int cantidad))
             {
@@ -160,6 +172,7 @@ namespace Capa_Presentacion
                 ? new FacturaContado(cliente)
                 : new FacturaCredito(cliente);
 
+            factura.MetodoDePago = cbMetodoPago.SelectedItem?.ToString();
             factura.Producto = txtIdProducto.Text;
             factura.Precio = precio;
             factura.Cantidad = cantidad;
@@ -206,7 +219,7 @@ namespace Capa_Presentacion
                 }
             }
 
-            txtTotal.Text = total.ToString("0.00");
+            txtTotal.Text = total.ToString("C", new CultureInfo("es-DO"));
         }
 
         private void btnGenerarFacturaPDF_Click(object sender, EventArgs e)
@@ -238,6 +251,7 @@ namespace Capa_Presentacion
             {
                 using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
                 {
+                    CultureInfo cultura = new CultureInfo("es-DO"); // RD$
                     Document pdfDoc = new Document(PageSize.A4, 25, 25, 30, 30);
                     PdfWriter.GetInstance(pdfDoc, stream);
                     pdfDoc.Open();
@@ -267,10 +281,15 @@ namespace Capa_Presentacion
 
                     // Tabla de productos
                     PdfPTable table = new PdfPTable(6); // ID, Nombre, Precio, Cantidad, Descuento, SubTotal
+                    table.WidthPercentage = 100;
+                    table.SetWidths(new float[] { 12f, 30f, 18f, 12f, 20f, 18f });
+                    table.HorizontalAlignment = Element.ALIGN_CENTER;
+                    table.SpacingBefore = 10f;
+                    table.SpacingAfter = 10f;
                     BaseColor colorFondo = new BaseColor(230, 230, 230); // Gris claro
                     FontFactory.GetFont("Arial", "12", Font.Bold);
 
-                    string[] headers = { "ID Producto", "Producto", "Precio", "Cantidad", "Subtotal", "Descuento" };
+                    string[] headers = { "Cod. Producto", "Producto", "Precio", "Cantidad", "Subtotal", "Descuento" };
                     foreach (string encabezado in headers)
                     {
                         PdfPCell celdaTitulo = new PdfPCell(new Phrase(encabezado, FontFactory.GetFont("Arial", "12", Font.Bold)))
@@ -286,19 +305,23 @@ namespace Capa_Presentacion
                     {
                         if (row.IsNewRow) continue;
 
+
+                        decimal precio = Convert.ToDecimal(row.Cells[2].Value);
+                        decimal subtotal = Convert.ToDecimal(row.Cells[4].Value);
+                        decimal descuento = Convert.ToDecimal(row.Cells[5].Value);
+
                         table.AddCell(row.Cells[0].Value?.ToString() ?? "");
                         table.AddCell(row.Cells[1].Value?.ToString() ?? "");
-                        table.AddCell(row.Cells[2].Value?.ToString() ?? "");
+                        table.AddCell(precio.ToString("C", cultura));
                         table.AddCell(row.Cells[3].Value?.ToString() ?? "");
-                        table.AddCell(row.Cells[4].Value?.ToString() ?? "");
-                        table.AddCell(row.Cells[5].Value?.ToString() ?? "");
-
+                        table.AddCell(subtotal.ToString("C", cultura));
+                        table.AddCell(descuento.ToString("C", cultura));
 
                     }
 
                     pdfDoc.Add(table);
 
-                    // Total
+
                     pdfDoc.Add(new Paragraph("\nTOTAL A PAGAR: " + txtTotal.Text, FontFactory.GetFont("Arial", "12", Font.Bold)));
 
                     pdfDoc.Close();
@@ -342,36 +365,118 @@ namespace Capa_Presentacion
 
                 if (indice >= 0)
                 {
-                    dgvFactura.Rows.RemoveAt(indice);
-                    CalcularTotal();
+                    dgvFactura.Rows.Clear();
+                    txtTotal.Text = "0";
                 }
             }
         }
-
-
-        public void SetDatosProducto(UCProducto.ProductoEventArgs e)
-        {
-            txtIdProducto.Text = e.IdProducto.ToString();
-            txtNombre.Text = e.Nombre;
-            txtPrecio.Text = e.Precio.ToString("0.00");
-            txtStock.Text = e.Stock.ToString();
-
-            
-         
-        }
-
         private void pbBuscarIdProducto_Click(object sender, EventArgs e)
         {
-            using(var catalogo = new Catalogo_De_Los_Productos())
+            using (var catalogo = new Catalogo_De_Los_Productos())
             {
                 var resulta = catalogo.ShowDialog();
 
                 if (resulta == DialogResult.OK)
                 {
-                    
+
                 }
             }
         }
+
+       
+
+        private void pbAtrasMP_Click(object sender, EventArgs e)
+        {
+
+            cbMetodoPago.Show();
+            lblPago.Text = "Metodo de Pago";
+            txtCambio.Hide();
+            lblCambio.Hide();
+            pbAtrasMP.Hide();
+        }
+        private void CalcularCambio()
+        {
+            string totalTexto = txtTotal.Text.Replace("RD$", "").Replace(",", "").Trim();
+            decimal total = Convert.ToDecimal(totalTexto);
+            decimal efectivo;
+
+            if (decimal.TryParse(txtPago.Text, out efectivo))
+            {
+                if (efectivo < total)
+                {
+                    MessageBox.Show("Error en el campo Efectivo.", "Ingrese una Cantidad de Efectivo mayor al Total a pagar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+
+                    txtCambio.Text = "RD$0.00";
+                }
+                else
+                {
+                    decimal cambio = efectivo - total;
+
+                    txtCambio.Text = cambio.ToString("C", new CultureInfo("es-DO"));
+                }
+            }
+        }
+
+        private void txtPago_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                CalcularCambio();
+            }
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+            cbTipo.Enabled = true;
+            txtIdCliente.Enabled = true;
+            txtNombre.Enabled = true;
+            MtxtRnc.Enabled = true;
+            MtxtTelefono.Enabled = true;
+            txtIdProducto.Enabled = true;
+            nudCantidad.Enabled = true;
+            txtTotal.Enabled = true;
+            txtCambio.Enabled = true;
+            txtPago.Enabled = true;
+            pbAtrasMP.Enabled = true;
+            pbBuscarIdCliente.Enabled = true;
+            pbBuscarIdProducto.Enabled = true;
+            btnAgregar.Enabled = true;
+            btnGenerarFacturaPDF.Enabled = true;
+            cbMetodoPago.Enabled = true;
+            btnGenerarFacturaPDF.Show();
+            btnFacturar.Hide();
+        }
+
+        private void cbMetodoPago_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string seleccion = cbMetodoPago.SelectedItem?.ToString();
+
+            switch (seleccion)
+            {
+                case "Efectivo":
+                    cbMetodoPago.Hide();
+                    lblPago.Text = seleccion;
+                    txtCambio.Show();
+                    lblCambio.Show();
+                    pbAtrasMP.Show();
+                    break;
+            }
+        }
+
+
+
+        public void SetDatosProducto(UCProducto.ProductoEventArgs e)
+        {
+            txtIdProducto.Text = e.IdProducto.ToString();
+            txtProducto.Text = e.Nombre;
+            txtPrecio.Text = e.Precio.ToString("C", new CultureInfo("es-DO"));
+            txtStock.Text = e.Stock.ToString();
+
+
+
+        }
+
     }
 
 }

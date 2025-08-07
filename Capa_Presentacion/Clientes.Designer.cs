@@ -64,7 +64,7 @@
             // lblCorreo
             // 
             lblCorreo.AutoSize = true;
-            lblCorreo.BackColor = Color.FromArgb(88, 173, 83);
+            lblCorreo.BackColor = Color.FromArgb(111, 129, 105);
             lblCorreo.Font = new Font("Verdana", 9F);
             lblCorreo.ForeColor = Color.White;
             lblCorreo.Location = new Point(20, 354);
@@ -77,7 +77,7 @@
             // 
             btnGuardarCliente.BackColor = SystemColors.MenuBar;
             btnGuardarCliente.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGuardarCliente.Location = new Point(1240, 620);
+            btnGuardarCliente.Location = new Point(1154, 589);
             btnGuardarCliente.Name = "btnGuardarCliente";
             btnGuardarCliente.Size = new Size(161, 40);
             btnGuardarCliente.TabIndex = 107;
@@ -87,6 +87,7 @@
             // 
             // gbDatosC
             // 
+            gbDatosC.BackColor = Color.FromArgb(111, 129, 105);
             gbDatosC.Controls.Add(pbBuscarIdCliente);
             gbDatosC.Controls.Add(txtIdCliente);
             gbDatosC.Controls.Add(txtCorreo);
@@ -100,9 +101,9 @@
             gbDatosC.Controls.Add(lblRnc);
             gbDatosC.Font = new Font("Lucida Sans", 12F, FontStyle.Bold);
             gbDatosC.ForeColor = Color.White;
-            gbDatosC.Location = new Point(1055, 110);
+            gbDatosC.Location = new Point(1070, 110);
             gbDatosC.Name = "gbDatosC";
-            gbDatosC.Size = new Size(328, 433);
+            gbDatosC.Size = new Size(318, 433);
             gbDatosC.TabIndex = 108;
             gbDatosC.TabStop = false;
             gbDatosC.Text = "Datos del Cliente";
@@ -140,7 +141,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.BackColor = Color.FromArgb(88, 173, 83);
+            lblNombre.BackColor = Color.FromArgb(111, 129, 105);
             lblNombre.Font = new Font("Verdana", 9F);
             lblNombre.ForeColor = Color.White;
             lblNombre.Location = new Point(20, 116);
@@ -162,7 +163,7 @@
             // lblTelefono
             // 
             lblTelefono.AutoSize = true;
-            lblTelefono.BackColor = Color.FromArgb(88, 173, 83);
+            lblTelefono.BackColor = Color.FromArgb(111, 129, 105);
             lblTelefono.Font = new Font("Verdana", 9F);
             lblTelefono.ForeColor = Color.White;
             lblTelefono.Location = new Point(20, 201);
@@ -174,7 +175,7 @@
             // lblIdCliente
             // 
             lblIdCliente.AutoSize = true;
-            lblIdCliente.BackColor = Color.FromArgb(88, 173, 83);
+            lblIdCliente.BackColor = Color.FromArgb(111, 129, 105);
             lblIdCliente.Font = new Font("Verdana", 9F);
             lblIdCliente.ForeColor = Color.White;
             lblIdCliente.Location = new Point(20, 37);
@@ -195,7 +196,7 @@
             // lblRnc
             // 
             lblRnc.AutoSize = true;
-            lblRnc.BackColor = Color.FromArgb(88, 173, 83);
+            lblRnc.BackColor = Color.FromArgb(111, 129, 105);
             lblRnc.Font = new Font("Verdana", 9F);
             lblRnc.ForeColor = Color.White;
             lblRnc.Location = new Point(20, 273);
@@ -207,10 +208,10 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.FromArgb(88, 173, 83);
+            lblTitulo.BackColor = Color.White;
             lblTitulo.Font = new Font("Lucida Sans", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(89, 44);
+            lblTitulo.ForeColor = Color.FromArgb(111, 129, 105);
+            lblTitulo.Location = new Point(56, 41);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(182, 45);
             lblTitulo.TabIndex = 105;
@@ -219,7 +220,7 @@
             // btnEditarCliente
             // 
             btnEditarCliente.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEditarCliente.Location = new Point(1240, 574);
+            btnEditarCliente.Location = new Point(1154, 561);
             btnEditarCliente.Name = "btnEditarCliente";
             btnEditarCliente.Size = new Size(161, 40);
             btnEditarCliente.TabIndex = 104;
@@ -236,7 +237,7 @@
             dgvClientes.BackgroundColor = Color.White;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.EnableHeadersVisualStyles = false;
-            dgvClientes.Location = new Point(89, 110);
+            dgvClientes.Location = new Point(56, 110);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowHeadersWidth = 62;
@@ -246,7 +247,7 @@
             // btnBuscar
             // 
             btnBuscar.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBuscar.Location = new Point(1040, 574);
+            btnBuscar.Location = new Point(1132, 607);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(194, 40);
             btnBuscar.TabIndex = 115;
@@ -257,7 +258,7 @@
             // btnEliminarCliente
             // 
             btnEliminarCliente.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEliminarCliente.Location = new Point(1040, 620);
+            btnEliminarCliente.Location = new Point(1132, 635);
             btnEliminarCliente.Name = "btnEliminarCliente";
             btnEliminarCliente.Size = new Size(194, 40);
             btnEliminarCliente.TabIndex = 116;
@@ -268,7 +269,7 @@
             // pbAtras
             // 
             pbAtras.Image = Properties.Resources.Flecha_hacia_atras;
-            pbAtras.Location = new Point(950, 58);
+            pbAtras.Location = new Point(917, 58);
             pbAtras.Name = "pbAtras";
             pbAtras.Size = new Size(57, 46);
             pbAtras.SizeMode = PictureBoxSizeMode.Zoom;
@@ -280,7 +281,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(88, 173, 83);
+            BackColor = Color.White;
             ClientSize = new Size(1431, 777);
             Controls.Add(pbAtras);
             Controls.Add(btnEliminarCliente);

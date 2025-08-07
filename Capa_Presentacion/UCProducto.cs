@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Globalization;
 using System.IO; 
 using System.Linq;
@@ -69,7 +70,11 @@ namespace Capa_Presentacion
         private decimal ObtenerPrecio(string texto)
         {
             //TODO Elimina la etiqueta y el símbolo de moneda
-            string sinEtiqueta = texto.Replace("Precio: ", "").Replace("$", "").Trim();                
+            string sinEtiqueta = texto.Replace("Precio: ", "")
+                               .Replace("DOP", "")
+                               .Replace("RD$", "")
+                               .Replace("$", "")
+                               .Trim();
 
             decimal precio;
             return decimal.TryParse(sinEtiqueta, NumberStyles.Any, CultureInfo.InvariantCulture, out precio) ? precio : 0m;
@@ -100,12 +105,17 @@ namespace Capa_Presentacion
                 Stock = ObtenerStock(lblStock.Text)
 
             });
+
+            
         }
+
+  
 
         public void HabilitarBotonAgregar()
         {
             btnAgregarFac.Enabled = true;
         }
+        
     }
 
 }
