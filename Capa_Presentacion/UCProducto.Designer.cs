@@ -33,6 +33,7 @@
             lblPrecio = new Label();
             lblStock = new Label();
             btnAgregarFac = new Button();
+            lblID = new Label();
             ((System.ComponentModel.ISupportInitialize)pbImagenPro).BeginInit();
             SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             lblPrecio.AutoSize = true;
             lblPrecio.BackColor = Color.Transparent;
             lblPrecio.ForeColor = Color.Black;
-            lblPrecio.Location = new Point(170, 71);
+            lblPrecio.Location = new Point(170, 64);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(60, 25);
             lblPrecio.TabIndex = 2;
@@ -91,6 +92,16 @@
             btnAgregarFac.UseVisualStyleBackColor = false;
             btnAgregarFac.Click += btnAgregarFac_Click;
             // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.ForeColor = Color.Black;
+            lblID.Location = new Point(171, 89);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(28, 25);
+            lblID.TabIndex = 5;
+            lblID.Text = "Id";
+            // 
             // UCProducto
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -98,6 +109,7 @@
             AutoSize = true;
             BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(lblID);
             Controls.Add(btnAgregarFac);
             Controls.Add(lblStock);
             Controls.Add(lblPrecio);
@@ -118,5 +130,6 @@
         private Label lblPrecio;
         private Label lblStock;
         private Button btnAgregarFac;
+        private Label lblID;
     }
 }

@@ -463,6 +463,20 @@ namespace Capa_Presentacion
                     break;
             }
         }
+
+
+
+        public void SetDatosProducto(UCProducto.ProductoEventArgs e)
+        {
+            txtIdProducto.Text = e.IdProducto.ToString();
+            txtProducto.Text = e.Nombre;
+            txtPrecio.Text = e.Precio.ToString("C", new CultureInfo("es-DO"));
+            txtStock.Text = e.Stock.ToString();
+
+
+
+        }
+
     }
 
 }
