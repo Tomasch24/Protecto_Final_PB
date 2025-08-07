@@ -84,7 +84,6 @@
             dgvExistentes.AllowUserToResizeRows = false;
             dgvExistentes.BackgroundColor = SystemColors.Window;
             dgvExistentes.BorderStyle = BorderStyle.None;
-            dgvExistentes.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
             dgvExistentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
