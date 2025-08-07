@@ -10,8 +10,7 @@ using System.Threading.Tasks;
     {
         // Es abstracta porque define lo común y obliga a las clases hijas a implementar lo específico
         public abstract class PROVEEDOR
-        {
-            public string IDPROVEEDOR { get; set; } 
+        { 
             public string RNC { get; set; }
             public string NOMBRE { get; set; }
             public string TELEFONO { get; set; }
@@ -20,9 +19,8 @@ using System.Threading.Tasks;
             public decimal PRECIO { get; set; } 
 
             // Constructor base: se usa en las clases hijas a través de herencia
-            protected PROVEEDOR(string idproveedor, string rnc, string nombre, string telefono, string producto, string tipo, decimal precio)
+            protected PROVEEDOR(string rnc, string nombre, string telefono, string producto, string tipo, decimal precio)
             {
-                IDPROVEEDOR = idproveedor;
                 RNC = rnc;
                 NOMBRE = nombre;
                 TELEFONO = telefono;
