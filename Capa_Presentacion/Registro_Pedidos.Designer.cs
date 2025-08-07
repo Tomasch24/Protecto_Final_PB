@@ -33,8 +33,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             lblRegistro = new Label();
             btnExportar = new Button();
-            btnVolver = new Button();
             dgvRegistro = new DataGridView();
+            btnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvRegistro).BeginInit();
             SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             lblRegistro.AutoSize = true;
             lblRegistro.Font = new Font("Lucida Sans", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblRegistro.ForeColor = Color.FromArgb(41, 76, 37);
-            lblRegistro.Location = new Point(429, 40);
+            lblRegistro.Location = new Point(523, 47);
             lblRegistro.Name = "lblRegistro";
             lblRegistro.Size = new Size(387, 40);
             lblRegistro.TabIndex = 0;
@@ -54,7 +54,7 @@
             btnExportar.BackColor = Color.FromArgb(41, 76, 37);
             btnExportar.Font = new Font("Verdana", 9F, FontStyle.Bold);
             btnExportar.ForeColor = SystemColors.Window;
-            btnExportar.Location = new Point(1031, 538);
+            btnExportar.Location = new Point(1129, 575);
             btnExportar.Name = "btnExportar";
             btnExportar.Size = new Size(200, 45);
             btnExportar.TabIndex = 1;
@@ -62,25 +62,13 @@
             btnExportar.UseVisualStyleBackColor = false;
             btnExportar.Click += btnExportar_Click;
             // 
-            // btnVolver
-            // 
-            btnVolver.BackColor = Color.FromArgb(41, 76, 37);
-            btnVolver.Font = new Font("Verdana", 9F, FontStyle.Bold);
-            btnVolver.ForeColor = SystemColors.Window;
-            btnVolver.Location = new Point(52, 538);
-            btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(154, 45);
-            btnVolver.TabIndex = 2;
-            btnVolver.Text = "Volver";
-            btnVolver.UseVisualStyleBackColor = false;
-            btnVolver.Click += btnVolver_Click;
-            // 
             // dgvRegistro
             // 
             dgvRegistro.AllowUserToDeleteRows = false;
             dgvRegistro.AllowUserToResizeColumns = false;
             dgvRegistro.AllowUserToResizeRows = false;
             dgvRegistro.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvRegistro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dgvRegistro.BackgroundColor = SystemColors.Window;
             dgvRegistro.BorderStyle = BorderStyle.None;
             dgvRegistro.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
@@ -98,13 +86,13 @@
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(111, 129, 105);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.Window;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvRegistro.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRegistro.EnableHeadersVisualStyles = false;
             dgvRegistro.GridColor = SystemColors.Window;
-            dgvRegistro.Location = new Point(52, 97);
+            dgvRegistro.Location = new Point(108, 125);
             dgvRegistro.Name = "dgvRegistro";
             dgvRegistro.ReadOnly = true;
             dgvRegistro.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -112,21 +100,34 @@
             dataGridViewCellStyle3.BackColor = Color.FromArgb(41, 76, 37);
             dataGridViewCellStyle3.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(111, 129, 105);
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.Window;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dgvRegistro.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvRegistro.RowHeadersWidth = 62;
             dgvRegistro.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRegistro.Size = new Size(1179, 425);
+            dgvRegistro.Size = new Size(1221, 425);
             dgvRegistro.TabIndex = 0;
+            // 
+            // btnVolver
+            // 
+            btnVolver.BackColor = Color.FromArgb(41, 76, 37);
+            btnVolver.Font = new Font("Verdana", 9F, FontStyle.Bold);
+            btnVolver.ForeColor = SystemColors.Window;
+            btnVolver.Location = new Point(108, 575);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(154, 45);
+            btnVolver.TabIndex = 3;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
             // 
             // Registro_Pedidos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 247, 246);
-            ClientSize = new Size(1286, 640);
+            ClientSize = new Size(1439, 686);
             Controls.Add(dgvRegistro);
             Controls.Add(btnVolver);
             Controls.Add(btnExportar);
@@ -136,6 +137,7 @@
             Text = "Registro_Pedidos";
             Load += Registro_Pedidos_Load;
             Leave += Registro_Pedidos_Leave;
+            MouseDown += Registro_Pedidos_MouseDown;
             ((System.ComponentModel.ISupportInitialize)dgvRegistro).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -145,7 +147,7 @@
 
         private Label lblRegistro;
         private Button btnExportar;
-        private Button btnVolver;
         private DataGridView dgvRegistro;
+        private Button btnVolver;
     }
 }
