@@ -74,11 +74,11 @@
             lbldescripcion.AutoSize = true;
             lbldescripcion.Font = new Font("Lucida Sans", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbldescripcion.ForeColor = Color.White;
-            lbldescripcion.Location = new Point(212, 69);
+            lbldescripcion.Location = new Point(408, 102);
             lbldescripcion.Name = "lbldescripcion";
-            lbldescripcion.Size = new Size(713, 59);
+            lbldescripcion.Size = new Size(329, 59);
             lbldescripcion.TabIndex = 18;
-            lbldescripcion.Text = "CATALOGO GREEN POINT";
+            lbldescripcion.Text = "CATÁLOGO";
             // 
             // btnHabilitarCat
             // 
@@ -94,7 +94,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(88, 173, 83);
+            BackColor = Color.FromArgb(110, 190, 125);
             ClientSize = new Size(1318, 851);
             Controls.Add(btnHabilitarCat);
             Controls.Add(lbldescripcion);

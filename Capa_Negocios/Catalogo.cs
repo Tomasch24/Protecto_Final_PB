@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocios
 {
-    public class ProductoVista
+    /*public class Producto_Vista
     {
         public int IdProducto { get; set; }
         public string Nombre { get; set; }
@@ -53,8 +53,8 @@ namespace Capa_Negocios
             }
             return productos;
             
-       }*/
-    }
+       }
+    }*/
 }
 
    

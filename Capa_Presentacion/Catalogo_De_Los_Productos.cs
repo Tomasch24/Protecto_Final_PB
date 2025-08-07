@@ -61,6 +61,7 @@ namespace Capa_Interfas
                             imagenPath
                         );
 
+                        ucpro.ProductoAgregado += UcProducto_ProductoAgregado;
                         //TODO Agregar el UserControl al FlowLayoutPanel
                         flpCatalogo.Controls.Add(ucpro);
 
@@ -74,6 +75,22 @@ namespace Capa_Interfas
             }
         }
 
+
+        private Facturacion formFacturacion;
+
+        private void UcProducto_ProductoAgregado(object sender, UCProducto.ProductoEventArgs e)
+        {
+            // Verifica si el formulario ya está abierto o fue cerrado
+            if (formFacturacion == null || formFacturacion.IsDisposed)
+                formFacturacion = new Facturacion();
+
+            // Pasa los datos al formulario de facturación
+            formFacturacion.SetDatosProducto(e);
+
+            // Muestra el formulario y lo trae al frente
+            formFacturacion.Show();
+            formFacturacion.BringToFront();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 

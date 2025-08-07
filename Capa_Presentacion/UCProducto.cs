@@ -29,6 +29,7 @@ namespace Capa_Presentacion
             IdProducto = id;
 
             //TODO Mostrar los datos en las etiquetas del control
+            lblID.Text = id.ToString();
             lblNombre.Text = nombre;
             lblPrecio.Text = $"Precio: {precio:C}DOP";
             lblStock.Text = $"Stock: {stock}";
@@ -93,7 +94,7 @@ namespace Capa_Presentacion
             //TODO Dispara el evento personalizado, enviando los datos del producto como argumentos
             ProductoAgregado?.Invoke(this, new ProductoEventArgs
             {
-                IdProducto = IdProducto,
+                IdProducto = int.TryParse(lblID.Text, out int id) ? id : 0,
                 Nombre = lblNombre.Text,
                 Precio = ObtenerPrecio(lblPrecio.Text),
                 Stock = ObtenerStock(lblStock.Text)

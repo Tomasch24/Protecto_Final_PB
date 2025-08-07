@@ -17,6 +17,7 @@ using System.Drawing.Imaging;
 using DocumentFormat.OpenXml.Presentation;
 using Rectangle = System.Drawing.Rectangle;
 using Capa_Interfas;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace Capa_Presentacion
 {
@@ -345,6 +346,18 @@ namespace Capa_Presentacion
                     CalcularTotal();
                 }
             }
+        }
+
+
+        public void SetDatosProducto(UCProducto.ProductoEventArgs e)
+        {
+            txtIdProducto.Text = e.IdProducto.ToString();
+            txtNombre.Text = e.Nombre;
+            txtPrecio.Text = e.Precio.ToString("0.00");
+            txtStock.Text = e.Stock.ToString();
+
+            
+         
         }
 
         private void pbBuscarIdProducto_Click(object sender, EventArgs e)
