@@ -35,6 +35,8 @@ namespace Capa_Presentacion
         private void CargarPedidos()
         {
             dgvRegistro.DataSource = negocio.ObtenerPedidos();
+            dgvRegistro.Columns["IDPRODUCTO"].HeaderText = "Cod. Producto";
+            dgvRegistro.Columns["IDPROVEEDOR"].HeaderText = "Cod. Proveedor";
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

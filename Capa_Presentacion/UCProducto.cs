@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Globalization;
 using System.IO; 
 using System.Linq;
@@ -99,12 +100,20 @@ namespace Capa_Presentacion
                 Stock = ObtenerStock(lblStock.Text)
 
             });
-        }
 
+            
+        }
+        private void ProductoSeleccionado()
+        {
+            Facturacion F;
+            
+        }
+        
         public void HabilitarBotonAgregar()
         {
             btnAgregarFac.Enabled = true;
         }
+        
     }
 
 }

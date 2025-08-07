@@ -17,7 +17,7 @@ namespace Capa_Presentacion
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new Facturacion());
+            Application.Run(new Pantalla_De_Inicio());
 
 
         }
