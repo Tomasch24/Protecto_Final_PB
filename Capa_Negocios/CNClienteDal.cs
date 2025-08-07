@@ -69,14 +69,14 @@ namespace Capa_negocios
 
                     CNCliente cliente = new CNCliente(
                     reader["Nombre"].ToString(),
-                    reader["Telefono"].ToString(),
+                    reader["Teléfono"].ToString(),
                    reader["RNC"].ToString(),
                    reader["Correo"].ToString());    
 
                     //Se asignan valores desde la base de datos a los atributos de clase
                     cliente.IdCliente = (int)reader["IdCliente"];
                     cliente.Nombre = reader["Nombre"].ToString();
-                    cliente.Telefono = reader["Telefono"].ToString();
+                    cliente.Telefono = reader["Teléfono"].ToString();
                     cliente.RNC = reader["RNC"].ToString();
                     cliente.Correo = reader["Correo"].ToString() ;
 
@@ -106,7 +106,7 @@ namespace Capa_negocios
             {
                 CNCliente cliente = new CNCliente(
                     reader["Nombre"].ToString(),
-                    reader["Telefono"].ToString(),
+                    reader["Teléfono"].ToString(),
                     reader["RNC"].ToString(),
                     reader["Correo"].ToString()
                 )
@@ -131,14 +131,14 @@ namespace Capa_negocios
             {
                 conn.Open();
                 //TODO Comando SQL para editar los clientes en la base de datos
-                string query = @"UPDATE Cliente  SET Nombre = @Nombre, RNC = @RNC, Telefono = @Telefono, Correo = @Correo   WHERE IdCliente = @IdCliente";
+                string query = @"UPDATE Cliente  SET Nombre = @Nombre, RNC = @RNC, Teléfono = @Teléfono, Correo = @Correo   WHERE IdCliente = @IdCliente";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@IdCliente", cliente.IdCliente);
                     cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
                     cmd.Parameters.AddWithValue("@RNC", cliente.RNC);
-                    cmd.Parameters.AddWithValue("@Telefono", cliente.Telefono);
+                    cmd.Parameters.AddWithValue("@Teléfono", cliente.Telefono);
                     cmd.Parameters.AddWithValue("@Correo", cliente.Correo ?? (object)DBNull.Value);
 
                     resultado = cmd.ExecuteNonQuery(); 

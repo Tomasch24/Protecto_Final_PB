@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="itextsharp.xmlworker" Version="5.5.13.3" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
 
     <ProjectReference Include="..\Capa de Modulos\Capa de Modulos.csproj" />
 
@@ -26,11 +32,13 @@
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
 
+
       <Generator>PublicResXFileCodeGenerator</Generator>
 
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
 
   <ItemGroup>
     <None Update="USUARIOS\donna_paulsen.jpg">
@@ -43,6 +51,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
 
 
 </Project>
