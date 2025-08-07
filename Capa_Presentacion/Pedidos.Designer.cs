@@ -84,7 +84,6 @@
             dgvExistentes.AllowUserToResizeRows = false;
             dgvExistentes.BackgroundColor = SystemColors.Window;
             dgvExistentes.BorderStyle = BorderStyle.None;
-            dgvExistentes.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
             dgvExistentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
@@ -162,7 +161,6 @@
             dgvAgotados.AllowUserToResizeRows = false;
             dgvAgotados.BackgroundColor = SystemColors.Window;
             dgvAgotados.BorderStyle = BorderStyle.None;
-            dgvAgotados.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
             dgvAgotados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(41, 76, 37);

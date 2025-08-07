@@ -71,7 +71,6 @@
             dgvRegistro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dgvRegistro.BackgroundColor = SystemColors.Window;
             dgvRegistro.BorderStyle = BorderStyle.None;
-            dgvRegistro.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
             dgvRegistro.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
