@@ -40,6 +40,9 @@ namespace Capa_Presentacion
                 {
                     UserModel user = new UserModel();
                     var validLogin = user.LoginUser(txtUser.Text, txtPassword.Text);
+                    this.Hide();
+                    FormBienvenida bienvenida = new FormBienvenida();
+                    bienvenida.ShowDialog();
 
                     if (validLogin == true)
                     {
@@ -47,7 +50,7 @@ namespace Capa_Presentacion
                         if (LoginUser.Rol == "Gerente")
                         {
                             Pantalla_De_Inicio inicioGerente = new Pantalla_De_Inicio();
-                            MessageBox.Show("Bienvenido/a  " + LoginUser.Nombre + " " + LoginUser.Apellido);
+                            //MessageBox.Show("Bienvenido/a  " + LoginUser.Nombre + " " + LoginUser.Apellido);
                             inicioGerente.Show();
                             inicioGerente.FormClosed += LogOut; // Asigna el evento para manejar el cierre del formulario
                             this.Hide(); // Oculta el formulario de login después de iniciar sesión
@@ -56,7 +59,7 @@ namespace Capa_Presentacion
                         {
                             // Abre el formulario específico para la cajera
                             Pantalla_Inicio_Cajera inicioCajera = new Pantalla_Inicio_Cajera();
-                            MessageBox.Show("Bienvenido/a  " + LoginUser.Nombre + " " + LoginUser.Apellido);
+                            //MessageBox.Show("Bienvenido/a  " + LoginUser.Nombre + " " + LoginUser.Apellido);
                             inicioCajera.Show();
                             inicioCajera.FormClosed += LogOut; // Asigna el evento para manejar el cierre
                             this.Hide(); // Oculta el formulario de login
@@ -76,7 +79,14 @@ namespace Capa_Presentacion
                 else msgError("Ingrese La Contraseña");
             }
             else msgError("Ingrese el nombre de usuario");
+
+           
+            
+
+
         }
+
+
 
         private void msgError(string msg)
         {
