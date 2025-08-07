@@ -17,6 +17,7 @@ using System.Drawing.Imaging;
 using DocumentFormat.OpenXml.Presentation;
 using Rectangle = System.Drawing.Rectangle;
 using Capa_Interfas;
+using static Capa_Presentacion.UCProducto;
 
 namespace Capa_Presentacion
 {
@@ -346,19 +347,7 @@ namespace Capa_Presentacion
                 }
             }
         }
-
-        private void pbBuscarIdProducto_Click(object sender, EventArgs e)
-        {
-            using(var catalogo = new Catalogo_De_Los_Productos())
-            {
-                var resulta = catalogo.ShowDialog();
-
-                if (resulta == DialogResult.OK)
-                {
-                    
-                }
-            }
-        }
+   
     }
 
 }
