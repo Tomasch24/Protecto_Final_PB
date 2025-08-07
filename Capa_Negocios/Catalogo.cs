@@ -13,14 +13,16 @@ namespace Capa_Negocios
 {
     public class ProductoVista
     {
-        public int Id { get; set; }
+        public int IdProducto { get; set; }
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
         public int Stock { get; set; }
 
+        public string ImagenPath { get; set; }
 
 
-        public static List<ProductoVista> Mostrar_InfCatPro()
+
+        /*public static List<ProductoVista> Mostrar_InfCatPro()
         {
             Productos_Agri data = new Productos_Agri();
 
@@ -39,7 +41,7 @@ namespace Capa_Negocios
                 {
                     ProductoVista p = new ProductoVista();
 
-                    p.Id = Convert.ToInt32(reader["Id"]);
+                    p.IdProducto = Convert.ToInt32(reader["Id"]);
                     p.Nombre = reader["Nombre"].ToString();
                     p.Precio = Convert.ToDecimal(reader["Precio"]);
                     p.Stock = Convert.ToInt32(reader["Stock"]);
@@ -51,9 +53,10 @@ namespace Capa_Negocios
             }
             return productos;
             
-        }
+       }*/
     }
+}
 
    
 
-}
+
