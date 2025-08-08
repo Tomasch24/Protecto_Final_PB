@@ -319,15 +319,15 @@
             lblIdCliente.Location = new Point(25, 48);
             lblIdCliente.Margin = new Padding(2, 0, 2, 0);
             lblIdCliente.Name = "lblIdCliente";
-            lblIdCliente.Size = new Size(98, 22);
+            lblIdCliente.Size = new Size(121, 22);
             lblIdCliente.TabIndex = 9;
-            lblIdCliente.Text = "Id Cliente";
+            lblIdCliente.Text = "Cod. Cliente";
             // 
             // txtProducto
             // 
             txtProducto.Enabled = false;
             txtProducto.Font = new Font("Verdana", 10F);
-            txtProducto.Location = new Point(190, 96);
+            txtProducto.Location = new Point(232, 96);
             txtProducto.Margin = new Padding(2);
             txtProducto.Name = "txtProducto";
             txtProducto.Size = new Size(236, 32);
@@ -374,7 +374,7 @@
             lblProducto.BackColor = Color.FromArgb(111, 129, 105);
             lblProducto.Font = new Font("Verdana", 9F);
             lblProducto.ForeColor = Color.White;
-            lblProducto.Location = new Point(190, 53);
+            lblProducto.Location = new Point(232, 53);
             lblProducto.Margin = new Padding(2, 0, 2, 0);
             lblProducto.Name = "lblProducto";
             lblProducto.Size = new Size(89, 22);
@@ -524,10 +524,10 @@
             // 
             txtIdProducto.Enabled = false;
             txtIdProducto.Font = new Font("Verdana", 10F);
-            txtIdProducto.Location = new Point(53, 97);
+            txtIdProducto.Location = new Point(53, 96);
             txtIdProducto.Margin = new Padding(2);
             txtIdProducto.Name = "txtIdProducto";
-            txtIdProducto.Size = new Size(82, 32);
+            txtIdProducto.Size = new Size(105, 32);
             txtIdProducto.TabIndex = 21;
             txtIdProducto.KeyPress += txtIdProducto_KeyPress;
             // 
@@ -540,9 +540,9 @@
             lblIdProducto.Location = new Point(53, 54);
             lblIdProducto.Margin = new Padding(2, 0, 2, 0);
             lblIdProducto.Name = "lblIdProducto";
-            lblIdProducto.Size = new Size(114, 22);
+            lblIdProducto.Size = new Size(137, 22);
             lblIdProducto.TabIndex = 22;
-            lblIdProducto.Text = "Id Producto";
+            lblIdProducto.Text = "Cod. Producto";
             // 
             // nudCantidad
             // 
