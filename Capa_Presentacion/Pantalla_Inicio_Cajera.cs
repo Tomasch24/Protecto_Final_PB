@@ -61,7 +61,7 @@ namespace Capa_Presentacion
             // Bloque try-catch para manejar de forma segura posibles errores al cargar la imagen
             try
             {
-                // Obtiene la ruta relativa de la imagen desde la clase estática de caché (USUARIOS\harvey.jpg)
+                // Obtiene la ruta relativa de la imagen desde la clase estática de caché (USUARIOS\donna.jpg)
                 string fotoPath = LoginUser.FotoPath;
 
                 // Se asegura de que la ruta de la foto no esté vacía antes de intentar cargarla
@@ -264,7 +264,9 @@ namespace Capa_Presentacion
 
         private void pbIconCerrar_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+
+            this.Close();
+
         }
     }
 }

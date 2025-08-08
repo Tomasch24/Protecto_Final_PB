@@ -69,40 +69,40 @@
             // lblRNC
             // 
             lblRNC.AutoSize = true;
-            lblRNC.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRNC.Font = new Font("Verdana", 9F, FontStyle.Bold);
             lblRNC.Location = new Point(11, 70);
             lblRNC.Name = "lblRNC";
-            lblRNC.Size = new Size(40, 18);
+            lblRNC.Size = new Size(43, 18);
             lblRNC.TabIndex = 0;
             lblRNC.Text = "RNC";
             // 
             // lblNOMBRE
             // 
             lblNOMBRE.AutoSize = true;
-            lblNOMBRE.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNOMBRE.Font = new Font("Verdana", 9F, FontStyle.Bold);
             lblNOMBRE.Location = new Point(6, 140);
             lblNOMBRE.Name = "lblNOMBRE";
-            lblNOMBRE.Size = new Size(68, 18);
+            lblNOMBRE.Size = new Size(73, 18);
             lblNOMBRE.TabIndex = 1;
             lblNOMBRE.Text = "Nombre";
             // 
             // lblTELEFONO
             // 
             lblTELEFONO.AutoSize = true;
-            lblTELEFONO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTELEFONO.Font = new Font("Verdana", 9F, FontStyle.Bold);
             lblTELEFONO.Location = new Point(11, 213);
             lblTELEFONO.Name = "lblTELEFONO";
-            lblTELEFONO.Size = new Size(70, 18);
+            lblTELEFONO.Size = new Size(78, 18);
             lblTELEFONO.TabIndex = 2;
             lblTELEFONO.Text = "Telefono";
             // 
             // lblTIPO
             // 
             lblTIPO.AutoSize = true;
-            lblTIPO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTIPO.Font = new Font("Verdana", 9F, FontStyle.Bold);
             lblTIPO.Location = new Point(11, 295);
             lblTIPO.Name = "lblTIPO";
-            lblTIPO.Size = new Size(39, 18);
+            lblTIPO.Size = new Size(42, 18);
             lblTIPO.TabIndex = 3;
             lblTIPO.Text = "Tipo";
             // 
@@ -123,10 +123,10 @@
             // lnlPRODUCTO
             // 
             lnlPRODUCTO.AutoSize = true;
-            lnlPRODUCTO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lnlPRODUCTO.Font = new Font("Verdana", 9F, FontStyle.Bold);
             lnlPRODUCTO.Location = new Point(11, 369);
             lnlPRODUCTO.Name = "lnlPRODUCTO";
-            lnlPRODUCTO.Size = new Size(75, 18);
+            lnlPRODUCTO.Size = new Size(81, 18);
             lnlPRODUCTO.TabIndex = 13;
             lnlPRODUCTO.Text = "Producto";
             // 
@@ -150,7 +150,7 @@
             dgvPROVEEDORES.BackgroundColor = SystemColors.Window;
             dgvPROVEEDORES.BorderStyle = BorderStyle.None;
             dgvPROVEEDORES.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
-            dgvPROVEEDORES.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvPROVEEDORES.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
             dataGridViewCellStyle1.Font = new Font("Verdana", 9F);
@@ -206,11 +206,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.White;
-            label1.Font = new Font("Lucida Sans", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(111, 129, 105);
+            label1.Font = new Font("Lucida Sans", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(22, 39, 33);
             label1.Location = new Point(271, 12);
             label1.Name = "label1";
-            label1.Size = new Size(368, 50);
+            label1.Size = new Size(338, 45);
             label1.TabIndex = 18;
             label1.Text = " PROVEEDORES";
             // 
@@ -279,9 +279,10 @@
             // 
             // btnEDITAR
             // 
-            btnEDITAR.BackColor = Color.FromArgb(111, 129, 105);
+            btnEDITAR.BackColor = Color.FromArgb(43, 56, 46);
             btnEDITAR.FlatStyle = FlatStyle.Flat;
-            btnEDITAR.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEDITAR.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEDITAR.ForeColor = Color.White;
             btnEDITAR.Location = new Point(686, 411);
             btnEDITAR.Name = "btnEDITAR";
             btnEDITAR.Size = new Size(161, 50);
@@ -306,10 +307,10 @@
             // lblPRECIO
             // 
             lblPRECIO.AutoSize = true;
-            lblPRECIO.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPRECIO.Font = new Font("Verdana", 9F, FontStyle.Bold);
             lblPRECIO.Location = new Point(11, 443);
             lblPRECIO.Name = "lblPRECIO";
-            lblPRECIO.Size = new Size(53, 18);
+            lblPRECIO.Size = new Size(58, 18);
             lblPRECIO.TabIndex = 29;
             lblPRECIO.Text = "Precio";
             // 
@@ -326,7 +327,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.FromArgb(111, 129, 105);
+            groupBox1.BackColor = Color.FromArgb(43, 56, 46);
             groupBox1.Controls.Add(lblPRECIO);
             groupBox1.Controls.Add(cmbTipoProveedor);
             groupBox1.Controls.Add(TxtNOMBRE);
