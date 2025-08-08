@@ -29,7 +29,7 @@ namespace Capa_Interfas
             CargarProductos();
         }
 
-
+        public UCProducto.ProductoEventArgs ProductoSeleccionado { get; private set; }
         private void CargarProductos()
         {
             try
@@ -82,16 +82,26 @@ namespace Capa_Interfas
 
         private void UcProducto_ProductoAgregado(object sender, UCProducto.ProductoEventArgs e)
         {
-            // Verifica si el formulario ya está abierto o fue cerrado
-            if (formFacturacion == null || formFacturacion.IsDisposed)
-                formFacturacion = new Facturacion();
+            /* // Verifica si el formulario ya está abierto o fue cerrado
+             if (formFacturacion == null || formFacturacion.IsDisposed)
+                 formFacturacion = new Facturacion();
 
-            // Pasa los datos al formulario de facturación
-            formFacturacion.SetDatosProducto(e);
+             // Pasa los datos al formulario de facturación
+             formFacturacion.SetDatosProducto(e);
 
-            // Muestra el formulario y lo trae al frente
-            Pantalla_De_Inicio.InstanciaActual.OpenPanelHerencia(formFacturacion);
-            
+             // Muestra el formulario y lo trae al frente
+             Pantalla_De_Inicio.InstanciaActual.OpenPanelHerencia(formFacturacion);
+             */
+
+
+            this.ProductoSeleccionado = e;
+
+            // Establece el DialogResult para indicar que se seleccionó un producto
+            this.DialogResult = DialogResult.OK;
+
+            // Cierra el formulario del catálogo
+            this.Close();
+
         }
        
 

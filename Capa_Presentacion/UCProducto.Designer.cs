@@ -39,9 +39,10 @@
             // 
             // pbImagenPro
             // 
-            pbImagenPro.Location = new Point(15, 21);
+            pbImagenPro.Location = new Point(12, 17);
+            pbImagenPro.Margin = new Padding(2, 2, 2, 2);
             pbImagenPro.Name = "pbImagenPro";
-            pbImagenPro.Size = new Size(135, 122);
+            pbImagenPro.Size = new Size(108, 98);
             pbImagenPro.SizeMode = PictureBoxSizeMode.Zoom;
             pbImagenPro.TabIndex = 0;
             pbImagenPro.TabStop = false;
@@ -51,9 +52,10 @@
             lblNombre.AutoSize = true;
             lblNombre.BackColor = Color.Transparent;
             lblNombre.ForeColor = Color.Black;
-            lblNombre.Location = new Point(170, 33);
+            lblNombre.Location = new Point(136, 26);
+            lblNombre.Margin = new Padding(2, 0, 2, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(78, 25);
+            lblNombre.Size = new Size(64, 20);
             lblNombre.TabIndex = 1;
             lblNombre.Text = "Nombre";
             // 
@@ -62,9 +64,10 @@
             lblPrecio.AutoSize = true;
             lblPrecio.BackColor = Color.Transparent;
             lblPrecio.ForeColor = Color.Black;
-            lblPrecio.Location = new Point(170, 64);
+            lblPrecio.Location = new Point(136, 51);
+            lblPrecio.Margin = new Padding(2, 0, 2, 0);
             lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(60, 25);
+            lblPrecio.Size = new Size(50, 20);
             lblPrecio.TabIndex = 2;
             lblPrecio.Text = "Precio";
             // 
@@ -73,9 +76,10 @@
             lblStock.AutoSize = true;
             lblStock.BackColor = Color.Transparent;
             lblStock.ForeColor = Color.Black;
-            lblStock.Location = new Point(170, 118);
+            lblStock.Location = new Point(136, 94);
+            lblStock.Margin = new Padding(2, 0, 2, 0);
             lblStock.Name = "lblStock";
-            lblStock.Size = new Size(55, 25);
+            lblStock.Size = new Size(45, 20);
             lblStock.TabIndex = 3;
             lblStock.Text = "Stock";
             // 
@@ -84,9 +88,10 @@
             btnAgregarFac.BackColor = Color.White;
             btnAgregarFac.Enabled = false;
             btnAgregarFac.ForeColor = Color.Black;
-            btnAgregarFac.Location = new Point(76, 169);
+            btnAgregarFac.Location = new Point(61, 135);
+            btnAgregarFac.Margin = new Padding(2, 2, 2, 2);
             btnAgregarFac.Name = "btnAgregarFac";
-            btnAgregarFac.Size = new Size(112, 34);
+            btnAgregarFac.Size = new Size(90, 27);
             btnAgregarFac.TabIndex = 4;
             btnAgregarFac.Text = "Agregar";
             btnAgregarFac.UseVisualStyleBackColor = false;
@@ -96,15 +101,16 @@
             // 
             lblID.AutoSize = true;
             lblID.ForeColor = Color.Black;
-            lblID.Location = new Point(171, 89);
+            lblID.Location = new Point(137, 71);
+            lblID.Margin = new Padding(2, 0, 2, 0);
             lblID.Name = "lblID";
-            lblID.Size = new Size(28, 25);
+            lblID.Size = new Size(22, 20);
             lblID.TabIndex = 5;
             lblID.Text = "Id";
             // 
             // UCProducto
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.White;
@@ -116,8 +122,10 @@
             Controls.Add(lblNombre);
             Controls.Add(pbImagenPro);
             ForeColor = Color.White;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UCProducto";
-            Size = new Size(456, 229);
+            Size = new Size(365, 183);
+            Load += UCProducto_Load;
             ((System.ComponentModel.ISupportInitialize)pbImagenPro).EndInit();
             ResumeLayout(false);
             PerformLayout();

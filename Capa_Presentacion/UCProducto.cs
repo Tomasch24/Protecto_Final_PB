@@ -30,7 +30,7 @@ namespace Capa_Presentacion
             IdProducto = id;
 
             //TODO Mostrar los datos en las etiquetas del control
-            lblID.Text = $"Cod. Producto: {id}" ;
+            lblID.Text = $"Cod. Producto: {id}";
             lblNombre.Text = nombre;
             lblPrecio.Text = $"Precio: {precio:C}";
             lblStock.Text = $"Stock: {stock}";
@@ -78,13 +78,13 @@ namespace Capa_Presentacion
 
             decimal precio;
             return decimal.TryParse(sinEtiqueta, NumberStyles.Any, CultureInfo.InvariantCulture, out precio) ? precio : 0m;
-                  
+
         }
 
-       //TODO Extrae el valor entero del texto de stock formateado
+        //TODO Extrae el valor entero del texto de stock formateado
         private int ObtenerID(string texto)
         {
-            
+
             string sinEtiqueta = texto.Replace("Cod. Producto:", "").Trim();
 
             //TODDO Intenta convertir el texto limpio a entero
@@ -115,16 +115,20 @@ namespace Capa_Presentacion
 
             });
 
-            
+
         }
 
-  
+
 
         public void HabilitarBotonAgregar()
         {
             btnAgregarFac.Enabled = true;
         }
-        
+
+        private void UCProducto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

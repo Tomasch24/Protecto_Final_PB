@@ -186,8 +186,8 @@ namespace Capa_Presentacion
                 return;
             }
 
-            
-            string precioTexto = txtPrecio.Text.Replace("RD$", "").Replace(",", "").Trim();
+
+            string precioTexto = txtPrecio.Text.Replace("$", "").Replace(",", "").Trim();
 
 
             if (!decimal.TryParse(precioTexto, out decimal precio))
@@ -548,11 +548,26 @@ namespace Capa_Presentacion
             // Pantalla_De_Inicio P = new Pantalla_De_Inicio();
             //Facturacion F = new Pantalla_De_Inicio();
             //P.OpenPanelHerencia(new Catalogo_De_Los_Productos());
+            // Crea una instancia del formulario del catálogo
+            // Crea una instancia del formulario del catálogo
+            using (var catalogo = new Catalogo_De_Los_Productos())
+            {
+                // Muestra el catálogo como un diálogo modal. El código se detiene aquí.
+                var result = catalogo.ShowDialog();
 
-            Pantalla_De_Inicio.InstanciaActual.OpenPanelHerencia(new Catalogo_De_Los_Productos());
-            
+                // Si el usuario seleccionó un producto y el resultado fue OK
+                if (result == DialogResult.OK)
+                {
+                    // Obtén el producto seleccionado de la propiedad pública del catálogo
+                    var producto = catalogo.ProductoSeleccionado;
 
+                    // Rellena los campos de producto en el formulario de facturación
+                    txtIdProducto.Text = producto.IdProducto.ToString();
+                    txtProducto.Text = producto.Nombre;
+                    txtPrecio.Text = producto.Precio.ToString("C", new CultureInfo("es-DO"));
+                    txtStock.Text = producto.Stock.ToString();
+                }
+            }
         }
     }
-
 }

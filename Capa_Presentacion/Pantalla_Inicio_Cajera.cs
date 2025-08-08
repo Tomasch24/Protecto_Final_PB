@@ -85,6 +85,8 @@ namespace Capa_Presentacion
                 MessageBox.Show("No se pudo cargar la imagen de perfil: " + ex.Message);
             }
         }
+
+      
         #endregion
 
 
@@ -198,6 +200,66 @@ namespace Capa_Presentacion
         private void btnCatalogo_Click_1(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Catalogo_De_Los_Productos());
+        }
+
+        private void PBuser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblemail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRol_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblnom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCatalogo_Click_2(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Catalogo_De_Los_Productos());
+        }
+
+        private void btnFacturacion_Click_1(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Facturacion());
+
+        }
+
+        private void btnPedidos_Click_1(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Pedidos());
+
+        }
+
+        private void btnClientes_Click_1(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Clientes());
+
+        }
+
+        private void btnReportes_Click_1(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Sistema());
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Pantalla_Inicio_Cajera_Load(object sender, EventArgs e)
+        {
+            LoadUserData();
+
         }
     }
 }

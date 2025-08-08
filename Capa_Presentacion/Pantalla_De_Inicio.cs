@@ -274,5 +274,15 @@ namespace Capa_Interfas
         {
             OpenPanelHerencia(new Catalogo_De_Los_Productos());
         }
+
+        private void lblnom_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRol_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
