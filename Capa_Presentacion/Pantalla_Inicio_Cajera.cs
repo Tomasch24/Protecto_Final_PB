@@ -189,6 +189,16 @@ namespace Capa_Presentacion
         {
             OpenPanelHerencia(new Sistema());
         }
+
+        private void pbIconCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnCatalogo_Click_1(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Catalogo_De_Los_Productos());
+        }
     }
 }
 #endregion

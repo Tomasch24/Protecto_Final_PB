@@ -8,6 +8,7 @@ namespace Capa_Interfas
 {
     public partial class Pantalla_De_Inicio : Form
     {
+        public static Pantalla_De_Inicio InstanciaActual;
         #region Campos de clase
         private Panel loadingPanel;
         // Almacena una referencia al formulario que está actualmente abierto en el panel principal.
@@ -38,6 +39,7 @@ namespace Capa_Interfas
         {
             // Llama al método para cargar la información del perfil del usuario en la interfaz
             LoadUserData();
+            InstanciaActual = this;
         }
 
         // Carga los datos del usuario (que fueron guardados en la caché durante el login) en los controles del formulario
@@ -100,7 +102,7 @@ namespace Capa_Interfas
         #region Metodo normal para abrir Formularios hijos en el panel principal
 
         // Este es el método central para la navegación, recibe cualquier formulario que deba ser mostrado
-        private void OpenPanelHerencia(Form herenciaForm)
+        public void OpenPanelHerencia(Form herenciaForm)
         {
             // Comprueba si ya hay un formulario abierto en el panel
             if (activeForm != null)
@@ -261,6 +263,16 @@ namespace Capa_Interfas
         private void PBuser_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbIconCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnCatalogo_Click(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Catalogo_De_Los_Productos());
         }
     }
 }

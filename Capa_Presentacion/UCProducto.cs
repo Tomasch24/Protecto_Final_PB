@@ -30,9 +30,9 @@ namespace Capa_Presentacion
             IdProducto = id;
 
             //TODO Mostrar los datos en las etiquetas del control
-            lblID.Text = id.ToString();
+            lblID.Text = $"Cod. Producto: {id}" ;
             lblNombre.Text = nombre;
-            lblPrecio.Text = $"Precio: {precio:C}DOP";
+            lblPrecio.Text = $"Precio: {precio:C}";
             lblStock.Text = $"Stock: {stock}";
 
             try
@@ -82,9 +82,18 @@ namespace Capa_Presentacion
         }
 
        //TODO Extrae el valor entero del texto de stock formateado
-        private int ObtenerStock(string texto)
+        private int ObtenerID(string texto)
         {
             
+            string sinEtiqueta = texto.Replace("Cod. Producto:", "").Trim();
+
+            //TODDO Intenta convertir el texto limpio a entero
+            int Id;
+            return int.TryParse(sinEtiqueta, out Id) ? Id : 0;
+        }
+        private int ObtenerStock(string texto)
+        {
+
             string sinEtiqueta = texto.Replace("Stock:", "").Trim();
 
             //TODDO Intenta convertir el texto limpio a entero
@@ -99,7 +108,7 @@ namespace Capa_Presentacion
             //TODO Dispara el evento personalizado, enviando los datos del producto como argumentos
             ProductoAgregado?.Invoke(this, new ProductoEventArgs
             {
-                IdProducto = int.TryParse(lblID.Text, out int id) ? id : 0,
+                IdProducto = ObtenerID(lblID.Text),
                 Nombre = lblNombre.Text,
                 Precio = ObtenerPrecio(lblPrecio.Text),
                 Stock = ObtenerStock(lblStock.Text)

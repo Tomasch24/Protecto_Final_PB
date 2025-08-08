@@ -511,19 +511,20 @@
             pbBuscarIdProducto.BackColor = Color.Transparent;
             pbBuscarIdProducto.Enabled = false;
             pbBuscarIdProducto.Image = Properties.Resources.icons8_search_32;
-            pbBuscarIdProducto.Location = new Point(122, 96);
+            pbBuscarIdProducto.Location = new Point(8, 97);
             pbBuscarIdProducto.Margin = new Padding(2);
             pbBuscarIdProducto.Name = "pbBuscarIdProducto";
             pbBuscarIdProducto.Size = new Size(30, 36);
             pbBuscarIdProducto.SizeMode = PictureBoxSizeMode.Zoom;
             pbBuscarIdProducto.TabIndex = 23;
             pbBuscarIdProducto.TabStop = false;
+            pbBuscarIdProducto.Click += pbBuscarIdProducto_Click_1;
             // 
             // txtIdProducto
             // 
             txtIdProducto.Enabled = false;
             txtIdProducto.Font = new Font("Verdana", 10F);
-            txtIdProducto.Location = new Point(8, 96);
+            txtIdProducto.Location = new Point(53, 97);
             txtIdProducto.Margin = new Padding(2);
             txtIdProducto.Name = "txtIdProducto";
             txtIdProducto.Size = new Size(82, 32);
@@ -536,7 +537,7 @@
             lblIdProducto.BackColor = Color.FromArgb(111, 129, 105);
             lblIdProducto.Font = new Font("Verdana", 9F);
             lblIdProducto.ForeColor = Color.White;
-            lblIdProducto.Location = new Point(8, 53);
+            lblIdProducto.Location = new Point(53, 54);
             lblIdProducto.Margin = new Padding(2, 0, 2, 0);
             lblIdProducto.Name = "lblIdProducto";
             lblIdProducto.Size = new Size(114, 22);
@@ -650,6 +651,7 @@
             txtPago.Name = "txtPago";
             txtPago.Size = new Size(182, 32);
             txtPago.TabIndex = 102;
+            txtPago.KeyDown += txtPago_KeyDown_1;
             txtPago.KeyPress += txtPago_KeyPress;
             // 
             // txtCambio
@@ -681,7 +683,7 @@
             cbMetodoPago.Enabled = false;
             cbMetodoPago.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbMetodoPago.FormattingEnabled = true;
-            cbMetodoPago.Location = new Point(1525, 617);
+            cbMetodoPago.Location = new Point(1525, 638);
             cbMetodoPago.Name = "cbMetodoPago";
             cbMetodoPago.Size = new Size(182, 33);
             cbMetodoPago.TabIndex = 105;
@@ -697,6 +699,7 @@
             pbAtrasMP.SizeMode = PictureBoxSizeMode.Zoom;
             pbAtrasMP.TabIndex = 106;
             pbAtrasMP.TabStop = false;
+            pbAtrasMP.Click += pbAtrasMP_Click;
             // 
             // Facturacion
             // 

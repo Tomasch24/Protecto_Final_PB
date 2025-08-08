@@ -106,6 +106,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
             Name = "Catalogo_De_Los_Productos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             Load += Catalogo_De_Los_Productos_Load;
             panel1.ResumeLayout(false);
