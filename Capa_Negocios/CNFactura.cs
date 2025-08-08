@@ -10,7 +10,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace capa_negocios
 {
     //TODO clase abstracta base Factura
-    public abstract class Factura
+    public abstract class Factura : IDescuento
     {
         public int IdFactura { get; set; }
         public CNCliente Cliente { get; set; }

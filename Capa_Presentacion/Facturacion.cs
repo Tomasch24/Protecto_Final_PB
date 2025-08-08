@@ -187,7 +187,7 @@ namespace Capa_Presentacion
             }
 
 
-            string precioTexto = txtPrecio.Text.Replace("$", "").Replace(",", "").Trim();
+            string precioTexto = txtPrecio.Text.Replace("RD$", "").Replace(",", "").Trim();
 
 
             if (!decimal.TryParse(precioTexto, out decimal precio))
