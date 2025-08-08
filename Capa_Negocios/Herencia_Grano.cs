@@ -9,6 +9,8 @@ namespace Capa_Negocios
     public class Grano : Producto
     {
         public override string Tipo => "Grano";
+        // TODO Agregar propiedades específicas para un grano
+        // TODO Esto permitiría especializar aún más la clase.
 
     }
 }

@@ -9,61 +9,96 @@ using ConexionADatos;
 
 namespace Capa.Presentacion
 {
+    // Define una clase parcial para el formulario de proveedores, que hereda de la clase Form.
     public partial class FormPROVEEDORES : Form
     {
+        // TODO --- SECCIÓN: Variables de Clase y Constructor ---
 
-
-        //Lógica para mostrar los datos en la interfaz
-
-        private void CargarProveedoresDesdeBD()
-        {
-            try
-            {
-                CNProveedor negocio = new CNProveedor();
-                dgvPROVEEDORES.DataSource = negocio.ObtenerTodosLosProveedores();
-                dgvPROVEEDORES.ClearSelection();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar proveedores: " + ex.Message);
-            }
-        }
-
-
-
-        private void LimpiarCampos()
-        {
-            TxtRNC.Text = "";
-            TxtNOMBRE.Text = "";
-            TxtTELEFONO.Text = "";
-            cmbTipoProveedor.Text = "";
-            TxtPRODUCTO.Text = "";
-            TxtPRECIO.Text = "";
-
-        }
-
-
+        // Variable para la capa de negocios de proveedores, inicializada para su uso en los métodos.
         private CNProveedor cnProveedor = new CNProveedor();
 
         public FormPROVEEDORES()
         {
             InitializeComponent();
 
+            // Lógica para inicializar el ComboBox si no tiene elementos.
             if (cmbTipoProveedor.Items.Count == 0)
             {
                 cmbTipoProveedor.Items.Add("LOCAL");
                 cmbTipoProveedor.Items.Add("INTERNACIONAL");
             }
 
+            // Selecciona el primer elemento por defecto.
             cmbTipoProveedor.SelectedIndex = 0;
         }
 
+        //TODO  --- SECCIÓN: Métodos Auxiliares ---
+        // Estos métodos ayudan a mantener el código limpio y a evitar la duplicación de lógica.
 
+        // TODO: Lógica para mostrar los datos en la interfaz
+        private void CargarProveedoresDesdeBD()
+        {
+            try
+            {
+                // Instancia de la capa de negocios para obtener los datos de los proveedores.
+                CNProveedor negocio = new CNProveedor();
+                // Asigna el DataTable resultante al DataSource del DataGridView.
+                dgvPROVEEDORES.DataSource = negocio.ObtenerTodosLosProveedores();
+                // Deselecciona todas las filas del DataGridView.
+                dgvPROVEEDORES.ClearSelection();
+            }
 
+            catch (Exception ex)
+            {
+                // Muestra un mensaje de error si la carga falla.
+                MessageBox.Show("Error al cargar proveedores: " + ex.Message);
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            // Borra el texto de todos los campos de entrada para el formulario.
+            TxtRNC.Text = "";
+            TxtNOMBRE.Text = "";
+            TxtTELEFONO.Text = "";
+            cmbTipoProveedor.Text = "";
+            TxtPRODUCTO.Text = "";
+            TxtPRECIO.Text = "";
+        }
+
+        // TODO --- SECCIÓN: Eventos del Formulario (Load y Cierre) ---
+
+        private void FormPROVEEDORES_Load(object sender, EventArgs e)
+        {
+            // Configuración inicial del DataGridView al cargar el formulario.
+            // Esto previene que se generen columnas automáticas.
+            dgvPROVEEDORES.AutoGenerateColumns = false;
+            dgvPROVEEDORES.Columns.Clear();
+
+            // Se definen las columnas manualmente, especificando el nombre y a qué campo de la base de datos se enlazan.
+            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "IDPROVEEDOR", HeaderText = "ID", DataPropertyName = "IDPROVEEDOR" });
+            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "RNC", HeaderText = "RNC", DataPropertyName = "RNC" });
+            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "NOMBRE", HeaderText = "Nombre", DataPropertyName = "NOMBRE" });
+            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "TELEFONO", HeaderText = "Teléfono", DataPropertyName = "TELEFONO" });
+            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "TIPO", HeaderText = "Tipo", DataPropertyName = "TIPO" });
+            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "PRODUCTO", HeaderText = "Producto", DataPropertyName = "PRODUCTO" });
+            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "PRECIO", HeaderText = "Precio", DataPropertyName = "PRECIO" });
+
+            // Llama al método para cargar los datos en el DataGridView al iniciar.
+            CargarProveedoresDesdeBD();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            // Cierra el formulario actual.
+            this.Dispose();
+        }
+
+        //TODO  --- SECCIÓN: Lógica de Botones Principales (CRUD) ---
 
         private void btnBUSCAR_Click(object sender, EventArgs e)
         {
+            // Maneja el evento de búsqueda de un proveedor por RNC.
             string rncBuscado = TxtRNC.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(rncBuscado))
@@ -79,6 +114,7 @@ namespace Capa.Presentacion
             {
                 DataRow proveedor = resultado.Rows[0];
 
+                // Llena los campos del formulario con los datos encontrados.
                 TxtRNC.Text = proveedor["RNC"].ToString();
                 TxtNOMBRE.Text = proveedor["NOMBRE"].ToString();
                 TxtTELEFONO.Text = proveedor["TELEFONO"].ToString();
@@ -86,6 +122,7 @@ namespace Capa.Presentacion
                 TxtPRODUCTO.Text = proveedor["PRODUCTO"].ToString();
                 TxtPRECIO.Text = proveedor["PRECIO"].ToString();
 
+                // Muestra solo el resultado de la búsqueda en el DataGridView y lo selecciona.
                 dgvPROVEEDORES.DataSource = resultado;
                 dgvPROVEEDORES.ClearSelection();
 
@@ -99,18 +136,16 @@ namespace Capa.Presentacion
                     }
                 }
             }
-
             else
             {
                 MessageBox.Show("Proveedor no encontrado en la base de datos.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarCampos();
             }
-
         }
 
         private void btnREGISTRAR_Click(object sender, EventArgs e)
         {
-
+            // Maneja el evento de registro de un nuevo proveedor, incluyendo validaciones.
             try
             {
                 if (string.IsNullOrWhiteSpace(TxtRNC.Text) || string.IsNullOrWhiteSpace(TxtNOMBRE.Text))
@@ -128,6 +163,7 @@ namespace Capa.Presentacion
                 PROVEEDOR nuevoProveedor;
                 string tipoProveedor = cmbTipoProveedor.SelectedItem?.ToString();
 
+                // Crea una instancia de la clase de proveedor adecuada según el tipo seleccionado.
                 if (tipoProveedor == "LOCAL")
                 {
                     nuevoProveedor = new ProveedorLocal(TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
@@ -142,8 +178,6 @@ namespace Capa.Presentacion
                     return;
                 }
 
-             
-
                 using (SqlConnection conn = new SqlConnection(new Productos_Agri().Conexion))
                 {
                     conn.Open();
@@ -152,7 +186,7 @@ namespace Capa.Presentacion
 
                     MessageBox.Show("Proveedor registrado correctamente.");
                     LimpiarCampos();
-                    CargarProveedoresDesdeBD(); // Refrescar el DataGridView
+                    CargarProveedoresDesdeBD(); // Refresca el DataGridView para mostrar el nuevo proveedor.
                 }
             }
             catch (Exception ex)
@@ -161,26 +195,21 @@ namespace Capa.Presentacion
             }
         }
 
-
         private void btnLIMPIAR_Click(object sender, EventArgs e)
         {
-
-            // Llamar al método que ya limpia los campos correctamente.
+            // Limpia los campos de texto, quita la selección del DataGridView y recarga los datos.
             LimpiarCampos();
-
-            // Quitar selección visual del DataGridView
             if (dgvPROVEEDORES != null)
             {
                 dgvPROVEEDORES.ClearSelection();
                 dgvPROVEEDORES.CurrentCell = null;
-
-                // Recargar desde la base de datos
                 CargarProveedoresDesdeBD();
             }
         }
 
         private void btnELIMINAR_Click(object sender, EventArgs e)
         {
+            // Maneja el evento de eliminación de un proveedor seleccionado en el DataGridView.
             if (dgvPROVEEDORES.CurrentRow == null)
             {
                 MessageBox.Show("Por favor, selecciona un proveedor para eliminar.");
@@ -205,41 +234,14 @@ namespace Capa.Presentacion
                 MessageBox.Show("No se pudo eliminar el proveedor. Verifica el RNC o intenta nuevamente.");
             }
 
-            // Se llama al método correcto para refrescar.
+            // Refresca la interfaz después de la eliminación.
             CargarProveedoresDesdeBD();
             LimpiarCampos();
-
         }
-
-
-
-        private void dgvLISTATEMPORAL_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
-
-        private void FormPROVEEDORES_Load(object sender, EventArgs e)
-        {
-            // Evitar que se generen columnas automáticamente
-            dgvPROVEEDORES.AutoGenerateColumns = false;
-            dgvPROVEEDORES.Columns.Clear();
-
-            // Definir las columnas manualmente y enlazar con los datos del DataTable
-            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "IDPROVEEDOR", HeaderText = "ID", DataPropertyName = "IDPROVEEDOR" });
-            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "RNC", HeaderText = "RNC", DataPropertyName = "RNC" });
-            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "NOMBRE", HeaderText = "Nombre", DataPropertyName = "NOMBRE" });
-            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "TELEFONO", HeaderText = "Teléfono", DataPropertyName = "TELEFONO" });
-            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "TIPO", HeaderText = "Tipo", DataPropertyName = "TIPO" });
-            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "PRODUCTO", HeaderText = "Producto", DataPropertyName = "PRODUCTO" });
-            dgvPROVEEDORES.Columns.Add(new DataGridViewTextBoxColumn { Name = "PRECIO", HeaderText = "Precio", DataPropertyName = "PRECIO" });
-
-            //Cargar los datos desde la base de datos
-            CargarProveedoresDesdeBD();
-        }
-
 
         private void btnEDITAR_Click(object sender, EventArgs e)
         {
+            // Maneja el evento de edición de un proveedor, incluyendo validaciones y manejo de errores.
             if (dgvPROVEEDORES.CurrentRow == null)
             {
                 MessageBox.Show("Por favor selecciona un proveedor de la lista para editar.", "Sin selección", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -259,6 +261,7 @@ namespace Capa.Presentacion
                 PROVEEDOR proveedorActualizado;
                 string tipoProveedor = cmbTipoProveedor.SelectedItem?.ToString();
 
+                // Crea una instancia del proveedor actualizada según el tipo.
                 if (tipoProveedor == "LOCAL")
                 {
                     proveedorActualizado = new ProveedorLocal(TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
@@ -287,36 +290,25 @@ namespace Capa.Presentacion
             }
             catch (InvalidOperationException ex)
             {
-                // Captura el error específico de RNC duplicado.
                 MessageBox.Show(ex.Message, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                // Captura cualquier otro error inesperado.
                 MessageBox.Show("Ocurrió un error inesperado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                // Se ejecuta siempre para refrescar la interfaz.
+                // Siempre se refresca la interfaz y se limpian los campos al final.
                 CargarProveedoresDesdeBD();
                 LimpiarCampos();
             }
         }
 
-
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void TxtNOMBRE_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        //TODO  --- SECCIÓN: Eventos de la Interfaz (Clicks en PictureBox) ---
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            // Configura la interfaz para el modo "Registrar". Oculta otros botones y habilita los campos.
             btnLIMPIAR.Hide();
             btnBUSCAR.Hide();
             btnEDITAR.Hide();
@@ -332,6 +324,7 @@ namespace Capa.Presentacion
 
         private void pbBuscar_Click(object sender, EventArgs e)
         {
+            // Configura la interfaz para el modo "Buscar".
             btnLIMPIAR.Hide();
             btnREGISTRAR.Hide();
             btnEDITAR.Hide();
@@ -343,11 +336,11 @@ namespace Capa.Presentacion
             TxtPRECIO.Enabled = true;
             TxtPRODUCTO.Enabled = true;
             cmbTipoProveedor.Enabled = true;
-
         }
 
         private void pbEditar_Click(object sender, EventArgs e)
         {
+            // Configura la interfaz para el modo "Editar".
             btnLIMPIAR.Hide();
             btnREGISTRAR.Hide();
             btnBUSCAR.Hide();
@@ -363,6 +356,7 @@ namespace Capa.Presentacion
 
         private void pbBorrar_Click(object sender, EventArgs e)
         {
+            // Configura la interfaz para el modo "Eliminar".
             btnLIMPIAR.Hide();
             btnREGISTRAR.Hide();
             btnBUSCAR.Hide();
@@ -378,6 +372,7 @@ namespace Capa.Presentacion
 
         private void pbLimpiar_Click(object sender, EventArgs e)
         {
+            // Configura la interfaz para el modo "Limpiar".
             btnELIMINAR.Hide();
             btnREGISTRAR.Hide();
             btnBUSCAR.Hide();
@@ -391,11 +386,21 @@ namespace Capa.Presentacion
             cmbTipoProveedor.Enabled = true;
         }
 
+        // TODO --- SECCIÓN: Eventos No Implementados o Vacíos ---
+
+        private void dgvLISTATEMPORAL_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // Evento vacío, no realiza ninguna acción.
+        }
+
+        private void TxtNOMBRE_TextChanged(object sender, EventArgs e)
+        {
+            // Evento vacío, no realiza ninguna acción.
+        }
+
         private void TxtIDPROVEEDOR_TextChanged(object sender, EventArgs e)
         {
-
-
+            // Evento vacío, no realiza ninguna acción.
         }
     }
-
 }

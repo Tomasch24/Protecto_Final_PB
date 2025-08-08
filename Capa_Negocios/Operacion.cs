@@ -9,6 +9,7 @@ namespace Capa_Negocios
 {
     public class Operacion : BaseDatos
     {
+        // TODO OVERRIDE DE PREPARAR OPERACION (METODO ABSTRACTO) 
         public override void PrepararOperacion()
         {
             try

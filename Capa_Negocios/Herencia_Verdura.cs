@@ -10,5 +10,7 @@ namespace Capa_Negocios
     {
 
         public override string Tipo => "Verdura";
+        // TODO Agregar propiedades específicas para una Verdura
+        // TODO Esto permitiría especializar aún más la clase.
     }
 }
