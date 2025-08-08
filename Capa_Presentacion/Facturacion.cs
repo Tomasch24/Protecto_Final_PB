@@ -19,11 +19,13 @@ using Rectangle = System.Drawing.Rectangle;
 using Capa_Interfas;
 using static Capa_Presentacion.UCProducto;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Capa_Presentacion
 {
     public partial class Facturacion : Form
     {
+
         public Facturacion()
         {
             InitializeComponent();
@@ -52,6 +54,20 @@ namespace Capa_Presentacion
             txtProducto.Text = "";
             txtStock.Text = "";
             nudCantidad.Value = 1;
+
+        }
+        private void LimpiarCamposExtras()
+        {
+            txtPago.Text = "0";
+            txtCambio.Text = "0";
+            txtCambio.Hide();
+            lblCambio.Hide();
+            pbAtrasMP.Hide();
+            txtTotal.Text = "0";
+            dgvFactura.Rows.Clear();
+            txtPago.Hide();
+            lblPago.Text = "Metodo de Pago";
+            cbMetodoPago.Show();
         }
         private void LimpiarCamposCliente()
         {
@@ -133,6 +149,23 @@ namespace Capa_Presentacion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //TODO Capturas de error de los textbox
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El campo Cliente esta incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!MtxtTelefono.MaskCompleted)
+            {
+                MessageBox.Show("El campo Teléfono está incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!MtxtRnc.MaskCompleted)
+            {
+                MessageBox.Show("El campo RNC está incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (string.IsNullOrWhiteSpace(txtIdProducto.Text))
             {
@@ -144,15 +177,22 @@ namespace Capa_Presentacion
                 MessageBox.Show("Error en el campo Metodo de Pago.", "Ingrese un Metodo de Pado valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            int cantidad = Convert.ToInt32(nudCantidad.Text);
+            int stock = Convert.ToInt32(txtStock.Text);
 
-            if (!int.TryParse(nudCantidad.Text, out int cantidad))
+            if (cantidad > stock)
             {
-                MessageBox.Show("Error en el campo Cantidad.", "Ingrese una Cantidad valida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La cantidad no puede ser mayor al stock disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
+            
+            string precioTexto = txtPrecio.Text.Replace("RD$", "").Replace(",", "").Trim();
+
+
+            if (!decimal.TryParse(precioTexto, out decimal precio))
             {
+
                 MessageBox.Show("Error en el campo Precio.", "Ingrese un Precio valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -242,6 +282,7 @@ namespace Capa_Presentacion
                 return;
             }
 
+
             SaveFileDialog guardar = new SaveFileDialog();
             guardar.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
 
@@ -305,8 +346,13 @@ namespace Capa_Presentacion
                     {
                         if (row.IsNewRow) continue;
 
+                        string precioTexto = row.Cells[2].Value?.ToString() ?? "0";
 
-                        decimal precio = Convert.ToDecimal(row.Cells[2].Value);
+
+                        // Eliminar símbolos de moneda y otros caracteres no numéricos
+                        precioTexto = Regex.Replace(precioTexto, @"[^\d.,]", "");
+
+                        decimal precio = Convert.ToDecimal(precioTexto);
                         decimal subtotal = Convert.ToDecimal(row.Cells[4].Value);
                         decimal descuento = Convert.ToDecimal(row.Cells[5].Value);
 
@@ -326,12 +372,30 @@ namespace Capa_Presentacion
 
                     pdfDoc.Close();
                     stream.Close();
+                    foreach (DataGridViewRow row in dgvFactura.Rows)
+
+                    {
+                        if (row.IsNewRow) continue;
+
+                        int idProducto = Convert.ToInt32(row.Cells["IdProducto"].Value);
+                        int cantidadVendida = Convert.ToInt32(row.Cells["Cantidad"].Value);
+
+                        // Obtener el producto desde la base de datos o capa de negocios
+                        var producto = FacturaDal.BuscarPorId(idProducto);
+
+                        // Restar la cantidad vendida
+                        producto.Stock -= cantidadVendida;
+
+                        // Actualizar el stock en la base de datos
+                        FacturaDal.ActualizarStock(producto);
+                    }
                 }
 
                 MessageBox.Show("Factura generada con éxito.", "PDF Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             LimpiarCamposProducto();
             LimpiarCamposCliente();
+            LimpiarCamposExtras();
 
 
         }
@@ -365,8 +429,8 @@ namespace Capa_Presentacion
 
                 if (indice >= 0)
                 {
-                    dgvFactura.Rows.Clear();
-                    txtTotal.Text = "0";
+                    dgvFactura.Rows.RemoveAt(indice);
+                    CalcularTotal();
                 }
             }
         }
@@ -383,17 +447,9 @@ namespace Capa_Presentacion
             }
         }
 
-       
 
-        private void pbAtrasMP_Click(object sender, EventArgs e)
-        {
 
-            cbMetodoPago.Show();
-            lblPago.Text = "Metodo de Pago";
-            txtCambio.Hide();
-            lblCambio.Hide();
-            pbAtrasMP.Hide();
-        }
+
         private void CalcularCambio()
         {
             string totalTexto = txtTotal.Text.Replace("RD$", "").Replace(",", "").Trim();
@@ -418,13 +474,6 @@ namespace Capa_Presentacion
             }
         }
 
-        private void txtPago_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                CalcularCambio();
-            }
-        }
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
@@ -433,7 +482,7 @@ namespace Capa_Presentacion
             txtNombre.Enabled = true;
             MtxtRnc.Enabled = true;
             MtxtTelefono.Enabled = true;
-            txtIdProducto.Enabled = true;
+
             nudCantidad.Enabled = true;
             txtTotal.Enabled = true;
             txtCambio.Enabled = true;
@@ -477,6 +526,33 @@ namespace Capa_Presentacion
 
         }
 
+        private void pbAtrasMP_Click(object sender, EventArgs e)
+        {
+            cbMetodoPago.Show();
+            lblPago.Text = "Metodo de Pago";
+            txtCambio.Hide();
+            lblCambio.Hide();
+            pbAtrasMP.Hide();
+        }
+
+        private void txtPago_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                CalcularCambio();
+            }
+        }
+
+        private void pbBuscarIdProducto_Click_1(object sender, EventArgs e)
+        {
+            // Pantalla_De_Inicio P = new Pantalla_De_Inicio();
+            //Facturacion F = new Pantalla_De_Inicio();
+            //P.OpenPanelHerencia(new Catalogo_De_Los_Productos());
+
+            Pantalla_De_Inicio.InstanciaActual.OpenPanelHerencia(new Catalogo_De_Los_Productos());
+            
+
+        }
     }
 
 }

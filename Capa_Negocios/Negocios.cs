@@ -15,6 +15,7 @@ namespace Capa_Negocios
         public virtual string Tipo { get; set; }
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }
+        public int Stock { get; set; }
         public string ImangenRuta { get; set; }
         public decimal Total => Precio * Cantidad;
 

@@ -1,5 +1,7 @@
 ﻿using capa_negocios;
+using Capa_Negocios;
 using ConexionADatos;
+using DocumentFormat.OpenXml.Drawing.Charts;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -46,6 +48,60 @@ namespace Capa_negocios
                 conn.Close();
             }
             return retorna;
+        }
+
+        public static void ActualizarStock(Producto producto)
+        {
+         
+            Productos_Agri data = new Productos_Agri();
+            using (SqlConnection conn = new SqlConnection(data.Conexion))
+            {
+
+                string query = "UPDATE Producto SET Stock = @Stock WHERE Id = @Id";
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Parameters.AddWithValue("@NuevoStock", producto.Stock);
+                cmd.Parameters.AddWithValue("@IdProducto", producto.Id);
+
+
+            }
+        }
+        public static Producto BuscarPorId(int Id)
+        {
+            Productos_Agri data = new Productos_Agri();
+
+            //Se abre la conexion
+            using (SqlConnection conn = new SqlConnection(data.Conexion))
+            {
+                //abre la conexion a la base de datos
+                conn.Open();
+
+                //TODO Comando SQL para buscar los clientes por id
+                string query = "SELECT * From Producto Where Id = @Id";
+
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                // Parametro de busqueda
+                cmd.Parameters.AddWithValue("@Id", Id);
+
+                //Ejecuta la consulta
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                //Verifica si hay resultados
+                if (reader.Read())
+                {
+
+
+                    Producto P = new Producto();
+
+                    //Se asignan valores desde la base de datos a los atributos de clase
+                    P.Stock =  (int)reader["Stock"];
+
+                    return P; //Devuelve la persona encontrada
+                }
+
+                return null; //Si no encuentra nada, no devuelve nada
+            }
         }
     }
 }

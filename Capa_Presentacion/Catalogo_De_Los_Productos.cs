@@ -90,9 +90,10 @@ namespace Capa_Interfas
             formFacturacion.SetDatosProducto(e);
 
             // Muestra el formulario y lo trae al frente
-            formFacturacion.Show();
-            formFacturacion.BringToFront();
+            Pantalla_De_Inicio.InstanciaActual.OpenPanelHerencia(formFacturacion);
+            
         }
+       
 
         private void label1_Click(object sender, EventArgs e)
         {

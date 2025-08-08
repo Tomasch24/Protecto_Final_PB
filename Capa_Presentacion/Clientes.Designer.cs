@@ -47,16 +47,24 @@
             btnBuscar = new Button();
             btnEliminarCliente = new Button();
             pbAtras = new PictureBox();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
             gbDatosC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbBuscarIdCliente).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAtras).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // txtCorreo
             // 
             txtCorreo.Font = new Font("Verdana", 10F);
-            txtCorreo.Location = new Point(20, 379);
+            txtCorreo.Location = new Point(20, 363);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(236, 32);
             txtCorreo.TabIndex = 115;
@@ -67,7 +75,7 @@
             lblCorreo.BackColor = Color.FromArgb(111, 129, 105);
             lblCorreo.Font = new Font("Verdana", 9F);
             lblCorreo.ForeColor = Color.White;
-            lblCorreo.Location = new Point(20, 354);
+            lblCorreo.Location = new Point(20, 338);
             lblCorreo.Name = "lblCorreo";
             lblCorreo.Size = new Size(72, 22);
             lblCorreo.TabIndex = 111;
@@ -112,7 +120,7 @@
             // 
             pbBuscarIdCliente.BackColor = Color.Transparent;
             pbBuscarIdCliente.Image = Properties.Resources.icons8_search_32;
-            pbBuscarIdCliente.Location = new Point(112, 69);
+            pbBuscarIdCliente.Location = new Point(112, 63);
             pbBuscarIdCliente.Name = "pbBuscarIdCliente";
             pbBuscarIdCliente.Size = new Size(30, 36);
             pbBuscarIdCliente.SizeMode = PictureBoxSizeMode.Zoom;
@@ -123,7 +131,7 @@
             // txtIdCliente
             // 
             txtIdCliente.Font = new Font("Verdana", 10F);
-            txtIdCliente.Location = new Point(20, 69);
+            txtIdCliente.Location = new Point(20, 63);
             txtIdCliente.Name = "txtIdCliente";
             txtIdCliente.Size = new Size(82, 32);
             txtIdCliente.TabIndex = 0;
@@ -132,7 +140,7 @@
             // txtNombre
             // 
             txtNombre.Font = new Font("Verdana", 10F);
-            txtNombre.Location = new Point(20, 148);
+            txtNombre.Location = new Point(20, 132);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(236, 32);
             txtNombre.TabIndex = 1;
@@ -144,7 +152,7 @@
             lblNombre.BackColor = Color.FromArgb(111, 129, 105);
             lblNombre.Font = new Font("Verdana", 9F);
             lblNombre.ForeColor = Color.White;
-            lblNombre.Location = new Point(20, 116);
+            lblNombre.Location = new Point(20, 100);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(82, 22);
             lblNombre.TabIndex = 10;
@@ -154,7 +162,7 @@
             // 
             MtxtTelefono.Font = new Font("Verdana", 10F);
             MtxtTelefono.ForeColor = SystemColors.ControlText;
-            MtxtTelefono.Location = new Point(20, 233);
+            MtxtTelefono.Location = new Point(20, 217);
             MtxtTelefono.Mask = "+1 (999) 000-0000";
             MtxtTelefono.Name = "MtxtTelefono";
             MtxtTelefono.Size = new Size(236, 32);
@@ -166,7 +174,7 @@
             lblTelefono.BackColor = Color.FromArgb(111, 129, 105);
             lblTelefono.Font = new Font("Verdana", 9F);
             lblTelefono.ForeColor = Color.White;
-            lblTelefono.Location = new Point(20, 201);
+            lblTelefono.Location = new Point(20, 185);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(85, 22);
             lblTelefono.TabIndex = 11;
@@ -178,7 +186,7 @@
             lblIdCliente.BackColor = Color.FromArgb(111, 129, 105);
             lblIdCliente.Font = new Font("Verdana", 9F);
             lblIdCliente.ForeColor = Color.White;
-            lblIdCliente.Location = new Point(20, 37);
+            lblIdCliente.Location = new Point(20, 31);
             lblIdCliente.Name = "lblIdCliente";
             lblIdCliente.Size = new Size(98, 22);
             lblIdCliente.TabIndex = 9;
@@ -187,7 +195,7 @@
             // MtxtRnc
             // 
             MtxtRnc.Font = new Font("Verdana", 10F);
-            MtxtRnc.Location = new Point(20, 305);
+            MtxtRnc.Location = new Point(20, 289);
             MtxtRnc.Mask = "000-0000000-0";
             MtxtRnc.Name = "MtxtRnc";
             MtxtRnc.Size = new Size(236, 32);
@@ -199,7 +207,7 @@
             lblRnc.BackColor = Color.FromArgb(111, 129, 105);
             lblRnc.Font = new Font("Verdana", 9F);
             lblRnc.ForeColor = Color.White;
-            lblRnc.Location = new Point(20, 273);
+            lblRnc.Location = new Point(20, 257);
             lblRnc.Name = "lblRnc";
             lblRnc.Size = new Size(49, 22);
             lblRnc.TabIndex = 12;
@@ -277,12 +285,48 @@
             pbAtras.TabStop = false;
             pbAtras.Click += pbAtras_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(997, 162);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(58, 49);
+            pictureBox1.TabIndex = 118;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Location = new Point(997, 217);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(58, 49);
+            pictureBox2.TabIndex = 119;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Location = new Point(997, 272);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(58, 49);
+            pictureBox3.TabIndex = 120;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Location = new Point(997, 327);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(58, 49);
+            pictureBox4.TabIndex = 121;
+            pictureBox4.TabStop = false;
+            // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1431, 777);
+            Controls.Add(pictureBox4);
+            Controls.Add(pictureBox3);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(pbAtras);
             Controls.Add(btnEliminarCliente);
             Controls.Add(btnBuscar);
@@ -293,12 +337,17 @@
             Controls.Add(dgvClientes);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Clientes";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += Clientes_Load;
             gbDatosC.ResumeLayout(false);
             gbDatosC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbBuscarIdCliente).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAtras).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -323,5 +372,9 @@
         private Button btnBuscar;
         private Button btnEliminarCliente;
         private PictureBox pbAtras;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }
