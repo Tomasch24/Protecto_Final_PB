@@ -93,6 +93,26 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap address_card_solid_full_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("address-card-solid-full-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap address_card_solid_full_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("address-card-solid-full-removebg-preview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap arrow_exchanges_exchange_growth_stock_market_bars_economy_stocks_icon_258648 {
             get {
                 object obj = ResourceManager.GetObject("arrow_exchanges_exchange_growth_stock_market_bars_economy_stocks_icon_258648", resourceCulture);
@@ -364,6 +384,26 @@ namespace Capa_Presentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Imagen_de_WhatsApp_2025_08_06_a_las_20_52_28_2dfab1f8_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Imagen_de_WhatsApp_2025-08-06_a_las_20.52.28_2dfab1f8-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Imagen_de_WhatsApp_2025_08_06_a_las_20_52_28_6e773097_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Imagen_de_WhatsApp_2025-08-06_a_las_20.52.28_6e773097-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap LOGO_CLARO {
             get {
                 object obj = ResourceManager.GetObject("LOGO CLARO", resourceCulture);
@@ -527,6 +567,16 @@ namespace Capa_Presentacion.Properties {
         public static System.Drawing.Bitmap trash_can_solid_full_png {
             get {
                 object obj = ResourceManager.GetObject("trash-can-solid-full.png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap user_pen_solid_full_1_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("user-pen-solid-full_1-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

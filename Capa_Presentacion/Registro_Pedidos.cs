@@ -39,8 +39,15 @@ namespace Capa_Presentacion
         {
             // TODO Cargar los pedidos en el DataGridView
             dgvRegistro.DataSource = negocio.ObtenerPedidos();
-            dgvRegistro.Columns["IDPRODUCTO"].HeaderText = "Cod. Producto";
-            dgvRegistro.Columns["IDPROVEEDOR"].HeaderText = "Cod. Proveedor";
+
+
+
+
+            dgvRegistro.Columns["IDPEDIDO"].HeaderText = "ID Pedido";
+            dgvRegistro.Columns["NombreProducto"].HeaderText = "Producto";
+            dgvRegistro.Columns["FECHA"].HeaderText = "Fecha";
+            dgvRegistro.Columns["PRECIOBASE"].HeaderText = "Precio Base";
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

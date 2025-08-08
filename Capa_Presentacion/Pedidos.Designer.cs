@@ -84,9 +84,12 @@
             dgvExistentes.AllowUserToDeleteRows = false;
             dgvExistentes.AllowUserToResizeColumns = false;
             dgvExistentes.AllowUserToResizeRows = false;
-            dgvExistentes.BackgroundColor = Color.White;
-            dgvExistentes.BorderStyle = BorderStyle.None;
-            dgvExistentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+            dgvExistentes.BackgroundColor = SystemColors.Window;
+
+            dgvExistentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 56, 46);
             dataGridViewCellStyle1.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
