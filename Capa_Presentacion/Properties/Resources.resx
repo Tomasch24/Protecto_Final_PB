@@ -121,9 +121,6 @@
   <data name="descargar (13)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar (13)2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LOGO OSCURO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO OSCURO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="calendar-with-spring-binder-and-date-blocks_icon-icons.com_73645" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendar-with-spring-binder-and-date-blocks_icon-icons.com_73645.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,8 +142,8 @@
   <data name="arrow_exchanges_exchange_growth_stock_market_bars_economy_stocks_icon_258648" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow_exchanges_exchange_growth_stock_market_bars_economy_stocks_icon_258648.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CERRAR (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CERRAR (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Imagen_de_WhatsApp_2025-08-06_a_las_20.52.28_6e773097-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagen_de_WhatsApp_2025-08-06_a_las_20.52.28_6e773097-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-search-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-search-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,6 +154,9 @@
   <data name="OPCION C" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OPCION C.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="address-card-solid-full-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\address-card-solid-full-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="exportar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exportar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,23 +166,32 @@
   <data name="icons8-eliminar-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-eliminar-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="user-pen-solid-full_1-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-pen-solid-full_1-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="descargar (13)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar (13).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-plus-math-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-plus-math-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LOGO OSCURO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO OSCURO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MAXIMIZAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MAXIMIZAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="address-card-solid-full-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\address-card-solid-full-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RESTAURAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RESTAURAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="factura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\factura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="harvey_specter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\harvey_specter.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1492617364-13-setting-configure-repair-support-optimization-google_83447" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1492617364-13-setting-configure-repair-support-optimization-google_83447.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MAXIMIZAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MAXIMIZAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="4544830-business-comerce-delivery-register-shop_121429" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4544830-business-comerce-delivery-register-shop_121429.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +205,11 @@
   <data name="descargar (13)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descargar (13)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-error-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-error-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-plus-math-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-plus-math-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CERRAR (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CERRAR (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-plus-math-64 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-plus-math-64 (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,11 +238,14 @@
   <data name="donna_paulsen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\donna_paulsen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="factura" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\factura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Negativo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Negativo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Positivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Positivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4544848-business-comerce-delivery-shop-truck_121448" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4544848-business-comerce-delivery-shop-truck_121448.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="release_introduction_debut_product_launch_icon_263002" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\release_introduction_debut_product_launch_icon_263002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,8 +265,8 @@
   <data name="catalogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\catalogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4544848-business-comerce-delivery-shop-truck_121448" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4544848-business-comerce-delivery-shop-truck_121448.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-error-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-error-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-bullet-list-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-bullet-list-481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,7 +283,7 @@
   <data name="folleto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folleto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Negativo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Negativo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Imagen_de_WhatsApp_2025-08-06_a_las_20.52.28_2dfab1f8-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagen_de_WhatsApp_2025-08-06_a_las_20.52.28_2dfab1f8-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

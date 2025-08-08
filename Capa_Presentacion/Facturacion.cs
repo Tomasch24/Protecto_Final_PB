@@ -36,6 +36,8 @@ namespace Capa_Presentacion
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
+
+            txtIdCliente.MaxLength = 6;
             // Inicializa los ComboBox de tipo de factura y método de pago
             cbTipo.Items.Add("Contado");
             cbTipo.Items.Add("Crédito");
