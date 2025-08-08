@@ -19,7 +19,7 @@ namespace Capa_negocios
         public static int IngresarDatos(Factura factura)
         {
             int retorna = 0;
-             Productos_Agri data = new Productos_Agri();
+            Productos_Agri data = new Productos_Agri();
             //TODO Se abre la conexion
             using (SqlConnection conn = new SqlConnection(data.Conexion))
             {
@@ -52,56 +52,48 @@ namespace Capa_negocios
 
         public static void ActualizarStock(Producto producto)
         {
-         
+
             Productos_Agri data = new Productos_Agri();
             using (SqlConnection conn = new SqlConnection(data.Conexion))
             {
-
+                // 1. Correct the parameter names in the query to match the parameters being added.
                 string query = "UPDATE Producto SET Stock = @Stock WHERE Id = @Id";
-                SqlCommand cmd = new SqlCommand();
 
-                cmd.Parameters.AddWithValue("@NuevoStock", producto.Stock);
-                cmd.Parameters.AddWithValue("@IdProducto", producto.Id);
+                using (SqlCommand cmd = new SqlCommand(query, conn)) // 2. Pass the query and connection to the command.
+                {
+                    // 3. The parameter names here must exactly match the ones in the query string.
+                    cmd.Parameters.AddWithValue("@Stock", producto.Stock);
+                    cmd.Parameters.AddWithValue("@Id", producto.Id);
 
-
+                    conn.Open(); // 4. Open the database connection.
+                    cmd.ExecuteNonQuery(); // 5. Execute the query to update the data.
+                    conn.Close(); // 6. Close the connection.
+                }
             }
         }
         public static Producto BuscarPorId(int Id)
         {
             Productos_Agri data = new Productos_Agri();
+            Producto P = null; // Initialize the product object to null.
 
-            //Se abre la conexion
             using (SqlConnection conn = new SqlConnection(data.Conexion))
             {
-                //abre la conexion a la base de datos
                 conn.Open();
-
-                //TODO Comando SQL para buscar los clientes por id
-                string query = "SELECT * From Producto Where Id = @Id";
-
-
-                SqlCommand cmd = new SqlCommand(query, conn);
-                // Parametro de busqueda
-                cmd.Parameters.AddWithValue("@Id", Id);
-
-                //Ejecuta la consulta
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                //Verifica si hay resultados
-                if (reader.Read())
+                string query = "SELECT Id, Stock From Producto Where Id = @Id"; // Only select the necessary columns.
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@Id", Id);
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-
-                    Producto P = new Producto();
-
-                    //Se asignan valores desde la base de datos a los atributos de clase
-                    P.Stock =  (int)reader["Stock"];
-
-                    return P; //Devuelve la persona encontrada
+                    if (reader.Read())
+                    {
+                        P = new Producto();
+                        P.Id = (int)reader["Id"]; // 1. Set the Id property.
+                        P.Stock = (int)reader["Stock"]; // 2. Set the Stock property.
+                    }
                 }
-
-                return null; //Si no encuentra nada, no devuelve nada
             }
+            return P; // 3. Return the product object (will be null if not found).
         }
     }
 }
