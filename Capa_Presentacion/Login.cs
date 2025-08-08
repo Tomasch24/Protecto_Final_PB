@@ -79,11 +79,6 @@ namespace Capa_Presentacion
                 else msgError("Ingrese La Contraseña");
             }
             else msgError("Ingrese el nombre de usuario");
-
-           
-            
-
-
         }
 
 
@@ -184,7 +179,28 @@ namespace Capa_Presentacion
         #endregion
 
 
-
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            //TODO Si la tecla presionada es Enter
+            if (e.KeyCode == Keys.Enter)
+            {
+                //TODO Si el foco está en el TextBox de usuario (txtUser)
+                if (txtUser.Focused)
+                {
+                    //TODO Mueve el foco al TextBox de contraseña (txtPassword)
+                    txtPassword.Focus();
+                    //TODO Evita que el "Enter" sea procesado por otros controles, como el botón
+                    e.Handled = true;
+                }
+                //TODO Si el foco está en el TextBox de contraseña (txtPassword)
+                else if (txtPassword.Focused)
+                {
+                    //TODO Llama al evento click del botón de login
+                    btnLogin_Click(sender, e);
+                    e.Handled = true;
+                }
+            }
+        }
 
 
 

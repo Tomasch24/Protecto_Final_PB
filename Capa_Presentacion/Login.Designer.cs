@@ -37,8 +37,6 @@
             lblPassword = new Label();
             txtPassword = new TextBox();
             btnLogin = new Button();
-            panel2 = new Panel();
-            linkLabel1 = new LinkLabel();
             pictureBox1 = new PictureBox();
             lblError = new Label();
             panelLogTitulo.SuspendLayout();
@@ -49,13 +47,13 @@
             // 
             // panelLogTitulo
             // 
-            panelLogTitulo.BackColor = Color.FromArgb(41, 76, 37);
+            panelLogTitulo.BackColor = Color.FromArgb(88, 173, 83);
             panelLogTitulo.Controls.Add(btnMinimizar);
             panelLogTitulo.Controls.Add(btnCerrar);
             panelLogTitulo.Dock = DockStyle.Top;
             panelLogTitulo.Location = new Point(0, 0);
             panelLogTitulo.Name = "panelLogTitulo";
-            panelLogTitulo.Size = new Size(474, 50);
+            panelLogTitulo.Size = new Size(462, 50);
             panelLogTitulo.TabIndex = 0;
             panelLogTitulo.Paint += panelLogTitulo_Paint;
             panelLogTitulo.MouseMove += panelLogTitulo_MouseDown;
@@ -84,16 +82,16 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(41, 76, 37);
+            panel1.BackColor = Color.FromArgb(88, 173, 83);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 758);
+            panel1.Location = new Point(0, 669);
             panel1.Name = "panel1";
-            panel1.Size = new Size(474, 27);
+            panel1.Size = new Size(462, 27);
             panel1.TabIndex = 1;
             // 
             // txtUser
             // 
-            txtUser.BackColor = Color.FromArgb(110, 190, 125);
+            txtUser.BackColor = Color.FromArgb(41, 76, 37);
             txtUser.BorderStyle = BorderStyle.None;
             txtUser.Font = new Font("Century", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtUser.ForeColor = Color.White;
@@ -126,7 +124,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.BackColor = Color.FromArgb(110, 190, 125);
+            txtPassword.BackColor = Color.FromArgb(41, 76, 37);
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Century", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtPassword.ForeColor = Color.White;
@@ -149,31 +147,6 @@
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             btnLogin.Paint += btnLogin_Paint;
-            // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.BackColor = Color.Black;
-            panel2.Enabled = false;
-            panel2.ForeColor = Color.Black;
-            panel2.Location = new Point(50, 678);
-            panel2.MaximumSize = new Size(460, 2);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(350, 2);
-            panel2.TabIndex = 8;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.ActiveLinkColor = Color.FromArgb(88, 173, 83);
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Century", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(102, 692);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(273, 22);
-            linkLabel1.TabIndex = 9;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "¿Ha olvidado su contraseña?";
             // 
             // pictureBox1
             // 
@@ -204,11 +177,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(474, 785);
+            ClientSize = new Size(462, 696);
             Controls.Add(lblError);
             Controls.Add(pictureBox1);
-            Controls.Add(linkLabel1);
-            Controls.Add(panel2);
             Controls.Add(btnLogin);
             Controls.Add(lblPassword);
             Controls.Add(txtPassword);
@@ -217,9 +188,11 @@
             Controls.Add(panel1);
             Controls.Add(panelLogTitulo);
             FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Load += Login_Load;
+            KeyDown += Login_KeyDown;
             MouseMove += Login_MouseDown;
             panelLogTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
@@ -240,8 +213,6 @@
         private Label lblPassword;
         private TextBox txtPassword;
         private Button btnLogin;
-        private Panel panel2;
-        private LinkLabel linkLabel1;
         private PictureBox pictureBox1;
         private Label lblError;
     }

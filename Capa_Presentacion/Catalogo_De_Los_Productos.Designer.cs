@@ -41,12 +41,13 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(btnHabilitarCat);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1160, 0);
+            panel1.Location = new Point(928, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(158, 851);
+            panel1.Size = new Size(126, 681);
             panel1.TabIndex = 16;
             // 
             // pictureBox1
@@ -55,7 +56,7 @@
             pictureBox1.Location = new Point(0, 2);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(158, 126);
+            pictureBox1.Size = new Size(126, 101);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -64,9 +65,10 @@
             // 
             flpCatalogo.AutoScroll = true;
             flpCatalogo.BackColor = Color.White;
-            flpCatalogo.Location = new Point(32, 179);
+            flpCatalogo.Location = new Point(26, 143);
+            flpCatalogo.Margin = new Padding(2, 2, 2, 2);
             flpCatalogo.Name = "flpCatalogo";
-            flpCatalogo.Size = new Size(1107, 548);
+            flpCatalogo.Size = new Size(886, 438);
             flpCatalogo.TabIndex = 17;
             // 
             // lbldescripcion
@@ -74,32 +76,35 @@
             lbldescripcion.AutoSize = true;
             lbldescripcion.Font = new Font("Lucida Sans", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbldescripcion.ForeColor = Color.White;
-            lbldescripcion.Location = new Point(437, 98);
+            lbldescripcion.Location = new Point(350, 78);
+            lbldescripcion.Margin = new Padding(2, 0, 2, 0);
             lbldescripcion.Name = "lbldescripcion";
-            lbldescripcion.Size = new Size(329, 59);
+            lbldescripcion.Size = new Size(277, 50);
             lbldescripcion.TabIndex = 18;
             lbldescripcion.Text = "CATÁLOGO";
             // 
             // btnHabilitarCat
             // 
+            btnHabilitarCat.BackColor = Color.FromArgb(43, 56, 46);
+            btnHabilitarCat.Dock = DockStyle.Bottom;
             btnHabilitarCat.FlatStyle = FlatStyle.Flat;
             btnHabilitarCat.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHabilitarCat.ForeColor = Color.White;
-            btnHabilitarCat.Location = new Point(958, 733);
+            btnHabilitarCat.Location = new Point(0, 639);
+            btnHabilitarCat.Margin = new Padding(2, 2, 2, 2);
             btnHabilitarCat.Name = "btnHabilitarCat";
-            btnHabilitarCat.Size = new Size(181, 52);
+            btnHabilitarCat.Size = new Size(126, 42);
             btnHabilitarCat.TabIndex = 19;
             btnHabilitarCat.Text = "Habilitar";
-            btnHabilitarCat.UseVisualStyleBackColor = true;
+            btnHabilitarCat.UseVisualStyleBackColor = false;
             btnHabilitarCat.Click += btnHabilitarCat_Click;
             // 
             // Catalogo_De_Los_Productos
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(111, 129, 105);
-            ClientSize = new Size(1318, 851);
-            Controls.Add(btnHabilitarCat);
+            BackColor = Color.FromArgb(43, 56, 46);
+            ClientSize = new Size(1054, 681);
             Controls.Add(lbldescripcion);
             Controls.Add(flpCatalogo);
             Controls.Add(panel1);

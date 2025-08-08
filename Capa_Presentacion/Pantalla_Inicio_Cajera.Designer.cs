@@ -59,9 +59,9 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.SIN_FONDO_OSCURO;
-            pictureBox1.Location = new Point(403, 137);
+            pictureBox1.Location = new Point(411, 131);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(560, 575);
+            pictureBox1.Size = new Size(384, 451);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -80,9 +80,9 @@
             // 
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(279, 0);
+            panel1.Location = new Point(315, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1401, 843);
+            panel1.Size = new Size(1365, 843);
             panel1.TabIndex = 12;
             // 
             // MenuVertical
@@ -101,15 +101,16 @@
             MenuVertical.ForeColor = SystemColors.ControlText;
             MenuVertical.Location = new Point(0, 0);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(279, 843);
+            MenuVertical.Size = new Size(315, 843);
             MenuVertical.TabIndex = 11;
             // 
             // btnCatalogo
             // 
             btnCatalogo.BackColor = Color.FromArgb(42, 100, 66);
             btnCatalogo.FlatStyle = FlatStyle.Popup;
+            btnCatalogo.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnCatalogo.ForeColor = Color.White;
-            btnCatalogo.Location = new Point(42, 226);
+            btnCatalogo.Location = new Point(58, 227);
             btnCatalogo.Margin = new Padding(2);
             btnCatalogo.Name = "btnCatalogo";
             btnCatalogo.Size = new Size(186, 38);
@@ -122,11 +123,11 @@
             // 
             lblemail.AutoSize = true;
             lblemail.BackColor = Color.Transparent;
-            lblemail.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblemail.Font = new Font("Lucida Bright", 7.8F, FontStyle.Bold);
             lblemail.ForeColor = Color.White;
             lblemail.Location = new Point(112, 108);
             lblemail.Name = "lblemail";
-            lblemail.Size = new Size(44, 17);
+            lblemail.Size = new Size(46, 15);
             lblemail.TabIndex = 14;
             lblemail.Text = "E-mail";
             lblemail.Click += lblemail_Click;
@@ -135,11 +136,11 @@
             // 
             lblnom.AutoSize = true;
             lblnom.BackColor = Color.Transparent;
-            lblnom.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblnom.Font = new Font("Lucida Bright", 7.8F, FontStyle.Bold);
             lblnom.ForeColor = Color.White;
             lblnom.Location = new Point(112, 21);
             lblnom.Name = "lblnom";
-            lblnom.Size = new Size(57, 17);
+            lblnom.Size = new Size(60, 15);
             lblnom.TabIndex = 13;
             lblnom.Text = "Nombre";
             lblnom.Click += lblnom_Click;
@@ -149,8 +150,9 @@
             btnClientes.BackColor = Color.FromArgb(87, 112, 50);
             btnClientes.FlatAppearance.BorderSize = 0;
             btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnClientes.ForeColor = Color.White;
-            btnClientes.Location = new Point(42, 439);
+            btnClientes.Location = new Point(58, 440);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(186, 38);
             btnClientes.TabIndex = 7;
@@ -162,11 +164,11 @@
             // 
             lblRol.AutoSize = true;
             lblRol.BackColor = Color.Transparent;
-            lblRol.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRol.Font = new Font("Lucida Bright", 7.8F, FontStyle.Bold);
             lblRol.ForeColor = Color.White;
             lblRol.Location = new Point(112, 69);
             lblRol.Name = "lblRol";
-            lblRol.Size = new Size(27, 17);
+            lblRol.Size = new Size(29, 15);
             lblRol.TabIndex = 12;
             lblRol.Text = "Rol";
             lblRol.Click += lblRol_Click;
@@ -176,8 +178,9 @@
             btnReportes.BackColor = Color.FromArgb(43, 56, 46);
             btnReportes.FlatAppearance.BorderSize = 0;
             btnReportes.FlatStyle = FlatStyle.Flat;
+            btnReportes.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnReportes.ForeColor = Color.White;
-            btnReportes.Location = new Point(42, 515);
+            btnReportes.Location = new Point(58, 516);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(186, 38);
             btnReportes.TabIndex = 5;
@@ -203,8 +206,9 @@
             btnPedidos.BackColor = Color.FromArgb(96, 141, 72);
             btnPedidos.FlatAppearance.BorderSize = 0;
             btnPedidos.FlatStyle = FlatStyle.Flat;
+            btnPedidos.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnPedidos.ForeColor = Color.White;
-            btnPedidos.Location = new Point(42, 362);
+            btnPedidos.Location = new Point(58, 363);
             btnPedidos.Name = "btnPedidos";
             btnPedidos.Size = new Size(186, 38);
             btnPedidos.TabIndex = 3;
@@ -217,8 +221,9 @@
             btnFacturacion.BackColor = Color.FromArgb(42, 100, 66);
             btnFacturacion.FlatAppearance.BorderSize = 0;
             btnFacturacion.FlatStyle = FlatStyle.Flat;
+            btnFacturacion.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnFacturacion.ForeColor = Color.White;
-            btnFacturacion.Location = new Point(42, 294);
+            btnFacturacion.Location = new Point(58, 295);
             btnFacturacion.Name = "btnFacturacion";
             btnFacturacion.Size = new Size(186, 38);
             btnFacturacion.TabIndex = 2;
@@ -242,6 +247,7 @@
             pbIconCerrar.SizeMode = PictureBoxSizeMode.Zoom;
             pbIconCerrar.TabIndex = 0;
             pbIconCerrar.TabStop = false;
+            pbIconCerrar.Click += pbIconCerrar_Click_1;
             // 
             // BarraTitulo
             // 
