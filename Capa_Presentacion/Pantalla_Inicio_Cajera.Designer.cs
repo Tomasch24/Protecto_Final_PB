@@ -37,15 +37,14 @@
             btnExit = new Button();
             lblemail = new Label();
             lblnom = new Label();
-            btnClientes = new Button();
             lblRol = new Label();
             btnReportes = new Button();
             PBuser = new PictureBox();
-            btnPedidos = new Button();
             btnFacturacion = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
             pbIconCerrar = new PictureBox();
             BarraTitulo = new Panel();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelHerencia.SuspendLayout();
             panel1.SuspendLayout();
@@ -53,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)PBuser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbIconCerrar).BeginInit();
             BarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -91,11 +91,9 @@
             MenuVertical.Controls.Add(btnExit);
             MenuVertical.Controls.Add(lblemail);
             MenuVertical.Controls.Add(lblnom);
-            MenuVertical.Controls.Add(btnClientes);
             MenuVertical.Controls.Add(lblRol);
             MenuVertical.Controls.Add(btnReportes);
             MenuVertical.Controls.Add(PBuser);
-            MenuVertical.Controls.Add(btnPedidos);
             MenuVertical.Controls.Add(btnFacturacion);
             MenuVertical.Dock = DockStyle.Left;
             MenuVertical.ForeColor = SystemColors.ControlText;
@@ -146,21 +144,6 @@
             lblnom.Text = "Nombre";
             lblnom.Click += lblnom_Click;
             // 
-            // btnClientes
-            // 
-            btnClientes.BackColor = Color.FromArgb(87, 112, 50);
-            btnClientes.FlatAppearance.BorderSize = 0;
-            btnClientes.FlatStyle = FlatStyle.Flat;
-            btnClientes.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
-            btnClientes.ForeColor = Color.White;
-            btnClientes.Location = new Point(58, 510);
-            btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(186, 38);
-            btnClientes.TabIndex = 7;
-            btnClientes.Text = "Clientes";
-            btnClientes.UseVisualStyleBackColor = false;
-            btnClientes.Click += btnClientes_Click_1;
-            // 
             // lblRol
             // 
             lblRol.AutoSize = true;
@@ -181,7 +164,7 @@
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnReportes.ForeColor = Color.White;
-            btnReportes.Location = new Point(58, 636);
+            btnReportes.Location = new Point(58, 468);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(186, 38);
             btnReportes.TabIndex = 5;
@@ -202,21 +185,6 @@
             PBuser.TabStop = false;
             PBuser.Click += PBuser_Click;
             // 
-            // btnPedidos
-            // 
-            btnPedidos.BackColor = Color.FromArgb(96, 141, 72);
-            btnPedidos.FlatAppearance.BorderSize = 0;
-            btnPedidos.FlatStyle = FlatStyle.Flat;
-            btnPedidos.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
-            btnPedidos.ForeColor = Color.White;
-            btnPedidos.Location = new Point(58, 363);
-            btnPedidos.Name = "btnPedidos";
-            btnPedidos.Size = new Size(186, 38);
-            btnPedidos.TabIndex = 3;
-            btnPedidos.Text = "Pedidos";
-            btnPedidos.UseVisualStyleBackColor = false;
-            btnPedidos.Click += btnPedidos_Click_1;
-            // 
             // btnFacturacion
             // 
             btnFacturacion.BackColor = Color.FromArgb(42, 100, 66);
@@ -224,7 +192,7 @@
             btnFacturacion.FlatStyle = FlatStyle.Flat;
             btnFacturacion.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnFacturacion.ForeColor = Color.White;
-            btnFacturacion.Location = new Point(58, 215);
+            btnFacturacion.Location = new Point(58, 309);
             btnFacturacion.Name = "btnFacturacion";
             btnFacturacion.Size = new Size(186, 38);
             btnFacturacion.TabIndex = 2;
@@ -253,6 +221,7 @@
             // BarraTitulo
             // 
             BarraTitulo.BackColor = Color.FromArgb(230, 230, 230);
+            BarraTitulo.Controls.Add(pictureBox2);
             BarraTitulo.Controls.Add(pbIconCerrar);
             BarraTitulo.Dock = DockStyle.Top;
             BarraTitulo.ForeColor = Color.White;
@@ -261,6 +230,16 @@
             BarraTitulo.Name = "BarraTitulo";
             BarraTitulo.Size = new Size(1710, 57);
             BarraTitulo.TabIndex = 13;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.SIN_FONDO_OSCURO;
+            pictureBox2.Location = new Point(12, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(63, 51);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
             // 
             // Pantalla_Inicio_Cajera
             // 
@@ -282,6 +261,7 @@
             ((System.ComponentModel.ISupportInitialize)PBuser).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbIconCerrar).EndInit();
             BarraTitulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -294,15 +274,14 @@
         private Panel MenuVertical;
         private Label lblemail;
         private Label lblnom;
-        private Button btnClientes;
         private Label lblRol;
         private Button btnReportes;
         private PictureBox PBuser;
-        private Button btnPedidos;
         private Button btnFacturacion;
         private ContextMenuStrip contextMenuStrip1;
         private PictureBox pbIconCerrar;
         private Panel BarraTitulo;
         private Button btnExit;
+        private PictureBox pictureBox2;
     }
 }

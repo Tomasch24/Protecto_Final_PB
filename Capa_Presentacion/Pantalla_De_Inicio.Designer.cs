@@ -48,6 +48,7 @@
             pictureBox1 = new PictureBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            pictureBox2 = new PictureBox();
             BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbIconCerrar).BeginInit();
             MenuVertical.SuspendLayout();
@@ -55,11 +56,13 @@
             PanelHerencia.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // BarraTitulo
             // 
             BarraTitulo.BackColor = Color.FromArgb(230, 230, 230);
+            BarraTitulo.Controls.Add(pictureBox2);
             BarraTitulo.Controls.Add(pbIconCerrar);
             BarraTitulo.Dock = DockStyle.Top;
             BarraTitulo.ForeColor = Color.White;
@@ -298,6 +301,16 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Capa_Presentacion.Properties.Resources.SIN_FONDO_OSCURO;
+            pictureBox2.Location = new Point(23, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(63, 51);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
             // Pantalla_De_Inicio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -320,6 +333,7 @@
             PanelHerencia.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -343,6 +357,6 @@
         private PictureBox pictureBox1;
         private PictureBox pbIconCerrar;
         private Button btnExit;
-
+        private PictureBox pictureBox2;
     }
 }
