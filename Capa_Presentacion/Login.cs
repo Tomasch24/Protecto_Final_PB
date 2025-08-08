@@ -41,32 +41,33 @@ namespace Capa_Presentacion
                     UserModel user = new UserModel();
                     var validLogin = user.LoginUser(txtUser.Text, txtPassword.Text);
 
+                    // TODO: La validación debe ocurrir primero
                     if (validLogin == true)
                     {
-                        // Si el login es exitoso, ahora verificamos el rol
+                        // Si el login es exitoso, muestra la pantalla de bienvenida y luego el formulario principal
+                        this.Hide();
+                        FormBienvenida bienvenida = new FormBienvenida();
+                        bienvenida.ShowDialog();
+
                         if (LoginUser.Rol == "Gerente")
                         {
                             Pantalla_De_Inicio inicioGerente = new Pantalla_De_Inicio();
-                            MessageBox.Show("Bienvenido/a  " + LoginUser.Nombre + " " + LoginUser.Apellido);
                             inicioGerente.Show();
-                            inicioGerente.FormClosed += LogOut; // Asigna el evento para manejar el cierre del formulario
-                            this.Hide(); // Oculta el formulario de login después de iniciar sesión
+                            inicioGerente.FormClosed += LogOut;
                         }
                         else if (LoginUser.Rol == "Cajera")
                         {
-                            // Abre el formulario específico para la cajera
                             Pantalla_Inicio_Cajera inicioCajera = new Pantalla_Inicio_Cajera();
-                            MessageBox.Show("Bienvenido/a  " + LoginUser.Nombre + " " + LoginUser.Apellido);
                             inicioCajera.Show();
-                            inicioCajera.FormClosed += LogOut; // Asigna el evento para manejar el cierre
-                            this.Hide(); // Oculta el formulario de login
+                            inicioCajera.FormClosed += LogOut;
                         }
                         else
                         {
                             msgError("Rol de usuario no reconocido.");
+                            this.Show(); // En caso de rol no reconocido, vuelve a mostrar el login
                         }
                     }
-                    else
+                    else // Si la validación falla
                     {
                         msgError("Usuario o contraseña incorrectos \n Intenta nuevamente, por favor.");
                         txtPassword.Clear();
@@ -76,7 +77,10 @@ namespace Capa_Presentacion
                 else msgError("Ingrese La Contraseña");
             }
             else msgError("Ingrese el nombre de usuario");
+
         }
+
+
 
         private void msgError(string msg)
         {
@@ -174,38 +178,28 @@ namespace Capa_Presentacion
         #endregion
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            //TODO Si la tecla presionada es Enter
+            if (e.KeyCode == Keys.Enter)
+            {
+                //TODO Si el foco está en el TextBox de usuario (txtUser)
+                if (txtUser.Focused)
+                {
+                    //TODO Mueve el foco al TextBox de contraseña (txtPassword)
+                    txtPassword.Focus();
+                    //TODO Evita que el "Enter" sea procesado por otros controles, como el botón
+                    e.Handled = true;
+                }
+                //TODO Si el foco está en el TextBox de contraseña (txtPassword)
+                else if (txtPassword.Focused)
+                {
+                    //TODO Llama al evento click del botón de login
+                    btnLogin_Click(sender, e);
+                    e.Handled = true;
+                }
+            }
+        }
 
         private void panelLogTitulo_Paint(object sender, PaintEventArgs e)
         {

@@ -10,6 +10,7 @@ using Microsoft.Data.SqlClient;
 
 namespace Capa_Negocios
 {
+    // TODO LOGICA PARA ELIMINAR PRODUCTO 
     public class EliminarProducto
     {
         public static bool Eliminar(int Id)

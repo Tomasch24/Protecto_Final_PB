@@ -58,10 +58,9 @@ namespace Capa_Negocios
             using (SqlConnection conn = new SqlConnection(conexionDatos.Conexion))
             {
                 string query = @"
-            SELECT 
+            SELECT
                 p.Id AS IDPRODUCTO,
                 p.Nombre,
-                p.Tipo,
                 pr.IDPROVEEDOR,
                 pr.Nombre AS NombreProveedor,
                 pr.RNC,

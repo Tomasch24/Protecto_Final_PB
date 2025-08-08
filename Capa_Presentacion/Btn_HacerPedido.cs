@@ -103,7 +103,8 @@ namespace Capa_Presentacion
                 precioBase = Convert.ToDecimal(datosProducto["PrecioBase"]);
 
                 txtProducto.Text = datosProducto["Nombre"].ToString();
-                txtTipo.Text = datosProducto["Tipo"].ToString();
+                // The following line is removed because the 'Tipo' column does not exist in the query result.
+                // txtTipo.Text = datosProducto["Tipo"].ToString();
                 txtProveedor.Text = datosProducto["NombreProveedor"].ToString();
                 txtRNC.Text = datosProducto["RNC"].ToString();
                 txtTelefono.Text = datosProducto["Telefono"].ToString();

@@ -83,7 +83,9 @@
             dgvExistentes.AllowUserToResizeColumns = false;
             dgvExistentes.AllowUserToResizeRows = false;
             dgvExistentes.BackgroundColor = SystemColors.Window;
+
             dgvExistentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
             dataGridViewCellStyle1.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -160,7 +162,6 @@
             dgvAgotados.AllowUserToResizeRows = false;
             dgvAgotados.BackgroundColor = SystemColors.Window;
             dgvAgotados.BorderStyle = BorderStyle.None;
-            dgvAgotados.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
             dgvAgotados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(41, 76, 37);

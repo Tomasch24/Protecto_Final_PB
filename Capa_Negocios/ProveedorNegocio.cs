@@ -8,6 +8,7 @@ namespace Capa_Negocios
 {
     internal class ProveedorNegocio
     {
+        // TODO LOGIA PARA BUSCAR NOMBRES POR RNC 
         private CNProveedor data = new CNProveedor();
 
         public string BuscarNombrePorRNC(string rnc)

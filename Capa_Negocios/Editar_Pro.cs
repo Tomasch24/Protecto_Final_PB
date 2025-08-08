@@ -11,6 +11,7 @@ using Microsoft.Data.SqlClient;
 
 namespace Capa_Negocios
 {
+    // TODO LOGICA PARA EDITAR PRODUCTOS 
     public class EditarProducto
     {
         public static bool Editar(Producto producto)

@@ -10,7 +10,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace capa_negocios
 {
     //TODO clase abstracta base Factura
-    public abstract class Factura
+    public abstract class Factura : IDescuento
     {
         public int IdFactura { get; set; }
         public CNCliente Cliente { get; set; }
@@ -20,8 +20,8 @@ namespace capa_negocios
         public string Producto { get; set; }
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }
-        public DateTime Fecha { get; set; } 
-
+        public DateTime Fecha { get; set; }
+        public string MetodoDePago { get; set; }
         public decimal SubTotal => Precio * Cantidad;
         public decimal Descuento { get;  set; }
         public decimal Total { get; set; }
@@ -52,7 +52,10 @@ namespace capa_negocios
                 DescuentoClienteRegistrado = 0;
 
             Descuento = DescuentoPorCantidad + DescuentoClienteRegistrado;
-
+            if (MetodoDePago == "Tarjeta de Credito/Debito")
+            {
+                Descuento = 0;
+            }
         }
 
         //TODO Metodo Virtual para calcular totales

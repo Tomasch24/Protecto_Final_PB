@@ -16,12 +16,12 @@ namespace Capa_Presentacion
         {
             InitializeComponent();
             this.BackColor = Color.FromArgb(245, 247, 246);
-            ConfigureChartsInitial(); // Configuración inicial de los gráficos
+            ConfigureChartsInitial(); // TODO Configuración inicial de los gráficos
         }
 
         private void DashGrafico_Load(object sender, EventArgs e)
         {
-            // Llamamos a los métodos para cargar los datos en los gráficos y resúmenes
+            // TODO Llamamos a los métodos para cargar los datos en los gráficos y resúmenes
             LoadVentasChart();
             LoadTopProductsChart();
             LoadProductStockChart();
@@ -33,7 +33,7 @@ namespace Capa_Presentacion
         /// </summary>
         private string GetConnectionString()
         {
-            // El namespace correcto de la clase de conexión es 'ConexionADatos'.
+            // TODO El namespace correcto de la clase de conexión es 'ConexionADatos'.
             ConexionADatos.Productos_Agri conexion = new ConexionADatos.Productos_Agri();
             return conexion.Conexion;
         }
@@ -44,12 +44,12 @@ namespace Capa_Presentacion
         /// </summary>
         private void ConfigureChartsInitial()
         {
-            // Configuración general de los gráficos
+            // TODO Configuración general de los gráficos
             chartVentas.BackColor = Color.FromArgb(245, 247, 246);
             chartTopProductos.BackColor = Color.FromArgb(245, 247, 246);
             chartStockProductos.BackColor = Color.FromArgb(245, 247, 246);
 
-            // Configuración para el gráfico de Ventas (chartVentas)
+            // TODO Configuración para el gráfico de Ventas (chartVentas)
             chartVentas.Series.Clear();
             chartVentas.Titles.Clear();
             chartVentas.Titles.Add("Ventas Diarias");
@@ -58,29 +58,29 @@ namespace Capa_Presentacion
             chartVentas.ChartAreas[0].AxisX.LabelStyle.Format = "dd/MM";
             chartVentas.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
             chartVentas.ChartAreas[0].AxisX.Interval = 1;
-            // Configuración 3D para el gráfico de ventas
+            //TODO  Configuración 3D para el gráfico de ventas
             chartVentas.ChartAreas[0].Area3DStyle.Enable3D = true;
             chartVentas.ChartAreas[0].Area3DStyle.Inclination = 15;
             chartVentas.ChartAreas[0].Area3DStyle.Rotation = 10;
             chartVentas.ChartAreas[0].Area3DStyle.LightStyle = LightStyle.Realistic;
 
-            // Configuración para el gráfico de los 5 Productos Más Vendidos (chartTopProductos)
+            // TODO Configuración para el gráfico de los 5 Productos Más Vendidos (chartTopProductos)
             chartTopProductos.Series.Clear();
             chartTopProductos.Titles.Clear();
             chartTopProductos.Titles.Add("Los 5 Productos Más Vendidos");
             chartTopProductos.ChartAreas[0].AxisX.Title = "Producto";
             chartTopProductos.ChartAreas[0].AxisY.Title = "Cantidad Vendida";
-            // Desactivar el efecto 3D para el gráfico de pastel
+            //TODO  Desactivar el efecto 3D para el gráfico de pastel
             chartTopProductos.ChartAreas[0].Area3DStyle.Enable3D = false;
 
 
-            // Configuración para el gráfico de Cantidad de Cada Producto Existente (chartStockProductos)
+            //TODO  Configuración para el gráfico de Cantidad de Cada Producto Existente (chartStockProductos)
             chartStockProductos.Series.Clear();
             chartStockProductos.Titles.Clear();
             chartStockProductos.Titles.Add("Cantidad de Cada Producto Existente");
             chartStockProductos.ChartAreas[0].AxisX.Title = "Producto";
             chartStockProductos.ChartAreas[0].AxisY.Title = "Stock Actual";
-            // Desactivar el efecto 3D para el gráfico de stock
+            // TODO Desactivar el efecto 3D para el gráfico de stock
             chartStockProductos.ChartAreas[0].Area3DStyle.Enable3D = false;
         }
 
@@ -91,45 +91,45 @@ namespace Capa_Presentacion
         {
             try
             {
-                // Establece una nueva conexión SQL usando la cadena de conexión centralizada
+                // TODO Establece una nueva conexión SQL usando la cadena de conexión centralizada
                 using (SqlConnection connection = new SqlConnection(GetConnectionString()))
                 {
-                    connection.Open(); // Abre la conexión a la base de datos
+                    connection.Open(); // TODO Abre la conexión a la base de datos
 
-                    // Consulta SQL para obtener la suma de ventas por fecha
+                    // TODO Consulta SQL para obtener la suma de ventas por fecha
                     string query = @"
                         SELECT
                             Fecha,
                             SUM(Precio * Cantidad) AS TotalVentaDiaria
                         FROM Factura
                         GROUP BY Fecha
-                        ORDER BY Fecha ASC;"; // Agrupa por fecha y ordena ascendente
+                        ORDER BY Fecha ASC;"; // TODO Agrupa por fecha y ordena ascendente
 
-                    SqlCommand command = new SqlCommand(query, connection); // Crea un comando SQL
-                    SqlDataReader reader = command.ExecuteReader(); // Ejecuta la consulta y obtiene un lector de datos
+                    SqlCommand command = new SqlCommand(query, connection); //TODO  Crea un comando SQL
+                    SqlDataReader reader = command.ExecuteReader(); //TODO  Ejecuta la consulta y obtiene un lector de datos
 
-                    chartVentas.Series.Clear(); // Limpia las series existentes del gráfico de ventas
-                    Series series = new Series("Ventas") // Crea una nueva serie de datos llamada "Ventas"
+                    chartVentas.Series.Clear(); //TODO  Limpia las series existentes del gráfico de ventas
+                    Series series = new Series("Ventas") // TODO Crea una nueva serie de datos llamada "Ventas"
                     {
-                        ChartType = SeriesChartType.Column, // Se cambió a Column para mejor efecto 3D
-                        BorderWidth = 3, // Ancho de la línea
-                        Color = Color.FromArgb(100, 160, 220) // Color de las barras para el gráfico de ventas
+                        ChartType = SeriesChartType.Column, // TODO Se cambió a Column para mejor efecto 3D
+                        BorderWidth = 3, //TODO  Ancho de la línea
+                        Color = Color.FromArgb(100, 160, 220) //TODO  Color de las barras para el gráfico de ventas
                     };
-                    chartVentas.Series.Add(series); // Añade la serie al gráfico
+                    chartVentas.Series.Add(series); // TODO Añade la serie al gráfico
 
-                    // Lee los datos del lector y los añade a la serie del gráfico
+                    // TODO Lee los datos del lector y los añade a la serie del gráfico
                     while (reader.Read())
                     {
-                        DateTime fecha = reader.GetDateTime(0); // Obtiene la fecha
-                        decimal totalVenta = reader.GetDecimal(1); // Obtiene el total de venta
-                        series.Points.AddXY(fecha.ToOADate(), totalVenta); // Añade el punto (fecha, totalVenta) al gráfico
+                        DateTime fecha = reader.GetDateTime(0); // TODO Obtiene la fecha
+                        decimal totalVenta = reader.GetDecimal(1); //TODO  Obtiene el total de venta
+                        series.Points.AddXY(fecha.ToOADate(), totalVenta); // TODO Añade el punto (fecha, totalVenta) al gráfico
                     }
-                    reader.Close(); // Cierra el lector de datos
+                    reader.Close(); // TODO Cierra el lector de datos
                 }
             }
             catch (Exception ex)
             {
-                // Muestra un mensaje de error si ocurre una excepción
+                // TODO Muestra un mensaje de error si ocurre una excepción
                 MessageBox.Show("Error al cargar el gráfico de ventas: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -146,7 +146,7 @@ namespace Capa_Presentacion
                 {
                     connection.Open();
 
-                    // Consulta SQL para obtener los 5 productos más vendidos, uniendo PEDIDOS con Producto
+                    //TODO  Consulta SQL para obtener los 5 productos más vendidos, uniendo PEDIDOS con Producto
                     string query = @"
                         SELECT TOP 5
                             P.Nombre AS NombreProducto,
@@ -162,16 +162,16 @@ namespace Capa_Presentacion
                     chartTopProductos.Series.Clear();
                     Series series = new Series("Productos")
                     {
-                        ChartType = SeriesChartType.Pie, // Tipo de gráfico: circular (pastel)
-                        IsValueShownAsLabel = true, // Muestra el valor de cada rebanada como etiqueta
-                        // Formato de la etiqueta: solo el valor. Eliminamos el porcentaje para ahorrar espacio.
+                        ChartType = SeriesChartType.Pie, // TODO Tipo de gráfico: circular (pastel)
+                        IsValueShownAsLabel = true, // TODO Muestra el valor de cada rebanada como etiqueta
+                        //TODO  Formato de la etiqueta: solo el valor. Eliminamos el porcentaje para ahorrar espacio.
                         LabelFormat = "{0}", // Solo el valor
-                        // Establece la fuente para las etiquetas de los puntos de datos
+                        // TODO Establece la fuente para las etiquetas de los puntos de datos
                         Font = new Font("Arial", 8, FontStyle.Bold)
                     };
                     chartTopProductos.Series.Add(series);
 
-                    // Paleta de colores de Green Point
+                    //TODO  Paleta de colores de Green Point
                     Color[] newPalette = new Color[]
                     {
                         Color.FromArgb(100, 160, 220),  // Azul
@@ -190,13 +190,13 @@ namespace Capa_Presentacion
                         DataPoint point = new DataPoint(series);
                         point.SetValueXY(nombreProducto, cantidadVendida);
                         point.Color = newPalette[colorIndex % newPalette.Length];
-                        // Sin animación, las porciones se añaden unidas por defecto
+                        // TODO Sin animación, las porciones se añaden unidas por defecto
                         series.Points.Add(point);
                         colorIndex++;
                     }
                     reader.Close();
 
-                    // Si no hay datos, muestra un mensaje en el título del gráfico
+                    //TODO  Si no hay datos, muestra un mensaje en el título del gráfico
                     if (series.Points.Count == 0)
                     {
                         chartTopProductos.Titles.Clear();
@@ -257,7 +257,7 @@ namespace Capa_Presentacion
                             stock = 0;
                         }
 
-                        // Creamos una serie para cada producto para tener barras separadas
+                        // TODO Creamos una serie para cada producto para tener barras separadas
                         Series productSeries = new Series(nombreProducto)
                         {
                             ChartType = SeriesChartType.Column, // Se cambió a Column para barras verticales
@@ -359,6 +359,11 @@ namespace Capa_Presentacion
             {
                 MessageBox.Show("Error al cargar los datos de resumen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

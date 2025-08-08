@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             chartTopProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             chartStockProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             lblTotalVentas = new Label();
@@ -120,34 +120,34 @@
             // 
             // chartTopProductos
             // 
-            chartArea4.Name = "ChartArea1";
-            chartTopProductos.ChartAreas.Add(chartArea4);
+            chartArea1.Name = "ChartArea1";
+            chartTopProductos.ChartAreas.Add(chartArea1);
             chartTopProductos.Dock = DockStyle.Fill;
-            legend4.Name = "Legend1";
-            chartTopProductos.Legends.Add(legend4);
+            legend1.Name = "Legend1";
+            chartTopProductos.Legends.Add(legend1);
             chartTopProductos.Location = new Point(0, 0);
             chartTopProductos.Name = "chartTopProductos";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            chartTopProductos.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartTopProductos.Series.Add(series1);
             chartTopProductos.Size = new Size(668, 236);
             chartTopProductos.TabIndex = 1;
             chartTopProductos.Text = "chart1";
             // 
             // chartStockProductos
             // 
-            chartArea5.Name = "ChartArea1";
-            chartStockProductos.ChartAreas.Add(chartArea5);
+            chartArea2.Name = "ChartArea1";
+            chartStockProductos.ChartAreas.Add(chartArea2);
             chartStockProductos.Dock = DockStyle.Fill;
-            legend5.Name = "Legend1";
-            chartStockProductos.Legends.Add(legend5);
+            legend2.Name = "Legend1";
+            chartStockProductos.Legends.Add(legend2);
             chartStockProductos.Location = new Point(0, 0);
             chartStockProductos.Name = "chartStockProductos";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            chartStockProductos.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chartStockProductos.Series.Add(series2);
             chartStockProductos.Size = new Size(668, 236);
             chartStockProductos.TabIndex = 2;
             chartStockProductos.Text = "chart1";
@@ -155,20 +155,22 @@
             // lblTotalVentas
             // 
             lblTotalVentas.AutoSize = true;
+            lblTotalVentas.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             lblTotalVentas.ForeColor = SystemColors.ActiveCaptionText;
             lblTotalVentas.Location = new Point(101, 44);
             lblTotalVentas.Name = "lblTotalVentas";
-            lblTotalVentas.Size = new Size(50, 20);
+            lblTotalVentas.Size = new Size(55, 17);
             lblTotalVentas.TabIndex = 3;
             lblTotalVentas.Text = "label1";
             // 
             // lblNumProveedores
             // 
             lblNumProveedores.AutoSize = true;
+            lblNumProveedores.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             lblNumProveedores.ForeColor = SystemColors.ActiveCaptionText;
             lblNumProveedores.Location = new Point(101, 41);
             lblNumProveedores.Name = "lblNumProveedores";
-            lblNumProveedores.Size = new Size(50, 20);
+            lblNumProveedores.Size = new Size(55, 17);
             lblNumProveedores.TabIndex = 4;
             lblNumProveedores.Text = "label2";
             lblNumProveedores.TextAlign = ContentAlignment.MiddleRight;
@@ -176,10 +178,11 @@
             // lblCaja
             // 
             lblCaja.AutoSize = true;
+            lblCaja.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             lblCaja.ForeColor = SystemColors.ActiveCaptionText;
             lblCaja.Location = new Point(101, 39);
             lblCaja.Name = "lblCaja";
-            lblCaja.Size = new Size(50, 20);
+            lblCaja.Size = new Size(55, 17);
             lblCaja.TabIndex = 5;
             lblCaja.Text = "label3";
             lblCaja.TextAlign = ContentAlignment.TopRight;
@@ -197,12 +200,13 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Poor Richard", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Lucida Sans", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(627, 6);
             label1.Name = "label1";
-            label1.Size = new Size(172, 35);
+            label1.Size = new Size(213, 34);
             label1.TabIndex = 7;
-            label1.Text = "DASBOARD";
+            label1.Text = "DASHBOARD";
+            label1.Click += label1_Click;
             // 
             // panel2
             // 
@@ -260,17 +264,17 @@
             // 
             // chartVentas
             // 
-            chartArea6.Name = "ChartArea1";
-            chartVentas.ChartAreas.Add(chartArea6);
+            chartArea3.Name = "ChartArea1";
+            chartVentas.ChartAreas.Add(chartArea3);
             chartVentas.Dock = DockStyle.Fill;
-            legend6.Name = "Legend1";
-            chartVentas.Legends.Add(legend6);
+            legend3.Name = "Legend1";
+            chartVentas.Legends.Add(legend3);
             chartVentas.Location = new Point(0, 0);
             chartVentas.Name = "chartVentas";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            chartVentas.Series.Add(series6);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            chartVentas.Series.Add(series3);
             chartVentas.Size = new Size(668, 235);
             chartVentas.TabIndex = 0;
             chartVentas.Text = "chart1";
@@ -316,10 +320,11 @@
             // lblFacturas
             // 
             lblFacturas.AutoSize = true;
+            lblFacturas.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             lblFacturas.ForeColor = SystemColors.ActiveCaptionText;
             lblFacturas.Location = new Point(95, 44);
             lblFacturas.Name = "lblFacturas";
-            lblFacturas.Size = new Size(50, 20);
+            lblFacturas.Size = new Size(55, 17);
             lblFacturas.TabIndex = 16;
             lblFacturas.Text = "label3";
             lblFacturas.TextAlign = ContentAlignment.TopRight;
@@ -327,10 +332,11 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             label10.ForeColor = SystemColors.ActiveCaptionText;
             label10.Location = new Point(95, 13);
             label10.Name = "label10";
-            label10.Size = new Size(66, 20);
+            label10.Size = new Size(80, 17);
             label10.TabIndex = 14;
             label10.Text = "Facturas ";
             label10.TextAlign = ContentAlignment.MiddleCenter;
@@ -360,10 +366,11 @@
             // label15
             // 
             label15.AutoSize = true;
+            label15.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             label15.ForeColor = SystemColors.ActiveCaptionText;
             label15.Location = new Point(93, 44);
             label15.Name = "label15";
-            label15.Size = new Size(17, 20);
+            label15.Size = new Size(18, 17);
             label15.TabIndex = 15;
             label15.Text = "0";
             label15.TextAlign = ContentAlignment.TopRight;
@@ -371,10 +378,11 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             label7.ForeColor = SystemColors.ActiveCaptionText;
-            label7.Location = new Point(93, 13);
+            label7.Location = new Point(84, 13);
             label7.Name = "label7";
-            label7.Size = new Size(104, 20);
+            label7.Size = new Size(125, 17);
             label7.TabIndex = 12;
             label7.Text = "Fallas Técnicas";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -414,10 +422,11 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(101, 13);
+            label4.Location = new Point(87, 13);
             label4.Name = "label4";
-            label4.Size = new Size(110, 20);
+            label4.Size = new Size(132, 17);
             label4.TabIndex = 4;
             label4.Text = "Total de Ventas";
             // 
@@ -446,10 +455,11 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ActiveCaptionText;
             label2.Location = new Point(101, 8);
             label2.Name = "label2";
-            label2.Size = new Size(38, 20);
+            label2.Size = new Size(43, 17);
             label2.TabIndex = 6;
             label2.Text = "Caja";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -469,10 +479,11 @@
             // lblStock
             // 
             lblStock.AutoSize = true;
+            lblStock.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             lblStock.ForeColor = SystemColors.ActiveCaptionText;
             lblStock.Location = new Point(93, 39);
             lblStock.Name = "lblStock";
-            lblStock.Size = new Size(50, 20);
+            lblStock.Size = new Size(55, 17);
             lblStock.TabIndex = 10;
             lblStock.Text = "label4";
             lblStock.TextAlign = ContentAlignment.TopRight;
@@ -480,10 +491,11 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             label5.ForeColor = SystemColors.ActiveCaptionText;
             label5.Location = new Point(93, 8);
             label5.Name = "label5";
-            label5.Size = new Size(45, 20);
+            label5.Size = new Size(53, 17);
             label5.TabIndex = 10;
             label5.Text = "Stock";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -523,10 +535,11 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             label3.ForeColor = SystemColors.ActiveCaptionText;
             label3.Location = new Point(101, 10);
             label3.Name = "label3";
-            label3.Size = new Size(92, 20);
+            label3.Size = new Size(103, 17);
             label3.TabIndex = 5;
             label3.Text = "Proovedores";
             // 
@@ -545,10 +558,11 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
+            lblFecha.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             lblFecha.ForeColor = SystemColors.ActiveCaptionText;
             lblFecha.Location = new Point(95, 39);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(50, 20);
+            lblFecha.Size = new Size(55, 17);
             lblFecha.TabIndex = 12;
             lblFecha.Text = "label3";
             lblFecha.TextAlign = ContentAlignment.TopRight;
@@ -556,10 +570,11 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             label8.ForeColor = SystemColors.ActiveCaptionText;
             label8.Location = new Point(95, 8);
             label8.Name = "label8";
-            label8.Size = new Size(47, 20);
+            label8.Size = new Size(53, 17);
             label8.TabIndex = 13;
             label8.Text = "Fecha";
             label8.TextAlign = ContentAlignment.MiddleCenter;
@@ -589,10 +604,11 @@
             // lblNumProductos
             // 
             lblNumProductos.AutoSize = true;
+            lblNumProductos.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             lblNumProductos.ForeColor = SystemColors.ActiveCaptionText;
             lblNumProductos.Location = new Point(93, 41);
             lblNumProductos.Name = "lblNumProductos";
-            lblNumProductos.Size = new Size(50, 20);
+            lblNumProductos.Size = new Size(55, 17);
             lblNumProductos.TabIndex = 11;
             lblNumProductos.Text = "label3";
             lblNumProductos.TextAlign = ContentAlignment.TopRight;
@@ -600,10 +616,11 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             label6.ForeColor = SystemColors.ActiveCaptionText;
             label6.Location = new Point(93, 10);
             label6.Name = "label6";
-            label6.Size = new Size(96, 20);
+            label6.Size = new Size(105, 17);
             label6.TabIndex = 11;
             label6.Text = "N° Productos";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -633,10 +650,11 @@
             // lblUsuarios
             // 
             lblUsuarios.AutoSize = true;
+            lblUsuarios.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             lblUsuarios.ForeColor = SystemColors.ActiveCaptionText;
             lblUsuarios.Location = new Point(95, 41);
             lblUsuarios.Name = "lblUsuarios";
-            lblUsuarios.Size = new Size(50, 20);
+            lblUsuarios.Size = new Size(55, 17);
             lblUsuarios.TabIndex = 14;
             lblUsuarios.Text = "label3";
             lblUsuarios.TextAlign = ContentAlignment.TopRight;
@@ -644,10 +662,11 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.Font = new Font("Lucida Sans", 9F, FontStyle.Bold);
             label9.ForeColor = SystemColors.ActiveCaptionText;
             label9.Location = new Point(95, 10);
             label9.Name = "label9";
-            label9.Size = new Size(69, 20);
+            label9.Size = new Size(79, 17);
             label9.TabIndex = 14;
             label9.Text = "Usuarios ";
             label9.TextAlign = ContentAlignment.MiddleCenter;

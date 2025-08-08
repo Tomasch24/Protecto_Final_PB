@@ -61,7 +61,7 @@ namespace Capa_Presentacion
             // Bloque try-catch para manejar de forma segura posibles errores al cargar la imagen
             try
             {
-                // Obtiene la ruta relativa de la imagen desde la clase estática de caché (USUARIOS\harvey.jpg)
+                // Obtiene la ruta relativa de la imagen desde la clase estática de caché (USUARIOS\donna.jpg)
                 string fotoPath = LoginUser.FotoPath;
 
                 // Se asegura de que la ruta de la foto no esté vacía antes de intentar cargarla
@@ -85,6 +85,8 @@ namespace Capa_Presentacion
                 MessageBox.Show("No se pudo cargar la imagen de perfil: " + ex.Message);
             }
         }
+
+
         #endregion
 
 
@@ -188,6 +190,91 @@ namespace Capa_Presentacion
         private void btnReportes_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Sistema());
+        }
+
+        private void pbIconCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnCatalogo_Click_1(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Catalogo_De_Los_Productos());
+        }
+
+        private void PBuser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblemail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRol_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblnom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCatalogo_Click_2(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Catalogo_De_Los_Productos());
+        }
+
+        private void btnFacturacion_Click_1(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Facturacion());
+
+        }
+
+        private void btnPedidos_Click_1(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Pedidos());
+
+        }
+
+        private void btnClientes_Click_1(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Clientes());
+
+        }
+
+        private void btnReportes_Click_1(object sender, EventArgs e)
+        {
+            OpenPanelHerencia(new Sistema());
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Pantalla_Inicio_Cajera_Load(object sender, EventArgs e)
+        {
+            LoadUserData();
+
+        }
+
+        private void pbIconCerrar_Click_1(object sender, EventArgs e)
+        {
+
+            this.Close();
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            // Muestra un cuadro de diálogo para confirmar la acción.
+            if (MessageBox.Show("¿Esta seguro de que quiere cerrar sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                // Si el usuario presiona "Sí", se cierra este formulario (FormAcceso), lo que debería devolver al usuario al formulario de login.
+                this.Close();
         }
     }
 }

@@ -7,19 +7,19 @@ using Capa_Negocios;
 
    namespace Capa_Negocios
    {
-        //  Herencia
+        //  TODO Herencia
         public class ProveedorLocal : PROVEEDOR
         {
-            //  Constructor: llama al constructor base con "LOCAL" como tipo fijo
-            public ProveedorLocal(string idproveedor, string rnc, string nombre, string telefono, string producto, decimal precio)
-                : base(idproveedor, rnc, nombre, telefono, producto, "LOCAL", precio)
+            //  TODO Constructor: llama al constructor base con "LOCAL" como tipo fijo
+            public ProveedorLocal(string rnc, string nombre, string telefono, string producto, decimal precio)
+                : base(rnc, nombre, telefono, producto, "LOCAL", precio)
             {
             }
 
-            //  Implementación de métodos abstractos
+            // TODO Implementación de métodos abstractos
             public override string ObtenerIdentificadorPrincipal() => RNC;
 
-            // Validación el RNC debe tener exactamente 9 dígitos
+            // TODO Validación el RNC debe tener exactamente 9 dígitos
             public override bool EsValido() =>
                 !string.IsNullOrWhiteSpace(RNC) && RNC.Length == 9;
 
