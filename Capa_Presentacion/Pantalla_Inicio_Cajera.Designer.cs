@@ -59,7 +59,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.SIN_FONDO_OSCURO;
-            pictureBox1.Location = new Point(411, 131);
+            pictureBox1.Location = new Point(424, 131);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(414, 461);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
