@@ -6,7 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Capa_de_Modulos.CACHE; //Para usar la clase LoginUser que almacena los datos del usuario logueado
+using Capa_de_Modulos.CACHE; //TODO Para usar la clase LoginUser que almacena los datos del usuario logueado
 
 namespace Capa_Datos
 {
@@ -15,7 +15,7 @@ namespace Capa_Datos
 
         public override void PrepararOperacion()
         {
-            //Implementacion del metodo abstracto de la clase abstracta BaseDatos
+            //TODO Implementacion del metodo abstracto de la clase abstracta BaseDatos
         }
 
         #region Métodos Públicos
