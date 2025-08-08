@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             txtIdCliente = new TextBox();
             lblRnc = new Label();
             lblTelefono = new Label();
@@ -110,9 +110,7 @@
             lblRnc.Location = new Point(602, 38);
             lblRnc.Margin = new Padding(2, 0, 2, 0);
             lblRnc.Name = "lblRnc";
-
             lblRnc.Size = new Size(43, 18);
-
             lblRnc.TabIndex = 12;
             lblRnc.Text = "RNC";
             // 
@@ -125,9 +123,7 @@
             lblTelefono.Location = new Point(372, 38);
             lblTelefono.Margin = new Padding(2, 0, 2, 0);
             lblTelefono.Name = "lblTelefono";
-
             lblTelefono.Size = new Size(78, 18);
-
             lblTelefono.TabIndex = 11;
             lblTelefono.Text = "Telefono";
             // 
@@ -140,9 +136,7 @@
             lblNombre.Location = new Point(136, 39);
             lblNombre.Margin = new Padding(2, 0, 2, 0);
             lblNombre.Name = "lblNombre";
-
             lblNombre.Size = new Size(73, 18);
-
             lblNombre.TabIndex = 10;
             lblNombre.Text = "Nombre";
             // 
@@ -187,14 +181,14 @@
             dgvFactura.AllowUserToResizeRows = false;
             dgvFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvFactura.BackgroundColor = Color.White;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(41, 76, 37);
-            dataGridViewCellStyle6.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle6.SelectionBackColor = Color.Green;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
+            dataGridViewCellStyle1.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFactura.Columns.AddRange(new DataGridViewColumn[] { IdProducto, Producto, Precio, Cantidad, SubTotal, Descuento, btnEliminar });
             dgvFactura.EnableHeadersVisualStyles = false;
@@ -203,12 +197,10 @@
             dgvFactura.Name = "dgvFactura";
             dgvFactura.ReadOnly = true;
             dgvFactura.RowHeadersWidth = 62;
-
-            dataGridViewCellStyle10.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle10.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = Color.Green;
-            dgvFactura.RowsDefaultCellStyle = dataGridViewCellStyle10;
-
+            dataGridViewCellStyle5.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Green;
+            dgvFactura.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvFactura.Size = new Size(1162, 405);
             dgvFactura.TabIndex = 100;
             dgvFactura.CellContentClick += dgvFactura_CellContentClick;
@@ -233,9 +225,9 @@
             // 
             // Precio
             // 
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle2;
             Precio.HeaderText = "Precio";
             Precio.MinimumWidth = 8;
             Precio.Name = "Precio";
@@ -252,9 +244,9 @@
             // 
             // SubTotal
             // 
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            SubTotal.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            SubTotal.DefaultCellStyle = dataGridViewCellStyle3;
             SubTotal.HeaderText = "SubTotal";
             SubTotal.MinimumWidth = 8;
             SubTotal.Name = "SubTotal";
@@ -263,9 +255,9 @@
             // 
             // Descuento
             // 
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle4;
             Descuento.HeaderText = "Descuento";
             Descuento.MinimumWidth = 8;
             Descuento.Name = "Descuento";
@@ -327,9 +319,7 @@
             lblIdCliente.Location = new Point(20, 38);
             lblIdCliente.Margin = new Padding(2, 0, 2, 0);
             lblIdCliente.Name = "lblIdCliente";
-
             lblIdCliente.Size = new Size(105, 18);
-
             lblIdCliente.TabIndex = 9;
             lblIdCliente.Text = "Cod. Cliente";
             // 
@@ -387,9 +377,7 @@
             lblProducto.Location = new Point(186, 42);
             lblProducto.Margin = new Padding(2, 0, 2, 0);
             lblProducto.Name = "lblProducto";
-
             lblProducto.Size = new Size(81, 18);
-
             lblProducto.TabIndex = 14;
             lblProducto.Text = "Producto";
             // 
@@ -402,9 +390,7 @@
             lblPrecio.Location = new Point(420, 42);
             lblPrecio.Margin = new Padding(2, 0, 2, 0);
             lblPrecio.Name = "lblPrecio";
-
             lblPrecio.Size = new Size(58, 18);
-
             lblPrecio.TabIndex = 15;
             lblPrecio.Text = "Precio";
             // 
@@ -417,9 +403,7 @@
             lblCantidad.Location = new Point(965, 42);
             lblCantidad.Margin = new Padding(2, 0, 2, 0);
             lblCantidad.Name = "lblCantidad";
-
             lblCantidad.Size = new Size(80, 18);
-
             lblCantidad.TabIndex = 16;
             lblCantidad.Text = "Cantidad";
             // 
@@ -432,9 +416,7 @@
             lblTipo.Location = new Point(255, 38);
             lblTipo.Margin = new Padding(2, 0, 2, 0);
             lblTipo.Name = "lblTipo";
-
             lblTipo.Size = new Size(42, 18);
-
             lblTipo.TabIndex = 17;
             lblTipo.Text = "Tipo";
             // 
@@ -447,9 +429,7 @@
             lblFecha.Location = new Point(6, 38);
             lblFecha.Margin = new Padding(2, 0, 2, 0);
             lblFecha.Name = "lblFecha";
-
             lblFecha.Size = new Size(56, 18);
-
             lblFecha.TabIndex = 19;
             lblFecha.Text = "Fecha";
             // 
@@ -560,9 +540,7 @@
             lblIdProducto.Location = new Point(42, 43);
             lblIdProducto.Margin = new Padding(2, 0, 2, 0);
             lblIdProducto.Name = "lblIdProducto";
-
             lblIdProducto.Size = new Size(122, 18);
-
             lblIdProducto.TabIndex = 22;
             lblIdProducto.Text = "Cod. Producto";
             // 
@@ -586,9 +564,7 @@
             label1.Location = new Point(698, 42);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-
             label1.Size = new Size(54, 18);
-
             label1.TabIndex = 19;
             label1.Text = "Stock";
             // 
@@ -608,13 +584,11 @@
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Lucida Sans", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-
             lblTitulo.ForeColor = Color.FromArgb(22, 39, 33);
             lblTitulo.Location = new Point(32, 28);
             lblTitulo.Margin = new Padding(2, 0, 2, 0);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(185, 45);
-
             lblTitulo.TabIndex = 18;
             lblTitulo.Text = "VENTAS";
             // 
@@ -627,9 +601,7 @@
             lblTotal.Location = new Point(1220, 394);
             lblTotal.Margin = new Padding(2, 0, 2, 0);
             lblTotal.Name = "lblTotal";
-
             lblTotal.Size = new Size(117, 18);
-
             lblTotal.TabIndex = 25;
             lblTotal.Text = "Total a Pagar";
             // 
@@ -642,9 +614,7 @@
             lblPago.Location = new Point(1220, 468);
             lblPago.Margin = new Padding(2, 0, 2, 0);
             lblPago.Name = "lblPago";
-
             lblPago.Size = new Size(140, 18);
-
             lblPago.TabIndex = 26;
             lblPago.Text = "Metodo de Pago";
             // 
@@ -657,9 +627,7 @@
             lblCambio.Location = new Point(1220, 539);
             lblCambio.Margin = new Padding(2, 0, 2, 0);
             lblCambio.Name = "lblCambio";
-
             lblCambio.Size = new Size(69, 18);
-
             lblCambio.TabIndex = 27;
             lblCambio.Text = "Cambio";
             // 
@@ -699,15 +667,14 @@
             // 
             // btnFacturar
             // 
+            btnFacturar.BackColor = Color.FromArgb(42, 100, 66);
             btnFacturar.ForeColor = Color.White;
-
             btnFacturar.Location = new Point(1220, 606);
-
             btnFacturar.Name = "btnFacturar";
             btnFacturar.Size = new Size(151, 41);
             btnFacturar.TabIndex = 104;
             btnFacturar.Text = "Facturar";
-            btnFacturar.UseVisualStyleBackColor = true;
+            btnFacturar.UseVisualStyleBackColor = false;
             btnFacturar.Click += btnFacturar_Click;
             // 
             // cbMetodoPago
@@ -717,7 +684,7 @@
             cbMetodoPago.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbMetodoPago.FormattingEnabled = true;
             cbMetodoPago.Location = new Point(1220, 510);
-            cbMetodoPago.Margin = new Padding(2, 2, 2, 2);
+            cbMetodoPago.Margin = new Padding(2);
             cbMetodoPago.Name = "cbMetodoPago";
             cbMetodoPago.Size = new Size(146, 28);
             cbMetodoPago.TabIndex = 105;
@@ -727,10 +694,8 @@
             // 
             pbAtrasMP.Enabled = false;
             pbAtrasMP.Image = Properties.Resources.Flecha_hacia_atras;
-
             pbAtrasMP.Location = new Point(1384, 465);
-
-            pbAtrasMP.Margin = new Padding(2, 2, 2, 2);
+            pbAtrasMP.Margin = new Padding(2);
             pbAtrasMP.Name = "pbAtrasMP";
             pbAtrasMP.Size = new Size(34, 21);
             pbAtrasMP.SizeMode = PictureBoxSizeMode.Zoom;
