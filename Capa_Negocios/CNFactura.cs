@@ -12,11 +12,9 @@ namespace capa_negocios
     //TODO clase abstracta base Factura
     public abstract class Factura : IDescuento
     {
-        public int IdFactura { get; set; }
+       
         public CNCliente Cliente { get; set; }
-        public string NombreFactura { get; set; }
-        public string TelefonoF { get; set; }
-        public string RncF { get; set; }
+        
         public string Producto { get; set; }
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }

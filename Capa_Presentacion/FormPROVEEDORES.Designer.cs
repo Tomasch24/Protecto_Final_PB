@@ -89,7 +89,7 @@
             // btnBUSCAR
             // 
             resources.ApplyResources(btnBUSCAR, "btnBUSCAR");
-            btnBUSCAR.BackColor = Color.FromArgb(43, 56, 46);
+            btnBUSCAR.BackColor = Color.FromArgb(111, 129, 105);
             btnBUSCAR.ForeColor = Color.White;
             btnBUSCAR.Name = "btnBUSCAR";
             btnBUSCAR.UseVisualStyleBackColor = false;
@@ -115,13 +115,12 @@
             dgvPROVEEDORES.AllowUserToResizeColumns = false;
             dgvPROVEEDORES.AllowUserToResizeRows = false;
             dgvPROVEEDORES.BackgroundColor = Color.White;
-            dgvPROVEEDORES.BorderStyle = BorderStyle.None;
-            dgvPROVEEDORES.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
             dgvPROVEEDORES.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(111, 129, 105);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
             dataGridViewCellStyle1.Font = new Font("Verdana", 9F);
             dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(41, 76, 37);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvPROVEEDORES.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -153,7 +152,7 @@
             // btnREGISTRAR
             // 
             resources.ApplyResources(btnREGISTRAR, "btnREGISTRAR");
-            btnREGISTRAR.BackColor = Color.FromArgb(43, 56, 46);
+            btnREGISTRAR.BackColor = Color.FromArgb(111, 129, 105);
             btnREGISTRAR.ForeColor = Color.White;
             btnREGISTRAR.Name = "btnREGISTRAR";
             btnREGISTRAR.UseVisualStyleBackColor = false;
@@ -162,8 +161,8 @@
             // label1
             // 
             resources.ApplyResources(label1, "label1");
-            label1.BackColor = Color.FromArgb(43, 56, 46);
-            label1.ForeColor = Color.White;
+            label1.BackColor = Color.White;
+            label1.ForeColor = Color.FromArgb(111, 129, 105);
             label1.Name = "label1";
             // 
             // TxtTELEFONO
@@ -181,7 +180,7 @@
             // btnLIMPIAR
             // 
             resources.ApplyResources(btnLIMPIAR, "btnLIMPIAR");
-            btnLIMPIAR.BackColor = Color.FromArgb(43, 56, 46);
+            btnLIMPIAR.BackColor = Color.FromArgb(111, 129, 105);
             btnLIMPIAR.ForeColor = Color.White;
             btnLIMPIAR.Name = "btnLIMPIAR";
             btnLIMPIAR.UseVisualStyleBackColor = false;
@@ -190,7 +189,7 @@
             // btnELIMINAR
             // 
             resources.ApplyResources(btnELIMINAR, "btnELIMINAR");
-            btnELIMINAR.BackColor = Color.FromArgb(43, 56, 46);
+            btnELIMINAR.BackColor = Color.FromArgb(111, 129, 105);
             btnELIMINAR.ForeColor = Color.White;
             btnELIMINAR.Name = "btnELIMINAR";
             btnELIMINAR.UseVisualStyleBackColor = false;
@@ -207,7 +206,7 @@
             // btnEDITAR
             // 
             resources.ApplyResources(btnEDITAR, "btnEDITAR");
-            btnEDITAR.BackColor = Color.FromArgb(43, 56, 46);
+            btnEDITAR.BackColor = Color.FromArgb(111, 129, 105);
             btnEDITAR.ForeColor = Color.White;
             btnEDITAR.Name = "btnEDITAR";
             btnEDITAR.UseVisualStyleBackColor = false;
@@ -236,7 +235,7 @@
             // groupBox1
             // 
             resources.ApplyResources(groupBox1, "groupBox1");
-            groupBox1.BackColor = Color.FromArgb(43, 56, 46);
+            groupBox1.BackColor = Color.FromArgb(111, 129, 105);
             groupBox1.Controls.Add(lblPRECIO);
             groupBox1.Controls.Add(cmbTipoProveedor);
             groupBox1.Controls.Add(TxtNOMBRE);
@@ -297,7 +296,7 @@
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(43, 56, 46);
+            BackColor = Color.White;
             Controls.Add(pbBorrar);
             Controls.Add(pbLimpiar);
             Controls.Add(pbEditar);

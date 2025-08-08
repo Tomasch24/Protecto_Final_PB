@@ -50,27 +50,28 @@ namespace Capa_negocios
             return retorna;
         }
 
+        //TODO metodo encargado de actualizar el stock en la tabla producto
         public static void ActualizarStock(Producto producto)
         {
 
             Productos_Agri data = new Productos_Agri();
             using (SqlConnection conn = new SqlConnection(data.Conexion))
             {
-                // 1. Correct the parameter names in the query to match the parameters being added.
+               
                 string query = "UPDATE Producto SET Stock = @Stock WHERE Id = @Id";
 
-                using (SqlCommand cmd = new SqlCommand(query, conn)) // 2. Pass the query and connection to the command.
+                using (SqlCommand cmd = new SqlCommand(query, conn)) 
                 {
-                    // 3. The parameter names here must exactly match the ones in the query string.
+                   
                     cmd.Parameters.AddWithValue("@Stock", producto.Stock);
                     cmd.Parameters.AddWithValue("@Id", producto.Id);
 
-                    conn.Open(); // 4. Open the database connection.
-                    cmd.ExecuteNonQuery(); // 5. Execute the query to update the data.
-                    conn.Close(); // 6. Close the connection.
+                    conn.Open(); 
+                    cmd.ExecuteNonQuery(); 
                 }
             }
         }
+        //TODO metodo encargado de buscar el producto para actualizar el stock en la tabla producto
         public static Producto BuscarPorId(int Id)
         {
             Productos_Agri data = new Productos_Agri();

@@ -26,7 +26,7 @@ namespace Capa_Presentacion
             txtNombre.MaxLength = 50;
             txtCorreo.MaxLength = 50;
             txtIdCliente.MaxLength = 6;
-    
+
             btnBuscar.Hide();
             btnEditarCliente.Hide();
             btnEliminarCliente.Hide();
@@ -289,7 +289,7 @@ namespace Capa_Presentacion
             btnEditarCliente.Enabled = false;
             btnEliminarCliente.Enabled = false;
             btnGuardarCliente.Enabled = false;
-                
+
             txtIdCliente.Enabled = true;
             txtNombre.Enabled = false;
             MtxtTelefono.Enabled = false;
@@ -354,5 +354,6 @@ namespace Capa_Presentacion
             MtxtRnc.Enabled = false;
             txtCorreo.Enabled = false;
         }
+
     }
 }

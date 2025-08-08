@@ -81,7 +81,7 @@ namespace Capa_Presentacion
             chartStockProductos.ChartAreas[0].AxisX.Title = "Producto";
             chartStockProductos.ChartAreas[0].AxisY.Title = "Stock Actual";
             // TODO Desactivar el efecto 3D para el gráfico de stock
-            chartStockProductos.ChartAreas[0].Area3DStyle.Enable3D = false;
+            chartStockProductos.ChartAreas[0].Area3DStyle.Enable3D = Enabled;
         }
 
         /// <summary>
