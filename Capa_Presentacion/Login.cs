@@ -45,7 +45,7 @@ namespace Capa_Presentacion
                     if (validLogin == true)
                     {
                         // Si el login es exitoso, muestra la pantalla de bienvenida y luego el formulario principal
-                        this.Dispose();
+                        this.Hide();
                         FormBienvenida bienvenida = new FormBienvenida();
                         bienvenida.ShowDialog();
 
