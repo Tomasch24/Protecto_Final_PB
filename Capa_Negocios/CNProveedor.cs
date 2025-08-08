@@ -8,7 +8,7 @@ namespace Capa_Negocios
     public class CNProveedor
     {
 
-        //Lógica para obtener los datos desde la base
+        //TODO Lógica para obtener los datos desde la base
         public DataTable ObtenerTodosLosProveedores()
         {
 

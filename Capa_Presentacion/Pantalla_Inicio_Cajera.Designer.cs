@@ -34,7 +34,6 @@
             PanelHerencia = new Panel();
             panel1 = new Panel();
             MenuVertical = new Panel();
-            btnCatalogo = new Button();
             lblemail = new Label();
             lblnom = new Label();
             btnClientes = new Button();
@@ -88,7 +87,6 @@
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(22, 39, 33);
-            MenuVertical.Controls.Add(btnCatalogo);
             MenuVertical.Controls.Add(lblemail);
             MenuVertical.Controls.Add(lblnom);
             MenuVertical.Controls.Add(btnClientes);
@@ -104,6 +102,7 @@
             MenuVertical.Size = new Size(315, 843);
             MenuVertical.TabIndex = 11;
             // 
+
             // btnCatalogo
             // 
             btnCatalogo.BackColor = Color.FromArgb(42, 100, 66);
@@ -119,6 +118,7 @@
             btnCatalogo.UseVisualStyleBackColor = false;
             btnCatalogo.Click += btnCatalogo_Click_2;
             // 
+
             // lblemail
             // 
             lblemail.AutoSize = true;
@@ -152,7 +152,9 @@
             btnClientes.FlatStyle = FlatStyle.Flat;
             btnClientes.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnClientes.ForeColor = Color.White;
+
             btnClientes.Location = new Point(58, 440);
+
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(186, 38);
             btnClientes.TabIndex = 7;
@@ -180,7 +182,9 @@
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnReportes.ForeColor = Color.White;
+
             btnReportes.Location = new Point(58, 516);
+
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(186, 38);
             btnReportes.TabIndex = 5;
@@ -208,7 +212,9 @@
             btnPedidos.FlatStyle = FlatStyle.Flat;
             btnPedidos.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnPedidos.ForeColor = Color.White;
+
             btnPedidos.Location = new Point(58, 363);
+
             btnPedidos.Name = "btnPedidos";
             btnPedidos.Size = new Size(186, 38);
             btnPedidos.TabIndex = 3;
@@ -223,7 +229,9 @@
             btnFacturacion.FlatStyle = FlatStyle.Flat;
             btnFacturacion.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnFacturacion.ForeColor = Color.White;
+
             btnFacturacion.Location = new Point(58, 295);
+
             btnFacturacion.Name = "btnFacturacion";
             btnFacturacion.Size = new Size(186, 38);
             btnFacturacion.TabIndex = 2;
@@ -240,7 +248,7 @@
             // pbIconCerrar
             // 
             pbIconCerrar.Image = Properties.Resources.icons8_eliminar_50;
-            pbIconCerrar.Location = new Point(1637, 11);
+            pbIconCerrar.Location = new Point(1627, 11);
             pbIconCerrar.Margin = new Padding(2);
             pbIconCerrar.Name = "pbIconCerrar";
             pbIconCerrar.Size = new Size(32, 32);
@@ -291,7 +299,6 @@
         private Panel PanelHerencia;
         private Panel panel1;
         private Panel MenuVertical;
-        private Button btnCatalogo;
         private Label lblemail;
         private Label lblnom;
         private Button btnClientes;

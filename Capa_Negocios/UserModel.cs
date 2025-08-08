@@ -9,6 +9,7 @@ using Capa_de_Modulos.CACHE; // Para usar la clase UserKey que almacena los dato
 namespace Capa_Negocios
 {
     public class UserModel
+
     {
         #region Login Negocios
 
@@ -16,12 +17,12 @@ namespace Capa_Negocios
 
             public bool LoginUser(string user, string password)
 
-            {   //Si el usuario o la contraseña son nulos o vacíos, lanzamos una excepción          
+            {   // TODO Si el usuario o la contraseña son nulos o vacíos, lanzamos una excepción          
                 if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(password))
                 {
                     return false;
                 }
-                //Llama al metodo de la capa de datos para autenticar al usuario y llenar la cache
+                //TODO Llama al metodo de la capa de datos para autenticar al usuario y llenar la cache
                 return userE.Login(user, password);
             }
     }

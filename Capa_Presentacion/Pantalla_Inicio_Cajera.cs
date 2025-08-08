@@ -264,6 +264,7 @@ namespace Capa_Presentacion
 
         private void pbIconCerrar_Click_1(object sender, EventArgs e)
         {
+
             this.Close();
 
         }

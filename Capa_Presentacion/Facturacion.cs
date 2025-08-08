@@ -26,6 +26,9 @@ namespace Capa_Presentacion
     public partial class Facturacion : Form
     {
 
+        //TODO --- SECCIÓN: Constructor y Carga del Formulario ---
+        // ---------------------------------------------------
+
         public Facturacion()
         {
             InitializeComponent();
@@ -33,6 +36,7 @@ namespace Capa_Presentacion
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
+            // Inicializa los ComboBox de tipo de factura y método de pago
             cbTipo.Items.Add("Contado");
             cbTipo.Items.Add("Crédito");
             cbTipo.SelectedIndex = 0;
@@ -41,23 +45,29 @@ namespace Capa_Presentacion
             cbMetodoPago.Items.Add("Transferencia");
             cbMetodoPago.Items.Add("Efectivo");
 
+            // Oculta los controles relacionados con el cambio de dinero al iniciar el formulario
             txtCambio.Hide();
             lblCambio.Hide();
             pbAtrasMP.Hide();
             btnGenerarFacturaPDF.Hide();
         }
+
+        // TODO --- SECCIÓN: Métodos de Limpieza de Campos ---
+        // ---------------------------------------------
+
         private void LimpiarCamposProducto()
         {
-
+            // Limpia los campos de texto y el NumericUpDown del producto
             txtIdProducto.Text = "";
             txtPrecio.Text = "";
             txtProducto.Text = "";
             txtStock.Text = "";
             nudCantidad.Value = 1;
-
         }
+
         private void LimpiarCamposExtras()
         {
+            // Restablece los campos de pago, cambio y totales
             txtPago.Text = "0";
             txtCambio.Text = "0";
             txtCambio.Hide();
@@ -69,18 +79,23 @@ namespace Capa_Presentacion
             lblPago.Text = "Metodo de Pago";
             cbMetodoPago.Show();
         }
+
         private void LimpiarCamposCliente()
         {
+            // Limpia los campos de información del cliente
             txtIdCliente.Text = "";
             txtNombre.Text = "";
             MtxtRnc.Text = "";
             MtxtTelefono.Text = "";
             txtIdCliente.Text = "";
-
         }
+
+        // TODO --- SECCIÓN: Manejo de Eventos de Teclas (KeyPress) ---
+        // -------------------------------------------------------
 
         private void txtIdCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Permite solo dígitos y teclas de control
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
@@ -89,6 +104,7 @@ namespace Capa_Presentacion
 
         private void txtIdProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Permite solo dígitos y teclas de control
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
@@ -97,6 +113,7 @@ namespace Capa_Presentacion
 
         private void txtPago_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Permite solo dígitos, el punto decimal y teclas de control
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
             {
                 e.Handled = true;
@@ -105,6 +122,7 @@ namespace Capa_Presentacion
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Permite solo dígitos, el punto decimal y teclas de control
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
             {
                 e.Handled = true;
@@ -113,14 +131,20 @@ namespace Capa_Presentacion
 
         private void txtTotal_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Permite solo dígitos, el punto decimal y teclas de control
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
             {
                 e.Handled = true;
             }
         }
 
+        // TODO --- SECCIÓN: Lógica de Búsqueda y Adición de Ítems ---
+        // -----------------------------------------------------
+
         private void pbBuscarIdCliente_Click(object sender, EventArgs e)
         {
+            // Busca un cliente por su ID y llena los campos correspondientes.
+            // Los campos del cliente se hacen de solo lectura después de la búsqueda.
             if (!int.TryParse(txtIdCliente.Text, out int idCliente))
             {
                 MessageBox.Show("Por favor ingrese un Id de cliente válido.");
@@ -134,7 +158,7 @@ namespace Capa_Presentacion
                 txtNombre.Text = cliente.Nombre;
                 MtxtTelefono.Text = cliente.Telefono;
                 MtxtRnc.Text = cliente.RNC;
-                txtNombre.Tag = cliente; // Guarda el cliente para usarlo al facturar
+                txtNombre.Tag = cliente;
             }
             else
             {
@@ -148,7 +172,9 @@ namespace Capa_Presentacion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //TODO Capturas de error de los textbox
+            // Valida los campos de cliente y producto, y luego agrega el producto a la factura.
+            // Calcula el total y guarda la información en la base de datos.
+            // TODO: Capturas de error de los textbox
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
                 MessageBox.Show("El campo Cliente esta incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -245,8 +271,13 @@ namespace Capa_Presentacion
                 MessageBox.Show("Error 404: el codigo del cerebro del jeifferson de este codigo dejo de compilar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // TODO --- SECCIÓN: Lógica de Cálculo y Generación de PDF ---
+        // -----------------------------------------------------
+
         private void CalcularTotal()
         {
+            // Itera sobre el DataGridView para calcular el total de la factura.
             decimal total = 0;
 
             foreach (DataGridViewRow row in dgvFactura.Rows)
@@ -264,6 +295,8 @@ namespace Capa_Presentacion
 
         private void btnGenerarFacturaPDF_Click(object sender, EventArgs e)
         {
+            // Valida los datos del cliente, luego genera y guarda un archivo PDF de la factura.
+            // Actualiza el stock de los productos vendidos después de generar el PDF.
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
                 MessageBox.Show("El campo Cliente esta incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -292,12 +325,11 @@ namespace Capa_Presentacion
             {
                 using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
                 {
-                    CultureInfo cultura = new CultureInfo("es-DO"); // RD$
+                    CultureInfo cultura = new CultureInfo("es-DO");
                     Document pdfDoc = new Document(PageSize.A4, 25, 25, 30, 30);
                     PdfWriter.GetInstance(pdfDoc, stream);
                     pdfDoc.Open();
 
-                    // Cargar imagen del logo (ajusta la ruta a tu caso)
                     using (MemoryStream ms = new MemoryStream())
                     {
                         Properties.Resources.LOGO_OSCURO.Save(ms, ImageFormat.Png);
@@ -307,12 +339,10 @@ namespace Capa_Presentacion
                         pdfDoc.Add(logo);
                     }
 
-                    // Información de la empresa
                     Paragraph infoEmpresa = new Paragraph("GreenPoint\nRNC: 123456789\nDirección: Av. Barcelo, Bavaro, Punta Cana\nTeléfono: (809) 123-4567\n\n", FontFactory.GetFont("Arial", "12", Font.Bold));
                     infoEmpresa.Alignment = Element.ALIGN_LEFT;
                     pdfDoc.Add(infoEmpresa);
 
-                    // Información del cliente
                     pdfDoc.Add(new Paragraph("FACTURA\n", FontFactory.GetFont("Arial", "16", Font.Bold)));
                     pdfDoc.Add(new Paragraph($"Fecha: {DateTime.Now:dd/MM/yyyy}", FontFactory.GetFont("Arial", "12")));
                     pdfDoc.Add(new Paragraph($"Cliente: {txtNombre.Text}"));
@@ -320,14 +350,13 @@ namespace Capa_Presentacion
                     pdfDoc.Add(new Paragraph($"RNC: {MtxtRnc.Text}"));
                     pdfDoc.Add(new Paragraph($"Tipo de Factura: {cbTipo.SelectedItem.ToString()}\n\n"));
 
-                    // Tabla de productos
-                    PdfPTable table = new PdfPTable(6); // ID, Nombre, Precio, Cantidad, Descuento, SubTotal
+                    PdfPTable table = new PdfPTable(6);
                     table.WidthPercentage = 100;
                     table.SetWidths(new float[] { 12f, 30f, 18f, 12f, 20f, 18f });
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     table.SpacingBefore = 10f;
                     table.SpacingAfter = 10f;
-                    BaseColor colorFondo = new BaseColor(230, 230, 230); // Gris claro
+                    BaseColor colorFondo = new BaseColor(230, 230, 230);
                     FontFactory.GetFont("Arial", "12", Font.Bold);
 
                     string[] headers = { "Cod. Producto", "Producto", "Precio", "Cantidad", "Subtotal", "Descuento" };
@@ -347,9 +376,6 @@ namespace Capa_Presentacion
                         if (row.IsNewRow) continue;
 
                         string precioTexto = row.Cells[2].Value?.ToString() ?? "0";
-
-
-                        // Eliminar símbolos de moneda y otros caracteres no numéricos
                         precioTexto = Regex.Replace(precioTexto, @"[^\d.,]", "");
 
                         decimal precio = Convert.ToDecimal(precioTexto);
@@ -362,31 +388,23 @@ namespace Capa_Presentacion
                         table.AddCell(row.Cells[3].Value?.ToString() ?? "");
                         table.AddCell(subtotal.ToString("C", cultura));
                         table.AddCell(descuento.ToString("C", cultura));
-
                     }
 
                     pdfDoc.Add(table);
-
-
                     pdfDoc.Add(new Paragraph("\nTOTAL A PAGAR: " + txtTotal.Text, FontFactory.GetFont("Arial", "12", Font.Bold)));
-
                     pdfDoc.Close();
                     stream.Close();
-                    foreach (DataGridViewRow row in dgvFactura.Rows)
 
+                    foreach (DataGridViewRow row in dgvFactura.Rows)
                     {
                         if (row.IsNewRow) continue;
 
                         int idProducto = Convert.ToInt32(row.Cells["IdProducto"].Value);
                         int cantidadVendida = Convert.ToInt32(row.Cells["Cantidad"].Value);
 
-                        // Obtener el producto desde la base de datos o capa de negocios
                         var producto = FacturaDal.BuscarPorId(idProducto);
 
-                        // Restar la cantidad vendida
                         producto.Stock -= cantidadVendida;
-
-                        // Actualizar el stock en la base de datos
                         FacturaDal.ActualizarStock(producto);
                     }
                 }
@@ -396,12 +414,14 @@ namespace Capa_Presentacion
             LimpiarCamposProducto();
             LimpiarCamposCliente();
             LimpiarCamposExtras();
-
-
         }
+
+        //TODO  --- SECCIÓN: Lógica del DataGridView ---
+        // ----------------------------------------
 
         private void dgvFactura_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            // Dibuja el icono de "eliminar" en la celda de la columna correspondiente.
             if (e.RowIndex < 0)
                 return;
             if (e.ColumnIndex == 6)
@@ -419,10 +439,10 @@ namespace Capa_Presentacion
             }
         }
 
-
-
         private void dgvFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Maneja el evento de clic en la celda de "eliminar" para quitar una fila de la factura.
+            // Recalcula el total después de eliminar un producto.
             if (dgvFactura.Columns[e.ColumnIndex].Name == "btnEliminar")
             {
                 int indice = e.RowIndex;
@@ -434,8 +454,14 @@ namespace Capa_Presentacion
                 }
             }
         }
+
+        // TODO --- SECCIÓN: Lógica de Búsqueda de Productos y Cálculo de Cambio ---
+        // ------------------------------------------------------------------
+
         private void pbBuscarIdProducto_Click(object sender, EventArgs e)
         {
+            // Abre un formulario de catálogo para que el usuario seleccione un producto.
+            // La versión anterior de este método está comentada.
             using (var catalogo = new Catalogo_De_Los_Productos())
             {
                 var resulta = catalogo.ShowDialog();
@@ -447,11 +473,9 @@ namespace Capa_Presentacion
             }
         }
 
-
-
-
         private void CalcularCambio()
         {
+            // Calcula el cambio a devolver al cliente, validando que el pago sea suficiente.
             string totalTexto = txtTotal.Text.Replace("RD$", "").Replace(",", "").Trim();
             decimal total = Convert.ToDecimal(totalTexto);
             decimal efectivo;
@@ -474,9 +498,12 @@ namespace Capa_Presentacion
             }
         }
 
+        // TODO --- SECCIÓN: Eventos de Interfaz de Usuario ---
+        // ---------------------------------------------
 
         private void btnFacturar_Click(object sender, EventArgs e)
         {
+            // Habilita los campos y botones del formulario para iniciar el proceso de facturación.
             cbTipo.Enabled = true;
             txtIdCliente.Enabled = true;
             txtNombre.Enabled = true;
@@ -499,6 +526,7 @@ namespace Capa_Presentacion
 
         private void cbMetodoPago_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            // Maneja la selección del método de pago. Si es 'Efectivo', muestra los campos de pago y cambio.
             string seleccion = cbMetodoPago.SelectedItem?.ToString();
 
             switch (seleccion)
@@ -513,21 +541,18 @@ namespace Capa_Presentacion
             }
         }
 
-
-
         public void SetDatosProducto(UCProducto.ProductoEventArgs e)
         {
+            // Método público para establecer los datos de un producto seleccionado desde otro formulario.
             txtIdProducto.Text = e.IdProducto.ToString();
             txtProducto.Text = e.Nombre;
             txtPrecio.Text = e.Precio.ToString("C", new CultureInfo("es-DO"));
             txtStock.Text = e.Stock.ToString();
-
-
-
         }
 
         private void pbAtrasMP_Click(object sender, EventArgs e)
         {
+            // Vuelve a mostrar el ComboBox de método de pago y oculta los campos de pago y cambio.
             cbMetodoPago.Show();
             lblPago.Text = "Metodo de Pago";
             txtCambio.Hide();
@@ -537,6 +562,7 @@ namespace Capa_Presentacion
 
         private void txtPago_KeyDown_1(object sender, KeyEventArgs e)
         {
+            // Llama a la función de calcular el cambio cuando se presiona la tecla 'Enter' en el campo de pago.
             if (e.KeyData == Keys.Enter)
             {
                 CalcularCambio();
@@ -545,23 +571,17 @@ namespace Capa_Presentacion
 
         private void pbBuscarIdProducto_Click_1(object sender, EventArgs e)
         {
-            // Pantalla_De_Inicio P = new Pantalla_De_Inicio();
-            //Facturacion F = new Pantalla_De_Inicio();
-            //P.OpenPanelHerencia(new Catalogo_De_Los_Productos());
-            // Crea una instancia del formulario del catálogo
-            // Crea una instancia del formulario del catálogo
+            // Abre el formulario 'Catalogo_De_Los_Productos' como un diálogo modal.
+            // Si el resultado es 'OK', actualiza los campos del formulario de facturación
+            // con la información del producto seleccionado.
             using (var catalogo = new Catalogo_De_Los_Productos())
             {
-                // Muestra el catálogo como un diálogo modal. El código se detiene aquí.
                 var result = catalogo.ShowDialog();
 
-                // Si el usuario seleccionó un producto y el resultado fue OK
                 if (result == DialogResult.OK)
                 {
-                    // Obtén el producto seleccionado de la propiedad pública del catálogo
                     var producto = catalogo.ProductoSeleccionado;
 
-                    // Rellena los campos de producto en el formulario de facturación
                     txtIdProducto.Text = producto.IdProducto.ToString();
                     txtProducto.Text = producto.Nombre;
                     txtPrecio.Text = producto.Precio.ToString("C", new CultureInfo("es-DO"));

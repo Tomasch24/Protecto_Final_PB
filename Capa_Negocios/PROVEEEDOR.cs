@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
     namespace Capa_Negocios
     {
-        // Es abstracta porque define lo común y obliga a las clases hijas a implementar lo específico
+        // TODO Es abstracta porque define lo común y obliga a las clases hijas a implementar lo específico
         public abstract class PROVEEDOR
         { 
             public string RNC { get; set; }
@@ -18,7 +18,7 @@ using System.Threading.Tasks;
             public string TIPO { get; set; }
             public decimal PRECIO { get; set; } 
 
-            // Constructor base: se usa en las clases hijas a través de herencia
+            // TODO Constructor base: se usa en las clases hijas a través de herencia
             protected PROVEEDOR(string rnc, string nombre, string telefono, string producto, string tipo, decimal precio)
             {
                 RNC = rnc;
@@ -29,7 +29,7 @@ using System.Threading.Tasks;
                 PRECIO = precio;
             }
 
-            // Métodos abstractos: obligan a las subclases a definir su comportamiento
+            // TODO Métodos abstractos: obligan a las subclases a definir su comportamiento
             public abstract string ObtenerIdentificadorPrincipal();  
             public abstract bool EsValido();                        
             public abstract string ObtenerTipo();              

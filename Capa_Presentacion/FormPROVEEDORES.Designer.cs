@@ -139,6 +139,7 @@
             TxtPRODUCTO.Name = "TxtPRODUCTO";
             TxtPRODUCTO.Size = new Size(253, 26);
             TxtPRODUCTO.TabIndex = 15;
+            TxtPRODUCTO.KeyPress += TxtPRODUCTO_KeyPress;
             // 
             // dgvPROVEEDORES
             // 
@@ -274,6 +275,7 @@
             TxtNOMBRE.Size = new Size(253, 26);
             TxtNOMBRE.TabIndex = 24;
             TxtNOMBRE.TextChanged += TxtNOMBRE_TextChanged;
+            TxtNOMBRE.KeyPress += TxtNOMBRE_KeyPress;
             // 
             // btnEDITAR
             // 
@@ -321,6 +323,7 @@
             TxtPRECIO.Name = "TxtPRECIO";
             TxtPRECIO.Size = new Size(253, 26);
             TxtPRECIO.TabIndex = 30;
+            TxtPRECIO.KeyPress += TxtPRECIO_KeyPress;
             // 
             // groupBox1
             // 
