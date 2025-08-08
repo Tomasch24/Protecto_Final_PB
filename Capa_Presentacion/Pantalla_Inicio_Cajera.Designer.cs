@@ -235,7 +235,7 @@
             // pbIconCerrar
             // 
             pbIconCerrar.Image = Properties.Resources.icons8_eliminar_50;
-            pbIconCerrar.Location = new Point(1637, 11);
+            pbIconCerrar.Location = new Point(1627, 11);
             pbIconCerrar.Margin = new Padding(2);
             pbIconCerrar.Name = "pbIconCerrar";
             pbIconCerrar.Size = new Size(32, 32);

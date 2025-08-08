@@ -73,7 +73,7 @@
             // pbIconCerrar
             // 
             pbIconCerrar.Image = Capa_Presentacion.Properties.Resources.icons8_eliminar_50;
-            pbIconCerrar.Location = new Point(1666, 10);
+            pbIconCerrar.Location = new Point(1637, 11);
             pbIconCerrar.Margin = new Padding(2);
             pbIconCerrar.Name = "pbIconCerrar";
             pbIconCerrar.Size = new Size(32, 32);
