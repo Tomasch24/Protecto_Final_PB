@@ -65,20 +65,19 @@
             // 
             txtCorreo.Enabled = false;
             txtCorreo.Font = new Font("Verdana", 10F);
-
-            txtCorreo.Location = new Point(16, 290);
+            txtCorreo.Location = new Point(20, 355);
             txtCorreo.Margin = new Padding(2);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(258, 28);
+            txtCorreo.Size = new Size(258, 32);
             txtCorreo.TabIndex = 115;
             // 
             // lblCorreo
             // 
             lblCorreo.AutoSize = true;
-            lblCorreo.BackColor = Color.FromArgb(43, 56, 46);
+            lblCorreo.BackColor = Color.FromArgb(111, 129, 105);
             lblCorreo.Font = new Font("Verdana", 9F);
             lblCorreo.ForeColor = Color.White;
-            lblCorreo.Location = new Point(20, 338);
+            lblCorreo.Location = new Point(20, 331);
             lblCorreo.Margin = new Padding(2, 0, 2, 0);
             lblCorreo.Name = "lblCorreo";
             lblCorreo.Size = new Size(72, 22);
@@ -87,12 +86,11 @@
             // 
             // btnGuardarCliente
             // 
-            btnGuardarCliente.BackColor = SystemColors.MenuBar;
+            btnGuardarCliente.BackColor = Color.FromArgb(111, 129, 105);
             btnGuardarCliente.Enabled = false;
             btnGuardarCliente.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
-
-            btnGuardarCliente.Location = new Point(815, 704);
-
+            btnGuardarCliente.ForeColor = Color.White;
+            btnGuardarCliente.Location = new Point(802, 660);
             btnGuardarCliente.Margin = new Padding(2);
             btnGuardarCliente.Name = "btnGuardarCliente";
             btnGuardarCliente.Size = new Size(161, 40);
@@ -103,7 +101,7 @@
             // 
             // gbDatosC
             // 
-            gbDatosC.BackColor = Color.FromArgb(43, 56, 46);
+            gbDatosC.BackColor = Color.FromArgb(111, 129, 105);
             gbDatosC.Controls.Add(txtIdCliente);
             gbDatosC.Controls.Add(txtCorreo);
             gbDatosC.Controls.Add(txtNombre);
@@ -116,24 +114,20 @@
             gbDatosC.Controls.Add(lblRnc);
             gbDatosC.Font = new Font("Lucida Sans", 12F, FontStyle.Bold);
             gbDatosC.ForeColor = Color.White;
-
-            gbDatosC.Location = new Point(873, 59);
+            gbDatosC.Location = new Point(1063, 88);
             gbDatosC.Margin = new Padding(2);
             gbDatosC.Name = "gbDatosC";
             gbDatosC.Padding = new Padding(2);
-            gbDatosC.Size = new Size(290, 375);
-
+            gbDatosC.Size = new Size(290, 418);
             gbDatosC.TabIndex = 108;
             gbDatosC.TabStop = false;
             gbDatosC.Text = "Datos del Cliente";
             // 
-
             // txtIdCliente
             // 
             txtIdCliente.Enabled = false;
             txtIdCliente.Font = new Font("Verdana", 10F);
-
-            txtIdCliente.Location = new Point
+            txtIdCliente.Location = new Point(20, 55);
             txtIdCliente.Margin = new Padding(2);
             txtIdCliente.Name = "txtIdCliente";
             txtIdCliente.Size = new Size(82, 32);
@@ -144,19 +138,17 @@
             // 
             txtNombre.Enabled = false;
             txtNombre.Font = new Font("Verdana", 10F);
-
-            txtNombre.Location = new Point(16, 106);
+            txtNombre.Location = new Point(20, 124);
             txtNombre.Margin = new Padding(2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(258, 28);
-
+            txtNombre.Size = new Size(258, 32);
             txtNombre.TabIndex = 1;
             txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.BackColor = Color.FromArgb(43, 56, 46);
+            lblNombre.BackColor = Color.FromArgb(111, 129, 105);
             lblNombre.Font = new Font("Verdana", 9F);
             lblNombre.ForeColor = Color.White;
             lblNombre.Location = new Point(20, 100);
@@ -171,22 +163,20 @@
             MtxtTelefono.Enabled = false;
             MtxtTelefono.Font = new Font("Verdana", 10F);
             MtxtTelefono.ForeColor = SystemColors.ControlText;
-
-            MtxtTelefono.Location = new Point(16, 174);
+            MtxtTelefono.Location = new Point(20, 200);
             MtxtTelefono.Margin = new Padding(2);
             MtxtTelefono.Mask = "+1 (999) 000-0000";
             MtxtTelefono.Name = "MtxtTelefono";
-            MtxtTelefono.Size = new Size(258, 28);
-
+            MtxtTelefono.Size = new Size(258, 32);
             MtxtTelefono.TabIndex = 4;
             // 
             // lblTelefono
             // 
             lblTelefono.AutoSize = true;
-            lblTelefono.BackColor = Color.FromArgb(43, 56, 46);
+            lblTelefono.BackColor = Color.FromArgb(111, 129, 105);
             lblTelefono.Font = new Font("Verdana", 9F);
             lblTelefono.ForeColor = Color.White;
-            lblTelefono.Location = new Point(20, 185);
+            lblTelefono.Location = new Point(20, 176);
             lblTelefono.Margin = new Padding(2, 0, 2, 0);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(85, 22);
@@ -196,7 +186,7 @@
             // lblIdCliente
             // 
             lblIdCliente.AutoSize = true;
-            lblIdCliente.BackColor = Color.FromArgb(43, 56, 46);
+            lblIdCliente.BackColor = Color.FromArgb(111, 129, 105);
             lblIdCliente.Font = new Font("Verdana", 9F);
             lblIdCliente.ForeColor = Color.White;
             lblIdCliente.Location = new Point(20, 31);
@@ -210,22 +200,20 @@
             // 
             MtxtRnc.Enabled = false;
             MtxtRnc.Font = new Font("Verdana", 10F);
-
-            MtxtRnc.Location = new Point(16, 231);
+            MtxtRnc.Location = new Point(20, 282);
             MtxtRnc.Margin = new Padding(2);
             MtxtRnc.Mask = "000-0000000-0";
             MtxtRnc.Name = "MtxtRnc";
-            MtxtRnc.Size = new Size(258, 28);
-
+            MtxtRnc.Size = new Size(258, 32);
             MtxtRnc.TabIndex = 5;
             // 
             // lblRnc
             // 
             lblRnc.AutoSize = true;
-            lblRnc.BackColor = Color.FromArgb(43, 56, 46);
+            lblRnc.BackColor = Color.FromArgb(111, 129, 105);
             lblRnc.Font = new Font("Verdana", 9F);
             lblRnc.ForeColor = Color.White;
-            lblRnc.Location = new Point(20, 258);
+            lblRnc.Location = new Point(20, 251);
             lblRnc.Margin = new Padding(2, 0, 2, 0);
             lblRnc.Name = "lblRnc";
             lblRnc.Size = new Size(49, 22);
@@ -235,31 +223,29 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.FromArgb(43, 56, 46);
+            lblTitulo.BackColor = Color.White;
             lblTitulo.Font = new Font("Lucida Sans", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-
-            lblTitulo.ForeColor = Color.White;
+            lblTitulo.ForeColor = Color.FromArgb(111, 129, 105);
             lblTitulo.Location = new Point(45, 33);
-
             lblTitulo.Margin = new Padding(2, 0, 2, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(182, 45);
+            lblTitulo.Size = new Size(218, 45);
             lblTitulo.TabIndex = 105;
-            lblTitulo.Text = "Clientes";
+            lblTitulo.Text = "CLIENTES";
             // 
             // btnEditarCliente
             // 
+            btnEditarCliente.BackColor = Color.FromArgb(111, 129, 105);
             btnEditarCliente.Enabled = false;
             btnEditarCliente.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
-
-            btnEditarCliente.Location = new Point(813, 704);
-
+            btnEditarCliente.ForeColor = Color.White;
+            btnEditarCliente.Location = new Point(802, 660);
             btnEditarCliente.Margin = new Padding(2);
             btnEditarCliente.Name = "btnEditarCliente";
             btnEditarCliente.Size = new Size(161, 40);
             btnEditarCliente.TabIndex = 104;
             btnEditarCliente.Text = "Editar Cliente";
-            btnEditarCliente.UseVisualStyleBackColor = true;
+            btnEditarCliente.UseVisualStyleBackColor = false;
             btnEditarCliente.Click += btnEditarCliente_Click;
             // 
             // dgvClientes
@@ -290,7 +276,6 @@
             dgvClientes.EnableHeadersVisualStyles = false;
             dgvClientes.GridColor = Color.Black;
             dgvClientes.Location = new Point(45, 88);
-
             dgvClientes.Margin = new Padding(2);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
@@ -300,40 +285,39 @@
             // 
             // btnBuscar
             // 
+            btnBuscar.BackColor = Color.FromArgb(111, 129, 105);
             btnBuscar.Enabled = false;
             btnBuscar.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
-
-            btnBuscar.Location = new Point(782, 704);
-
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.Location = new Point(769, 660);
             btnBuscar.Margin = new Padding(2);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(194, 40);
             btnBuscar.TabIndex = 115;
             btnBuscar.Text = "Buscar por Id";
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
             // 
             // btnEliminarCliente
             // 
+            btnEliminarCliente.BackColor = Color.FromArgb(111, 129, 105);
             btnEliminarCliente.Enabled = false;
             btnEliminarCliente.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
-
-            btnEliminarCliente.Location = new Point(782, 704);
+            btnEliminarCliente.ForeColor = Color.White;
+            btnEliminarCliente.Location = new Point(769, 660);
             btnEliminarCliente.Margin = new Padding(2);
             btnEliminarCliente.Name = "btnEliminarCliente";
             btnEliminarCliente.Size = new Size(194, 40);
             btnEliminarCliente.TabIndex = 116;
             btnEliminarCliente.Text = "Eliminar Cliente";
-            btnEliminarCliente.UseVisualStyleBackColor = true;
+            btnEliminarCliente.UseVisualStyleBackColor = false;
             btnEliminarCliente.Click += btnEliminarCliente_Click;
             // 
             // pbAtras
             // 
             pbAtras.BackColor = Color.White;
             pbAtras.Image = Properties.Resources.Flecha_hacia_atras;
-
-            pbAtras.Location = new Point(733, 35);
-
+            pbAtras.Location = new Point(905, 32);
             pbAtras.Margin = new Padding(2);
             pbAtras.Name = "pbAtras";
             pbAtras.Size = new Size(58, 46);
@@ -342,11 +326,10 @@
             pbAtras.TabStop = false;
             pbAtras.Click += pbAtras_Click;
             // 
-
             // pbBuscar
             // 
             pbBuscar.Image = Properties.Resources.Imagen_de_WhatsApp_2025_08_06_a_las_20_52_28_6e773097_removebg_preview;
-            pbBuscar.Location = new Point(805, 109);
+            pbBuscar.Location = new Point(985, 148);
             pbBuscar.Margin = new Padding(2);
             pbBuscar.Name = "pbBuscar";
             pbBuscar.Size = new Size(58, 49);
@@ -358,10 +341,10 @@
             // pbRegistrar
             // 
             pbRegistrar.Image = Properties.Resources.address_card_solid_full_removebg_preview1;
-            pbRegistrar.Location = new Point(805, 153);
+            pbRegistrar.Location = new Point(985, 212);
             pbRegistrar.Margin = new Padding(2);
             pbRegistrar.Name = "pbRegistrar";
-            pbRegistrar.Size = new Size(58, 49);
+            pbRegistrar.Size = new Size(60, 49);
             pbRegistrar.SizeMode = PictureBoxSizeMode.Zoom;
             pbRegistrar.TabIndex = 119;
             pbRegistrar.TabStop = false;
@@ -370,7 +353,7 @@
             // pbEditar
             // 
             pbEditar.Image = Properties.Resources.user_pen_solid_full_1_removebg_preview;
-            pbEditar.Location = new Point(805, 197);
+            pbEditar.Location = new Point(985, 271);
             pbEditar.Margin = new Padding(2);
             pbEditar.Name = "pbEditar";
             pbEditar.Size = new Size(58, 49);
@@ -382,7 +365,7 @@
             // pbEliminar
             // 
             pbEliminar.Image = Properties.Resources.Imagen_de_WhatsApp_2025_08_06_a_las_20_52_28_2dfab1f8_removebg_preview;
-            pbEliminar.Location = new Point(805, 241);
+            pbEliminar.Location = new Point(985, 330);
             pbEliminar.Margin = new Padding(2);
             pbEliminar.Name = "pbEliminar";
             pbEliminar.Size = new Size(58, 49);
@@ -390,20 +373,17 @@
             pbEliminar.TabIndex = 121;
             pbEliminar.TabStop = false;
             pbEliminar.Click += pbEliminar_Click;
-
             // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-
-            BackColor = Color.FromArgb(43, 56, 46);
-            ClientSize = new Size(1203, 622);
+            BackColor = Color.White;
+            ClientSize = new Size(1385, 772);
             Controls.Add(pbEliminar);
             Controls.Add(pbEditar);
             Controls.Add(pbRegistrar);
             Controls.Add(pbBuscar);
-
             Controls.Add(pbAtras);
             Controls.Add(btnEliminarCliente);
             Controls.Add(btnBuscar);
