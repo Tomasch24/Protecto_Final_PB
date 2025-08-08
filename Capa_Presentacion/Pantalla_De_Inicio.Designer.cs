@@ -174,7 +174,7 @@
             btnReportes.FlatAppearance.BorderSize = 0;
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.ForeColor = Color.White;
-            btnReportes.Location = new Point(42, 665);
+            btnReportes.Location = new Point(42, 678);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(186, 38);
             btnReportes.TabIndex = 5;
