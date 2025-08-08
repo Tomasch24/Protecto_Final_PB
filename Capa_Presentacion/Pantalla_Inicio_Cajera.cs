@@ -268,6 +268,14 @@ namespace Capa_Presentacion
             this.Close();
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            // Muestra un cuadro de diálogo para confirmar la acción.
+            if (MessageBox.Show("¿Esta seguro de que quiere cerrar sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                // Si el usuario presiona "Sí", se cierra este formulario (FormAcceso), lo que debería devolver al usuario al formulario de login.
+                this.Close();
+        }
     }
 }
 #endregion
