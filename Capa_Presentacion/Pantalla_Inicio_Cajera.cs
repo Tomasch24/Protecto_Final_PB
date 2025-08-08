@@ -86,7 +86,7 @@ namespace Capa_Presentacion
             }
         }
 
-      
+
         #endregion
 
 
@@ -260,6 +260,11 @@ namespace Capa_Presentacion
         {
             LoadUserData();
 
+        }
+
+        private void pbIconCerrar_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

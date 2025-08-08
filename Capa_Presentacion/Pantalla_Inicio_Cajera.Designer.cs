@@ -226,6 +226,7 @@
             pbIconCerrar.SizeMode = PictureBoxSizeMode.Zoom;
             pbIconCerrar.TabIndex = 0;
             pbIconCerrar.TabStop = false;
+            pbIconCerrar.Click += pbIconCerrar_Click_1;
             // 
             // BarraTitulo
             // 
