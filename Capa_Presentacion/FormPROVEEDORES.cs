@@ -145,15 +145,20 @@ namespace Capa.Presentacion
 
         private void btnREGISTRAR_Click(object sender, EventArgs e)
         {
-            // Maneja el evento de registro de un nuevo proveedor, incluyendo validaciones.
             try
             {
-                if (string.IsNullOrWhiteSpace(TxtRNC.Text) || string.IsNullOrWhiteSpace(TxtNOMBRE.Text))
+                // 1. Validar que todos los campos obligatorios no estén vacíos.
+                if (string.IsNullOrWhiteSpace(TxtRNC.Text) ||
+                    string.IsNullOrWhiteSpace(TxtNOMBRE.Text) ||
+                    string.IsNullOrWhiteSpace(TxtTELEFONO.Text) ||
+                    string.IsNullOrWhiteSpace(TxtPRODUCTO.Text) ||
+                    string.IsNullOrWhiteSpace(TxtPRECIO.Text))
                 {
-                    MessageBox.Show("Por favor completa los campos obligatorios (RNC y Nombre).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Por favor completa todos los campos obligatorios.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
+                // 2. Mantener la validación del precio.
                 if (!decimal.TryParse(TxtPRECIO.Text.Trim(), out decimal precio) || precio < 0 || precio > 1000000)
                 {
                     MessageBox.Show("El precio debe ser un número válido entre 0 y 1,000,000.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -163,7 +168,6 @@ namespace Capa.Presentacion
                 PROVEEDOR nuevoProveedor;
                 string tipoProveedor = cmbTipoProveedor.SelectedItem?.ToString();
 
-                // Crea una instancia de la clase de proveedor adecuada según el tipo seleccionado.
                 if (tipoProveedor == "LOCAL")
                 {
                     nuevoProveedor = new ProveedorLocal(TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
@@ -186,7 +190,7 @@ namespace Capa.Presentacion
 
                     MessageBox.Show("Proveedor registrado correctamente.");
                     LimpiarCampos();
-                    CargarProveedoresDesdeBD(); // Refresca el DataGridView para mostrar el nuevo proveedor.
+                    CargarProveedoresDesdeBD();
                 }
             }
             catch (Exception ex)
@@ -241,7 +245,6 @@ namespace Capa.Presentacion
 
         private void btnEDITAR_Click(object sender, EventArgs e)
         {
-            // Maneja el evento de edición de un proveedor, incluyendo validaciones y manejo de errores.
             if (dgvPROVEEDORES.CurrentRow == null)
             {
                 MessageBox.Show("Por favor selecciona un proveedor de la lista para editar.", "Sin selección", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -250,6 +253,17 @@ namespace Capa.Presentacion
 
             try
             {
+                // 1. Validar que todos los campos no estén vacíos.
+                if (string.IsNullOrWhiteSpace(TxtRNC.Text) ||
+                    string.IsNullOrWhiteSpace(TxtNOMBRE.Text) ||
+                    string.IsNullOrWhiteSpace(TxtTELEFONO.Text) ||
+                    string.IsNullOrWhiteSpace(TxtPRODUCTO.Text) ||
+                    string.IsNullOrWhiteSpace(TxtPRECIO.Text))
+                {
+                    MessageBox.Show("Por favor completa todos los campos obligatorios.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 string rncSeleccionado = dgvPROVEEDORES.CurrentRow.Cells["RNC"].Value?.ToString();
 
                 if (!decimal.TryParse(TxtPRECIO.Text.Trim(), out decimal precio) || precio < 0 || precio > 1000000)
@@ -261,7 +275,6 @@ namespace Capa.Presentacion
                 PROVEEDOR proveedorActualizado;
                 string tipoProveedor = cmbTipoProveedor.SelectedItem?.ToString();
 
-                // Crea una instancia del proveedor actualizada según el tipo.
                 if (tipoProveedor == "LOCAL")
                 {
                     proveedorActualizado = new ProveedorLocal(TxtRNC.Text.Trim(), TxtNOMBRE.Text.Trim(), TxtTELEFONO.Text.Trim(), TxtPRODUCTO.Text.Trim(), precio);
@@ -298,7 +311,6 @@ namespace Capa.Presentacion
             }
             finally
             {
-                // Siempre se refresca la interfaz y se limpian los campos al final.
                 CargarProveedoresDesdeBD();
                 LimpiarCampos();
             }
