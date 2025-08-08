@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtCorreo = new TextBox();
             lblCorreo = new Label();
             btnGuardarCliente = new Button();
@@ -65,9 +67,9 @@
             // 
             txtCorreo.Font = new Font("Verdana", 10F);
             txtCorreo.Location = new Point(16, 290);
-            txtCorreo.Margin = new Padding(2, 2, 2, 2);
+            txtCorreo.Margin = new Padding(2);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(190, 28);
+            txtCorreo.Size = new Size(258, 28);
             txtCorreo.TabIndex = 115;
             // 
             // lblCorreo
@@ -88,7 +90,7 @@
             btnGuardarCliente.BackColor = SystemColors.MenuBar;
             btnGuardarCliente.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
             btnGuardarCliente.Location = new Point(241, 563);
-            btnGuardarCliente.Margin = new Padding(2, 2, 2, 2);
+            btnGuardarCliente.Margin = new Padding(2);
             btnGuardarCliente.Name = "btnGuardarCliente";
             btnGuardarCliente.Size = new Size(129, 32);
             btnGuardarCliente.TabIndex = 107;
@@ -112,21 +114,21 @@
             gbDatosC.Controls.Add(lblRnc);
             gbDatosC.Font = new Font("Lucida Sans", 12F, FontStyle.Bold);
             gbDatosC.ForeColor = Color.White;
-            gbDatosC.Location = new Point(856, 88);
-            gbDatosC.Margin = new Padding(2, 2, 2, 2);
+            gbDatosC.Location = new Point(873, 59);
+            gbDatosC.Margin = new Padding(2);
             gbDatosC.Name = "gbDatosC";
-            gbDatosC.Padding = new Padding(2, 2, 2, 2);
-            gbDatosC.Size = new Size(254, 346);
+            gbDatosC.Padding = new Padding(2);
+            gbDatosC.Size = new Size(290, 375);
             gbDatosC.TabIndex = 108;
             gbDatosC.TabStop = false;
             gbDatosC.Text = "Datos del Cliente";
             // 
             // pbBuscarIdCliente
             // 
-            pbBuscarIdCliente.BackColor = Color.Transparent;
+            pbBuscarIdCliente.BackColor = Color.White;
             pbBuscarIdCliente.Image = Properties.Resources.icons8_search_32;
             pbBuscarIdCliente.Location = new Point(90, 50);
-            pbBuscarIdCliente.Margin = new Padding(2, 2, 2, 2);
+            pbBuscarIdCliente.Margin = new Padding(2);
             pbBuscarIdCliente.Name = "pbBuscarIdCliente";
             pbBuscarIdCliente.Size = new Size(24, 29);
             pbBuscarIdCliente.SizeMode = PictureBoxSizeMode.Zoom;
@@ -138,7 +140,7 @@
             // 
             txtIdCliente.Font = new Font("Verdana", 10F);
             txtIdCliente.Location = new Point(16, 50);
-            txtIdCliente.Margin = new Padding(2, 2, 2, 2);
+            txtIdCliente.Margin = new Padding(2);
             txtIdCliente.Name = "txtIdCliente";
             txtIdCliente.Size = new Size(66, 28);
             txtIdCliente.TabIndex = 0;
@@ -148,9 +150,9 @@
             // 
             txtNombre.Font = new Font("Verdana", 10F);
             txtNombre.Location = new Point(16, 106);
-            txtNombre.Margin = new Padding(2, 2, 2, 2);
+            txtNombre.Margin = new Padding(2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(190, 28);
+            txtNombre.Size = new Size(258, 28);
             txtNombre.TabIndex = 1;
             txtNombre.KeyPress += txtNombre_KeyPress;
             // 
@@ -172,10 +174,10 @@
             MtxtTelefono.Font = new Font("Verdana", 10F);
             MtxtTelefono.ForeColor = SystemColors.ControlText;
             MtxtTelefono.Location = new Point(16, 174);
-            MtxtTelefono.Margin = new Padding(2, 2, 2, 2);
+            MtxtTelefono.Margin = new Padding(2);
             MtxtTelefono.Mask = "+1 (999) 000-0000";
             MtxtTelefono.Name = "MtxtTelefono";
-            MtxtTelefono.Size = new Size(190, 28);
+            MtxtTelefono.Size = new Size(258, 28);
             MtxtTelefono.TabIndex = 4;
             // 
             // lblTelefono
@@ -208,10 +210,10 @@
             // 
             MtxtRnc.Font = new Font("Verdana", 10F);
             MtxtRnc.Location = new Point(16, 231);
-            MtxtRnc.Margin = new Padding(2, 2, 2, 2);
+            MtxtRnc.Margin = new Padding(2);
             MtxtRnc.Mask = "000-0000000-0";
             MtxtRnc.Name = "MtxtRnc";
-            MtxtRnc.Size = new Size(190, 28);
+            MtxtRnc.Size = new Size(258, 28);
             MtxtRnc.TabIndex = 5;
             // 
             // lblRnc
@@ -230,9 +232,9 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.White;
+            lblTitulo.BackColor = Color.FromArgb(43, 56, 46);
             lblTitulo.Font = new Font("Lucida Sans", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.FromArgb(43, 56, 46);
+            lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(45, 33);
             lblTitulo.Margin = new Padding(2, 0, 2, 0);
             lblTitulo.Name = "lblTitulo";
@@ -244,7 +246,7 @@
             // 
             btnEditarCliente.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
             btnEditarCliente.Location = new Point(45, 563);
-            btnEditarCliente.Margin = new Padding(2, 2, 2, 2);
+            btnEditarCliente.Margin = new Padding(2);
             btnEditarCliente.Name = "btnEditarCliente";
             btnEditarCliente.Size = new Size(129, 32);
             btnEditarCliente.TabIndex = 104;
@@ -258,11 +260,29 @@
             dgvClientes.AllowUserToDeleteRows = false;
             dgvClientes.AllowUserToResizeColumns = false;
             dgvClientes.AllowUserToResizeRows = false;
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvClientes.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 56, 46);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(111, 129, 105);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
             dgvClientes.EnableHeadersVisualStyles = false;
+            dgvClientes.GridColor = Color.Black;
             dgvClientes.Location = new Point(45, 88);
-            dgvClientes.Margin = new Padding(2, 2, 2, 2);
+            dgvClientes.Margin = new Padding(2);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowHeadersWidth = 62;
@@ -273,7 +293,7 @@
             // 
             btnBuscar.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
             btnBuscar.Location = new Point(425, 563);
-            btnBuscar.Margin = new Padding(2, 2, 2, 2);
+            btnBuscar.Margin = new Padding(2);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(155, 32);
             btnBuscar.TabIndex = 115;
@@ -285,7 +305,7 @@
             // 
             btnEliminarCliente.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
             btnEliminarCliente.Location = new Point(615, 563);
-            btnEliminarCliente.Margin = new Padding(2, 2, 2, 2);
+            btnEliminarCliente.Margin = new Padding(2);
             btnEliminarCliente.Name = "btnEliminarCliente";
             btnEliminarCliente.Size = new Size(155, 32);
             btnEliminarCliente.TabIndex = 116;
@@ -295,9 +315,10 @@
             // 
             // pbAtras
             // 
+            pbAtras.BackColor = Color.White;
             pbAtras.Image = Properties.Resources.Flecha_hacia_atras;
-            pbAtras.Location = new Point(734, 46);
-            pbAtras.Margin = new Padding(2, 2, 2, 2);
+            pbAtras.Location = new Point(733, 35);
+            pbAtras.Margin = new Padding(2);
             pbAtras.Name = "pbAtras";
             pbAtras.Size = new Size(46, 37);
             pbAtras.SizeMode = PictureBoxSizeMode.Zoom;
@@ -307,8 +328,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(798, 130);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Location = new Point(805, 109);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(46, 39);
             pictureBox1.TabIndex = 118;
@@ -316,8 +337,8 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(798, 174);
-            pictureBox2.Margin = new Padding(2, 2, 2, 2);
+            pictureBox2.Location = new Point(805, 153);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(46, 39);
             pictureBox2.TabIndex = 119;
@@ -325,8 +346,8 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(798, 218);
-            pictureBox3.Margin = new Padding(2, 2, 2, 2);
+            pictureBox3.Location = new Point(805, 197);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(46, 39);
             pictureBox3.TabIndex = 120;
@@ -334,8 +355,8 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(798, 262);
-            pictureBox4.Margin = new Padding(2, 2, 2, 2);
+            pictureBox4.Location = new Point(805, 241);
+            pictureBox4.Margin = new Padding(2);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(46, 39);
             pictureBox4.TabIndex = 121;
@@ -345,8 +366,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1145, 622);
+            BackColor = Color.FromArgb(43, 56, 46);
+            ClientSize = new Size(1203, 622);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -360,7 +381,7 @@
             Controls.Add(btnEditarCliente);
             Controls.Add(dgvClientes);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Clientes";
             StartPosition = FormStartPosition.CenterScreen;
             Load += Clientes_Load;

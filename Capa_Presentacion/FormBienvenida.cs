@@ -1,21 +1,16 @@
 ﻿using Capa_de_Modulos.CACHE; // Importa el espacio de nombres donde se almacena la información del usuario logueado.
-using System; // Proporciona acceso a tipos de datos y funciones del sistema.
-using System.Collections.Generic; // Permite el uso de colecciones genéricas.
+using System; 
+using System.Collections.Generic; 
 using System.ComponentModel; // Habilita atributos y clases para el diseño de componentes.
-using System.Data; // Proporciona clases para la arquitectura ADO.NET (acceso a datos).
-using System.Drawing; // Permite el uso de gráficos GDI+ para dibujar y manipular imágenes.
-using System.Linq; // Habilita las consultas LINQ.
-using System.Text; // Proporciona clases para manipular cadenas.
+using System.Data; 
+using System.Drawing; 
+using System.Linq; 
 using System.Threading.Tasks; // Facilita la programación asíncrona.
-using System.Windows.Forms; // Contiene las clases para crear aplicaciones de Windows.
-using static System.Windows.Forms.VisualStyles.VisualStyleElement; // Permite usar elementos de estilos visuales.
+using static System.Windows.Forms.VisualStyles.VisualStyleElement; 
 
-namespace Capa_Presentacion // Espacio de nombres para la capa de presentación de la aplicación.
+namespace Capa_Presentacion 
 {
-    /// <summary>
-    /// Representa un formulario de bienvenida que se muestra al iniciar la sesión.
-    /// Contiene una barra de progreso y anima la entrada y salida del formulario.
-    /// </summary>
+   
     public partial class FormBienvenida : Form
     {
         // TODO --- SECCIÓN: Constructor ---
@@ -63,10 +58,10 @@ namespace Capa_Presentacion // Espacio de nombres para la capa de presentación 
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            // Disminuye la opacidad del formulario para crear un efecto de desvanecimiento (fade-out).
+            //Disminuye la opacidad del formulario para crear un efecto de desvanecimiento (fade-out).
             this.Opacity -= 0.05;
 
-            // Cuando el formulario es completamente transparente, se detiene el temporizador
+            //TODO Cuando el formulario es completamente transparente, se detiene el temporizador
             // y se cierra el formulario.
             if (this.Opacity <= 0)
             {
@@ -78,14 +73,14 @@ namespace Capa_Presentacion // Espacio de nombres para la capa de presentación 
      
         private void FormBienvenida_Load(object sender, EventArgs e)
         {
-            // Muestra el nombre y apellido del usuario que ha iniciado sesión en un Label.
-            // La información se obtiene de una clase estática o cache de usuario.
+            //Muestra el nombre y apellido del usuario que ha iniciado sesión en un Label.
+            //La información se obtiene de una clase estática o cache de usuario.
             lblusuario.Text = LoginUser.Nombre + " " + LoginUser.Apellido;
 
-            // Establece la opacidad inicial del formulario a 0 para que sea invisible al cargar.
+            //Establece la opacidad inicial del formulario a 0 para que sea invisible al cargar.
             this.Opacity = 0.0;
 
-            // Inicia el primer temporizador para comenzar la animación de fade-in y progreso.
+            //Inicia el primer temporizador para comenzar la animación de fade-in y progreso.
             timer1.Start();
         }
     }

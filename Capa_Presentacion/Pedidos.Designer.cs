@@ -57,21 +57,23 @@
             // 
             tabPedidos.Controls.Add(tabExistentes);
             tabPedidos.Controls.Add(tabAgotados);
-            tabPedidos.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tabPedidos.Location = new Point(225, 135);
+            tabPedidos.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tabPedidos.Location = new Point(87, 96);
+            tabPedidos.Margin = new Padding(2);
             tabPedidos.Name = "tabPedidos";
             tabPedidos.SelectedIndex = 0;
-            tabPedidos.Size = new Size(1148, 503);
+            tabPedidos.Size = new Size(1189, 429);
             tabPedidos.TabIndex = 0;
             tabPedidos.DrawItem += tabPedidos_DrawItem;
             // 
             // tabExistentes
             // 
             tabExistentes.Controls.Add(dgvExistentes);
-            tabExistentes.Location = new Point(4, 31);
+            tabExistentes.Location = new Point(4, 29);
+            tabExistentes.Margin = new Padding(2);
             tabExistentes.Name = "tabExistentes";
-            tabExistentes.Padding = new Padding(3);
-            tabExistentes.Size = new Size(1140, 468);
+            tabExistentes.Padding = new Padding(2);
+            tabExistentes.Size = new Size(1181, 396);
             tabExistentes.TabIndex = 0;
             tabExistentes.Text = "Productos Existentes";
             tabExistentes.UseVisualStyleBackColor = true;
@@ -82,14 +84,14 @@
             dgvExistentes.AllowUserToDeleteRows = false;
             dgvExistentes.AllowUserToResizeColumns = false;
             dgvExistentes.AllowUserToResizeRows = false;
-            dgvExistentes.BackgroundColor = SystemColors.Window;
+            dgvExistentes.BackgroundColor = Color.White;
             dgvExistentes.BorderStyle = BorderStyle.None;
             dgvExistentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(41, 76, 37);
-            dataGridViewCellStyle1.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(43, 56, 46);
+            dataGridViewCellStyle1.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(41, 76, 37);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(111, 129, 105);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvExistentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -104,8 +106,9 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvExistentes.DefaultCellStyle = dataGridViewCellStyle2;
             dgvExistentes.EnableHeadersVisualStyles = false;
-            dgvExistentes.GridColor = SystemColors.Window;
+            dgvExistentes.GridColor = Color.Black;
             dgvExistentes.Location = new Point(0, 0);
+            dgvExistentes.Margin = new Padding(2);
             dgvExistentes.Name = "dgvExistentes";
             dgvExistentes.ReadOnly = true;
             dgvExistentes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -119,7 +122,7 @@
             dgvExistentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvExistentes.RowHeadersWidth = 62;
             dgvExistentes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvExistentes.Size = new Size(1140, 465);
+            dgvExistentes.Size = new Size(1185, 400);
             dgvExistentes.TabIndex = 0;
             // 
             // ProductosExistentes
@@ -130,7 +133,7 @@
             ProductosExistentes.MinimumWidth = 8;
             ProductosExistentes.Name = "ProductosExistentes";
             ProductosExistentes.ReadOnly = true;
-            ProductosExistentes.Width = 800;
+            ProductosExistentes.Width = 600;
             // 
             // Stock
             // 
@@ -140,15 +143,16 @@
             Stock.MinimumWidth = 8;
             Stock.Name = "Stock";
             Stock.ReadOnly = true;
-            Stock.Width = 280;
+            Stock.Width = 800;
             // 
             // tabAgotados
             // 
             tabAgotados.Controls.Add(dgvAgotados);
-            tabAgotados.Location = new Point(4, 31);
+            tabAgotados.Location = new Point(4, 29);
+            tabAgotados.Margin = new Padding(2);
             tabAgotados.Name = "tabAgotados";
-            tabAgotados.Padding = new Padding(3);
-            tabAgotados.Size = new Size(1140, 468);
+            tabAgotados.Padding = new Padding(2);
+            tabAgotados.Size = new Size(1181, 396);
             tabAgotados.TabIndex = 1;
             tabAgotados.Text = "Productos Agotados";
             tabAgotados.UseVisualStyleBackColor = true;
@@ -163,10 +167,10 @@
             dgvAgotados.BorderStyle = BorderStyle.None;
             dgvAgotados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(41, 76, 37);
-            dataGridViewCellStyle4.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(43, 56, 46);
+            dataGridViewCellStyle4.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle4.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(41, 76, 37);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(111, 129, 105);
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.Window;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             dgvAgotados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
@@ -176,13 +180,15 @@
             dataGridViewCellStyle5.BackColor = SystemColors.Window;
             dataGridViewCellStyle5.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(111, 129, 105);
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.Window;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
             dgvAgotados.DefaultCellStyle = dataGridViewCellStyle5;
+            dgvAgotados.Dock = DockStyle.Fill;
             dgvAgotados.EnableHeadersVisualStyles = false;
-            dgvAgotados.GridColor = SystemColors.Window;
-            dgvAgotados.Location = new Point(0, 0);
+            dgvAgotados.GridColor = Color.Black;
+            dgvAgotados.Location = new Point(2, 2);
+            dgvAgotados.Margin = new Padding(2);
             dgvAgotados.Name = "dgvAgotados";
             dgvAgotados.ReadOnly = true;
             dgvAgotados.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -196,7 +202,7 @@
             dgvAgotados.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvAgotados.RowHeadersWidth = 62;
             dgvAgotados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAgotados.Size = new Size(1140, 465);
+            dgvAgotados.Size = new Size(1177, 392);
             dgvAgotados.TabIndex = 0;
             // 
             // ProductosAgotados
@@ -207,7 +213,7 @@
             ProductosAgotados.MinimumWidth = 8;
             ProductosAgotados.Name = "ProductosAgotados";
             ProductosAgotados.ReadOnly = true;
-            ProductosAgotados.Width = 800;
+            ProductosAgotados.Width = 600;
             // 
             // Stock0
             // 
@@ -217,29 +223,32 @@
             Stock0.MinimumWidth = 8;
             Stock0.Name = "Stock0";
             Stock0.ReadOnly = true;
-            Stock0.Width = 280;
+            Stock0.Width = 800;
             // 
             // lblPedidos
             // 
             lblPedidos.AutoSize = true;
+            lblPedidos.BackColor = Color.FromArgb(43, 56, 46);
             lblPedidos.Font = new Font("Lucida Sans", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPedidos.ForeColor = Color.Black;
-            lblPedidos.Location = new Point(697, 53);
+            lblPedidos.ForeColor = Color.White;
+            lblPedidos.Location = new Point(564, 29);
+            lblPedidos.Margin = new Padding(2, 0, 2, 0);
             lblPedidos.Name = "lblPedidos";
-            lblPedidos.Size = new Size(221, 50);
+            lblPedidos.Size = new Size(184, 42);
             lblPedidos.TabIndex = 1;
             lblPedidos.Text = "PEDIDOS";
             lblPedidos.TextAlign = ContentAlignment.TopCenter;
             // 
             // btnHacerPedido
             // 
-            btnHacerPedido.BackColor = Color.FromArgb(41, 76, 37);
+            btnHacerPedido.BackColor = Color.FromArgb(43, 56, 46);
             btnHacerPedido.FlatStyle = FlatStyle.Flat;
             btnHacerPedido.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHacerPedido.ForeColor = SystemColors.Window;
-            btnHacerPedido.Location = new Point(333, 700);
+            btnHacerPedido.Location = new Point(326, 581);
+            btnHacerPedido.Margin = new Padding(2);
             btnHacerPedido.Name = "btnHacerPedido";
-            btnHacerPedido.Size = new Size(270, 44);
+            btnHacerPedido.Size = new Size(216, 35);
             btnHacerPedido.TabIndex = 1;
             btnHacerPedido.Text = "Realizar Pedido";
             btnHacerPedido.UseVisualStyleBackColor = false;
@@ -247,13 +256,14 @@
             // 
             // btnRegistroPedidos
             // 
-            btnRegistroPedidos.BackColor = Color.FromArgb(41, 76, 37);
+            btnRegistroPedidos.BackColor = Color.FromArgb(43, 56, 46);
             btnRegistroPedidos.FlatStyle = FlatStyle.Flat;
             btnRegistroPedidos.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistroPedidos.ForeColor = SystemColors.Window;
-            btnRegistroPedidos.Location = new Point(932, 700);
+            btnRegistroPedidos.Location = new Point(806, 581);
+            btnRegistroPedidos.Margin = new Padding(2);
             btnRegistroPedidos.Name = "btnRegistroPedidos";
-            btnRegistroPedidos.Size = new Size(270, 44);
+            btnRegistroPedidos.Size = new Size(216, 35);
             btnRegistroPedidos.TabIndex = 2;
             btnRegistroPedidos.Text = "Ver Registro de Pedidos";
             btnRegistroPedidos.UseVisualStyleBackColor = false;
@@ -261,15 +271,16 @@
             // 
             // Pedidos
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(245, 247, 246);
-            ClientSize = new Size(1711, 821);
+            BackColor = Color.FromArgb(43, 56, 46);
+            ClientSize = new Size(1369, 657);
             Controls.Add(btnRegistroPedidos);
             Controls.Add(btnHacerPedido);
             Controls.Add(lblPedidos);
             Controls.Add(tabPedidos);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "Pedidos";
             Load += Pedidos_Load;
             tabPedidos.ResumeLayout(false);
