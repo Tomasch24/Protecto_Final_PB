@@ -25,9 +25,12 @@ namespace Capa_Presentacion
             Mclientes();
             txtNombre.MaxLength = 50;
             txtCorreo.MaxLength = 50;
-            txtIdCliente.Hide();
-            lblIdCliente.Hide();
-            pbBuscarIdCliente.Hide();
+            txtIdCliente.MaxLength = 6;
+    
+            btnBuscar.Hide();
+            btnEditarCliente.Hide();
+            btnEliminarCliente.Hide();
+            btnGuardarCliente.Hide();
         }
         private void Mclientes()
         {
@@ -233,15 +236,6 @@ namespace Capa_Presentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            btnBuscar.Hide();
-            lblIdCliente.Show();
-            txtIdCliente.Show();
-            txtIdCliente.Text = "";
-            pbBuscarIdCliente.Show();
-        }
-
-        private void pbBuscarIdCliente_Click(object sender, EventArgs e)
-        {
             if (!int.TryParse(txtIdCliente.Text, out int id))
             {
                 MessageBox.Show("Por favor ingrese un Id de factura válido.");
@@ -272,17 +266,93 @@ namespace Capa_Presentacion
             {
                 MessageBox.Show("No se encontró ninguna factura con ese Id.");
             }
-            btnBuscar.Show();
-            lblIdCliente.Hide();
-            txtIdCliente.Hide();
+            pbAtras.Enabled = true;
             pbAtras.Show();
         }
+
 
         private void pbAtras_Click(object sender, EventArgs e)
         {
             Mclientes();
             pbAtras.Hide();
 
+        }
+
+        private void pbBuscar_Click(object sender, EventArgs e)
+        {
+            btnBuscar.Show();
+            btnEditarCliente.Hide();
+            btnEliminarCliente.Hide();
+            btnGuardarCliente.Hide();
+
+            btnBuscar.Enabled = true;
+            btnEditarCliente.Enabled = false;
+            btnEliminarCliente.Enabled = false;
+            btnGuardarCliente.Enabled = false;
+                
+            txtIdCliente.Enabled = true;
+            txtNombre.Enabled = false;
+            MtxtTelefono.Enabled = false;
+            MtxtRnc.Enabled = false;
+            txtCorreo.Enabled = false;
+
+        }
+
+        private void pbRegistrar_Click(object sender, EventArgs e)
+        {
+            btnBuscar.Hide();
+            btnEditarCliente.Hide();
+            btnEliminarCliente.Hide();
+            btnGuardarCliente.Show();
+
+            btnBuscar.Enabled = false;
+            btnEditarCliente.Enabled = false;
+            btnEliminarCliente.Enabled = false;
+            btnGuardarCliente.Enabled = true;
+
+            txtIdCliente.Enabled = false;
+            txtNombre.Enabled = true;
+            MtxtTelefono.Enabled = true;
+            MtxtRnc.Enabled = true;
+            txtCorreo.Enabled = true;
+        }
+
+        private void pbEditar_Click(object sender, EventArgs e)
+        {
+            btnBuscar.Hide();
+            btnEditarCliente.Show();
+            btnEliminarCliente.Hide();
+            btnGuardarCliente.Hide();
+
+            btnBuscar.Enabled = false;
+            btnEditarCliente.Enabled = true;
+            btnEliminarCliente.Enabled = false;
+            btnGuardarCliente.Enabled = false;
+
+            txtIdCliente.Enabled = false;
+            txtNombre.Enabled = true;
+            MtxtTelefono.Enabled = true;
+            MtxtRnc.Enabled = true;
+            txtCorreo.Enabled = true;
+        }
+
+        private void pbEliminar_Click(object sender, EventArgs e)
+        {
+            btnBuscar.Hide();
+            btnEditarCliente.Hide();
+            btnEliminarCliente.Show();
+            btnGuardarCliente.Hide();
+
+            btnBuscar.Enabled = false;
+            btnEditarCliente.Enabled = false;
+            btnEliminarCliente.Enabled = true;
+            btnGuardarCliente.Enabled = false;
+
+            txtIdCliente.Enabled = false;
+            txtNombre.Enabled = false;
+            MtxtTelefono.Enabled = false;
+            MtxtRnc.Enabled = false;
+            txtCorreo.Enabled = false;
         }
     }
 }
