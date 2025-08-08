@@ -276,6 +276,13 @@ namespace Capa_Presentacion
                 // Si el usuario presiona "Sí", se cierra este formulario (FormAcceso), lo que debería devolver al usuario al formulario de login.
                 this.Close();
         }
+
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 #endregion

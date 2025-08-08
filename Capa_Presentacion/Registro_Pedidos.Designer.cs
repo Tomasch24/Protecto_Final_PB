@@ -42,10 +42,11 @@
             // 
             lblRegistro.AutoSize = true;
             lblRegistro.Font = new Font("Lucida Sans", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRegistro.ForeColor = Color.FromArgb(41, 76, 37);
-            lblRegistro.Location = new Point(523, 47);
+            lblRegistro.ForeColor = Color.White;
+            lblRegistro.Location = new Point(418, 38);
+            lblRegistro.Margin = new Padding(2, 0, 2, 0);
             lblRegistro.Name = "lblRegistro";
-            lblRegistro.Size = new Size(387, 40);
+            lblRegistro.Size = new Size(324, 34);
             lblRegistro.TabIndex = 0;
             lblRegistro.Text = "Registro de Pedidos";
             // 
@@ -54,9 +55,10 @@
             btnExportar.BackColor = Color.FromArgb(41, 76, 37);
             btnExportar.Font = new Font("Verdana", 9F, FontStyle.Bold);
             btnExportar.ForeColor = SystemColors.Window;
-            btnExportar.Location = new Point(1129, 575);
+            btnExportar.Location = new Point(903, 460);
+            btnExportar.Margin = new Padding(2);
             btnExportar.Name = "btnExportar";
-            btnExportar.Size = new Size(200, 45);
+            btnExportar.Size = new Size(160, 36);
             btnExportar.TabIndex = 1;
             btnExportar.Text = "Exportar a Excel";
             btnExportar.UseVisualStyleBackColor = false;
@@ -91,8 +93,9 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvRegistro.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRegistro.EnableHeadersVisualStyles = false;
-            dgvRegistro.GridColor = SystemColors.Window;
-            dgvRegistro.Location = new Point(108, 125);
+            dgvRegistro.GridColor = Color.Black;
+            dgvRegistro.Location = new Point(86, 100);
+            dgvRegistro.Margin = new Padding(2);
             dgvRegistro.Name = "dgvRegistro";
             dgvRegistro.ReadOnly = true;
             dgvRegistro.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -106,7 +109,7 @@
             dgvRegistro.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvRegistro.RowHeadersWidth = 62;
             dgvRegistro.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRegistro.Size = new Size(1221, 425);
+            dgvRegistro.Size = new Size(977, 340);
             dgvRegistro.TabIndex = 0;
             // 
             // btnVolver
@@ -114,9 +117,10 @@
             btnVolver.BackColor = Color.FromArgb(41, 76, 37);
             btnVolver.Font = new Font("Verdana", 9F, FontStyle.Bold);
             btnVolver.ForeColor = SystemColors.Window;
-            btnVolver.Location = new Point(108, 575);
+            btnVolver.Location = new Point(86, 460);
+            btnVolver.Margin = new Padding(2);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(154, 45);
+            btnVolver.Size = new Size(123, 36);
             btnVolver.TabIndex = 3;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = false;
@@ -124,15 +128,16 @@
             // 
             // Registro_Pedidos
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(245, 247, 246);
-            ClientSize = new Size(1439, 686);
+            BackColor = Color.FromArgb(43, 56, 46);
+            ClientSize = new Size(1151, 549);
             Controls.Add(dgvRegistro);
             Controls.Add(btnVolver);
             Controls.Add(btnExportar);
             Controls.Add(lblRegistro);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "Registro_Pedidos";
             Text = "Registro_Pedidos";
             Load += Registro_Pedidos_Load;

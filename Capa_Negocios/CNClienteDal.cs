@@ -110,6 +110,7 @@ namespace Capa_negocios
                     reader["RNC"].ToString(),
                     reader["Correo"].ToString()
                 )
+
                 {
                     IdCliente = Convert.ToInt32(reader["IdCliente"]),
                     Correo = reader["Correo"].ToString()
