@@ -139,7 +139,7 @@
             btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogin.Location = new Point(50, 540);
+            btnLogin.Location = new Point(50, 513);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(350, 63);
             btnLogin.TabIndex = 7;
