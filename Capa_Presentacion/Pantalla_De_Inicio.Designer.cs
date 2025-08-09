@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             BarraTitulo = new Panel();
-            pbIconCerrar = new PictureBox();
+            PBlogoG = new PictureBox();
             MenuVertical = new Panel();
             btnExit = new Button();
             lblemail = new Label();
@@ -48,42 +48,38 @@
             pictureBox1 = new PictureBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            pictureBox2 = new PictureBox();
             BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbIconCerrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PBlogoG).BeginInit();
             MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PBuser).BeginInit();
             PanelHerencia.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // BarraTitulo
             // 
-            BarraTitulo.BackColor = Color.FromArgb(230, 230, 230);
-            BarraTitulo.Controls.Add(pictureBox2);
-            BarraTitulo.Controls.Add(pbIconCerrar);
+            BarraTitulo.BackColor = Color.White;
+            BarraTitulo.Controls.Add(PBlogoG);
             BarraTitulo.Dock = DockStyle.Top;
             BarraTitulo.ForeColor = Color.White;
             BarraTitulo.Location = new Point(0, 0);
             BarraTitulo.Margin = new Padding(2);
             BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(1710, 57);
+            BarraTitulo.Size = new Size(1554, 76);
             BarraTitulo.TabIndex = 11;
             BarraTitulo.Paint += BarraTitulo_Paint;
             // 
-            // pbIconCerrar
+            // PBlogoG
             // 
-            pbIconCerrar.Image = Capa_Presentacion.Properties.Resources.icons8_eliminar_50;
-            pbIconCerrar.Location = new Point(1637, 11);
-            pbIconCerrar.Margin = new Padding(2);
-            pbIconCerrar.Name = "pbIconCerrar";
-            pbIconCerrar.Size = new Size(32, 32);
-            pbIconCerrar.SizeMode = PictureBoxSizeMode.Zoom;
-            pbIconCerrar.TabIndex = 0;
-            pbIconCerrar.TabStop = false;
-            pbIconCerrar.Click += pbIconCerrar_Click;
+            PBlogoG.Image = Capa_Presentacion.Properties.Resources.SIN_FONDO_OSCURO;
+            PBlogoG.Location = new Point(3, 0);
+            PBlogoG.Name = "PBlogoG";
+            PBlogoG.Size = new Size(104, 92);
+            PBlogoG.SizeMode = PictureBoxSizeMode.Zoom;
+            PBlogoG.TabIndex = 2;
+            PBlogoG.TabStop = false;
+            PBlogoG.Click += PBlogoG_Click;
             // 
             // MenuVertical
             // 
@@ -103,7 +99,7 @@
             MenuVertical.ForeColor = SystemColors.ControlText;
             MenuVertical.Location = new Point(0, 0);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(310, 853);
+            MenuVertical.Size = new Size(310, 806);
             MenuVertical.TabIndex = 11;
             MenuVertical.Paint += MenuVertical_Paint;
             // 
@@ -115,7 +111,7 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnExit.ForeColor = Color.White;
-            btnExit.Location = new Point(0, 815);
+            btnExit.Location = new Point(0, 768);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(310, 38);
             btnExit.TabIndex = 17;
@@ -213,7 +209,7 @@
             PBuser.Location = new Point(0, 21);
             PBuser.Margin = new Padding(2);
             PBuser.Name = "PBuser";
-            PBuser.Size = new Size(107, 88);
+            PBuser.Size = new Size(107, 102);
             PBuser.SizeMode = PictureBoxSizeMode.Zoom;
             PBuser.TabIndex = 11;
             PBuser.TabStop = false;
@@ -269,18 +265,19 @@
             PanelHerencia.Controls.Add(panel1);
             PanelHerencia.Controls.Add(MenuVertical);
             PanelHerencia.Dock = DockStyle.Fill;
-            PanelHerencia.Location = new Point(0, 57);
+            PanelHerencia.Location = new Point(0, 76);
             PanelHerencia.Name = "PanelHerencia";
-            PanelHerencia.Size = new Size(1710, 853);
+            PanelHerencia.Size = new Size(1554, 806);
             PanelHerencia.TabIndex = 12;
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(310, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1400, 853);
+            panel1.Size = new Size(1244, 806);
             panel1.TabIndex = 12;
             panel1.Paint += panel1_Paint_3;
             // 
@@ -288,9 +285,9 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Capa_Presentacion.Properties.Resources.LOGO_OSCURO;
-            pictureBox1.Location = new Point(427, 119);
+            pictureBox1.Location = new Point(406, 122);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(519, 451);
+            pictureBox1.Size = new Size(315, 419);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -301,22 +298,12 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Capa_Presentacion.Properties.Resources.SIN_FONDO_OSCURO;
-            pictureBox2.Location = new Point(23, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(63, 51);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
             // Pantalla_De_Inicio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1710, 910);
+            ClientSize = new Size(1554, 882);
             Controls.Add(PanelHerencia);
             Controls.Add(BarraTitulo);
             FormBorderStyle = FormBorderStyle.None;
@@ -326,14 +313,13 @@
             Text = "Form3";
             Load += Pantalla_De_Inicio_Load;
             BarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbIconCerrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PBlogoG).EndInit();
             MenuVertical.ResumeLayout(false);
             MenuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PBuser).EndInit();
             PanelHerencia.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -355,8 +341,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel1;
         private PictureBox pictureBox1;
-        private PictureBox pbIconCerrar;
         private Button btnExit;
-        private PictureBox pictureBox2;
+        private PictureBox PBlogoG;
     }
 }

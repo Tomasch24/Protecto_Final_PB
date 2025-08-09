@@ -48,6 +48,8 @@ namespace Capa_Presentacion
         {
             // Llama al método para cargar la información del perfil del usuario en la interfaz
             LoadUserData();
+            // TODO: Se llama a este método para asegurar que la pantalla de inicio se muestre al cargar el formulario.
+            CargarPantallaInicio(); 
         }
 
         // Carga los datos del usuario (que fueron guardados en la caché durante el login) en los controles del formulario
@@ -100,6 +102,28 @@ namespace Capa_Presentacion
 
         #endregion
 
+        #region Eventos de navegación al inicio
+        // TODO: Este es el nuevo método que limpia el panel principal y vuelve a la pantalla inicial.
+        private void CargarPantallaInicio()
+        {
+            if (activeForm != null)
+            {
+                // Cierra el formulario hijo actual para limpiar el panel.
+                activeForm.Close();
+                activeForm = null;
+            }
+            // TODO: Aquí debes implementar la lógica para mostrar la pantalla en blanco con el logo.
+            // Una forma es simplemente asegurarte de que el PanelHerencia esté vacío y que
+            // su imagen de fondo (o un PictureBox dentro de él) sea visible.
+        }
+
+        // TODO: Este es el evento asociado al PictureBox del logo en la barra de título (PBlogoC).
+        private void PBlogoC_Click(object sender, EventArgs e)
+        {
+            // Llama al método que limpia el panel y muestra la pantalla de inicio.
+            CargarPantallaInicio();
+        }
+        #endregion
 
 
 

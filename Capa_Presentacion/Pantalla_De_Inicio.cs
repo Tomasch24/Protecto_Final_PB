@@ -3,131 +3,110 @@ using Capa_de_Modulos.CACHE; // Para usar la clase LoginUser que almacena los da
 using Capa_Presentacion;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace Capa_Interfas
 {
     public partial class Pantalla_De_Inicio : Form
     {
         public static Pantalla_De_Inicio InstanciaActual;
+
         #region Campos de clase
         private Panel loadingPanel;
-        //TODO  Almacena una referencia al formulario que está actualmente abierto en el panel principal.
+        //TODO  Almacena una referencia al formulario que está actualmente abierto en el panel principal.
         // TODO Se usa para poder cerrarlo antes de abrir uno nuevo. Es 'nullable' (con ?) porque al inicio no hay ningún formulario activo
         private Form? activeForm = null;
 
         #endregion
+
         private Button _activeButton;
 
         #region Constructor y Carga de Datos
         public Pantalla_De_Inicio()
         {
-
             InitializeComponent();
-
             this.Text = string.Empty; //TODO Elimina el texto de la barra de título.
             this.DoubleBuffered = true; // TODO Mejora el rendimiento del dibujado del formulario, reduciendo el parpadeo.
-            // TODO Limita el área de maximización para que no cubra la barra de tareas de Windows.
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            // TODO Asocia el evento MenuButton_Click a todos los botones del menú
-
-            this.Text = string.Empty;
-            this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void Pantalla_De_Inicio_Load(object sender, EventArgs e)
         {
-            //TODO  Llama al método para cargar la información del perfil del usuario en la interfaz
+            //TODO  Llama al método para cargar la información del perfil del usuario en la interfaz
             LoadUserData();
             InstanciaActual = this;
+            CargarPantallaInicio(); // TODO: Se llama a este método para asegurar que la pantalla de inicio se muestre al cargar el formulario.
         }
 
-        //TODO  Carga los datos del usuario (que fueron guardados en la caché durante el login) en los controles del formulario
+        //TODO  Carga los datos del usuario (que fueron guardados en la caché durante el login) en los controles del formulario
         private void LoadUserData()
         {
-            // TODO Asigna el nombre, posición y email a los labels correspondientes
             lblnom.Text = LoginUser.Nombre + " " + LoginUser.Apellido;
             lblRol.Text = LoginUser.Rol;
             lblemail.Text = LoginUser.Email;
-
-            //TODO  Bloque try-catch para manejar de forma segura posibles errores al cargar la imagen
             try
             {
-                // TODO Obtiene la ruta relativa de la imagen desde la clase estática de caché (USUARIOS\harvey.jpg)
                 string fotoPath = LoginUser.FotoPath;
-
-                // TODO Se asegura de que la ruta de la foto no esté vacía antes de intentar cargarla
                 if (!string.IsNullOrEmpty(fotoPath))
                 {
-                    // TODO Combina la ruta de inicio de la aplicación con la ruta relativa de la foto
-                    // TODO para obtener la ubicación completa y exacta del archivo de imagen
                     string rutaCompleta = System.IO.Path.Combine(Application.StartupPath, fotoPath);
-
-                    // TODO Verifica que el archivo de imagen realmente existe en la ruta calculada antes de intentar cargarlo
                     if (System.IO.File.Exists(rutaCompleta))
                     {
-                        // Carga la imagen desde el archivo y la asigna al control PictureBox
                         PBuser.Image = Image.FromFile(rutaCompleta);
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Si ocurre cualquier error (el archivo está dañado), muestra un mensaje al usuario
                 MessageBox.Show("No se pudo cargar la imagen de perfil: " + ex.Message);
             }
         }
         #endregion
 
-
-
         #region API
-
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
         #endregion
 
-
-
-
-        #region botones menu
-
-        //TODO En progreso, hasta que terminen ustedes. 
-        #endregion
-
-
-        #region Metodo normal para abrir Formularios hijos en el panel principal
-
-        //TODO  Este es el método central para la navegación, recibe cualquier formulario que deba ser mostrado
-        public void OpenPanelHerencia(Form herenciaForm)
+        #region Eventos de navegación al inicio
+        // TODO: Este es el nuevo método que limpia el panel principal y vuelve a la pantalla inicial.
+        private void CargarPantallaInicio()
         {
-            //TODO  Comprueba si ya hay un formulario abierto en el panel
             if (activeForm != null)
-                // Si lo hay, lo cierra para limpiar el panel antes de abrir el nuevo
+            {
                 activeForm.Close();
+                activeForm = null;
+            }
+            // TODO: Lógica para mostrar la pantalla de inicio. Si el PanelHerencia tiene una imagen de fondo,
+            // con limpiar el formulario hijo ya es suficiente.
+        }
 
-            // TODO Guarda una referencia al nuevo formulario que se va a abrir
-            activeForm = herenciaForm;
-
-            //TODO Configura el formulario hijo para que se comporte como un control dentro del panel 
-            herenciaForm.TopLevel = false;
-            herenciaForm.FormBorderStyle = FormBorderStyle.None; //TODO  Le quita los bordes y la barra de título
-            herenciaForm.Dock = DockStyle.Fill; // TODO Hace que ocupe todo el espacio del panel
-
-            //Agrega y muestra el formulario en el panel
-            PanelHerencia.Controls.Add(herenciaForm); //TODO  Lo añade a la colección de controles del panel
-            PanelHerencia.Tag = herenciaForm; // TODO Guarda una referencia en la propiedad
-            herenciaForm.BringToFront(); // TODO Se asegura de que se muestre por encima de cualquier otro control en el panel
-            herenciaForm.Show(); // TODO Muestra el formulario
+        // TODO: Evento asociado al PictureBox del logo en la barra de título (PBlogoG).
+        private void PBlogoG_Click(object sender, EventArgs e)
+        {
+            CargarPantallaInicio();
         }
         #endregion
 
+        #region Metodo normal para abrir Formularios hijos en el panel principal
+        public void OpenPanelHerencia(Form herenciaForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = herenciaForm;
+            herenciaForm.TopLevel = false;
+            herenciaForm.FormBorderStyle = FormBorderStyle.None;
+            herenciaForm.Dock = DockStyle.Fill;
+            PanelHerencia.Controls.Add(herenciaForm);
+            PanelHerencia.Tag = herenciaForm;
+            herenciaForm.BringToFront();
+            herenciaForm.Show();
+        }
+        #endregion
 
-        #region Botones de la ventana (cerrar, restaurar, Maximizar, Minimizar)  y boton de cierre de sesion
-
+        #region Eventos de botones
         private void btnSlide_Click(object sender, EventArgs e)
         {
             if (MenuVertical.Width == 68)
@@ -152,11 +131,6 @@ namespace Capa_Interfas
                 Application.Exit();
         }
 
-
-
-
-
-
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -167,102 +141,46 @@ namespace Capa_Interfas
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        #endregion
 
-
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void BarraTitulo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblnom_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_2(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_3(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Dasboard(object sender, EventArgs e)
-        {
-
+            if (MessageBox.Show("¿Esta seguro de que quiere cerrar sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
         }
 
         private void BotonParaDashBoard_Click(object sender, EventArgs e)
         {
-
             OpenPanelHerencia(new DashGrafico());
-
-        }
-
-        private void MenuVertical_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Catalogo_De_Los_Productos());
-
         }
 
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Facturacion());
-
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Pedidos());
-
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Clientes());
-
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new FormPROVEEDORES());
-
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
             OpenPanelHerencia(new Sistema());
-
-        }
-
-        private void PBuser_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pbIconCerrar_Click(object sender, EventArgs e)
@@ -275,22 +193,21 @@ namespace Capa_Interfas
             OpenPanelHerencia(new Catalogo_De_Los_Productos());
         }
 
-        private void lblnom_Click_1(object sender, EventArgs e)
-        {
+        private void lblnom_Click_1(object sender, EventArgs e) { }
+        private void lblRol_Click(object sender, EventArgs e) { }
 
-        }
+        #endregion
 
-        private void lblRol_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            // Muestra un cuadro de diálogo para confirmar la acción.
-            if (MessageBox.Show("¿Esta seguro de que quiere cerrar sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                // Si el usuario presiona "Sí", se cierra este formulario (FormAcceso), lo que debería devolver al usuario al formulario de login.
-                this.Close();
-        }
+        // TODO: Métodos sin usar. Se han consolidado en una sola región para mayor orden.
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
+        private void BarraTitulo_Paint(object sender, PaintEventArgs e) { }
+        private void button1_Click(object sender, EventArgs e) { }
+        private void lblnom_Click(object sender, EventArgs e) { }
+        private void panel1_Paint_1(object sender, PaintEventArgs e) { }
+        private void panel1_Paint_2(object sender, PaintEventArgs e) { }
+        private void panel1_Paint_3(object sender, PaintEventArgs e) { }
+        private void Dasboard(object sender, EventArgs e) { }
+        private void MenuVertical_Paint(object sender, PaintEventArgs e) { }
+        private void PBuser_Click(object sender, EventArgs e) { }
     }
 }
