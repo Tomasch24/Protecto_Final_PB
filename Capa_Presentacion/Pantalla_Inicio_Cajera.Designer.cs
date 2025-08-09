@@ -57,9 +57,11 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.SIN_FONDO_OSCURO;
+
             pictureBox1.Location = new Point(405, 130);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(366, 443);
+
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -69,9 +71,11 @@
             PanelHerencia.Controls.Add(panel1);
             PanelHerencia.Controls.Add(MenuVertical);
             PanelHerencia.Dock = DockStyle.Fill;
+
             PanelHerencia.Location = new Point(0, 76);
             PanelHerencia.Name = "PanelHerencia";
             PanelHerencia.Size = new Size(1554, 806);
+
             PanelHerencia.TabIndex = 14;
             // 
             // panel1
@@ -79,9 +83,12 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(315, 0);
+            panel1.Location = new Point(394, 0);
+            panel1.Margin = new Padding(4, 4, 4, 4);
             panel1.Name = "panel1";
+
             panel1.Size = new Size(1239, 806);
+
             panel1.TabIndex = 12;
             // 
             // MenuVertical
@@ -97,8 +104,13 @@
             MenuVertical.Dock = DockStyle.Left;
             MenuVertical.ForeColor = SystemColors.ControlText;
             MenuVertical.Location = new Point(0, 0);
+            MenuVertical.Margin = new Padding(4, 4, 4, 4);
             MenuVertical.Name = "MenuVertical";
+
             MenuVertical.Size = new Size(315, 806);
+
+           
+
             MenuVertical.TabIndex = 11;
             // 
             // btnExit
@@ -109,9 +121,11 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnExit.ForeColor = Color.White;
+
             btnExit.Location = new Point(0, 768);
+
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(315, 38);
+            btnExit.Size = new Size(394, 48);
             btnExit.TabIndex = 18;
             btnExit.Text = "Cerrar Sesion";
             btnExit.UseVisualStyleBackColor = false;
@@ -123,9 +137,13 @@
             lblemail.BackColor = Color.Transparent;
             lblemail.Font = new Font("Lucida Bright", 7.8F, FontStyle.Bold);
             lblemail.ForeColor = Color.White;
+
             lblemail.Location = new Point(112, 119);
+
+            
+
             lblemail.Name = "lblemail";
-            lblemail.Size = new Size(46, 15);
+            lblemail.Size = new Size(54, 18);
             lblemail.TabIndex = 14;
             lblemail.Text = "E-mail";
             lblemail.Click += lblemail_Click;
@@ -136,9 +154,11 @@
             lblnom.BackColor = Color.Transparent;
             lblnom.Font = new Font("Lucida Bright", 7.8F, FontStyle.Bold);
             lblnom.ForeColor = Color.White;
+
             lblnom.Location = new Point(112, 32);
+
             lblnom.Name = "lblnom";
-            lblnom.Size = new Size(60, 15);
+            lblnom.Size = new Size(73, 18);
             lblnom.TabIndex = 13;
             lblnom.Text = "Nombre";
             lblnom.Click += lblnom_Click;
@@ -149,9 +169,11 @@
             lblRol.BackColor = Color.Transparent;
             lblRol.Font = new Font("Lucida Bright", 7.8F, FontStyle.Bold);
             lblRol.ForeColor = Color.White;
+
             lblRol.Location = new Point(112, 73);
+
             lblRol.Name = "lblRol";
-            lblRol.Size = new Size(29, 15);
+            lblRol.Size = new Size(35, 18);
             lblRol.TabIndex = 12;
             lblRol.Text = "Rol";
             lblRol.Click += lblRol_Click;
@@ -163,9 +185,10 @@
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnReportes.ForeColor = Color.White;
-            btnReportes.Location = new Point(58, 468);
+            btnReportes.Location = new Point(72, 585);
+            btnReportes.Margin = new Padding(4, 4, 4, 4);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(186, 38);
+            btnReportes.Size = new Size(232, 48);
             btnReportes.TabIndex = 5;
             btnReportes.Text = "Sistema";
             btnReportes.UseVisualStyleBackColor = false;
@@ -175,10 +198,12 @@
             // 
             PBuser.BackColor = Color.Transparent;
             PBuser.Image = Properties.Resources.USUARIO_NEGRO;
-            PBuser.Location = new Point(0, 21);
+            PBuser.Location = new Point(0, 26);
             PBuser.Margin = new Padding(2);
             PBuser.Name = "PBuser";
+
             PBuser.Size = new Size(107, 113);
+
             PBuser.SizeMode = PictureBoxSizeMode.Zoom;
             PBuser.TabIndex = 11;
             PBuser.TabStop = false;
@@ -191,9 +216,10 @@
             btnFacturacion.FlatStyle = FlatStyle.Flat;
             btnFacturacion.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnFacturacion.ForeColor = Color.White;
-            btnFacturacion.Location = new Point(58, 309);
+            btnFacturacion.Location = new Point(72, 386);
+            btnFacturacion.Margin = new Padding(4, 4, 4, 4);
             btnFacturacion.Name = "btnFacturacion";
-            btnFacturacion.Size = new Size(186, 38);
+            btnFacturacion.Size = new Size(232, 48);
             btnFacturacion.TabIndex = 2;
             btnFacturacion.Text = "Facturación";
             btnFacturacion.UseVisualStyleBackColor = false;
@@ -207,18 +233,23 @@
             // 
             // BarraTitulo
             // 
+
             BarraTitulo.BackColor = Color.White;
             BarraTitulo.Controls.Add(PBlogoC);
+
             BarraTitulo.Dock = DockStyle.Top;
             BarraTitulo.ForeColor = Color.White;
             BarraTitulo.Location = new Point(0, 0);
             BarraTitulo.Margin = new Padding(2);
             BarraTitulo.Name = "BarraTitulo";
+
             BarraTitulo.Size = new Size(1554, 76);
+
             BarraTitulo.TabIndex = 13;
             // 
             // PBlogoC
             // 
+
             PBlogoC.Image = Properties.Resources.SIN_FONDO_OSCURO;
             PBlogoC.Location = new Point(0, 3);
             PBlogoC.Name = "PBlogoC";
@@ -227,15 +258,19 @@
             PBlogoC.TabIndex = 1;
             PBlogoC.TabStop = false;
             PBlogoC.Click += PBlogoC_Click;
+
             // 
             // Pantalla_Inicio_Cajera
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+
             ClientSize = new Size(1554, 882);
+
             Controls.Add(PanelHerencia);
             Controls.Add(BarraTitulo);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "Pantalla_Inicio_Cajera";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pantalla_Inicio_Cajera";

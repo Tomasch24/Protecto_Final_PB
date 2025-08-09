@@ -145,31 +145,12 @@ namespace Capa_Presentacion
 
         private void pbBuscarIdCliente_Click(object sender, EventArgs e)
         {
-            // Busca un cliente por su ID y llena los campos correspondientes.
-            // Los campos del cliente se hacen de solo lectura después de la búsqueda.
-            if (!int.TryParse(txtIdCliente.Text, out int idCliente))
-            {
-                MessageBox.Show("Por favor ingrese un Id de cliente válido.");
-                return;
-            }
+            txtIdCliente.ReadOnly = false;
+            txtIdCliente.Enabled = true;
+            txtNombre.Enabled = false;
+            MtxtRnc.Enabled = false;
+            MtxtTelefono.Enabled = false;
 
-            CNCliente cliente = CNClienteDal.BuscarPorId(idCliente);
-
-            if (cliente != null)
-            {
-                txtNombre.Text = cliente.Nombre;
-                MtxtTelefono.Text = cliente.Telefono;
-                MtxtRnc.Text = cliente.RNC;
-                txtNombre.Tag = cliente;
-            }
-            else
-            {
-                MessageBox.Show("Cliente no encontrado.");
-            }
-
-            txtNombre.ReadOnly = true;
-            MtxtTelefono.ReadOnly = true;
-            MtxtRnc.ReadOnly = true;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -205,22 +186,28 @@ namespace Capa_Presentacion
                 MessageBox.Show("Error en el campo Metodo de Pago.", "Ingrese un Metodo de Pado valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int cantidad = Convert.ToInt32(nudCantidad.Text);
+
+            int cantidad = (int)nudCantidad.Value;
             int stock = Convert.ToInt32(txtStock.Text);
 
-            if (cantidad > stock)
+            // *VALIDACIÓN AGREGADA* para que la cantidad no sea cero ni negativa
+            if (cantidad <= 0)
             {
-                MessageBox.Show("La cantidad no puede ser mayor al stock disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La cantidad no puede ser cero ni un número negativo. Por favor, ingrese un valor mayor a cero.", "Error de Cantidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            // Validar que la cantidad no sea mayor al stock disponible
+            if (cantidad > stock)
+            {
+                MessageBox.Show("La cantidad no puede ser mayor al stock disponible.", "Error de Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            string precioTexto = txtPrecio.Text.Replace("$", "").Replace(",", "").Trim();
-
+            string precioTexto = txtPrecio.Text.Replace("RD$", "").Replace(",", "").Trim();
 
             if (!decimal.TryParse(precioTexto, out decimal precio))
             {
-
                 MessageBox.Show("Error en el campo Precio.", "Ingrese un Precio valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -257,12 +244,12 @@ namespace Capa_Presentacion
 
                 dgvFactura.Rows.Add(new object[]
                 {
-                     txtIdProducto.Text,
-                     txtProducto.Text,
-                     txtPrecio.Text,
-                     nudCantidad.Value,
-                     factura.SubTotal,
-                     factura.Descuento
+                    txtIdProducto.Text,
+                    txtProducto.Text,
+                    txtPrecio.Text,
+                    nudCantidad.Value,
+                    factura.SubTotal,
+                    factura.Descuento
                 });
 
                 LimpiarCamposProducto();
@@ -321,7 +308,7 @@ namespace Capa_Presentacion
             SaveFileDialog guardar = new SaveFileDialog();
             guardar.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + ".pdf";
 
-            guardar.Filter = "PDF Files (*.pdf)|*.pdf";
+            guardar.Filter = "PDF Files (.pdf)|.pdf";
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {
@@ -507,7 +494,7 @@ namespace Capa_Presentacion
         {
             // Habilita los campos y botones del formulario para iniciar el proceso de facturación.
             cbTipo.Enabled = true;
-            txtIdCliente.Enabled = true;
+
             txtNombre.Enabled = true;
             MtxtRnc.Enabled = true;
             MtxtTelefono.Enabled = true;
@@ -589,6 +576,39 @@ namespace Capa_Presentacion
                     txtPrecio.Text = producto.Precio.ToString("C", new CultureInfo("es-DO"));
                     txtStock.Text = producto.Stock.ToString();
                 }
+            }
+        }
+
+        //TODO Buscar Clientes a traves del id presinando enter
+        private void txtIdCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                // Busca un cliente por su ID y llena los campos correspondientes.
+                // Los campos del cliente se hacen de solo lectura después de la búsqueda.
+                if (!int.TryParse(txtIdCliente.Text, out int idCliente))
+                {
+                    MessageBox.Show("Por favor ingrese un Id de cliente válido.");
+                    return;
+                }
+
+                CNCliente cliente = CNClienteDal.BuscarPorId(idCliente);
+
+                if (cliente != null)
+                {
+                    txtNombre.Text = cliente.Nombre;
+                    MtxtTelefono.Text = cliente.Telefono;
+                    MtxtRnc.Text = cliente.RNC;
+                    txtNombre.Tag = cliente;
+                }
+                else
+                {
+                    MessageBox.Show("Cliente no encontrado.");
+                }
+                txtIdCliente.ReadOnly = true;
+                txtNombre.ReadOnly = true;
+                MtxtTelefono.ReadOnly = true;
+                MtxtRnc.ReadOnly = true;
             }
         }
     }

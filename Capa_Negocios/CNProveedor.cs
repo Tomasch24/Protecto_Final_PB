@@ -47,7 +47,7 @@ namespace Capa_Negocios
         }
 
 
-
+        //TODO metodo para insertar provedores en la base de datos
         public void InsertarProveedorEnBD(PROVEEDOR proveedor, SqlConnection conn)
         {
             // Opcional: Verificar si el RNC/ID ya existe antes de insertar
@@ -79,7 +79,7 @@ namespace Capa_Negocios
         }
 
 
-
+        //TODO metodo para buscar provedores en la base de datos
 
         public DataTable BuscarProveedoresPorRNC(string RNC)
         {
@@ -103,7 +103,7 @@ namespace Capa_Negocios
         }
 
 
-
+        //TODO metodo para eliminar provedores en la base de datos
         public bool EliminarProveedorPorRNC(string rnc)
         {
             Productos_Agri datos = new Productos_Agri();
@@ -120,7 +120,7 @@ namespace Capa_Negocios
             }
         }
 
-
+        //TODO metodo para actualizar provedores en la base de datos
         public bool ActualizarProveedor(string rncOriginal, PROVEEDOR proveedorNuevo)
         {
             Productos_Agri datos = new Productos_Agri();

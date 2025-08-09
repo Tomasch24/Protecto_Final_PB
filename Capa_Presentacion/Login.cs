@@ -36,14 +36,17 @@ namespace Capa_Presentacion
             {
                 if (txtPassword.Text != "Contraseña")
                 {
+                    this.Hide();
                     UserModel user = new UserModel();
                     var validLogin = user.LoginUser(txtUser.Text, txtPassword.Text);
 
                     if (validLogin)
                     {
+
                         // TODO: Si el login es exitoso, establece el DialogResult y cierra el formulario.
                         this.DialogResult = DialogResult.OK;
                         this.Close();
+
                     }
                     else // Si la validación falla
                     {
@@ -55,6 +58,7 @@ namespace Capa_Presentacion
                 else msgError("Ingrese La Contraseña");
             }
             else msgError("Ingrese el nombre de usuario");
+
         }
 
         private void msgError(string msg)
@@ -67,10 +71,20 @@ namespace Capa_Presentacion
         // La lógica de "cerrar sesión" se manejará en los formularios principales y en el Program.cs.
         private void LogOut(object sender, FormClosedEventArgs e)
         {
-            // Ya no se utiliza aquí
+
         }
 
-        // TODO: SECCIÓN: Eventos para mover el formulario
+
+
+
+        #endregion
+
+
+
+        #region eventos para mover el formulario
+
+        // DllImport para capturar el mouse y enviar mensajes de la ventana
+
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -137,8 +151,21 @@ namespace Capa_Presentacion
             }
         }
 
+
         // TODO: SECCIÓN: Eventos adicionales
         private void panelLogTitulo_Paint(object sender, PaintEventArgs e) { }
         private void Login_Load(object sender, EventArgs e) { }
+
+        private void panelLogTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
