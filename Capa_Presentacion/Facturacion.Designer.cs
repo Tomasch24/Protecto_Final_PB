@@ -360,6 +360,7 @@
             // 
             // cbTipo
             // 
+            cbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTipo.Enabled = false;
             cbTipo.Font = new Font("Verdana", 10F);
             cbTipo.FormattingEnabled = true;

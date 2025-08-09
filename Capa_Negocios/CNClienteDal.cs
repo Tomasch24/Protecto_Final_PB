@@ -24,12 +24,12 @@ namespace Capa_negocios
                 conn.Open();
 
                 // TODO comando sql para que se guarden los datos del cliente en la base de datos
-                string query = "INSERT INTO Cliente (Nombre, Telefono, RNC, Correo) VALUES (@Nombre, @Telefono, @RNC, @Correo)";
+                string query = "INSERT INTO Cliente (Nombre, Teléfono, RNC, Correo) VALUES (@Nombre, @Télefono, @RNC, @Correo)";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-                cmd.Parameters.AddWithValue("@Telefono", cliente.Telefono);
+                cmd.Parameters.AddWithValue("@Télefono", cliente.Telefono);
                 cmd.Parameters.AddWithValue("@RNC", cliente.RNC);
                 cmd.Parameters.AddWithValue("@Correo", cliente.Correo);
 

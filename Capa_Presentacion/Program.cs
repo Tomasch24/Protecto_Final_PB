@@ -17,7 +17,7 @@ namespace Capa_Presentacion
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new Login());
+            Application.Run(new Pantalla_De_Inicio());
 
 
 

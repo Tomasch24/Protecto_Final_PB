@@ -82,7 +82,7 @@ namespace Capa_Presentacion
 
             // Llenar los campos del formulario con los datos seleccionados
             txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
-            MtxtTelefono.Text = fila.Cells["Telefono"].Value.ToString();
+            MtxtTelefono.Text = fila.Cells["Teléfono"].Value.ToString();
             MtxtRnc.Text = fila.Cells["RNC"].Value.ToString();
             txtCorreo.Text = fila.Cells["Correo"].Value?.ToString();
 

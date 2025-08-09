@@ -38,6 +38,7 @@ namespace Capa_Presentacion
             {
                 if (txtPassword.Text != "Contraseña")
                 {
+                    this.Hide();
                     UserModel user = new UserModel();
                     var validLogin = user.LoginUser(txtUser.Text, txtPassword.Text);
 
@@ -45,7 +46,7 @@ namespace Capa_Presentacion
                     if (validLogin == true)
                     {
                         // Si el login es exitoso, muestra la pantalla de bienvenida y luego el formulario principal
-                        this.Hide();
+
                         FormBienvenida bienvenida = new FormBienvenida();
                         bienvenida.ShowDialog();
 
@@ -78,6 +79,7 @@ namespace Capa_Presentacion
             }
             else msgError("Ingrese el nombre de usuario");
 
+
         }
 
 
@@ -94,12 +96,12 @@ namespace Capa_Presentacion
             txtPassword.Clear();
             lblError.Visible = false; // Oculta el mensaje de error al cerrar el formulario
             this.Show(); // Muestra el formulario de login nuevamente
-            txtUser.Focus(); 
+            txtUser.Focus();
         }
 
-          
 
-        
+
+
         #endregion
 
 
@@ -211,6 +213,6 @@ namespace Capa_Presentacion
 
         }
 
-       
+
     }
 }
