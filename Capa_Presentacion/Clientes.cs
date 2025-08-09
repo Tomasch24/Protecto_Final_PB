@@ -82,11 +82,14 @@ namespace Capa_Presentacion
 
             // Llenar los campos del formulario con los datos seleccionados
             txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
-            MtxtTelefono.Text = fila.Cells["Teléfono"].Value.ToString();
+            MtxtTelefono.Text = fila.Cells["Telefono"].Value.ToString();
             MtxtRnc.Text = fila.Cells["RNC"].Value.ToString();
             txtCorreo.Text = fila.Cells["Correo"].Value?.ToString();
 
             // Cambiar el texto y estilo del botón Guardar para indicar "modo edición"
+            btnEditarCliente.Hide();
+            btnGuardarCliente.Show();
+            btnGuardarCliente.Enabled = true;
             btnGuardarCliente.Text = "Guardar Cambios";
             btnGuardarCliente.BackColor = Color.SkyBlue;
             btnGuardarCliente.ForeColor = Color.Black;
@@ -105,7 +108,7 @@ namespace Capa_Presentacion
             }
             if (!MtxtTelefono.MaskCompleted)
             {
-                MessageBox.Show("El campo Teléfono está incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El campo Telefono está incompleto.", "Favor completar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -156,8 +159,8 @@ namespace Capa_Presentacion
 
                 // Restaurar modo normal del botón
                 idClienteEditando = null;
-                btnGuardarCliente.Text = "Registrar";
-                btnGuardarCliente.BackColor = Color.Gainsboro;
+                btnGuardarCliente.Text = "Guardar";
+               
 
             }
             else

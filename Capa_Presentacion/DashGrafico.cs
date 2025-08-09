@@ -67,7 +67,7 @@ namespace Capa_Presentacion
             // TODO Configuración para el gráfico de los 5 Productos Más Vendidos (chartTopProductos)
             chartTopProductos.Series.Clear();
             chartTopProductos.Titles.Clear();
-            chartTopProductos.Titles.Add("Productos Más Vendidos");
+            chartTopProductos.Titles.Add("Los 5 Productos Más Vendidos");
             chartTopProductos.ChartAreas[0].AxisX.Title = "Producto";
             chartTopProductos.ChartAreas[0].AxisY.Title = "Cantidad Vendida";
             //TODO  Desactivar el efecto 3D para el gráfico de pastel

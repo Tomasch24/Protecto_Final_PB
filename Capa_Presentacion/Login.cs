@@ -36,7 +36,7 @@ namespace Capa_Presentacion
             {
                 if (txtPassword.Text != "Contraseña")
                 {
-                    this.Hide();
+                   
                     UserModel user = new UserModel();
                     var validLogin = user.LoginUser(txtUser.Text, txtPassword.Text);
 
@@ -52,6 +52,7 @@ namespace Capa_Presentacion
                     {
                         msgError("Usuario o contraseña incorrectos \n Intenta nuevamente, por favor.");
                         txtPassword.Clear();
+                        txtUser.Clear();
                         txtUser.Focus();
                     }
                 }
