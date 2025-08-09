@@ -159,8 +159,8 @@ namespace Capa_Presentacion
 
                 // Restaurar modo normal del botón
                 idClienteEditando = null;
-                btnGuardarCliente.Text = "Registrar";
-                btnGuardarCliente.BackColor = Color.Gainsboro;
+                btnGuardarCliente.Text = "Guardar";
+               
 
             }
             else
