@@ -69,15 +69,7 @@ namespace Capa_Presentacion
 
         // TODO: Este método ya no será necesario en el Login, pues el formulario se cierra por completo.
         // La lógica de "cerrar sesión" se manejará en los formularios principales y en el Program.cs.
-        private void LogOut(object sender, FormClosedEventArgs e)
-        {
-
-        }
-
-
-
-
-        #endregion
+       
 
 
 
@@ -153,18 +145,11 @@ namespace Capa_Presentacion
 
 
         // TODO: SECCIÓN: Eventos adicionales
-        private void panelLogTitulo_Paint(object sender, PaintEventArgs e) { }
+       
         private void Login_Load(object sender, EventArgs e) { }
 
-        private void panelLogTitulo_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
 
 
     }
