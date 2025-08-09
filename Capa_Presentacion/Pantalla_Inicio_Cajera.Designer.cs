@@ -43,24 +43,25 @@
             btnFacturacion = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
             BarraTitulo = new Panel();
-            pictureBox2 = new PictureBox();
+            PBlogoC = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelHerencia.SuspendLayout();
             panel1.SuspendLayout();
             MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PBuser).BeginInit();
             BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PBlogoC).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.SIN_FONDO_OSCURO;
-            pictureBox1.Location = new Point(530, 164);
-            pictureBox1.Margin = new Padding(4, 4, 4, 4);
+
+            pictureBox1.Location = new Point(405, 130);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(518, 577);
+            pictureBox1.Size = new Size(366, 443);
+
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -70,20 +71,24 @@
             PanelHerencia.Controls.Add(panel1);
             PanelHerencia.Controls.Add(MenuVertical);
             PanelHerencia.Dock = DockStyle.Fill;
-            PanelHerencia.Location = new Point(0, 71);
-            PanelHerencia.Margin = new Padding(4, 4, 4, 4);
+
+            PanelHerencia.Location = new Point(0, 76);
             PanelHerencia.Name = "PanelHerencia";
-            PanelHerencia.Size = new Size(2138, 1067);
+            PanelHerencia.Size = new Size(1554, 806);
+
             PanelHerencia.TabIndex = 14;
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(394, 0);
             panel1.Margin = new Padding(4, 4, 4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1744, 1067);
+
+            panel1.Size = new Size(1239, 806);
+
             panel1.TabIndex = 12;
             // 
             // MenuVertical
@@ -101,7 +106,11 @@
             MenuVertical.Location = new Point(0, 0);
             MenuVertical.Margin = new Padding(4, 4, 4, 4);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(394, 1067);
+
+            MenuVertical.Size = new Size(315, 806);
+
+           
+
             MenuVertical.TabIndex = 11;
             // 
             // btnExit
@@ -112,8 +121,9 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnExit.ForeColor = Color.White;
-            btnExit.Location = new Point(0, 1019);
-            btnExit.Margin = new Padding(4, 4, 4, 4);
+
+            btnExit.Location = new Point(0, 768);
+
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(394, 48);
             btnExit.TabIndex = 18;
@@ -127,8 +137,11 @@
             lblemail.BackColor = Color.Transparent;
             lblemail.Font = new Font("Lucida Bright", 7.8F, FontStyle.Bold);
             lblemail.ForeColor = Color.White;
-            lblemail.Location = new Point(140, 135);
-            lblemail.Margin = new Padding(4, 0, 4, 0);
+
+            lblemail.Location = new Point(112, 119);
+
+            
+
             lblemail.Name = "lblemail";
             lblemail.Size = new Size(54, 18);
             lblemail.TabIndex = 14;
@@ -141,8 +154,9 @@
             lblnom.BackColor = Color.Transparent;
             lblnom.Font = new Font("Lucida Bright", 7.8F, FontStyle.Bold);
             lblnom.ForeColor = Color.White;
-            lblnom.Location = new Point(140, 26);
-            lblnom.Margin = new Padding(4, 0, 4, 0);
+
+            lblnom.Location = new Point(112, 32);
+
             lblnom.Name = "lblnom";
             lblnom.Size = new Size(73, 18);
             lblnom.TabIndex = 13;
@@ -155,8 +169,9 @@
             lblRol.BackColor = Color.Transparent;
             lblRol.Font = new Font("Lucida Bright", 7.8F, FontStyle.Bold);
             lblRol.ForeColor = Color.White;
-            lblRol.Location = new Point(140, 86);
-            lblRol.Margin = new Padding(4, 0, 4, 0);
+
+            lblRol.Location = new Point(112, 73);
+
             lblRol.Name = "lblRol";
             lblRol.Size = new Size(35, 18);
             lblRol.TabIndex = 12;
@@ -186,7 +201,9 @@
             PBuser.Location = new Point(0, 26);
             PBuser.Margin = new Padding(2);
             PBuser.Name = "PBuser";
-            PBuser.Size = new Size(134, 110);
+
+            PBuser.Size = new Size(107, 113);
+
             PBuser.SizeMode = PictureBoxSizeMode.Zoom;
             PBuser.TabIndex = 11;
             PBuser.TabStop = false;
@@ -216,32 +233,40 @@
             // 
             // BarraTitulo
             // 
-            BarraTitulo.BackColor = Color.FromArgb(230, 230, 230);
-            BarraTitulo.Controls.Add(pictureBox2);
+
+            BarraTitulo.BackColor = Color.White;
+            BarraTitulo.Controls.Add(PBlogoC);
+
             BarraTitulo.Dock = DockStyle.Top;
             BarraTitulo.ForeColor = Color.White;
             BarraTitulo.Location = new Point(0, 0);
             BarraTitulo.Margin = new Padding(2);
             BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(2138, 71);
+
+            BarraTitulo.Size = new Size(1554, 76);
+
             BarraTitulo.TabIndex = 13;
             // 
-            // pictureBox2
+            // PBlogoC
             // 
-            pictureBox2.Image = Properties.Resources.SIN_FONDO_OSCURO;
-            pictureBox2.Location = new Point(15, 4);
-            pictureBox2.Margin = new Padding(4, 4, 4, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(79, 64);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+
+            PBlogoC.Image = Properties.Resources.SIN_FONDO_OSCURO;
+            PBlogoC.Location = new Point(0, 3);
+            PBlogoC.Name = "PBlogoC";
+            PBlogoC.Size = new Size(128, 91);
+            PBlogoC.SizeMode = PictureBoxSizeMode.Zoom;
+            PBlogoC.TabIndex = 1;
+            PBlogoC.TabStop = false;
+            PBlogoC.Click += PBlogoC_Click;
+
             // 
             // Pantalla_Inicio_Cajera
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2138, 1138);
+
+            ClientSize = new Size(1554, 882);
+
             Controls.Add(PanelHerencia);
             Controls.Add(BarraTitulo);
             FormBorderStyle = FormBorderStyle.None;
@@ -257,7 +282,7 @@
             MenuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PBuser).EndInit();
             BarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PBlogoC).EndInit();
             ResumeLayout(false);
         }
 
@@ -277,6 +302,6 @@
         private ContextMenuStrip contextMenuStrip1;
         private Panel BarraTitulo;
         private Button btnExit;
-        private PictureBox pictureBox2;
+        private PictureBox PBlogoC;
     }
 }

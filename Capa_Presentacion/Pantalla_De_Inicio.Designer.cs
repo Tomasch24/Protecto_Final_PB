@@ -30,7 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             BarraTitulo = new Panel();
-            pictureBox2 = new PictureBox();
+
+            PBlogoG = new PictureBox();
+
             MenuVertical = new Panel();
             btnExit = new Button();
             lblemail = new Label();
@@ -49,7 +51,9 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+
+            ((System.ComponentModel.ISupportInitialize)PBlogoG).BeginInit();
+
             MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PBuser).BeginInit();
             PanelHerencia.SuspendLayout();
@@ -59,27 +63,31 @@
             // 
             // BarraTitulo
             // 
-            BarraTitulo.BackColor = Color.FromArgb(230, 230, 230);
-            BarraTitulo.Controls.Add(pictureBox2);
+
+            BarraTitulo.BackColor = Color.White;
+            BarraTitulo.Controls.Add(PBlogoG);
+
             BarraTitulo.Dock = DockStyle.Top;
             BarraTitulo.ForeColor = Color.White;
             BarraTitulo.Location = new Point(0, 0);
             BarraTitulo.Margin = new Padding(2);
             BarraTitulo.Name = "BarraTitulo";
-            BarraTitulo.Size = new Size(2138, 71);
+
+            BarraTitulo.Size = new Size(1554, 76);
             BarraTitulo.TabIndex = 11;
             BarraTitulo.Paint += BarraTitulo_Paint;
             // 
-            // pictureBox2
+            // PBlogoG
             // 
-            pictureBox2.Image = Capa_Presentacion.Properties.Resources.SIN_FONDO_OSCURO;
-            pictureBox2.Location = new Point(29, 4);
-            pictureBox2.Margin = new Padding(4, 4, 4, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(79, 64);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
+            PBlogoG.Image = Capa_Presentacion.Properties.Resources.SIN_FONDO_OSCURO;
+            PBlogoG.Location = new Point(3, 0);
+            PBlogoG.Name = "PBlogoG";
+            PBlogoG.Size = new Size(104, 92);
+            PBlogoG.SizeMode = PictureBoxSizeMode.Zoom;
+            PBlogoG.TabIndex = 2;
+            PBlogoG.TabStop = false;
+            PBlogoG.Click += PBlogoG_Click;
+
             // 
             // MenuVertical
             // 
@@ -100,7 +108,9 @@
             MenuVertical.Location = new Point(0, 0);
             MenuVertical.Margin = new Padding(4, 4, 4, 4);
             MenuVertical.Name = "MenuVertical";
-            MenuVertical.Size = new Size(388, 1067);
+
+            MenuVertical.Size = new Size(310, 806);
+
             MenuVertical.TabIndex = 11;
             MenuVertical.Paint += MenuVertical_Paint;
             // 
@@ -112,8 +122,9 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Lucida Bright", 9F, FontStyle.Bold);
             btnExit.ForeColor = Color.White;
-            btnExit.Location = new Point(0, 1019);
-            btnExit.Margin = new Padding(4, 4, 4, 4);
+
+            btnExit.Location = new Point(0, 768);
+
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(388, 48);
             btnExit.TabIndex = 17;
@@ -217,7 +228,9 @@
             PBuser.Location = new Point(0, 26);
             PBuser.Margin = new Padding(2);
             PBuser.Name = "PBuser";
-            PBuser.Size = new Size(134, 110);
+
+            PBuser.Size = new Size(107, 102);
+
             PBuser.SizeMode = PictureBoxSizeMode.Zoom;
             PBuser.TabIndex = 11;
             PBuser.TabStop = false;
@@ -276,20 +289,24 @@
             PanelHerencia.Controls.Add(panel1);
             PanelHerencia.Controls.Add(MenuVertical);
             PanelHerencia.Dock = DockStyle.Fill;
-            PanelHerencia.Location = new Point(0, 71);
-            PanelHerencia.Margin = new Padding(4, 4, 4, 4);
+
+            PanelHerencia.Location = new Point(0, 76);
             PanelHerencia.Name = "PanelHerencia";
-            PanelHerencia.Size = new Size(2138, 1067);
+            PanelHerencia.Size = new Size(1554, 806);
+
             PanelHerencia.TabIndex = 12;
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(388, 0);
             panel1.Margin = new Padding(4, 4, 4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1750, 1067);
+
+            panel1.Size = new Size(1244, 806);
+
             panel1.TabIndex = 12;
             panel1.Paint += panel1_Paint_3;
             // 
@@ -297,10 +314,11 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Capa_Presentacion.Properties.Resources.LOGO_OSCURO;
-            pictureBox1.Location = new Point(534, 149);
-            pictureBox1.Margin = new Padding(4, 4, 4, 4);
+
+            pictureBox1.Location = new Point(406, 122);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(649, 565);
+            pictureBox1.Size = new Size(315, 419);
+
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -316,7 +334,9 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(2138, 1138);
+
+            ClientSize = new Size(1554, 882);
+
             Controls.Add(PanelHerencia);
             Controls.Add(BarraTitulo);
             FormBorderStyle = FormBorderStyle.None;
@@ -326,7 +346,9 @@
             Text = "Form3";
             Load += Pantalla_De_Inicio_Load;
             BarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+
+            ((System.ComponentModel.ISupportInitialize)PBlogoG).EndInit();
+
             MenuVertical.ResumeLayout(false);
             MenuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PBuser).EndInit();
@@ -355,6 +377,6 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Button btnExit;
-        private PictureBox pictureBox2;
+        private PictureBox PBlogoG;
     }
 }
