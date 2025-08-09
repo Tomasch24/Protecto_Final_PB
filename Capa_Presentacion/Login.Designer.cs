@@ -55,8 +55,8 @@
             panelLogTitulo.Name = "panelLogTitulo";
             panelLogTitulo.Size = new Size(462, 50);
             panelLogTitulo.TabIndex = 0;
-            panelLogTitulo.Paint += panelLogTitulo_Paint;
-            panelLogTitulo.MouseMove += panelLogTitulo_MouseDown;
+           
+         
             // 
             // btnMinimizar
             // 

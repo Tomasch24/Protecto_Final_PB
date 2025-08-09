@@ -209,5 +209,10 @@ namespace Capa_Interfas
         private void Dasboard(object sender, EventArgs e) { }
         private void MenuVertical_Paint(object sender, PaintEventArgs e) { }
         private void PBuser_Click(object sender, EventArgs e) { }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

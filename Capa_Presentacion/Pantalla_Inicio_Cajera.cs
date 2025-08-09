@@ -49,7 +49,7 @@ namespace Capa_Presentacion
             // Llama al método para cargar la información del perfil del usuario en la interfaz
             LoadUserData();
             // TODO: Se llama a este método para asegurar que la pantalla de inicio se muestre al cargar el formulario.
-            CargarPantallaInicio(); 
+            CargarPantallaInicio();
         }
 
         // Carga los datos del usuario (que fueron guardados en la caché durante el login) en los controles del formulario
@@ -307,6 +307,10 @@ namespace Capa_Presentacion
 
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 #endregion
